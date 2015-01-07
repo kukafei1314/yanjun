@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+body {
+font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif !important;
+}
+.col-md-8 {
+	width: 100%;
+}
+.col-md-3 {
+	width: 15%;
+}
+.admin-pull-center {
+	margin:0 auto;
+	text-align:center;
+}
+.add-width {
+	width:50% !important;
+}
+.form-group {
+margin-bottom: 20px !important;
+}
+.col-admin {
+	width:35%!important;
+	padding-left:28%;
+	line-height:35px;
+}
+.col-admin-div {
+	width:65%!important;
+}
+.cl {
+	clear:both;
+}
+
+.col-md-4 {
+	width: 90%;
+	margin:0 5%;
+}
+
+.list_showing{
+	margin-top:50px;
+}
+
+.todo-list-item .glyphicon {
+	color: #30a5ff;
+}
+
+.panel-body {
+	background:#fff;
+}
+
+.my_table th{
+	text-align: center;
+}
+
+.my_table td{
+	text-align: center;
+	height:35px;
+	line-height:35px;
+}
+
+.my_search{
+	float:left;
+	margin-top:7px;
+	margin-left:48%;
+	width:20%;
+}
+
+.form-control {
+	height: 38px;
+}
+
+.sec_head{
+	float:left;
+	width:20%;
+}
+
+.my_botton{
+	width:10%;
+	height:38px;
+	margin-top:7px;
+	float:right;
+}
+}
+#table1 {
+	width:20%!important;
+}
+#table2 {
+	width:60%!important;
+}
+#table3 {
+	width:20%!important;
+}
+.left {
+	float:left;
+}
+.add_a {
+	padding:15px 20px 10px 0;
+}
+.add_a a{
+	float:right;
+	display:block;
+	padding:0 10px 0 10px;
+	height:35px;
+	line-height:35px;
+	background:#30a5ff;
+	color:#fff;
+	border-radius:4px;
+}
+.add_a a:active, .add_a a:hover, .add_a a:focus{
+	background:#63bafd;
+	text-decoration:none;
+}
+.panel-heading {
+	border:none !important;
+}
+th,td {
+	text-align:center !important;
+}
+.edit_type a:active,.edit_type a:hover, .edit_type a:focus {
+	color:#fa232d;
+}
+td a{
+	margin-left:10px;
+}

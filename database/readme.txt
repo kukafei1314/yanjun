@@ -1,1 +1,0 @@
-请database文件夹中的database.php文件复制到application/config文件夹中，自行配置数据库。
