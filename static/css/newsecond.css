@@ -1,0 +1,85 @@
+/* CSS Document */
+body {
+	background:#dededd;
+}
+.cl {
+	clear:both;
+}
+* {
+	margin:0;
+	padding:0;
+}
+#newsecond {
+	width:986px;
+	margin:0 auto;
+	font-family:Microsoft Yahei;
+}
+#news_middle {
+	background:#fff;
+	margin-bottom:10px;
+}
+.news_left {
+	width:536px;
+	padding:45px 30px 5px 30px;
+	float:left;
+	background:#fff;
+	color:#333;
+}
+.news_left p {
+	margin-bottom:15px;
+}
+.news_left img {
+	margin-top:15px;
+}
+.news_right {
+	width:390px;
+	float:right;
+	padding-top:5px;
+	background:#fff;
+}
+.news_title {
+	font-size:20px;
+	line-height:30px;
+}
+.news_content {
+	font-size:14px;
+	line-height:25px;
+}
+.news_list {
+	width:100%;
+	position:relative;
+	margin-top:5px;
+}
+.news_list_word {
+	width:135px;
+	height:150px;
+	padding:40px 35px 0 20px;
+	background:#60605b;
+	color:#fff;
+	font-weight:bold;
+	font-size:14px;
+	line-height:25px;
+	color:#fffde5;
+	float:left;
+}
+.news_list_img {
+	width:200px;
+	height:190px;
+	float:left;
+}
+.news_list_img img {
+	width:200px;
+	height:190px;
+}
+.fade {
+	position:absolute;
+	top:0;
+	left:190px;
+	background:#666;
+	opacity:0.7;
+	width:200px;
+	height:190px;
+}
+.fade:hover {
+	opacity:0;
+}
