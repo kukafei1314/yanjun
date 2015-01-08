@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>晏钧设计</title>
-</head>
-<body>
+<?php $this->load->view('common/common_header'); ?>
 
-晏钧设计首页
-
-</body>
-</html>
+<div>首页主要内容</div>
+    
+<?php $this->load->view('common/common_footer'); ?>    
