@@ -1,15 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="<?php echo base_url('static/css/newsecond.css'); ?>"/>
-<script type="text/javascript" src="<?php echo base_url('static/js/jquery-1.8.0.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('static/js/news.js'); ?>"></script>
-
-<title>无标题文档</title>
-</head>
 	<div id="newsecond">
-    	<img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=432/>
+        <div class="pic_div">
+        	<div id="pic">
+                <ul>
+                    <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=432/></li>
+                    <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=432/></li>
+                </ul>
+            </div>
+            <div id="tip">
+                <a class="pic_left" onclick="change(1)"></a>
+                <a class="pic_right" onclick="change(0)"></a>
+            </div>
+        </div>
         <div id="news_middle">
         <div class="news_left">
         	<div class="news_title">设计的情怀——京、冀、豫三地设计师主题沙龙</div>
@@ -27,10 +28,13 @@
 				<div class="news_list_word">
                 	澳大利亚大事来中国啦啦啦啦啦啦阿里啦啦啦啦啦啦啦啦啦啦了
                 </div>
+                
                 <div class="news_list_img">
-                	<img src="<?php echo base_url('static/image/news_list.png');?>" width=203 height=192/>
+                	<img src="<?php echo base_url('static/image/news_list.png');?>" width=200 height=190/>
+                    
                 </div>
                 <a class="fade" href="http://www.baidu.com"></a>
+                <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                 <div class="cl"></div>
             </div>
             <div class="news_list">
@@ -41,6 +45,7 @@
                 	<img src="<?php echo base_url('static/image/news_list.png');?>" width=203 height=192/>
                 </div>
                 <div class="fade"></div>
+                <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                 <div class="cl"></div>
             </div>
             <div class="news_list">
@@ -51,6 +56,7 @@
                 	<img src="<?php echo base_url('static/image/news_list.png');?>" width=203 height=192/>
                 </div>
                 <div class="fade"></div>
+                <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                 <div class="cl"></div>
             </div>
             <div class="news_list">
@@ -61,6 +67,7 @@
                 	<img src="<?php echo base_url('static/image/news_list.png');?>" width=203 height=192/>
                 </div>
                 <div class="fade"></div>
+                <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                 <div class="cl"></div>
             </div>
             <div class="news_list">
@@ -71,6 +78,7 @@
                 	<img src="<?php echo base_url('static/image/news_list.png');?>" width=203 height=192/>
                 </div>
                 <div class="fade"></div>
+                <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                 <div class="cl"></div>
             </div>
             <div class="news_list">
@@ -81,6 +89,7 @@
                 	<img src="<?php echo base_url('static/image/news_list.png');?>" width=203 height=192/>
                 </div>
                 <div class="fade"></div>
+                <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                 <div class="cl"></div>
             </div>
             <div class="news_list">
@@ -91,12 +100,10 @@
                 	<img src="<?php echo base_url('static/image/news_list.png');?>" width=203 height=192/>
                 </div>
                 <div class="fade"></div>
+                <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                 <div class="cl"></div>
             </div>
         </div>
         <div class="cl"></div>
         </div>
     </div>
-<body>
-</body>
-</html>

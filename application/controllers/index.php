@@ -17,6 +17,8 @@ class Index extends CI_Controller {
 	}
 	public function news()
 	{
+		$this->load->view('common/common_header');
 		$this->load->view('news');
+		$this->load->view('common/common_footer');
 	}
 }
