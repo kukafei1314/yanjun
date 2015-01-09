@@ -6,9 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="<?php echo base_url('static/css/home.css'); ?>"/>
+<link rel="stylesheet" href="<?php echo base_url('static/css/newsecond.css'); ?>"/>
 <link rel="stylesheet" href="<?php echo base_url('static/css/case.css'); ?>"/>
 <script type="text/javascript" src="<?php echo base_url('static/js/jquery-1.8.0.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('static/js/pic.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('static/js/news.js'); ?>"></script>
 <title>晏钧设计</title>
 </head>
 
@@ -42,3 +43,7 @@
         <div class="cl"></div>
     </div><!--header结束-->
     <div class="main_content"><!--主要内容层开始，以限制宽度为986px-->
+    	<div class="mian_out">
+            <a href="#"><img src="<?php echo base_url('static/image/main_totop.png');?>"/></a>
+            <a href="#"><img src="<?php echo base_url('static/image/main_contact.png');?>"/></a>
+        </div>
