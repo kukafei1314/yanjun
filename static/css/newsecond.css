@@ -81,7 +81,6 @@ body {
 }
 .fade:hover {
 	opacity: 0;
-	visibility: hidden;
 }
 .pic_div {
 	position:relative;
