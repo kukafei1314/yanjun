@@ -19,4 +19,12 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('news');
 	}
+	public function subpage_case()
+	{
+		$this->load->view('subpage_case');
+	}
+	public function case_expand()
+	{
+		$this->load->view('case_expand');
+	}
 }

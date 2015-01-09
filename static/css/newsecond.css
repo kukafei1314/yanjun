@@ -81,5 +81,6 @@ body {
 	height:190px;
 }
 .fade:hover {
-	opacity:0;
+	opacity: 0;
+	visibility: hidden;
 }
