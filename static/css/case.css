@@ -124,7 +124,6 @@ body {
 }
 .a_link:hover {
 	opacity: 0;
-	visibility: hidden;
 }
 .c_img {
 	height: 192px;
