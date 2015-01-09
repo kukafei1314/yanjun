@@ -21,10 +21,6 @@
             <div class="div_hr float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
             <a class="a_link" href="">品牌策略<br />Brand<br />Strategy</a>
         </div>
-        <div class="top_con float">
-            <div class="top"><a class="a_t" href="">Top</a></div>
-            <div class="contact"><a class="a_c" href="">联系</a></div>
-        </div>
         <div class="clc"></div>
     </div>
     <div class="div_2">
