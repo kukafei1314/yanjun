@@ -36,3 +36,23 @@ function scrollMove(m){
 		clearInterval(scrollmove);
 	}
 }
+
+/**
+ *  首页鼠标悬停动画
+*/
+$(document).ready(function() {
+    $(".main_block1").each(function() {
+		$(this).mouseenter(function(){
+			$(this).children('.main_block-yellow').css("display","block");
+			//$(this).children('.main_block-detail').slideDown("slow");
+			$(this).children('.main_block-detail').css("display","block");
+			$(this).children('.main_block-detail').animate({ top: "-60px", }, 100 );
+		});
+		$(this).mouseleave(function(){
+			$(this).children('.main_block-yellow').css("display","none");
+			$(this).children('.main_block-detail').css("display","none");
+			$(this).children('.main_block-detail').css("top","0");
+		});
+	});
+});
+
