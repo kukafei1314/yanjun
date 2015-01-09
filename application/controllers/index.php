@@ -21,6 +21,12 @@ class Index extends CI_Controller {
 		$this->load->view('news');
 		$this->load->view('common/common_footer');
 	}
+		public function joinus()
+	{
+		$this->load->view('common/common_header');
+		$this->load->view('join_us');
+		$this->load->view('common/common_footer');
+	}
 	
 	public function test()
 	{
