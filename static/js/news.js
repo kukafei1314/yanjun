@@ -1,12 +1,14 @@
-// JavaScript Document
 /**
  * 大图滚动
  */
 var scrollmove = "";
 var masktime = 10;
 var focus_cur = 1;	
+var next;
+var interval = "";
 function change(id){
-	clearInterval(scrollmove);
+	clearTimeout(scrollmove);
+	clearTimeout(interval);
 	if(id==0) {
 		if(focus_cur==1) {
 			next = 2;
@@ -20,9 +22,19 @@ function change(id){
 			next = focus_cur + 1;
 		}
 	}
-	scrollmove = setInterval("scrollMove("+next+")",masktime);
-	focus_cur = next;
+	move();
 }
+
+function move() {
+	if (focus_cur==2){
+		next = 1;
+	} else {
+		next = focus_cur + 1;
+	}
+	focus_cur = next;
+	scrollmove = setInterval("scrollMove("+next+")",masktime);
+}
+
 function scrollMove(m){
 	var p = $("#pic li");
 	var srl = $("#pic").scrollLeft();
@@ -33,6 +45,41 @@ function scrollMove(m){
 	}else if(srl < p.width()*(m-1)){
 		$("#pic").scrollLeft(srl + xsrl);
 	}else{
-		clearInterval(scrollmove);
+		clearTimeout(scrollmove);
+		clearTimeout(interval);
+		run();
 	}
 }
+
+/**
+* 大图自动滚动
+**/
+$(document).ready(function() {
+  	 run();      //加载页面时启动定时器  
+});
+
+function run() {
+	interval = setTimeout("move()","4000");
+}
+
+/*
+*加入我们三级页面 省略号点击消失与显示
+*/
+function showdown(obj) {
+	$(obj).css("display","none");
+	$(obj).prev(".right_middle").css("height","auto");
+}
+function hideup(obj) {
+	if($(obj).css("height") != 130) {
+		$(obj).css("height","130");
+		$(obj).next(".not").css("display","block");
+	}
+}
+$(document).ready(function() {
+  $(".right_middle_content").each(function(){
+	  if(parseInt($(this).css("height"))> 90) {
+		  $(this).parent(".right_middle").after(dot);
+	  }
+  });
+});
+var dot = "<a class='not' onclick='showdown(this)'>……</a>";
