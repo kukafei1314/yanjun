@@ -54,7 +54,6 @@
 }
 .case_opacity:hover {
 	opacity: 0;
-	visibility: hidden;
 }
 .a_t {
 	text-decoration: none;
@@ -124,18 +123,19 @@ body {
 }
 .a_link:hover {
 	opacity: 0;
-	visibility: hidden;
 }
 .c_img {
 	height: 192px;
 	width: 193px;
 	margin-right: 5px;
 	margin-bottom: 5px;
+	position:relative;
 }
 .l_img {
 	height: 192px;
 	width: 193px;
 	margin-bottom: 5px;
+	position: relative;
 }
 .case_t {
 	height: 192px;
@@ -183,4 +183,19 @@ body {
 	height: 20px;
 	width: 20px;
 	border:none;
+}
+
+.slide {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 74px;
+	width: 178px;
+	background-color: #3D3D37;
+	line-height: 20px;
+	padding-left: 15px;
+	padding-top: 10px;
+	font-size: 12px;
+	color: #FFF;
+	display: none;
 }

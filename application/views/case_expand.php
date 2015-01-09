@@ -114,5 +114,8 @@
 		</div>
         <div class="clc"></div>
 	</div>
+    <div class="main_page">
+    	显示页码
+    </div>
    
 <?php $this->load->view('common/common_footer'); ?>

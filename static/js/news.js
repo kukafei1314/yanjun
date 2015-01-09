@@ -113,5 +113,23 @@ $(document).ready(function() {
 			$(this).children('.main_work_detail').css("display","none");
 		});
 	});
+	
+	$(".c_img").each(function() {
+		$(this).mouseenter(function(){
+			$(this).children('.slide').slideDown("slow");
+		});
+		$(this).mouseleave(function(){
+			$(this).children('.slide').css("display","none");
+		});
+	});
+	
+	$(".l_img").each(function() {
+		$(this).mouseenter(function(){
+			$(this).children('.slide').slideDown("slow");
+		});
+		$(this).mouseleave(function(){
+			$(this).children('.slide').css("display","none");
+		});
+	});
 });
 
