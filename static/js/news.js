@@ -83,6 +83,8 @@ $(document).ready(function() {
   });
 });
 var dot = "<a class='not' onclick='showdown(this)'>……</a>";
+
+
 /**
  *  首页鼠标悬停动画
 */
@@ -98,6 +100,17 @@ $(document).ready(function() {
 			$(this).children('.main_block-yellow').css("display","none");
 			$(this).children('.main_block-detail').css("display","none");
 			$(this).children('.main_block-detail').css("top","0");
+		});
+	});
+	
+	$(".main_work_pic").each(function() {
+		$(this).mouseenter(function(){
+			$(this).children('.main_pic_mask').css("display","block");
+			$(this).children('.main_work_detail').slideDown("slow");
+		});
+		$(this).mouseleave(function(){
+			$(this).children('.main_pic_mask').css("display","none");
+			$(this).children('.main_work_detail').css("display","none");
 		});
 	});
 });
