@@ -40,4 +40,12 @@ class Index extends CI_Controller {
 		$this->load->view('join_us_second');
 		$this->load->view('common/common_footer');
 	}
+	public function subpage_case()
+	{
+		$this->load->view('subpage_case');
+	}
+	public function case_expand()
+	{
+		$this->load->view('case_expand');
+	}
 }
