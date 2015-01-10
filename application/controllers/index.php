@@ -17,14 +17,16 @@ class Index extends CI_Controller {
 	}
 	public function news()
 	{
+		$data['title'] = "我喜欢";
 		$this->load->view('common/common_header');
-		$this->load->view('news');
+		$this->load->view('news',$data);
 		$this->load->view('common/common_footer');
 	}
-		public function joinus()
+	public function joinus()
 	{
+		$data['title'] = "我喜欢";
 		$this->load->view('common/common_header');
-		$this->load->view('join_us');
+		$this->load->view('join_us',$data);
 		$this->load->view('common/common_footer');
 	}
 	

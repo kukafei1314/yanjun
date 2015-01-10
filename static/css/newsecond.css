@@ -104,6 +104,11 @@ body {
 	top:10px;
 	right:10px;
 }
+.qq_share {
+	position:absolute;
+	top:40px;
+	right:10px;
+}
 .pic_left {
 	position:absolute;
 	top:180px;
