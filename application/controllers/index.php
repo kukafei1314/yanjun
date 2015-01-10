@@ -13,20 +13,18 @@ class Index extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('index');
+		$data['title'] = "我喜欢";
+		$this->load->view('index',$data);
 	}
 	public function news()
 	{
 		$data['title'] = "我喜欢";
-		$this->load->view('common/common_header');
 		$this->load->view('news',$data);
 	}
 	public function joinus()
 	{
 		$data['title'] = "我喜欢";
-		$this->load->view('common/common_header');
 		$this->load->view('join_us',$data);
-		$this->load->view('common/common_footer');
 	}
 	
 	public function test()
@@ -36,9 +34,7 @@ class Index extends CI_Controller {
 	
 	public function joinus2()
 	{
-		$this->load->view('common/common_header');
 		$this->load->view('join_us_second');
-		$this->load->view('common/common_footer');
 	}
 	
 	public function subpage_case()

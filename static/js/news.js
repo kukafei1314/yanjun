@@ -106,7 +106,7 @@ $(document).ready(function() {
 	$(".main_work_pic").each(function() {
 		$(this).mouseenter(function(){
 			$(this).children('.main_pic_mask').css("display","block");
-			$(this).children('.main_work_detail').slideDown("slow");
+			$(this).children('.main_work_detail').slideDown("fast");
 		});
 		$(this).mouseleave(function(){
 			$(this).children('.main_pic_mask').css("display","none");
@@ -138,6 +138,15 @@ $(document).ready(function() {
 		});
 		$(this).mouseleave(function(){
 			$(this).children(".share_1").slideUp();
+		});
+	});
+	
+	$(".share_work").each(function() {
+		$(this).mouseenter(function(){
+			$(this).children(".share_2").slideDown();
+		});
+		$(this).mouseleave(function(){
+			$(this).children(".share_2").slideUp();
 		});
 	});
 });

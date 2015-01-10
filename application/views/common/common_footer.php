@@ -2,7 +2,7 @@
 <!--author:lizzyphy-->     
     
     </div><!--主要内容层结束-->
-    <div class="main_footer"><!--footer开始-->
+    <div class="main_footer" id="main_contact"><!--footer开始-->
     	<div class="main_footer_left">
         	<div class="main_footer_tel">Brand Tel:&nbsp;4001-606-909</div>
             <div class="main_footer_address">

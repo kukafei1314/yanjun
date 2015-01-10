@@ -364,12 +364,6 @@ body{
 	padding-left:15px;
 }
 
-.main_work_detail img{
-	position:absolute;
-	top:15px;
-	right:12px;
-}
-
 .main_news{
 	width:392px;
 	margin:0 0px 0 0;
@@ -434,3 +428,13 @@ body{
 	color:#3e3a39;
 }
 
+.share_work{
+	position:absolute;
+	top:15px;
+	left:550px;
+	z-index:2000;
+}
+
+.share_2{
+	display: none;
+}
