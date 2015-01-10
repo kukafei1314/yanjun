@@ -114,6 +114,15 @@ $(document).ready(function() {
 		});
 	});
 	
+	$(".news_list_img").each(function() {
+		$(this).mouseenter(function(){
+			$(this).children('.main_news_mask').css("display","none");
+		});
+		$(this).mouseleave(function(){
+			$(this).children('.main_news_mask').css("display","block");
+		});
+	});
+	
 	$(".c_img").each(function() {
 		$(this).mouseenter(function(){
 			$(this).children('.slide').slideDown("slow");
@@ -144,6 +153,7 @@ $(document).ready(function() {
 	$(".share_work").each(function() {
 		$(this).mouseenter(function(){
 			$(this).children(".share_2").slideDown();
+			//$(this).siblings('a .fade').css("opacity","0");
 		});
 		$(this).mouseleave(function(){
 			$(this).children(".share_2").slideUp();
