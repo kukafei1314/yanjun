@@ -131,5 +131,14 @@ $(document).ready(function() {
 			$(this).children('.slide').css("display","none");
 		});
 	});
+	
+	$(".share").each(function() {
+		$(this).mouseenter(function(){
+			$(this).children(".share_1").slideDown();
+		});
+		$(this).mouseleave(function(){
+			$(this).children(".share_1").slideUp();
+		});
+	});
 });
 

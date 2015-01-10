@@ -1,3 +1,4 @@
+
 <div id="news_middle">
 	<div class="pic_div">
         <div id="pic">

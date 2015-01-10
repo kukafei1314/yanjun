@@ -77,7 +77,7 @@ body {
 	opacity:0.7;
 	width:200px;
 	height:190px;
-	z-index:1000;
+	z-index:5;
 }
 .fade:hover {
 	opacity: 0;
@@ -100,11 +100,27 @@ body {
 	height:432px;
 	float:left;
 }
-.pic1 {
+.share {
 	position:absolute;
 	top:10px;
-	right:10px;
-	z-index:100;
+	left:360px;
+	z-index:10;
+
+}
+.pic1 {
+	margin-bottom:5px;
+}
+.weibo_share {
+	width:63px;
+	height:24px;
+}
+.qq_share {
+	width:63px;
+	height:24px;
+}
+.share_1 {
+	display:none;
+	z-index:20;
 }
 .pic_left {
 	position:absolute;
