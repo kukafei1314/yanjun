@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="<?php echo base_url('static/css/case.css'); ?>"/>
 <script type="text/javascript" src="<?php echo base_url('static/js/jquery-1.8.0.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('static/js/news.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('static/js/map.js'); ?>"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AwiCeIVhbizweIdRqOIavdAZ"></script>
 <title>晏钧设计</title>
 </head>
 

@@ -414,3 +414,23 @@ body{
 	margin-bottom:2px;
 }
 
+.map{
+	padding:25px 25px 25px 25px;
+	background:#FFF;
+}
+
+.allmap{
+	width:934px;
+	height:745px;
+	over-flow:hidden;
+}
+
+.map_title{
+	position:absolute;
+	top:355px;
+	left:35px;
+	font-size:40px;
+	font-family:Microsoft YaHei;
+	color:#3e3a39;
+}
+

@@ -17,9 +17,7 @@ class Index extends CI_Controller {
 	}
 	public function news()
 	{
-		$this->load->view('common/common_header');
 		$this->load->view('news');
-		$this->load->view('common/common_footer');
 	}
 		public function joinus()
 	{
@@ -32,18 +30,27 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('test');
 	}
+	
 	public function joinus2()
 	{
 		$this->load->view('common/common_header');
 		$this->load->view('join_us_second');
 		$this->load->view('common/common_footer');
 	}
+	
 	public function subpage_case()
 	{
 		$this->load->view('subpage_case');
 	}
-	public function case_expand()
+	
+	public function map()
 	{
-		$this->load->view('case_expand');
+		$type = $this->input->get('type',true);
+		if($type == 1) {
+			$this->load->view('map_shi');
+		} else {
+			$this->load->view('map_bj');
+		}
+		
 	}
 }
