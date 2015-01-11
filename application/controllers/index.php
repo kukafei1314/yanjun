@@ -48,4 +48,12 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('case_expand');
 	}
+	public function subBusiness()
+	{
+		$this->load->view('subBusiness');
+	}
+	public function busi_problem()
+	{
+		$this->load->view('busi_problem');
+	}
 }
