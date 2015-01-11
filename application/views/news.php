@@ -1,4 +1,3 @@
-
 	<div id="newsecond">
         <div class="pic_div">
         	<div id="pic">

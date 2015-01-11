@@ -40,11 +40,11 @@ function scrollMove(m){
 	var srl = $("#pic").scrollLeft();
 	var dsrl = Math.floor((p.width()*(m-1)-srl)/5);
 	var xsrl = Math.ceil((p.width()*(m-1)-srl)/5);
-	if(srl > p.width()*(m-1)){
+	if(srl > p.width()*(m-1)) {
 		$("#pic").scrollLeft(srl + dsrl);
-	}else if(srl < p.width()*(m-1)){
+	} else if (srl < p.width()*(m-1)){
 		$("#pic").scrollLeft(srl + xsrl);
-	}else{
+	} else {
 		clearTimeout(scrollmove);
 		clearTimeout(interval);
 		run();
