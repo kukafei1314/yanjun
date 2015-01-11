@@ -1,3 +1,4 @@
+<?php $this->load->view('common/common_header');?>
 
 <div id="news_middle">
 	<div class="pic_div">
@@ -148,3 +149,5 @@
     <div class="cl"></div>
     </div>
 </div>
+
+<?php $this->load->view('common/common_footer');?>
