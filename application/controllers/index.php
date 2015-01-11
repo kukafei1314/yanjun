@@ -16,6 +16,7 @@ class Index extends CI_Controller {
 		$data['title'] = "我喜欢";
 		$this->load->view('index',$data);
 	}
+	
 	public function news()
 	{
 		$data['title'] = "我喜欢";
