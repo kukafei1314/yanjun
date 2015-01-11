@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="<?php echo base_url('static/css/case.css'); ?>"/>
 <script type="text/javascript" src="<?php echo base_url('static/js/jquery-1.8.0.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('static/js/news.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('static/js/map.js'); ?>"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AwiCeIVhbizweIdRqOIavdAZ"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
 <title>晏钧设计</title>
@@ -49,5 +51,5 @@
     <div class="main_content"><!--主要内容层开始，以限制宽度为986px-->
     	<div class="main_out">
             <a href="#"><img src="<?php echo base_url('static/image/main_totop.png');?>"/></a>
-            <a href="#"><img src="<?php echo base_url('static/image/main_contact.png');?>"/></a>
+            <a href="#main_contact"><img src="<?php echo base_url('static/image/main_contact.png');?>"/></a>
         </div>

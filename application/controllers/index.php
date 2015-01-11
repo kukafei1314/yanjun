@@ -13,40 +13,44 @@ class Index extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('index');
+		$data['title'] = "我喜欢";
+		$this->load->view('index',$data);
 	}
 	public function news()
 	{
 		$data['title'] = "我喜欢";
-		$this->load->view('common/common_header');
 		$this->load->view('news',$data);
-		$this->load->view('common/common_footer');
 	}
 	public function joinus()
 	{
 		$data['title'] = "我喜欢";
-		$this->load->view('common/common_header');
 		$this->load->view('join_us',$data);
-		$this->load->view('common/common_footer');
 	}
 	
 	public function test()
 	{
 		$this->load->view('test');
 	}
+	
 	public function joinus2()
 	{
-		$this->load->view('common/common_header');
 		$this->load->view('join_us_second');
-		$this->load->view('common/common_footer');
 	}
+	
 	public function subpage_case()
 	{
 		$this->load->view('subpage_case');
 	}
-	public function case_expand()
+	
+	public function map()
 	{
-		$this->load->view('case_expand');
+		$type = $this->input->get('type',true);
+		if($type == 1) {
+			$this->load->view('map_shi');
+		} else {
+			$this->load->view('map_bj');
+		}
+		
 	}
 	public function up()
 	{

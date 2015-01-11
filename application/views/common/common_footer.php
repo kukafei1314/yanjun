@@ -2,7 +2,7 @@
 <!--author:lizzyphy-->     
     
     </div><!--主要内容层结束-->
-    <div class="main_footer"><!--footer开始-->
+    <div class="main_footer" id="main_contact"><!--footer开始-->
     	<div class="main_footer_left">
         	<div class="main_footer_tel">Brand Tel:&nbsp;4001-606-909</div>
             <div class="main_footer_address">
@@ -13,7 +13,7 @@
                 	Add:河北省石家庄市广安大街16号美东国际C座2708</br>PC:050011&nbsp;&nbsp;&nbsp;&nbsp;Mail:777@yanjun.net
                 </div>
                 <div class="main_footer_address3">
-                	<input type="button" value="查看地图"/>
+                	<a href="<?php echo base_url('/index/map?type=1'); ?>"><input type="button" value="查看地图"/></a>
                 </div>
                 <div class="cl"></div>
             </div>
@@ -25,7 +25,7 @@
                 	Add:北京市朝阳区东三环中39号建外SOHO2号楼0501</br>PC:100022
                 </div>
                 <div class="main_footer_address3">
-                	<input type="button" value="查看地图"/>
+                	<a href="<?php echo base_url('/index/map?type=2'); ?>"><input type="button" value="查看地图"/></a>
                 </div>
                 <div class="cl"></div>
             </div>

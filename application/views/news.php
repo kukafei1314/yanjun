@@ -1,3 +1,5 @@
+<?php $this->load->view('common/common_header'); ?>
+
 	<div id="newsecond">
         <div class="pic_div">
         	<div id="pic">
@@ -313,3 +315,5 @@
         <div class="cl"></div>
         </div>
     </div>
+    
+<?php $this->load->view('common/common_footer'); ?> 
