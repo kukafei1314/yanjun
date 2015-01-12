@@ -6,3 +6,33 @@
 .fa {
 	padding-right:5px;
 }
+
+.cl{
+	clear: both;
+	height: 0; 
+	overflow: hidden;
+}
+
+#check_num{
+	width:50px;
+	height:34px;
+	color:#FFF;
+	font-size:18px;
+	line-height:34px;
+	border-radius:4px;
+	background-color:#68dff0;
+	margin-left:5px;
+	padding-left:2px;
+	float:left;
+}
+
+.password_input{
+	width:80%;
+	float:left;
+}
+
+.login_error{
+	color:#F00;
+	font-size:14px;
+	font-family:Microsoft Yahei;
+}

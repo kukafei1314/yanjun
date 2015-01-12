@@ -9,6 +9,13 @@ class Index extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('login_m');
+		
+		// 先验证登录
+		$id = $this->login_m->check_login();
+		if ($id < 0 || $id == FALSE) {
+			redirect('admin/login');
+		}
 	}
 	
 	public function index()
@@ -19,5 +26,11 @@ class Index extends CI_Controller {
 	public function register()
 	{
 		$this->load->view('admin/register');
+	}
+	
+	public function logout()
+	{
+		$this->login_m->logout();
+		redirect('admin');
 	}
 }
