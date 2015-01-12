@@ -11,7 +11,6 @@ class Register_m extends CI_Model {
 	function __construct() 
 	{	
 		parent::__construct();
-		$this->load->database();
 	}
     
     public function user_select($username)
