@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="<?php echo base_url('static/css/home.css'); ?>"/>
 <link rel="stylesheet" href="<?php echo base_url('static/css/newsecond.css'); ?>"/>
 <link rel="stylesheet" href="<?php echo base_url('static/css/case.css'); ?>"/>
+<link rel="stylesheet" href="<?php echo base_url('static/css/joycenter.css'); ?>"/>
 <script type="text/javascript" src="<?php echo base_url('static/js/jquery-1.8.0.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('static/js/news.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('static/js/map.js'); ?>"></script>

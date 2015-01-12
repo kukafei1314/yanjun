@@ -85,6 +85,26 @@ $(document).ready(function() {
 var dot = "<a class='not' onclick='showdown(this)'>……</a>";
 
 
+
+function showall(obj) {
+	$(obj).css("display","none");
+	$(obj).prev(".m_text").css("height","auto");
+}
+function unhide(obj) {
+	if($(obj).css("height") != 395) {
+		$(obj).css("height","395");
+		$(obj).next(".show").css("display","block");
+	}
+}
+$(document).ready(function() {
+  $(".text_li").each(function(){
+	  if(parseInt($(this).css("height"))> 360) {
+		  $(this).parent(".m_text").after(more);
+	  }
+  });
+});
+var more = "<a class='show float' onclick='showall(this)'>more……</a>";
+
 /**
  *  首页鼠标悬停动画
 */
