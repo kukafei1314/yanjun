@@ -43,6 +43,14 @@ class Index extends CI_Controller {
 		$this->load->view('subpage_case');
 	}
 	
+	public function case_expand()
+	{
+		$data['title'] = "我喜欢";
+		$this->load->view('case_expand',$data);
+	}
+	
+	
+	
 	public function map()
 	{
 		$type = $this->input->get('type',true);
