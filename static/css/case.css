@@ -212,22 +212,25 @@
 	height: 54px;
 }
 .input_s {
-	background-color: #DEDEDD;
+	background-color: #DCDDDD;
 	height: 30px;
 	width: 285px;
-	border-color: #D2D3D3;
+	border-width: 2px;
+	border-color: #D2D2D3;
 }
 .input_l {
-	background-color: #DEDEDD;
+	background-color: #DCDDDD;
 	height: 30px;
 	width: 587px;
-	border-color: #d2d3d3;
+	border-width: 2px;
+	border-color: #D2D2D3;
 }
 .b_form textarea {
-	background-color: #DEDEDD;
+	background-color: #DCDDDD;
 	height: 152px;
 	width: 587px;
-	border-top-color: #d2d3d3;
+	border-width: 2px;
+	border-color: #D2D2D3;
 }
 .sr {
 	margin-top:20px;
