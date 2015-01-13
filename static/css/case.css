@@ -215,27 +215,32 @@
 	background-color: #DCDDDD;
 	height: 30px;
 	width: 285px;
-	border-width: 2px;
+	border-width: 1px;
 	border-color: #D2D2D3;
 }
 .input_l {
 	background-color: #DCDDDD;
 	height: 30px;
 	width: 587px;
-	border-width: 2px;
+	border-width: 1px;
 	border-color: #D2D2D3;
 }
-.b_form textarea {
+.t_area {
 	background-color: #DCDDDD;
 	height: 152px;
 	width: 587px;
-	border-width: 2px;
-	border-color: #D2D2D3;
+	border-width: 1px;
+	border-color: #D2D2D3;	
 }
 .sr {
 	margin-top:20px;
-	width:45%;
+	width:46%;
 	text-align:center;
+}
+.sr input {
+	width:38px;
+	height:26px;
+	font-size:13px;
 }
 .m_text {
 	padding-top: 60px;

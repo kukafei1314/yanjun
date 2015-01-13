@@ -43,7 +43,7 @@
                     <input name="company" type="text" size="80" class="input_l">
                 </div>
                 <p><label>留言</label></p>
-                <textarea name="words" cols="68" rows="5"></textarea>
+                <textarea class="t_area" name="words" cols="68" rows="5"></textarea>
                 <div class="sr float">
                 	<input name="sub" type="submit" value="提交">
                 </div>
