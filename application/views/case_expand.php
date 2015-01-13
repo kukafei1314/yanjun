@@ -71,6 +71,7 @@
                                     var s = [];
                                     for(var i in p){
                                     s.push(i + '=' + encodeURIComponent(p[i]||''));
+									//s.push(i + '=' + p[i]||'');
                                     }
                                     document.write(['<a class="qcShareQQDiv" href="http://connect.qq.com/widget/shareqq/index.html?',s.join('&'),'" 	target="_blank">分享到QQ</a>'].join(''));
                 })();

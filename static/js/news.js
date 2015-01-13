@@ -84,8 +84,9 @@ $(document).ready(function() {
 });
 var dot = "<a class='not' onclick='showdown(this)'>……</a>";
 
-
-
+/*
+*业务通道二级页面  more...点击消失与显示
+*/
 function showall(obj) {
 	$(obj).css("display","none");
 	$(obj).prev(".m_text").css("height","auto");
