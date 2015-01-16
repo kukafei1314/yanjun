@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>晏钧设计后台管理系统</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('static/admin/assets/css/bootstrap.css');?>" rel="stylesheet">
@@ -37,7 +37,7 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form name="formUser" class="form-login register_form-login" action="<?php echo base_url('admin/register');?>" onsubmit="return register();" method=post>
+		      <form name="formUser" class="form-login register_form-login" action="<?php echo base_url('admin/register/zhuce');?>" onsubmit="return register();" method=post>
 		        <h2 class="form-login-heading">注册</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" placeholder="用户名" id="username" name="username" onblur="chkUserName(this)" autofocus/>

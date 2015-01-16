@@ -1,8 +1,6 @@
 <?php
 /**
  * 
- * 
- * 
  * 注册登录模型
  * @author lizzyphy
  *

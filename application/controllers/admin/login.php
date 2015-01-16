@@ -11,6 +11,11 @@ class Login extends CI_Controller {
 		parent::__construct();
 		$this->load->library('captcha_np');
 		$this->load->model('login_m');
+		//检验是否已经登陆
+		$id = $this->login_m->check_login();
+		if ($id > 0) {
+			redirect('admin/index');
+		}
 	}
 	
 	public function index()

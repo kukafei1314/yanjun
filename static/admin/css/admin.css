@@ -36,3 +36,27 @@
 	font-size:14px;
 	font-family:Microsoft Yahei;
 }
+
+.add_news{
+	float:right;
+	width:100px;
+	font-size:14px;
+}
+
+.task-content {
+	margin-bottom: 10px;
+}
+
+.page_html{
+	text-align:center;
+}
+
+.col-sm-2 {
+	width: 10%;
+}
+
+.news_botton{
+	width:100px;
+	height:35px;
+	font-size:14px;
+}

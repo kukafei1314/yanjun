@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>晏钧设计后台管理系统</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('static/admin/assets/css/bootstrap.css');?>" rel="stylesheet">
@@ -60,7 +60,7 @@
 		            <hr>
 		            <div class="registration">
 		                Don't have an account yet?<br/>
-		                <a class="" href="<?php echo base_url('admin/index/register');?>">
+		                <a class="" href="<?php echo base_url('admin/register');?>">
 		                    Create an account
 		                </a>
 		            </div>
