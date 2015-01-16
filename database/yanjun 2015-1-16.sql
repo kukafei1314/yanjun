@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2015-01-12 08:22:46
+-- Generation Time: 2015-01-16 10:10:51
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -69,11 +69,22 @@ CREATE TABLE IF NOT EXISTS `yj_case` (
 --
 
 CREATE TABLE IF NOT EXISTS `yj_department_type` (
-  `did` int(11) NOT NULL AUTO_INCREMENT,
-  `name` int(11) NOT NULL COMMENT '部门名称',
-  `content` int(11) NOT NULL COMMENT '部门介绍',
-  PRIMARY KEY (`did`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='部门管理表格' AUTO_INCREMENT=1 ;
+  `tid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL COMMENT '部门名称',
+  `content` varchar(500) NOT NULL COMMENT '部门介绍',
+  PRIMARY KEY (`tid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='部门管理表格' AUTO_INCREMENT=19 ;
+
+--
+-- 转存表中的数据 `yj_department_type`
+--
+
+INSERT INTO `yj_department_type` (`tid`, `name`, `content`) VALUES
+(14, '设计部', '设计部 品牌咨询与设计领域长久经营，成为依靠专业与服务品质创造价值的公司， 成为引领行业变革的公司，成为值得员工骄傲的公司； '),
+(15, '动画部', '设计部 品牌咨询与设计领域长久经营，成为依靠专业与服务品质创造价值的公司， 成为引领行业变革的公司，成为值得员工骄傲的公司； '),
+(16, '事业部', '设计部 品牌咨询与设计领域长久经营，成为依靠专业与服务品质创造价值的公司， 成为引领行业变革的公司，成为值得员工骄傲的公司； '),
+(17, '人事部', '设计部 品牌咨询与设计领域长久经营，成为依靠专业与服务品质创造价值的公司， 成为引领行业变革的公司，成为值得员工骄傲的公司； '),
+(18, '财务行政部', '设计部 品牌咨询与设计领域长久经营，成为依靠专业与服务品质创造价值的公司， 成为引领行业变革的公司，成为值得员工骄傲的公司； ');
 
 -- --------------------------------------------------------
 
@@ -96,11 +107,25 @@ CREATE TABLE IF NOT EXISTS `yj_employee` (
 --
 
 CREATE TABLE IF NOT EXISTS `yj_image_type` (
-  `pid` int(11) NOT NULL AUTO_INCREMENT,
-  `tid` int(11) NOT NULL,
+  `tid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`tid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- 转存表中的数据 `yj_image_type`
+--
+
+INSERT INTO `yj_image_type` (`tid`, `pid`, `name`) VALUES
+(1, 0, '首页大图'),
+(2, 0, '地图页面大图'),
+(3, 0, '分享中心大图'),
+(4, 0, '服务页面大图'),
+(5, 0, '加入我们大图'),
+(6, 0, '我们页面大图'),
+(7, 0, '新闻页面大图'),
+(8, 0, '业务通道常见问题大图');
 
 -- --------------------------------------------------------
 
@@ -200,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `yj_user` (
   `salt` varchar(50) NOT NULL,
   `token` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- 转存表中的数据 `yj_user`
@@ -208,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `yj_user` (
 
 INSERT INTO `yj_user` (`id`, `name`, `password`, `email`, `salt`, `token`) VALUES
 (1, 'aa', 'd00eaf3b925458e794780b106d39a7d4', 'lizzy.999@qq.com', '295674', ''),
-(2, 'bb', '726cf09a73546cfd365474b9e4ae1344', 'lizzyphy@163.com', '289890', '');
+(27, 'cc', '61ab43b3c68c9859595a5fbe16d1ff7f', '111111@qq.com', '794612', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
