@@ -89,11 +89,6 @@
 	line-height: 200%;
 	margin-bottom: 5px;
 }
-body {
-	height: 2452px;
-	width: 1280px;
-}
-
 .div_hr {
 	background-color: #FAAD00;
 	height: 265px;
@@ -210,33 +205,42 @@ body {
 .b_middle {
 	background-color:#FFF;
 	width: 100%;
+	color:#3E3A39;
 }
 .line {
 	margin-bottom: 20px;
 	height: 54px;
 }
 .input_s {
-	background-color: #DEDEDD;
+	background-color: #DCDDDD;
 	height: 30px;
 	width: 285px;
-	border-color: #D2D3D3;
+	border-width: 1px;
+	border-color: #D2D2D3;
 }
 .input_l {
-	background-color: #DEDEDD;
+	background-color: #DCDDDD;
 	height: 30px;
 	width: 587px;
-	border-color: #d2d3d3;
+	border-width: 1px;
+	border-color: #D2D2D3;
 }
-.b_form textarea {
-	background-color: #DEDEDD;
+.t_area {
+	background-color: #DCDDDD;
 	height: 152px;
 	width: 587px;
-	border-top-color: #d2d3d3;
+	border-width: 1px;
+	border-color: #D2D2D3;	
 }
 .sr {
 	margin-top:20px;
-	width:45%;
+	width:46%;
 	text-align:center;
+}
+.sr input {
+	width:38px;
+	height:26px;
+	font-size:13px;
 }
 .m_text {
 	padding-top: 60px;
