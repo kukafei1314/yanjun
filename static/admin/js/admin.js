@@ -11,7 +11,6 @@ function chkUserName(obj){
 		change_submit("true");
 	  }
 	else if(obj.value.length<1){
-		alert(obj.value.length);
 		$(obj).addClass = "FrameDivWarn";
 		showInfo("username_notice",msg_un_blank);
 		change_submit("true");

@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * 后台首页控制器
+ * 后台新闻管理控制器
  * 
  * @author lizzyphy
- * @version 1.0 2015-01-11
+ * @version 1.0 2015-01-16
  */
-class Index extends CI_Controller {
+class News extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
@@ -21,12 +21,13 @@ class Index extends CI_Controller {
 	public function index()
 	{
 		$data['username'] = $this->session->userdata('username');
-		$this->load->view('admin/index',$data);
+		$this->load->view('admin/news_list',$data);
 	}
 	
-	public function logout()
+	public function news_add()
 	{
-		$this->login_m->logout();
-		redirect('admin');
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('admin/news_add',$data);
 	}
+	
 }
