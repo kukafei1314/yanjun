@@ -20,7 +20,7 @@
                               <div class="task-content">
                                   <ul id="sortable" class="task-list">
 									<?php foreach ($news as $news): ?>
-                                      <li <?php  $a=6;
+                                      <li <?php  $a=4;
 										       switch(((int)$news['id'])%$a){
 													case 1: echo "class= \"list-primary  \"";break;
 													case 2: echo "class= \"list-danger \"";break;
@@ -44,7 +44,7 @@
                                   </ul>
                               </div>
                               <div class=" add-task-row page_html">
-                                  显示页码
+                                  <?php echo $page_html; ?>
                               </div>
                           </div>
                       </section>

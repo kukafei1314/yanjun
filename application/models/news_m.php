@@ -85,4 +85,10 @@ class News_m extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->update('yj_news', $data);
 	}
+	
+	//获得文章数量
+	public function get_num()
+	{
+		return $this->db->count_all('yj_news');
+	}
 }
