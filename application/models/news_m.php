@@ -13,6 +13,7 @@ class News_m extends CI_Model {
 	{
 		parent::__construct();
 		$this->load->database();
+		$this->load->library('pagination');
 	}
 
 	// 获取文章列表，不包括文章内容字段
@@ -91,4 +92,18 @@ class News_m extends CI_Model {
 	{
 		return $this->db->count_all('yj_news');
 	}
+	
+	//分页配置
+	public function pageConfig($temp)
+   {
+       $config['base_url'] = 'admin/news';
+       $config['total_rows'] = $temp['total_rows'];
+       $config['per_page'] = 10;
+       $config['first_link'] = "首页";
+       $config['last_link'] = "末页";
+       $config['use_page_numbers'] = TRUE;
+       $config['cur_tag_open'] = '<b>';
+       $config['cur_tag_close'] = '</b>';
+       $this->pagination->initialize($config);
+   }
 }

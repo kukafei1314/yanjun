@@ -24,6 +24,16 @@ class News extends CI_Controller {
 	//获取表格数据，显示新闻列表
 	public function index()
 	{	
+		$per_page = 1;
+	    if(isset($_GET['per_page']) && $_GET['per_page'] != ''){
+	        $start_page = ((int)$_GET['per_page'] - 1) * 10;
+	    } else {
+	        $start_page = ($per_page - 1) * 10;
+	    }
+	    $count = $this->news_m->get_num();
+	    //$temp['base_url'] = base_url('admin/news');
+	    $temp['total_rows'] = (int)$count;
+	    $this->news_m->pageConfig($temp);
 		$data['news'] = $this->news_m->get_list(); 	
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('admin/news_list',$data);
@@ -87,24 +97,5 @@ class News extends CI_Controller {
 		$data['content'] = $news['content'];
 		$data['form_url'] = 'd=admin&c=news&m=edit&id=' . $id;
 		$this->load->view('admin/news_add.php', $data);
-	}
-	
-	//分页
-	private function _page_init()
-	{
-		$this->load->library('pagination');	
-		$config['total_rows'] = $this->news_m->get_num();	
-		$config['per_page'] = 8;
-		$config['base_url'] = 'index.php?d=admin&c=news';
-		$config['num_links'] = 10;
-		$config['query_string_segment'] = 'p';
-		$config['first_link'] = '首页';
-		$config['last_link'] = '末页';
-		$config['prev_link'] = '上一页';
-		$config['next_link'] = '下一页';
-		$config['use_page_numbers'] = TRUE;
-	
-		$this->pagination->initialize($config);
-		return $this->pagination->create_links();
 	}
 }

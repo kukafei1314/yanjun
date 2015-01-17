@@ -44,7 +44,7 @@
                                   </ul>
                               </div>
                               <div class=" add-task-row page_html">
-                                  <?php echo $page_html; ?>
+                                  <?php echo $this->pagination->create_links()?>
                               </div>
                           </div>
                       </section>
