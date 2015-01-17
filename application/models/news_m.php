@@ -16,16 +16,19 @@ class News_m extends CI_Model {
 		$this->load->library('pagination');
 	}
 
-	// 获取文章列表，不包括文章内容字段
-	public function get_list()
+	// 获取每页文章列表，不包括文章内容字段
+	public function get_list($per_page)
 	{
-		$return = array();
-		$this->db->order_by('id ASC');
-		$query = $this->db->get('yj_news');
-		if ($query->num_rows() > 0){
-			$return = $query->result_array();
-		}
-		return $return;
+		//$return = array();
+		//$this->db->order_by('id ASC');
+		//$query = $this->db->get('yj_news');
+		//if ($query->num_rows() > 0){
+		//	$return = $query->result_array();
+		//}
+		//return $return;
+	   $sql = "SELECT * FROM `yj_news` ORDER BY `id` ASC LIMIT $per_page , 10";
+       $query = $this->db->query($sql);
+       return $query->result_array();
 	}
 	
 	//删除文章
@@ -94,11 +97,11 @@ class News_m extends CI_Model {
 	}
 	
 	//分页配置
-	public function pageConfig($temp)
+	public function pageConfig($count)
    {
        $config['base_url'] = 'admin/news';
-       $config['total_rows'] = $temp['total_rows'];
-       $config['per_page'] = 10;
+       $config['total_rows'] = $count;
+       $config['per_page'] = 6;
        $config['first_link'] = "首页";
        $config['last_link'] = "末页";
        $config['use_page_numbers'] = TRUE;

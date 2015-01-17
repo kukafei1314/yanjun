@@ -32,9 +32,9 @@ class News extends CI_Controller {
 	    }
 	    $count = $this->news_m->get_num();
 	    //$temp['base_url'] = base_url('admin/news');
-	    $temp['total_rows'] = (int)$count;
-	    $this->news_m->pageConfig($temp);
-		$data['news'] = $this->news_m->get_list(); 	
+	    //$temp['total_rows'] = (int)$count;
+	    $this->news_m->pageConfig($count);
+		$data['news'] = $this->news_m->get_list($per_page); 	
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('admin/news_list',$data);
 	}
