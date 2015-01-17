@@ -35,8 +35,8 @@
                                               <span class="task-title-sp"><?php echo $news['title']; ?></span>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button> <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id']);?>"><input type="button"></input></a>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"  ?>"></button> <input type=button onclick="window.location.href('<?php echo base_url('admin/news/del?id='.$news['id']);?>')">
+                                                  <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id']);?>"><button class="btn btn-primary btn-xs fa fa-pencil"></button> </a>
+                                                  <a href="<?php echo base_url('admin/news/del?id='.$news['id']);?>">   <button class="btn btn-danger btn-xs fa fa-trash-o"></button> </a>
                                               </div>
                                           </div>
                                       </li>
