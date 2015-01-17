@@ -2,7 +2,7 @@
 /**
  * 后台新闻管理控制器
  * 
- * @author lizzyphy
+ * @author Lsen
  * @version 1.0 2015-01-16
  */
 class News extends CI_Controller {
@@ -21,6 +21,7 @@ class News extends CI_Controller {
 		$this->load->helper('form');
 	}
 	
+	//获取表格数据，显示新闻列表
 	public function index()
 	{	
 		$data['news'] = $this->news_m->get_list(); 	
@@ -28,11 +29,10 @@ class News extends CI_Controller {
 		$this->load->view('admin/news_list',$data);
 	}
 	
+	//删除新闻
 	public function del() 
 	{
 		$id = (int) $this->input->get('id');
-		//var_dump($id);
-		//die;
 		if($id < 1) {
 			redirect('d=admin&c=news&m=index');
 		}
@@ -40,6 +40,7 @@ class News extends CI_Controller {
 		redirect('d=admin&c=news&m=index');
 	}
 	
+	//添加新闻
 	public function add() 
 	{
 		$title = $this->input->post('title');
@@ -51,20 +52,6 @@ class News extends CI_Controller {
 		redirect('d=admin&c=news&m=index', 'refresh');
 	}
 	
-	public function edit() 
-	{
-		$id = (int) $this->input->get('id');
-		$data['title'] = $this->input->post('title');
-		$data['images'] = $this->input->post('images');
-		$data['content'] = $this->input->post('ue_content');
-		//if($data['title'] === FALSE || $data['images'] === FALSE || $data['content'] === FALSE) {
-		//	redirect('d=admin&c=news');
-		//}
-		//var_dump($data);
-		$this->news_m->edit($id, $data);
-		redirect('d=admin&c=news');
-	}
-
 	public function add_v() 
 	{
 		$data['title'] = '';
@@ -74,6 +61,21 @@ class News extends CI_Controller {
 		$this->load->view('admin/news_add.php', $data);
 	}
 	
+	//编辑新闻
+	public function edit() 
+	{
+		$id = (int) $this->input->get('id');
+		$data['title'] = $this->input->post('title');
+		$data['images'] = $this->input->post('images');
+		$data['content'] = $this->input->post('ue_content');
+		if($data['title'] === FALSE || $data['content'] === FALSE) {
+			redirect('d=admin&c=news');
+		}
+		//var_dump($data);
+		$this->news_m->edit($id, $data);
+		redirect('d=admin&c=news');
+	}
+
 	public function edit_v() 
 	{
 		$id = (int) $this->input->get('id');
@@ -86,6 +88,7 @@ class News extends CI_Controller {
 		$data['form_url'] = 'd=admin&c=news&m=edit&id=' . $id;
 		$this->load->view('admin/news_add.php', $data);
 	}
+	
 	//分页
 	private function _page_init()
 	{
