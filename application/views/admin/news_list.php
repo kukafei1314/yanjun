@@ -13,7 +13,7 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 新闻列表</h5></div>
-                            <a class="btn btn-success btn-sm add_news" href="index.php?d=admin&c=news&m=add_v">添加新闻</a>
+                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/news/add_v')?>;">添加新闻</a>
                             <div class="cl"></div>
 	                 	</div>
                           <div class="panel-body">
