@@ -24,15 +24,10 @@ class News extends CI_Controller {
 	//获取表格数据，显示新闻列表
 	public function index()
 	{	
-		$per_page = 1;
-	    if(isset($_GET['per_page']) && $_GET['per_page'] != ''){
-	        $start_page = ((int)$_GET['per_page'] - 1) * 10;
-	    } else {
-	        $start_page = ($per_page - 1) * 10;
-	    }
-	    $count = $this->news_m->get_num();
-	    $this->news_m->pageConfig($count);
-		$data['news'] = $this->news_m->get_list($per_page); 	
+		$p = (int) page_cur();	// 获取当前页码
+		$per_page = 3;
+		$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1)); 
+		$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('admin/news_list',$data);
 	}

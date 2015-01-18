@@ -13,7 +13,7 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 新闻列表</h5></div>
-                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/news/add_v')?>;">添加新闻</a>
+                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/news/add_v');?>">添加新闻</a>
                             <div class="cl"></div>
 	                 	</div>
                           <div class="panel-body">
@@ -31,19 +31,21 @@
 										 ?>
 										>
 										  <div class="task-title">
-                                              <span class="task-title-sp"><?php echo $news['title']; ?></span>
+                                              <div class="task-title-sp pull_left list_title"><?php echo $news['title']; ?></div>
+                                              <div class="task-title-sp pull_left list_time"><?php echo $news['date']; ?></div>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
                                                   <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id']);?>"><button class="btn btn-primary btn-xs fa fa-pencil"></button> </a>
                                                   <a href="<?php echo base_url('admin/news/del?id='.$news['id']);?>">   <button class="btn btn-danger btn-xs fa fa-trash-o"></button> </a>
                                               </div>
+                                              <div class="cl"></div>
                                           </div>
                                       </li>
 									<?php endforeach;?>               
                                   </ul>
                               </div>
                               <div class=" add-task-row page_html">
-                                  <?php echo $this->pagination->create_links()?>
+                                  <?php echo $page_html;?>
                               </div>
                           </div>
                       </section>

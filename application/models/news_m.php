@@ -17,17 +17,10 @@ class News_m extends CI_Model {
 	}
 
 	// 获取每页文章列表，不包括文章内容字段
-	public function get_list($per_page)
+	public function get_list($limit,$offset)
 	{
-		//$return = array();
-		//$this->db->order_by('id ASC');
-		//$query = $this->db->get('yj_news');
-		//if ($query->num_rows() > 0){
-		//	$return = $query->result_array();
-		//}
-		//return $return;
-	   $sql = "SELECT * FROM `yj_news` ORDER BY `id` ASC LIMIT $per_page , 10";
-       $query = $this->db->query($sql);
+	   $this->db->order_by('id desc,date desc');
+       $query = $this->db->get('yj_news',$limit, $offset);
        return $query->result_array();
 	}
 	
@@ -48,7 +41,7 @@ class News_m extends CI_Model {
 					'title'		=>	$title,
 					'images'	=>	$images,
 					'content'	=>	$content,
-					'date'	=>	date('Y-m-d', time()),
+					'date'	    =>	time(),
 				);
 		if($this->db->insert('yj_news', $data) === FALSE) {
 			return FALSE;
@@ -80,11 +73,11 @@ class News_m extends CI_Model {
 	{   
 		$id = (int) $id;
 		$array= array(
-			   'id'		=>	$id,
-               'title' => $data['title'] ,
-               'content' =>$data['content'],
-			   'images' => $data['images'] ,
-               'date' =>$data['add_date'],
+			   'id'		 =>	$id,
+               'title'   => $data['title'] ,
+               'content' => $data['content'],
+			   'images'  => $data['images'] ,
+			   'date'    => time(),
             );
 		$this->db->where('id', $id);
 		$this->db->update('yj_news', $data);
