@@ -11,6 +11,7 @@ class News extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('login_m');
+		$this->load->library('uploader_ue');
 		
 		// 先验证登录
 		$id = $this->login_m->check_login();
@@ -23,9 +24,10 @@ class News extends CI_Controller {
 	
 	//获取表格数据，显示新闻列表
 	public function index()
-	{	
+	{
+		$per_page = 10;
 		$p = (int) page_cur();	// 获取当前页码
-		$per_page = 3;
+		$data['p'] = $p;
 		$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1)); 
 		$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
 		$data['username'] = $this->session->userdata('username');
@@ -35,19 +37,31 @@ class News extends CI_Controller {
 	//删除新闻
 	public function del() 
 	{
+		$p = (int) page_cur();	// 获取当前页码
 		$id = (int) $this->input->get('id');
 		if($id < 1) {
 			redirect('admin/news');
 		}
 		$this->news_m->del($id);
-		redirect('admin/news');
+		redirect('admin/news?p='.$p);
 	}
 	
 	//添加新闻
 	public function add() 
 	{
 		$title = $this->input->post('title');
-		$images = $this->input->post('images');
+		$config = array(
+	    			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
+	    			"maxSize" => 50000000 , //单位KB
+	    			"allowFiles" => array( ".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"  )
+	    	);
+    	$pic = new Uploader_ue( "pic" , $config);
+    	$info = $pic->getFileInfo();
+    	if($info['state'] == 'SUCCESS') {
+    		$images = $info['url'];
+    	} else {
+    		$images = '';
+    	}
 		$content = $this->input->post('ue_content');
 		$this->news_m->add($title, $images, $content);
 		redirect('admin/news');
@@ -66,28 +80,41 @@ class News extends CI_Controller {
 	//编辑新闻
 	public function edit() 
 	{
+		$p = (int) page_cur();	// 获取当前页码
 		$id = (int) $this->input->get('id');
 		$data['title'] = $this->input->post('title');
-		$data['images'] = $this->input->post('images');
+		$config = array(
+    			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
+    			"maxSize" => 50000000 , //单位KB
+    			"allowFiles" => array( ".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"  )
+	    );
+    	$pic = new Uploader_ue( "pic" , $config);
+    	$info = $pic->getFileInfo();
+    	if($info['state'] == 'SUCCESS') {
+    		$data['images'] = $info['url'];
+    	} else {
+    		$data['images'] = '';
+    	}
 		$data['content'] = $this->input->post('ue_content');
 		if($data['title'] === FALSE || $data['content'] === FALSE) {
 			redirect('admin/news');
 		}
 		$this->news_m->edit($id, $data);
-		redirect('admin/news');
+		redirect('admin/news?p='.$p);
 	}
 
 	public function edit_v() 
 	{
+		$data['p'] = (int) page_cur();	// 获取当前页码
 		$data['username'] = $this->session->userdata('username');
-		$id = (int) $this->input->get('id');
-		$news = $this->news_m->get($id);
+		$data['id'] = (int) $this->input->get('id');
+		$news = $this->news_m->get($data['id']);
 		if($news === FALSE) {
 			redirect('admin/news');
 		}
 		$data['title'] = $news['title'];
 		$data['content'] = $news['content'];
-		$data['form_url'] = 'admin/news/edit?id=' . $id;
+		$data['images'] = $news['images'];
 		$this->load->view('admin/news_add.php', $data);
 	}
 }
