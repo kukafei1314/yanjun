@@ -20,13 +20,12 @@
                               <div class="task-content">
                                   <ul id="sortable" class="task-list">
 									<?php foreach ($news as $news): ?>
-                                      <li <?php  $a=4;
-										       switch(((int)$news['id'])%$a){
-													case 1: echo "class= \"list-primary  \"";break;
-													case 2: echo "class= \"list-danger \"";break;
-													case 3: echo "class= \"list-success \"";break;
-													case 4: echo "class= \"list-warning \"";break;
-													case 5: echo "class= \"list-info \"";break;
+                                      <li <?php
+										       switch(((int)$news['id'])%4){
+													case 0: echo "class= \"list-primary  \"";break;
+													case 1: echo "class= \"list-danger \"";break;
+													case 2: echo "class= \"list-success \"";break;
+													case 3: echo "class= \"list-warning \"";break;
 													default:echo "class= \"list-primary \"";break;
 											   }
 										 ?>

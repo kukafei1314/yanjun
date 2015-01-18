@@ -31,8 +31,6 @@ class News extends CI_Controller {
 	        $start_page = ($per_page - 1) * 10;
 	    }
 	    $count = $this->news_m->get_num();
-	    //$temp['base_url'] = base_url('admin/news');
-	    //$temp['total_rows'] = (int)$count;
 	    $this->news_m->pageConfig($count);
 		$data['news'] = $this->news_m->get_list($per_page); 	
 		$data['username'] = $this->session->userdata('username');
@@ -44,31 +42,30 @@ class News extends CI_Controller {
 	{
 		$id = (int) $this->input->get('id');
 		if($id < 1) {
-			redirect('d=admin&c=news&m=index');
+			redirect('admin/news');
 		}
 		$this->news_m->del($id);
-		redirect('d=admin&c=news&m=index');
+		redirect('admin/news');
 	}
 	
 	//添加新闻
 	public function add() 
 	{
 		$title = $this->input->post('title');
-		//var_dump($title);
-		//die;
 		$images = $this->input->post('images');
 		$content = $this->input->post('ue_content');
 		$this->news_m->add($title, $images, $content);
-		redirect('d=admin&c=news&m=index', 'refresh');
+		redirect('admin/news');
 	}
 	
 	public function add_v() 
 	{
+		$data['username'] = $this->session->userdata('username');
 		$data['title'] = '';
 		$data['content'] = '';
 		$data['images'] = '';
-		$data['form_url'] = 'd=admin&c=news&m=add';
-		$this->load->view('admin/news_add.php', $data);
+		$data['form_url'] = 'admin/news/add';
+		$this->load->view('admin/news_add', $data);
 	}
 	
 	//编辑新闻
@@ -79,23 +76,23 @@ class News extends CI_Controller {
 		$data['images'] = $this->input->post('images');
 		$data['content'] = $this->input->post('ue_content');
 		if($data['title'] === FALSE || $data['content'] === FALSE) {
-			redirect('d=admin&c=news');
+			redirect('admin/news');
 		}
-		//var_dump($data);
 		$this->news_m->edit($id, $data);
-		redirect('d=admin&c=news');
+		redirect('admin/news');
 	}
 
 	public function edit_v() 
 	{
+		$data['username'] = $this->session->userdata('username');
 		$id = (int) $this->input->get('id');
 		$news = $this->news_m->get($id);
 		if($news === FALSE) {
-			redirect('d=admin&c=news');
+			redirect('admin/news');
 		}
 		$data['title'] = $news['title'];
 		$data['content'] = $news['content'];
-		$data['form_url'] = 'd=admin&c=news&m=edit&id=' . $id;
+		$data['form_url'] = 'admin/news/edit?id=' . $id;
 		$this->load->view('admin/news_add.php', $data);
 	}
 }
