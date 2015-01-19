@@ -72,12 +72,21 @@ class News_m extends CI_Model {
 	public function edit($id, $data) 
 	{   
 		$id = (int) $id;
-		$array= array(
-               'title'   => $data['title'] ,
-               'content' => $data['content'],
-			   'images'  => $data['images'] ,
-			   'date'    => time(),
-            );
+		if ($data['images'] == '') {
+			$array= array(
+					'title'   => $data['title'] ,
+					'content' => $data['content'],
+					'date'    => time(),
+			);
+		} else {
+			$array= array(
+					'title'   => $data['title'] ,
+					'content' => $data['content'],
+					'images'  => $data['images'] ,
+					'date'    => time(),
+			);
+		}
+		
 		$this->db->where('id', $id);
 		$this->db->update('yj_news', $array);
 	}
