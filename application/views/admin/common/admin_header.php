@@ -75,7 +75,7 @@
                   </li>
                   
                   <li class="sub-menu dcjq-parent-li">
-                      <a href="index.html">
+                      <a href="<?php echo base_url('admin/cases');?>">
                           <i class="fa fa-heart"></i>
                           <span>案例管理</span>
                       </a>
