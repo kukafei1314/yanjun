@@ -69,6 +69,19 @@
 	width:100px;
 	height:35px;
 	font-size:14px;
+<<<<<<< HEAD
+}
+.g_title_t {
+	font-size:14px;
+	color:#00F;
+}
+.g_title_t td {
+	padding-bottom:10px;
+}
+.g_td {
+	padding-bottom:10px;
+}
+=======
 	margin-top:20px;
 }
 
@@ -92,3 +105,4 @@
 .pull_left{
 	float:left;
 }
+>>>>>>> c29f35f58beeeeee40eced174943dd6528cf9194
