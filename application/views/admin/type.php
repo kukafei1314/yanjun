@@ -13,7 +13,7 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> <?php echo ($type == 1)?  '大图类别列表' : '部门类别列表';?></h5></div>
-                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/type/add?type='.$type);?>">添加内容</a>
+                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/type/add?type='.$type);?>">添加类别</a>
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">
