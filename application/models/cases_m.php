@@ -75,14 +75,24 @@ class Cases_m extends CI_Model {
 	public function edit($id, $data) 
 	{   
 		$id = (int) $id;
+		if ($data['images'] == '') {
+			$array= array(
+				'name'		=>	$data['name'],
+				'project'	=>	$data['project'],
+				'logo'		=>	$data['logo'],
+				'content'	=>	$data['content'],
+				'date'    => time(),
+			);
+		} else {
 		$array= array(
-				'name'		=>	$row['name'],
-				'project'	=>	$row['project'],
-				'logo'		=>	$row['logo'],
-				'content'	=>	$row['content'],
-				'images'	=>	$row['images'],
+				'name'		=>	$data['name'],
+				'project'	=>	$data['project'],
+				'logo'		=>	$data['logo'],
+				'content'	=>	$data['content'],
+				'images'	=>	$data['images'],
 			    'date'    => time(),
             );
+		}
 		$this->db->where('id', $id);
 		$this->db->update('yj_cases', $array);
 	}

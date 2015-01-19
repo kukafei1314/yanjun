@@ -32,7 +32,14 @@
 										>
 										  <div class="task-title">
                                               <div class="task-title-sp pull_left list_title">
-                                              	<?php echo $cases['title']; ?>
+                                              	<?php echo $cases['name']; ?>
+                                              </div>
+											  <div class=" pull_left list_title">
+	                                              <?php if(!empty($cases['logo'])) :?>
+												  	  <img src="<?php echo base_url($cases['logo']);?>" width="80" height="48"/>
+												  <?php else:?>
+												  	  <img src=" " width="80" height="48"/>
+											      <?php endif;?>
                                               </div>
                                               <div class=" pull_left list_title">
 	                                              <?php if(!empty($cases['images'])) :?>

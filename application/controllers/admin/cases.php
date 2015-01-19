@@ -96,6 +96,7 @@ class Cases extends CI_Controller {
 		$p = (int) page_cur();	// 获取当前页码
 		$id = (int) $this->input->get('id');
 		$data['name'] = $this->input->post('name');
+		$data['project'] = $this->input->post('project');
 		$config = array(
     			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
     			"maxSize" => 50000000 , //单位KB
@@ -136,8 +137,11 @@ class Cases extends CI_Controller {
 			redirect('admin/cases');
 		}
 		$data['name'] = $cases['name'];
+		$data['project'] = $cases['project'];
 		$data['content'] = $cases['content'];
 		$data['images'] = $cases['images'];
+		$data['logo'] = $cases['logo'];
+		$data['form_url'] = 'admin/cases/edit?id=' . $data['id'].'&p='.$data['p'];
 		$this->load->view('admin/cases_add.php', $data);
 	}
 }
