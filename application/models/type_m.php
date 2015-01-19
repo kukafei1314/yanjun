@@ -78,4 +78,11 @@ class Type_m extends CI_Model {
 		}
 		return $table;
 	}
+	
+	public function get_all_num($type) {
+		$tab = $this->get_table($type);
+		$this->db->select('*');
+		$this->db->from($tab);
+		return $this->db->count_all_results();
+	}
 }

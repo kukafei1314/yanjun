@@ -25,6 +25,13 @@ class Type extends CI_Controller {
 		$data['username'] = $this->session->userdata('username');
 		$type = $this->input->get('type',true);
 		$data['type'] = $type;
+		
+		$per_page = 10;
+		$p = (int) page_cur();	// 获取当前页码
+		$offset = $per_page*($p-1);
+		$num = $this->type_m->get_all_num($type);
+		$data['link'] = page($num, $per_page);
+		
 		$data['types'] = $this->type_m->get_all($type);
 		$this->load->view('admin/type',$data);
 	}
