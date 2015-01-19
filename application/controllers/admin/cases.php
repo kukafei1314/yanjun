@@ -12,13 +12,14 @@ class Cases extends CI_Controller {
 		$this->load->database();
 		$this->load->model('login_m');
 		$this->load->library('uploader_ue');
-		$this->load->model('cases_m');
-		$this->load->helper('form');
+
 		// 先验证登录
 		$id = $this->login_m->check_login();
 		if ($id < 0 || $id == FALSE) {
 			redirect('admin/login');
-		}
+		}		
+		$this->load->model('cases_m');
+		$this->load->helper('form');
 	}
 	
 		//获取表格数据，显示案例列表

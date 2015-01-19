@@ -16,7 +16,8 @@
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">
-                        	<form class="form-horizontal style-form" method="post" action="<?php echo base_url('admin/cases/edit?id=' . $id.'&p='.$p);?>" enctype="multipart/form-data">
+                  <!--      	<form class="form-horizontal style-form" method="post" action="<?php //echo base_url('admin/cases/edit?id=' . $id.'&p='.$p);?>" enctype="multipart/form-data">  -->
+                        	<form class="form-horizontal style-form" method="post" action= "<?php echo base_url('admin/cases/edit?id='.$id.'&p='.$p); ?>" enctype="multipart/form-data">
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例名称</label>
                                       <div class="col-sm-10">
