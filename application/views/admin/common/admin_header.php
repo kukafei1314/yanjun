@@ -94,10 +94,10 @@
                           <span>常规项目管理</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">服务</a></li>
-                          <li><a  href="buttons.html">我们</a></li>
-                          <li><a  href="buttons.html">分享中心</a></li>
-                          <li><a  href="buttons.html">常见问题</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=1');?>">服务</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=2');?>">我们</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=3');?>">分享中心</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=4');?>">常见问题</a></li>
                       </ul>
                   </li>
                   

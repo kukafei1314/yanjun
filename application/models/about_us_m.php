@@ -13,4 +13,103 @@ class About_us_m extends CI_Model {
 		parent::__construct();
 	}
 	
+	public function select_tab($type) {
+		switch($type) {
+			case 1: 
+				$tab = 'yj_service';
+				break;
+			case 2: 
+				$tab = 'yj_about_us';
+				break;
+			case 3: 
+				$tab = 'yj_share';
+				break;
+			case 4: 
+				$tab = 'yj_questions';
+		}
+		return $tab;
+	}
+	
+	public function get_all_num($type) {
+		$tab = $this->select_tab($type);
+		$this->db->select('*');
+		$this->db->from($tab);
+		return $this->db->count_all_results();
+	}
+	
+	public function select_limit($type, $pagesize, $offset) {
+		$tab = $this->select_tab($type);
+		$this->db->select('*');
+		$this->db->order_by('id','asc');
+		$this->db->limit($pagesize, $offset);
+		$query = $this->db->get($tab);
+		if($query) {
+			return $query->result_array();
+		} else {
+			return false;
+		}		
+	}
+	
+	public function select_i($type,$id) {
+		$tab = $this->select_tab($type);
+		$this->db->where('id',$id);
+		$query = $this->db->get($tab);
+		if($query) {
+			return $query->result_array();
+		} else {
+			return false;
+		}
+	}
+	
+	public function g_add($type,$arr) {
+		$tab = $this->select_tab($type);
+		switch($type) {
+			case 1:
+				$data['service_area'] = $arr['title'];
+				$data['content'] = $arr['content'];
+				break;
+			case 2:
+				$data['content'] = $arr['content'];
+				break;
+			case 3:
+				$data['title'] = $arr['title'];
+				$data['content'] = $arr['content'];
+				break;
+			case 4:
+				$data['title'] = $arr['title'];
+				$data['content'] = $arr['content'];
+		}	
+		$this->db->insert($tab,$data);
+		return $this->db->affected_rows();
+	}
+	
+	public function g_delete($arr) {
+		$tab = $this->select_tab($arr['type']);
+		$this->db->where('id',$arr['id']);
+		$this->db->delete($tab);
+		return $this->db->affected_rows();
+	}
+	
+	public function g_update($type,$arr){
+		$tab = $this->select_tab($type);
+		switch($type) {
+			case 1:
+				$data['service_area'] = $arr['title'];
+				$data['content'] = $arr['content'];
+				break;
+			case 2:
+				$data['content'] = $arr['content'];
+				break;
+			case 3:
+				$data['title'] = $arr['title'];
+				$data['content'] = $arr['content'];
+				break;
+			case 4:
+				$data['title'] = $arr['title'];
+				$data['content'] = $arr['content'];
+		}
+		$this->db->where('id',$arr['id']);
+		$this->db->update($tab,$data);
+		return $this->db->affected_rows();	
+	}
 }

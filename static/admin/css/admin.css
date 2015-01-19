@@ -60,3 +60,17 @@
 	height:35px;
 	font-size:14px;
 }
+.g_title_t {
+	font-size:14px;
+	color:#00F;
+}
+.g_title_t td {
+	padding-bottom:10px;
+}
+.g_td {
+	padding-bottom:10px;
+}
+.g_page {
+	width: 100%;
+	text-align: center;
+}
