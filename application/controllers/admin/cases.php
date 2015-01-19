@@ -110,6 +110,7 @@ class Cases extends CI_Controller {
     	} else {
     		$data['images'] = '';
     	}
+		sleep(1);
 		//添加logo
 		$logopic = new Uploader_ue( "logopic" , $config);
     	$logoinfo = $logopic->getFileInfo();
