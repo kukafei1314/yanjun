@@ -69,7 +69,7 @@
 	width:100px;
 	height:35px;
 	font-size:14px;
-<<<<<<< HEAD
+	margin-top:20px;
 }
 .g_title_t {
 	font-size:14px;
@@ -80,10 +80,7 @@
 }
 .g_td {
 	padding-bottom:10px;
-}
-=======
-	margin-top:20px;
-}
+}	
 
 .ui-sortable > li {
 	padding: 0 0 0 35px !important;
@@ -105,4 +102,4 @@
 .pull_left{
 	float:left;
 }
->>>>>>> c29f35f58beeeeee40eced174943dd6528cf9194
+

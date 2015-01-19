@@ -115,6 +115,7 @@ class News extends CI_Controller {
 		$data['title'] = $news['title'];
 		$data['content'] = $news['content'];
 		$data['images'] = $news['images'];
+		$data['form_url'] = 'admin/news/edit?id=' . $data['id'].'&p='.$data['p'];
 		$this->load->view('admin/news_add.php', $data);
 	}
 }
