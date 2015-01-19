@@ -157,7 +157,7 @@
 	padding-left:80px;
 	padding-top:15px;
 }
-.t_con a{
+.t_con a {
 	color: #FFF;
 	text-decoration: none;
 }
@@ -171,7 +171,7 @@
 	color: #FFF;
 	line-height: 10px;
 }
-.img_ss{
+.img_ss {
 	position: absolute;
 	top: 10px;
 	right: 12px;
@@ -301,13 +301,13 @@
 	border-bottom-color: #DEDEDD;
 	line-height: 28px;
 }
-.pro_text ol{
-	padding-left:23px;
+.pro_text ol {
+	padding-left:25px;
 }
 ol li {
 	list-style-type: decimal;
 }
-.pro_text p{
+.pro_text p {
 	font-size: 24px;
 	line-height:50px;	
 }
