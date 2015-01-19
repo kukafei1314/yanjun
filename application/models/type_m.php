@@ -20,6 +20,19 @@ class Type_m extends CI_Model {
 			return false;
 		}
 	}
+	
+	public function select_limit($type, $pagesize, $offset) {
+		$tab = $this->get_table($type);
+		$this->db->select('*');
+		$this->db->order_by('tid','asc');
+		$this->db->limit($pagesize, $offset);
+		$query = $this->db->get($tab);
+		if($query) {
+			return $query->result_array();
+		} else {
+			return false;
+		}		
+	}
 	//添加大图类别或部门类别和部门简介
 	public function add_type($name,$content, $type)
 	{
@@ -58,6 +71,14 @@ class Type_m extends CI_Model {
 		
 		$this->db->where('tid',$tid);
 		$this->db->update($table,$data);
+	}
+	
+	//删除大图类别或部门类别
+	public function t_delete($arr) {
+		$tab = $this->get_table($arr['type']);
+		$this->db->where('tid',$arr['tid']);
+		$this->db->delete($tab);
+		return $this->db->affected_rows();
 	}
 	
 	public function get_single_name($tid,$type)

@@ -21,11 +21,11 @@
                                   <ul id="sortable" class="task-list">
                       			  <?php foreach($types as $row) {?>
                                         	<li <?php switch(((int)$row['tid'])%4){
-														case 0: echo "class= \"list-primary \"";break;
-														case 1: echo "class= \"list-danger \"";break;
-														case 2: echo "class= \"list-success \"";break;
-														case 3: echo "class= \"list-warning \"";break;
-														default:echo "class= \"list-primary \"";break;
+														case 0: echo "class= \"list-primary list-news \"";break;
+														case 1: echo "class= \"list-danger list-news \"";break;
+														case 2: echo "class= \"list-success list-news \"";break;
+														case 3: echo "class= \"list-warning list-news \"";break;
+														default:echo "class= \"list-primary list-news \"";break;
 											  		 }?> >
                                             	<div class="task-title">
                                                 	<span class="task-title-sp"><?php echo $row['name'];?></span>

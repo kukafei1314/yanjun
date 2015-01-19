@@ -26,13 +26,15 @@ class Type extends CI_Controller {
 		$type = $this->input->get('type',true);
 		$data['type'] = $type;
 		
+		//分页
 		$per_page = 10;
 		$p = (int) page_cur();	// 获取当前页码
 		$offset = $per_page*($p-1);
 		$num = $this->type_m->get_all_num($type);
 		$data['link'] = page($num, $per_page);
+		$data['types'] = $this->type_m->select_limit($type, $per_page, $offset);
 		
-		$data['types'] = $this->type_m->get_all($type);
+		//$data['types'] = $this->type_m->get_all($type);
 		$this->load->view('admin/type',$data);
 	}
 	
@@ -73,5 +75,15 @@ class Type extends CI_Controller {
 			$data['form_url'] = 'admin/type/edit?type='.$data['type'].'&tid='.$tid;
 			$this->load->view('admin/type_add.php',$data);
 		}
+	}
+	
+	public function delete() {
+		$type = $this->input->get('type');
+		$arr['type'] = $type;
+		$arr['tid'] = $this->input->get('tid');
+		$result = $this->type_m->t_delete($arr);
+		if($result){
+			redirect('admin/type/index?type='.$type);
+		}else echo "数据删除失败！";	
 	}
 }

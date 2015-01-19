@@ -11,25 +11,27 @@
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                      <div>
-                        <?php echo form_open($form_url);?>
-						<table width="100%" border="0" cellpadding="0" cellspacing="0">
-							<tr class="title_3">
-								<td colspan="2">添加类别</td>
-							</tr>
-								<td>类别名称</td>
-								<td><input size="30" type="text" name="name" value="<?php echo $name;?>" /></td>
-							</tr>
+                      <form class="form-horizontal style-form" action="<?php echo base_url($form_url); ?>" method="post">
+							 <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label"><?php echo ($type == 1)? '类别名称' : '部门名称';?></label>
+                                  <div class="col-sm-10">
+                                      <input name="name" type="text" class="form-control" value="<?php echo $name;?>">
+                                  </div>
+                            </div>							
 							<?php if ($type != 1):?>
-							</tr>
-								<td>部门简介</td>
-								<td><textarea rows="8" cols="50"  name="content" value="" ><?php echo $content;?></textarea></td>
-							</tr>
+							<div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">部门介绍</label>
+                              <div class="col-sm-10">
+                                  <script id="ue_content" name="content" type="text/plain"><?php echo $content;?></script>
+                              </div>
+                            </div>
 							<?php endif;?>
-						</table>
-						<div class="button"><button type="submit">提交</button></div>
-                    </div>
-                  </div>
+                            <div class=" add-task-row page_html">
+                            	<button type="submit" class="btn btn-theme03 news_botton">提交</button>
+                            </div>
+                 	 </form>
+ 
+                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
 		</section> <!--/wrapper -->
