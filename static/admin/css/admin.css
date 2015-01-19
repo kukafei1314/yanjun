@@ -49,6 +49,16 @@
 
 .page_html{
 	text-align:center;
+	font-size:16px;
+}
+
+.page_html a{
+	color:#398439;
+	padding:0 5px 0 5px;
+}
+
+.current{
+	color:red !important;
 }
 
 .col-sm-2 {
@@ -59,6 +69,7 @@
 	width:100px;
 	height:35px;
 	font-size:14px;
+<<<<<<< HEAD
 }
 .g_title_t {
 	font-size:14px;
@@ -74,3 +85,28 @@
 	width: 100%;
 	text-align: center;
 }
+=======
+	margin-top:20px;
+}
+
+.ui-sortable > li {
+	padding: 0 0 0 35px !important;
+}
+
+.list-news  {
+	height:48px;
+	line-height:48px;
+}
+
+.list_title{
+	width:35%;
+}
+
+.list_time{
+	width:15%;
+}
+
+.pull_left{
+	float:left;
+}
+>>>>>>> c29f35f58beeeeee40eced174943dd6528cf9194

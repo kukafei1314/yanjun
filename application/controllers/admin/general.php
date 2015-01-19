@@ -21,9 +21,12 @@ class General extends CI_Controller {
 	
 	public function index() {
 		$data['username'] = $this->session->userdata('username');
-		$data['type'] = $this->input->get('type');
-		$num = $this->about_us_m->get_all_num($this->input->get('type'));
-		$arr = $this->page($this->input->get('type'), $num);
+		$type = $this->input->get('type');
+		$data['type'] = $type;
+		//$data['font'] = $this->about_us_m->get_all($type); 
+		$num = $this->about_us_m->get_all_num($type);
+		//echo $num;
+		$arr = $this->page($type, $num);
 		$data['font'] = $arr['font'];
 		$data['link'] = $arr['key'];
 		$this->load->view('admin/general',$data);
@@ -98,7 +101,7 @@ class General extends CI_Controller {
 		$data['font'] = $query;
 		
 		$this->load->library('pagination');
-		$config['base_url'] = "index?type=$type";
+		$config['base_url'] = "general/index?type=$type";
 		$config['page_query_string'] = TRUE;
 		$config['use_page_numbers'] = TRUE;
 		$config['total_rows'] = $num;

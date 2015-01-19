@@ -13,68 +13,54 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 新闻列表</h5></div>
-                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/news/news_add');?>">添加新闻</a>
+                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/news/add_v');?>">添加新闻</a>
                             <div class="cl"></div>
 	                 	</div>
                           <div class="panel-body">
                               <div class="task-content">
                                   <ul id="sortable" class="task-list">
-                                      <li class="list-primary">
-                                          <div class="task-title">
-                                              <span class="task-title-sp">国际财经头条：美国宣布放宽对古巴贸易和旅游限制</span>
+									<?php foreach ($news as $news): ?>
+                                      <li <?php
+										       switch(((int)$news['id'])%4){
+													case 0: echo "class= \"list-primary list-news \"";break;
+													case 1: echo "class= \"list-danger list-news \"";break;
+													case 2: echo "class= \"list-success list-news \"";break;
+													case 3: echo "class= \"list-warning list-news \"";break;
+													default:echo "class= \"list-primary list-news \"";break;
+											   }
+										 ?>
+										>
+										  <div class="task-title">
+                                              <div class="task-title-sp pull_left list_title">
+                                              	<?php echo $news['title']; ?>
+                                              </div>
+                                              <div class=" pull_left list_title">
+	                                              <?php if(!empty($news['images'])) :?>
+												  	  <img src="<?php echo base_url($news['images']);?>" width="80" height="48"/>
+												  <?php else:?>
+												  	  <img src=" " width="80" height="48"/>
+											      <?php endif;?>
+                                              </div>
+                                              <div class="task-title-sp pull_left list_time">
+                                              	  发布时间：&nbsp;<?php echo date('Y-m-d',$news['date']); ?>
+                                              </div>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+                                                  <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id'].'&p='.$p);?>">
+                                                  		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
+                                                  </a>
+                                                  <a href="<?php echo base_url('admin/news/del?id='.$news['id'].'&p='.$p);?>">   
+                                                  		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
+                                                  </a>
                                               </div>
+                                              <div class="cl"></div>
                                           </div>
                                       </li>
-
-                                      <li class="list-danger">
-                                          <div class="task-title">
-                                              <span class="task-title-sp">雷军回应吐槽和炮轰：小米不够有钱不能任性</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li class="list-success">
-                                          <div class="task-title">
-                                              <span class="task-title-sp">雷军回应吐槽和炮轰：小米不够有钱不能任性</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li class="list-warning">
-                                          <div class="task-title">
-                                              <span class="task-title-sp">国际财经头条：美国宣布放宽对古巴贸易和旅游限制</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li class="list-info">
-                                          <div class="task-title">
-                                              <span class="task-title-sp">国际财经头条：美国宣布放宽对古巴贸易和旅游限制</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
-
+									<?php endforeach;?>               
                                   </ul>
                               </div>
                               <div class=" add-task-row page_html">
-                                  显示页码
+                                  <?php echo $page_html;?>
                               </div>
                           </div>
                       </section>

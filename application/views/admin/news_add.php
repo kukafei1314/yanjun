@@ -16,32 +16,34 @@
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">
-                        	<form class="form-horizontal style-form" method="post" action="<?php echo base_url('admin/news/news_add'); ?>">
+                        	<form class="form-horizontal style-form" method="post" action="<?php echo base_url('admin/news/edit?id=' . $id.'&p='.$p);?>" enctype="multipart/form-data">
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">新闻标题</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
+                                          <input type="text" name="title" class="form-control" value="<?php echo $title;?>">
                                       </div>
+                                      <div class="cl"></div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">图片</label>
 									<div class="col-sm-10">
+										<?php if(isset($images)) :?>
+											<img src="<?php echo base_url($images);?>" width="80" style="margin-top:10px;"/>
+										<?php endif;?>
 										<input type="file" name="pic" />
-                                        <input type="file" name="pic" />
-                                        <input type="file" name="pic" />
-                                        <input type="file" name="pic" />
-                                        <input type="file" name="pic" />
 									</div>
+									<div class="cl"></div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">新闻内容</label>
                                       <div class="col-sm-10">
-                                          <script id="ue_content" name="ue_content" type="text/plain"></script>
+                                          <script id="ue_content" name="ue_content" type="text/plain"><?php echo $content;?></script>
                                       </div>
+                                      <div class="cl"></div>
                                   </div>
                                  
                                   <div class=" add-task-row page_html">
-                                     <button type="button" class="btn btn-theme03 news_botton">提交</button>
+                                     <button type="submit" class="btn btn-theme03 news_botton">提交</button>
                                   </div>
                               </form>
                           </div>
