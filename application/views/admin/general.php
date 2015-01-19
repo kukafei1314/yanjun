@@ -51,7 +51,9 @@
                                       <?php }?>
                                       <?php break;?>
                                       
-                         <?php case 2: foreach($font as $row) {?>
+                         <?php case 2;
+							   case 3;
+							   case 4: foreach($font as $row) {?>
                                         	<li <?php switch(((int)$row['id'])%4){
 														case 0: echo "class= \"list-primary \"";break;
 														case 1: echo "class= \"list-danger \"";break;
@@ -71,54 +73,12 @@
                                               </li>
                                       <?php }?>
                                       <?php break;?>
-                                      
-                         <?php case 3: foreach($font as $row) {?>
-                                        	<li <?php switch(((int)$row['id'])%4){
-														case 0: echo "class= \"list-primary \"";break;
-														case 1: echo "class= \"list-danger \"";break;
-														case 2: echo "class= \"list-success \"";break;
-														case 3: echo "class= \"list-warning \"";break;
-														default:echo "class= \"list-primary \"";break;
-											  		 }?> >
-                                            	<div class="task-title">
-                                                	<span class="task-title-sp"><?php echo $row['title'];?></span>
-                                                
-                                                    <div class="pull-right hidden-phone">
-                                                        <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location="<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                     </div>
-                                                </div>
-                                              </li>
-                                      <?php }?>
-                                      <?php break;?>
-                                      
-                         <?php case 4: foreach($font as $row) {?>
-                                        	<li <?php switch(((int)$row['id'])%4){
-														case 0: echo "class= \"list-primary \"";break;
-														case 1: echo "class= \"list-danger \"";break;
-														case 2: echo "class= \"list-success \"";break;
-														case 3: echo "class= \"list-warning \"";break;
-														default:echo "class= \"list-primary \"";break;
-											  		 }?> >
-                                            	<div class="task-title">
-                                                	<span class="task-title-sp"><?php echo $row['title'];?></span>
-                                                
-                                                    <div class="pull-right hidden-phone">
-                                                        <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location="<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                     </div>
-                                                </div>
-                                           </li>
-                                   <?php }?>
-                              <?php break;?>
                                       
                         <?php }?>
                         </ul>
                     </div>
                   
-                    <div class = "g_page">
+                    <div class=" add-task-row page_html">
                         <p><?php echo "$link"; ?></p>
                     </div>
                     

@@ -30,7 +30,7 @@ class About_us_m extends CI_Model {
 		return $tab;
 	}
 	
-	public function get_all($type) {
+	/*public function get_all($type) {
 		$tab = $this->select_tab($type);
 		$query = $this->db->get($tab);
 		if($query) {
@@ -38,7 +38,7 @@ class About_us_m extends CI_Model {
 		} else {
 			return false;
 		}	
-	}
+	}*/
 	
 	public function get_all_num($type) {
 		$tab = $this->select_tab($type);
@@ -78,16 +78,12 @@ class About_us_m extends CI_Model {
 				$data['service_area'] = $arr['title'];
 				$data['content'] = $arr['content'];
 				break;
-			case 2:
-				$data['content'] = $arr['content'];
-				break;
-			case 3:
-				$data['title'] = $arr['title'];
-				$data['content'] = $arr['content'];
-				break;
+			case 2;
+			case 3;
 			case 4:
 				$data['title'] = $arr['title'];
 				$data['content'] = $arr['content'];
+				break;
 		}	
 		$this->db->insert($tab,$data);
 		return $this->db->affected_rows();
@@ -107,16 +103,12 @@ class About_us_m extends CI_Model {
 				$data['service_area'] = $arr['title'];
 				$data['content'] = $arr['content'];
 				break;
-			case 2:
-				$data['content'] = $arr['content'];
-				break;
-			case 3:
-				$data['title'] = $arr['title'];
-				$data['content'] = $arr['content'];
-				break;
+			case 2;
+			case 3;
 			case 4:
 				$data['title'] = $arr['title'];
 				$data['content'] = $arr['content'];
+				break;
 		}
 		$this->db->where('id',$arr['id']);
 		$this->db->update($tab,$data);

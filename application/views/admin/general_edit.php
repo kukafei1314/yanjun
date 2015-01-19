@@ -32,8 +32,9 @@
                                       </div>
                                   	</div>
                               <?php break;?>
-                          <?php case 2: break;?>
-                          <?php case 3;
+                          <?php //case 2: break;?>
+                          <?php case 2;
+						  		case 3;
                                 case 4:?>
                                     <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">标题</label>
