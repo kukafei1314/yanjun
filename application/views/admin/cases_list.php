@@ -18,6 +18,7 @@
 	                 	</div>
                           <div class="panel-body">
                               <div class="task-content">
+							  
                                   <ul id="sortable" class="task-list">
 									<?php foreach ($cases as $cases): ?>
                                       <li <?php
@@ -31,24 +32,27 @@
 										 ?>
 										>
 										  <div class="task-title">
-                                              <div class="task-title-sp pull_left list_title">
+                                              <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
                                               	<?php echo $cases['name']; ?>
                                               </div>
-											  <div class=" pull_left list_title">
+                                              <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; margin-left:5%; line-height:48px;">
+                                              	<?php echo $cases['project']; ?>
+                                              </div>
+											  <div class=" pull_left list_title" style="width:15%; margin-left:5%;">
 	                                              <?php if(!empty($cases['logo'])) :?>
 												  	  <img src="<?php echo base_url($cases['logo']);?>" width="80" height="48"/>
 												  <?php else:?>
 												  	  <img src=" " width="80" height="48"/>
 											      <?php endif;?>
                                               </div>
-                                              <div class=" pull_left list_title">
+                                              <div class=" pull_left list_title" style="width:15%; margin-left:5%;">
 	                                              <?php if(!empty($cases['images'])) :?>
 												  	  <img src="<?php echo base_url($cases['images']);?>" width="80" height="48"/>
 												  <?php else:?>
 												  	  <img src=" " width="80" height="48"/>
 											      <?php endif;?>
                                               </div>
-                                              <div class="task-title-sp pull_left list_time">
+                                              <div class="task-title-sp pull_left list_time" style="line-height:48px;" >
                                               	  发布时间：&nbsp;<?php echo date('Y-m-d',$cases['date']); ?>
                                               </div>
                                               <div class="pull-right hidden-phone">
