@@ -13,7 +13,7 @@ class Home_pic_m extends CI_Model
    
    public function home_pic_list()
    {
-       $sql = "SELECT type FROM `yj_big_image` ORDER BY `type`,`order` ASC";
+       $sql = "SELECT type FROM `yj_big_image` ORDER BY type";
        $query = $this->db->query($sql);
 	   foreach($query->result_array() as $row) {
 		   $type = $row['type'];
@@ -54,6 +54,7 @@ class Home_pic_m extends CI_Model
    public function pic_info($type)
    {
 	   $this->db->where('type',$type);
+	   $this->db->order_by('order');
 	   $query = $this->db->get('yj_big_image');
 	   $i = 0;
 	   foreach($query->result_array() as $row) {

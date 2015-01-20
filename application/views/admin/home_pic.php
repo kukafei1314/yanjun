@@ -63,8 +63,8 @@ glyphicon-pencil"></span></a>
                     </div>
                     <input type="hidden" id="pid" name="pid" value="" />
                     <div class="button_img">
-                        <button onclick="return is_empty()" type="submit" class="btn btn-success">提&nbsp;交</button>
-                        <button onclick="return close_button()" class="btn btn-danger">关&nbsp;闭</button>
+                        <button onclick="return is_empty()" type="submit" class="btn btn-success">提交</button>
+                        <button onclick="return close_button()" class="btn btn-danger">关闭</button>
                     </div>
                  </div>
              </form>
@@ -72,6 +72,12 @@ glyphicon-pencil"></span></a>
 		</section> <!--/wrapper -->
       </section>
 <script>
+	function is_empty() {
+		if($('#order').val() == '') {
+			alert('请填入顺序');
+			return false;
+		}
+	}
 	function up_img(order,id) {
 		$("#order").val(order);
 		$("#pid").val(id);
