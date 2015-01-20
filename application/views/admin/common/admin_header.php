@@ -38,9 +38,6 @@
   <body>
 
   <section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
       <!--header start-->
       <header class="header black-bg">
               <div class="sidebar-toggle-box">
@@ -68,7 +65,7 @@
               	  <h5 class="centered"><?php echo $username;?></h5>
               	  	
                   <li class="mt">
-                      <a href="index.html">
+                      <a href="<?php echo base_url('/admin/home_pic');?>">
                           <i class="fa fa-dashboard"></i>
                           <span>大图管理</span>
                       </a>
