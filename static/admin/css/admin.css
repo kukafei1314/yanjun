@@ -110,6 +110,38 @@
 .pull_left{
 	float:left;
 }
+
+
+#sortable{
+	list-style-type: none;
+	margin: 0 0 20px 0;
+	padding: 0;
+	width: 100%;
+}
+
+#sortable li {
+	padding: 0 0 0 35px !important;
+	position: relative;
+	background: #f5f6f8;
+	margin-bottom: 2px;
+	border-bottom: none !important;
+}
+
+.list-warning {
+	border-left: 3px solid #F1C500;
+}
+
+.list-success {
+	border-left: 3px solid #78CD51;
+}
+
+.list-danger {
+	border-left: 3px solid #FF6C60;
+}
+
+.list-primary {
+	border-left: 3px solid #41CAC0;
+}
 .mask_img {
 	display:inline-block;
 	position:absolute;
