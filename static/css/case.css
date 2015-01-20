@@ -74,6 +74,8 @@
 }
 .clc {
 	clear:both;
+	height:0px;
+	overflow:hidden;
 }
 .top_con {
 	height: 43px;

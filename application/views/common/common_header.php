@@ -23,11 +23,11 @@
 <body>
 	<div class="main_header"><!--header开始-->
     	<div class="main_header_left">
-        	<img src="<?php echo base_url('static/image/header1.png');?>" />
+        	<img src="<?php echo base_url('static/image/header1.png');?>"/>
         </div>
         <div class="main_header_right">
         	<div class="main_header_top">
-            	<img src="<?php echo base_url('static/image/header_title.png');?>" />
+            	<img src="<?php echo base_url('static/image/header_title.png');?>"/>
                 <p>Brand Tel:4001-606-909</p>
             </div>
             <div class="main_header_nav">
