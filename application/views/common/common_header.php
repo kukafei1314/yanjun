@@ -49,6 +49,5 @@
     </div><!--header结束-->
     <div class="main_content"><!--主要内容层开始，以限制宽度为986px-->
     	<div class="main_out">
-            <a href="#"><img src="<?php echo base_url('static/image/main_totop.png');?>"/></a>
-            <a href="#main_contact"><img src="<?php echo base_url('static/image/main_contact.png');?>"/></a>
+            <a href="#"><img src="<?php echo base_url('static/image/main_totop.png');?>"/></a><a href="#main_contact"><img src="<?php echo base_url('static/image/main_contact.png');?>"/></a>
         </div>

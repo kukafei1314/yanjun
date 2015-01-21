@@ -224,6 +224,7 @@ body{
 .main_big_pic {
 	position:relative;
 	width:100%;
+	_height:410px;
 }
 
 .main_big_pic ul {
@@ -263,10 +264,13 @@ body{
 	position:absolute;
 	left:986px;
 	top:0px;
+	width:42px;
+	height:43px;
 }
 
 .main_block{
 	width:100%;
+	height:190px;
 	margin-bottom:6px;
 	font-family:Microsoft YaHei;
 }
@@ -335,6 +339,7 @@ body{
 	width:588px;
 	margin:0 5px 0 0;
 	float:left;
+	clear:both;
 }
 
 .main_work_title{
@@ -351,6 +356,7 @@ body{
 	width:100%;
 	height:385px;
 	margin:2px 0 5px 0;
+	_margin-bottom:0px!important;
 }
 
 .main_pic_mask{
@@ -402,13 +408,29 @@ body{
 
 .main_news_list{
 	width: 100%;
+	height:190px;
+	_height:193px!important;
 	position: relative;
-	margin:2px 0 5px 0;
+	margin:2px 0 5px 0px;
+	_margin-bottom:0px!important;
+	
+}
+
+.main_news_listl{
+	width: 100%;
+	height:190px;
+	_height:194px!important;
+	position: relative;
+	margin:2px 0 5px 0px;
+	_margin-bottom:0px!important;
+	
 }
 
 .main_news_list_word {
 	width: 137px;
+	_width:192px!important;
 	height: 150px;
+	_height:190px!important;
 	padding: 40px 30px 0 25px;
 	background: #60605b;
 	color: #fff;
@@ -438,6 +460,7 @@ body{
 	color:#fff;
 	background-color:#3e3a39;
 	margin-bottom:2px;
+	clear:both;
 }
 
 .map{

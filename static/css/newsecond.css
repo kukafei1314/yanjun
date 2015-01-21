@@ -50,6 +50,7 @@ body {
 }
 .news_list_word {
 	width:135px;
+	_width:190px!important;
 	height:150px;
 	padding:40px 35px 0 20px;
 	background:#60605b;
@@ -85,6 +86,7 @@ body {
 	margin-top:5px;
 }
 #pic {
+	_height:410px;
 	overflow:hidden;
 }
 .pic_div ul {

@@ -190,3 +190,34 @@
 #order {
 	 border-color: #3c763d;
 }
+
+/* start_join_us */
+.employee_title{
+	text-align:left;
+	height:80px;
+}
+.employee_pic {
+	width:15%;
+}
+.employee_name {
+	line-height:80px;
+	height:80px;
+	width:15%;
+}
+.employee_id {
+	line-height:80px;
+	height:80px;
+	width:15%;
+}
+.employee_motto {
+	overflow:hidden;
+	width:30%;
+	line-height:80px;
+	height:80px;
+}
+
+.employee_tool {
+	height:80px;
+	padding-top:35px;
+}
+/* end_join_us */

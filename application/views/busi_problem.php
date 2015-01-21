@@ -5,7 +5,7 @@
             <ul>
                 <li><img src="<?php echo base_url('static/image/join_image.png');?>" width=986 height=430/></li>
                 <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=430/></li>
-                <div class="cl"></div>
+                <!--<div class="cl"></div>-->
             </ul>
         </div>
         <div id="main_tip">
@@ -18,7 +18,7 @@
         <div class="float" style="position: relative">
             <div class="pro_m2"></div>
             <div class="case_opacity"></div>
-            <div class="cl"></div>
+            <!--<div class="cl"></div>-->
         </div>
     </div>
     <div class="pro_text">
@@ -44,9 +44,6 @@
         <p>品牌设计需要哪些资料？</p>
         要考虑清楚，产品需要设计LOGO的主要目的，并且通过这个LOGO想要是达到一个什么样的预期收益。是否能通过LOGO让企业从同业竞争者中脱颖而出。要考虑清楚，产品需要设计LOGO的主要目的，并且通过这个LOGO想要是达到一个什么样的预期收益。是否能通过LOGO让企业从同业竞争者中脱颖而出。要考虑清楚，产品需要设计LOGO的主要目的，并且通过这个LOGO想要是达到一个什么样的预期收益。是否能通过LOGO让企业从同业竞争者中脱颖而出。要考虑清楚，产品需要设计LOGO的主要目的，并且通过这个LOGO想要是达到一个什么样的预期收益。是否能通过LOGO让企业从同业竞争者中脱颖而出。要考虑清楚，产品需要设计LOGO的主要目的，并且通过这个LOGO想要是达到一个什么样的预期收益。是否能通过LOGO让企业从同业竞争者中脱颖而出。要考虑清楚，产品需要设计LOGO的主要目的，并且通过这个LOGO想要是达到一个什么样的预期收益。是否能通过LOGO让企业从同业竞争者中脱颖而出。
     </div>
-    
-    
-    
     
     <div class="main_page">
     	显示页码

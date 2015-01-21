@@ -1,12 +1,12 @@
 .div_1 {
 	width: 986px;
-	height:auto;
-	margin-top: 5px;
+	height:382px;
+	margin: 5px 0;
+	_margin-bottom: 0px!important;
 	position: relative;
 }
 .case_right {
 	width: 192px;
-	margin-top: 5px;
 	position: relative;
 }
 .div_2 {
@@ -14,6 +14,7 @@
 	margin-top: 5px;
 	position: relative;
 	background-color: #FFF;
+	clear:both;
 }
 .div_h {
 	height: 382px;
@@ -30,12 +31,13 @@
 }
 .case_left {
 	width: 788px;
-	margin-top: 5px;
 	margin-right: 4px;
 	position: relative;
 }
 .case_img {
 	margin-bottom: 5px;
+	_height:586px;
+	position: relative;
 }
 .div_opa {
 	margin-bottom: 5px;
@@ -84,21 +86,24 @@
 .div_hf {
 	background-color: #FAAD00;
 	height: 265px;
+	_height: 382px!important;
 	width: 193px;
+	-width: 194px!important;
 	text-align: center;
 	padding-top: 117px;
 	margin-right: 5px;
+	-margin-right: 2px!important;
 	line-height: 200%;
-	margin-bottom: 5px;
 }
 .div_hr {
 	background-color: #FAAD00;
 	height: 265px;
+	_height: 382px!important;
 	width: 193px;
 	text-align: center;
 	padding-top: 117px;
 	line-height: 200%;
-	margin-bottom: 5px;
+	_z-index:10;
 }
 .float {
 	float: left;
@@ -108,13 +113,18 @@
 	font-weight: bold;
 	color: #FFF;
 	height: 252px;
+	_height: 382px!important;
 	width: 193px;
+	-width: 194px!important;
 	text-decoration: none;
 	background-color: #60605B;
 	position: absolute;
+	_top:0px;
+	_left:0px;
 	text-align: center;
 	vertical-align: middle;
 	margin-right: 5px;
+	-margin-right: 2px!important;
 	padding-top: 130px;
 	display: block;
 }
@@ -137,6 +147,7 @@
 .case_t {
 	height: 192px;
 	width: 556px;
+	_width: 589px!important;
 	background-color: #60605B;
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -152,6 +163,8 @@
 .t_con {
 	height: 177px;
 	width: 118px;
+	_width: 198px!important;
+	_height: 192px!important;
 	background-color: #60605B;
 	font-size: 13px;
 	color: #FFF;
@@ -203,9 +216,11 @@
 .b_form {
 	padding-top: 60px;
 	padding-bottom: 60px;
+	_padding-bottom: 20px!important;
 	padding-left: 34px;
 	position:relative;
 	width:630px;
+	_width:664px!important;
 }
 .b_middle {
 	background-color:#FFF;
@@ -252,12 +267,16 @@
 	padding-right: 34px;
 	position:relative;
 	width:288px;
+	_width:322px!important;
+	_text-align:left;
 	height:395px;
+	_height:455px!important;
 	line-height:28px;
 	overflow:hidden;
 }
 .text_li {
 	font-size: 16px;
+	list-style:none;
 }
 .m_text p {
 	font-size:20px;
@@ -281,6 +300,8 @@
 	background-color: #F9B900;
 	height: 164px;
 	width: 758px;
+	_height: 192px!important;
+	_width: 793px!important;
 	padding-top: 28px;
 	padding-left: 35px;
 	font-size: 28px;
@@ -295,6 +316,7 @@
 .pro_text {
 	color: #3E3A39;
 	width: 720px;
+	_width: 986px!important;
 	background-color: #FFF;
 	padding-left: 36px;
 	padding-top: 26px;
