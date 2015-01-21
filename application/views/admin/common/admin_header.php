@@ -112,8 +112,8 @@
                       </a>
                       <ul class="sub">
                           <!-- <li><a  href="general.html">部门介绍</a></li> -->
-                          <li><a  href="buttons.html">员工介绍</a></li>
-                          <li><a  href="buttons.html">招聘职位</a></li>
+                          <li><a  href="<?php echo base_url('admin/join_us/employee');?>">员工介绍</a></li>
+                          <li><a  href="<?php echo base_url('admin/join_us/job');?>">招聘职位</a></li>
                       </ul>
                   </li>
                   

@@ -12,6 +12,20 @@ class Join_us_m extends CI_Model {
 	function __construct() 
 	{	
 		parent::__construct();
+		$this->load->database();
+	}
+	
+	public function get_department()
+	{
+	    $query = $this->db->get('yj_department_type');
+	    return $query->result_array();
+	}
+	
+	public function get_employee()
+	{  
+	    $this->db->select('did','pic','signature','employee_name','employee_id');
+	    $query = $this->db->get('yj_employee');
+	    return $query->result_array();
 	}
 	
 }
