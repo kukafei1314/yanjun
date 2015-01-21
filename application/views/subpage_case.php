@@ -351,7 +351,7 @@
                 <p>Time / 2009.12.16 </p>
             </div>
         </div>
-        <div class="clc"></div>
+        
     </div>
     <div class="main_page">
     	显示页码

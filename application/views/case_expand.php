@@ -409,7 +409,7 @@
 		</div>
         <!--<div class="clc"></div>-->
 	</div>
-    <div class="main_page" style="clear:both;">
+    <div class="main_page">
     	显示页码
     </div>
    
