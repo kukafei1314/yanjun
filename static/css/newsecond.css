@@ -85,6 +85,7 @@ body {
 	margin-top:5px;
 }
 #pic {
+	_height:410px;
 	overflow:hidden;
 }
 .pic_div ul {

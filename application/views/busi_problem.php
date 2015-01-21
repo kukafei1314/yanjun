@@ -5,7 +5,7 @@
             <ul>
                 <li><img src="<?php echo base_url('static/image/join_image.png');?>" width=986 height=430/></li>
                 <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=430/></li>
-                <div class="cl"></div>
+                <!--<div class="cl"></div>-->
             </ul>
         </div>
         <div id="main_tip">
@@ -18,7 +18,7 @@
         <div class="float" style="position: relative">
             <div class="pro_m2"></div>
             <div class="case_opacity"></div>
-            <div class="cl"></div>
+            <!--<div class="cl"></div>-->
         </div>
     </div>
     <div class="pro_text">

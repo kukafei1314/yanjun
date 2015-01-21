@@ -224,6 +224,7 @@ body{
 .main_big_pic {
 	position:relative;
 	width:100%;
+	_height:410px;
 }
 
 .main_big_pic ul {
@@ -263,6 +264,8 @@ body{
 	position:absolute;
 	left:986px;
 	top:0px;
+	width:42px;
+	height:43px;
 }
 
 .main_block{
