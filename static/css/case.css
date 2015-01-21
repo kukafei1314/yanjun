@@ -159,6 +159,9 @@
 	padding-left:80px;
 	padding-top:15px;
 }
+.t_con li {
+	list-style-type: none;	
+}
 .t_con a {
 	color: #FFF;
 	text-decoration: none;
