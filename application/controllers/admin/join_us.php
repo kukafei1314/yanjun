@@ -41,7 +41,10 @@ class Join_us extends CI_Controller
             $data['did'] = $_POST['employee_department'];
             $data['pic'] = $pic;
             $data['signature'] = $sign;
-            $data['motto'] = $_POST['ue_content'];
+            $ue_content= $_POST['ue_content'];
+            $preg = "/<p.*>(.*)<\/p>/";//正则
+            preg_match($preg,$ue_content,$store);
+            $data['motto'] = $store[1];
             if($this->join_us_m->add_employee($data) == TRUE) {
                 redirect('admin/join_us/employee');
             }
