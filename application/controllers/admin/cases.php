@@ -43,7 +43,7 @@ class Cases extends CI_Controller {
 			redirect('admin/cases');
 		}
 		$this->cases_m->del($id);
-		redirect('admin/cases?p='.$p);  //!!!!!!!!!!!!!!!!!!!!!!!!!!
+		redirect('admin/cases?p='.$p);  
 	}
 	
 		//添加新闻
@@ -64,6 +64,7 @@ class Cases extends CI_Controller {
     	} else {
     		$images = '';
     	}
+		sleep(1);
 		//添加logo
 		$logopic = new Uploader_ue( "logopic" , $config);
     	$logoinfo = $logopic->getFileInfo();

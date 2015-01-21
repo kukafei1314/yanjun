@@ -18,8 +18,33 @@
 	                 	</div>
                           <div class="panel-body">
                               <div class="task-content">
-							  
                                   <ul id="sortable" class="task-list">
+								  
+
+								     <li>
+										  <div class="task-title">
+                                              <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
+													<b>Name</b>	
+                                              </div>
+                                              <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; margin-left:5%; line-height:48px;">
+													<b>Project</b>
+                                              </div>
+											  <div class=" pull_left list_title" style="width:15%; margin-left:5%; line-height:48px;">
+													<b>Logo</b>
+                                              </div>
+                                              <div class=" pull_left list_title" style="width:15%; margin-left:5%; line-height:48px;">
+													<b>Image</b>
+                                              </div>
+                                              <div class="task-title-sp pull_left list_time" style="line-height:48px; margin-left:5%;">
+													<b>Date</b>
+                                              </div>
+                                              <div class="pull-right hidden-phone" style="line-height:48px; margin-right:4%;">
+													<b>Action</b>
+                                              </div>
+                                              <div class="cl"></div>
+                                          </div>
+                                      </li>
+								  
 									<?php foreach ($cases as $cases): ?>
                                       <li <?php
 										       switch(((int)$cases['id'])%4){
@@ -33,10 +58,20 @@
 										>
 										  <div class="task-title">
                                               <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
-                                              	<?php echo $cases['name']; ?>
+                                              	<?php
+														if(!empty($cases['name'])){
+															echo $cases['name'];
+														}else{
+															echo '空';
+														} ?>
                                               </div>
                                               <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; margin-left:5%; line-height:48px;">
-                                              	<?php echo $cases['project']; ?>
+                                              	<?php 
+														if(!empty($cases['project'])){
+															echo $cases['project'];
+														}else{
+															echo '空';
+														} ?>
                                               </div>
 											  <div class=" pull_left list_title" style="width:15%; margin-left:5%;">
 	                                              <?php if(!empty($cases['logo'])) :?>
@@ -52,8 +87,8 @@
 												  	  <img src=" " width="80" height="48"/>
 											      <?php endif;?>
                                               </div>
-                                              <div class="task-title-sp pull_left list_time" style="line-height:48px;" >
-                                              	  发布时间：&nbsp;<?php echo date('Y-m-d',$cases['date']); ?>
+                                              <div class="task-title-sp pull_left list_time" style="line-height:48px; margin-left:5%;" >
+                                              	  <?php echo date('Y-m-d',$cases['date']); ?>
                                               </div>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
