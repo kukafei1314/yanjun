@@ -1,13 +1,12 @@
 .div_1 {
 	width: 986px;
-	height:auto;
+	height:382px;
 	margin: 5px 0;
 	_margin-bottom: 0px!important;
 	position: relative;
 }
 .case_right {
 	width: 192px;
-	margin-top: 5px;
 	position: relative;
 }
 .div_2 {
@@ -15,6 +14,7 @@
 	margin-top: 5px;
 	position: relative;
 	background-color: #FFF;
+	clear:both;
 }
 .div_h {
 	height: 382px;
@@ -31,7 +31,6 @@
 }
 .case_left {
 	width: 788px;
-	margin-top: 5px;
 	margin-right: 4px;
 	position: relative;
 }
