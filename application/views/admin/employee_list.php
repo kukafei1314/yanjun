@@ -13,57 +13,52 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 员工列表</h5></div>
-                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/news/add_v');?>">添加员工</a>
+                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/join_us/add_employee');?>">添加员工</a>
                             <div class="cl"></div>
 	                 	</div>
-                          <div class="panel-body">
- <!-- <?php /*                 <div class="task-content">
-                                 <ul id="sortable" class="task-list">
-									<?php foreach ($news as $news): ?>
-                                      <li <?php
-										       switch(((int)$news['id'])%4){
-													case 0: echo "class= \"list-primary list-news \"";break;
-													case 1: echo "class= \"list-danger list-news \"";break;
-													case 2: echo "class= \"list-success list-news \"";break;
-													case 3: echo "class= \"list-warning list-news \"";break;
-													default:echo "class= \"list-primary list-news \"";break;
-											   }
-										 ?>
-										>
-										  <div class="task-title">
-                                              <div class="task-title-sp pull_left list_title">
-                                              	<?php echo $news['title']; ?>
-                                              </div>
-                                              <div class=" pull_left list_title">
-	                                              <?php if(!empty($news['images'])) :?>
-												  	  <img src="<?php echo base_url($news['images']);?>" width="80" height="48"/>
+                      <div class="panel-body">
+                        <?php foreach ($departments as $department):?>
+                        <div class="department_name"><?php echo $department['name']?></div>
+                          <div class="task-content">
+                             <ul id="sortable" class="task-list">
+                                <li>
+                                    <?php foreach($employees as $employee):?>
+                                        <?php if($employee['did'] == $department['tid']):?>
+                                           <div class="employee_title">
+                                              <div class=" pull_left employee_pic">
+	                                              <?php if(!empty($employee['pic'])) :?>
+												  	  <img src="<?php echo base_url($employee['pic']);?>" width="80" height="80"/>
 												  <?php else:?>
-												  	  <img src=" " width="80" height="48"/>
+												  	  <img src=" " width="80" height="80"/>
 											      <?php endif;?>
                                               </div>
-                                              <div class="task-title-sp pull_left list_time">
-                                              	  发布时间：&nbsp;<?php echo date('Y-m-d',$news['date']); ?>
+                                              <div class="pull_left employee_name">
+                                              	  姓名：<?php echo $employee['employee_name']; ?>
                                               </div>
-                                              <div class="pull-right hidden-phone">
+                                              <div class="pull_left employee_id">
+                                              	  工号：<?php echo $employee['employee_id']; ?>
+                                              </div>
+                                              <div class="pull_left employee_motto">
+                                              	  座右铭：<?php echo $employee['motto']; ?>
+                                              </div>
+                                              <div class="pull-right employee_tool">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id'].'&p='.$p);?>">
+                                                  <a href="#">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a href="<?php echo base_url('admin/news/del?id='.$news['id'].'&p='.$p);?>">   
+                                                  <a href="#">   
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
                                               <div class="cl"></div>
                                           </div>
-                                      </li>
-									<?php endforeach;?>               
-                                  </ul>
-                              </div>
-                              <div class=" add-task-row page_html">
-                                  <?php echo $page_html;?>
-                              </div>
-*/?> --> 
+                                        <?php endif;?>
+                                    <?php endforeach;?>
+                                </li>								             
+                              </ul>
                           </div>
+                          <?php endforeach;?>
+                      </div>
                       </section>
                   </div><!--/col-md-12 -->
               </div><!-- /row -->

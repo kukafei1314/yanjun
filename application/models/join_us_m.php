@@ -13,6 +13,7 @@ class Join_us_m extends CI_Model {
 	{	
 		parent::__construct();
 		$this->load->database();
+		$this->load->library('uploader_ue');
 	}
 	
 	public function get_department()
@@ -23,9 +24,15 @@ class Join_us_m extends CI_Model {
 	
 	public function get_employee()
 	{  
-	    $this->db->select('did','pic','signature','employee_name','employee_id');
+	    $this->db->select('did,pic,signature,motto,employee_name,employee_id');
 	    $query = $this->db->get('yj_employee');
 	    return $query->result_array();
+	}
+	
+	public function add_employee($data)
+	{
+	    $this->db->insert('yj_employee',$data);
+	    return TRUE;
 	}
 	
 }
