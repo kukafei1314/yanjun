@@ -34,14 +34,13 @@
                 	产业投资合作伙伴
                 </div>
                 <div class="main_footer_corp2">
-                	<ul>
-                	<li><a href="#">智行文化</a></li>
-                    <li><a href="#">海晏堂</a></li>
-                    <li><a href="#">尖峰影视</a></li>
-                    <li><a href="#">龙竹堂</a></li>
-                    <li><a href="#">道达咨询</a></li>
-                    <div class="cl"></div>
-                </ul>
+                	<a href="#">智行文化</a>
+                    <a href="#">海晏堂</a>
+                    <a href="#">尖峰影视</a>
+                    <a href="#">龙竹堂</a>
+                    <a href="#">道达咨询</a>
+                    
+                
                 </div>
                 <div class="cl"></div>
             </div>
