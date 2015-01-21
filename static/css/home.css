@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
-ul,li{  
+.main_footer_corp2 a{  
 	list-style:none;
-	padding:0;
+	padding:0 5px;
 	margin:0;
 }
 p{
@@ -20,7 +20,7 @@ img {
 .cl{
 	clear: both;
 	height: 0px; 
-	overflow: hidden;
+	width: 0px;
 }
 
 body{
@@ -31,9 +31,14 @@ body{
 }
 
 .main_header{
-	width:986px;
-	height:196px;
-	margin:0 auto;
+	width: 986px;
+	height: 196px;
+	margin-top: 0;
+	margin-bottom: 3px;
+	margin-right: auto;
+	margin-left: auto;
+	_margin-bottom: 0px;!important;
+	_margin-left: 220px;!important;
 }
 
 .main_header_left{
@@ -88,6 +93,8 @@ body{
 	margin-left:85px;
 	line-height:53px;
 	width:320px;
+	_margin-left:50px!important;
+	height:53px;
 }
 
 .main_ul2{
@@ -97,42 +104,48 @@ body{
 	margin:8px 0 0 0;
 }
 
-.main_ul1 li{
+.main_ul1 a{
 	float:left;
 	padding:0 28px 0 28px;
 }
 
-.main_ul2 li{
+.main_ul2 a{
 	float:left;
 	padding:0 18px 0 18px;
+	_padding:0 17px 0 17px!important;
 }
 
 .main_footer{
 	width:986px;
 	margin:0 auto;
 	background-color:#3e3a39;
+	_margin-left: 220px;!important;
 }
 
 .main_footer_left{
 	float:left;
 	width:605px;
 	padding:25px 0 30px 45px;
+	_width:650px!important;
+	_padding-bottom:5px!important;
 }
 
 .main_footer_tel{
 	font-size:20px;
 	color:#faad00;
 	text-align:left;
+	_padding-bottom:20px;
 }
 
 .main_footer_address{
 	color:#c9caca;
 	padding-top:20px;
+	_padding-top:0px!important;
 }
 
 .main_footer_address1{
 	float:left;
-	width:140px;
+	width:150px;
 	font-size:14px;
 	padding-right:10px;
 }
@@ -160,8 +173,9 @@ body{
 
 .main_footer_corp{
 	color:#848282;
-	font-size:10px;
+	font-size:13px;
 	padding-top:40px;
+	_padding-top:20px!important;
 }
 
 .main_footer_corp1{
@@ -170,7 +184,7 @@ body{
 	padding-right:10px;
 }
 
-.main_footer_corp2 ul li a{
+.main_footer_corp2 a{
 	float:left;
 	padding-right:20px;
 	color:#848282;
@@ -187,21 +201,24 @@ body{
 }
 
 .main_footer_er p{
-	font-size:8px;
+	font-size:10px;
+	text-align:center;
 	color:#c9caca;
 	margin:10px 0 0 0;
 }
 
 .main_footer_copyright{
 	padding:20px 0 0 0;
-	font-size:6px;
+	font-size:12px;
 	color:#848282;
+	_padding-top:0px!important;
 }
 
 .main_content{
 	position:relative;
 	width:986px;
 	margin:0 auto;
+	_margin-left: 220px;!important;
 }
 
 .main_big_pic {

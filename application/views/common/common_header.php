@@ -31,23 +31,21 @@
                 <p>Brand Tel:4001-606-909</p>
             </div>
             <div class="main_header_nav">
-            	<ul class="main_ul1">
-                	<li><a href="#">案例</a></li>
-                    <li><a href="#">服务</a></li>
-                    <li><a href="#">我们</a></li>
-                    <div class="cl"></div>
-                </ul>
-                <ul class="main_ul2">
-                	<li><a href="#">业务通道</a></li>
-                    <li><a href="#">加入我们</a></li>
-                    <li><a href="#">分享中心</a></li>
-                    <li><a href="#">新闻</a></li>
-                    <div class="cl"></div>
-                </ul>
-                <div class="cl"></div>
+            	<div class="main_ul1">
+                	<a href="#">案例</a>
+                    <a href="#">服务</a>
+                    <a href="#">我们</a>
+                </div>
+                <div class="main_ul2">
+                	<a href="#">业务通道</a>
+                    <a href="#">加入我们</a>
+                    <a href="#">分享中心</a>
+                    <a href="#">新闻</a>
+                </div>
+                <!--<div class="cl"></div>-->
             </div>
         </div>
-        <div class="cl"></div>
+        <!--<div class="cl"></div>-->
     </div><!--header结束-->
     <div class="main_content"><!--主要内容层开始，以限制宽度为986px-->
     	<div class="main_out">
