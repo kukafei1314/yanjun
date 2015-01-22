@@ -15,7 +15,7 @@
     </div>
     <div class="b_middle">
         <div class="b_form float">
-            <form action="" method="post" name="note">
+            <form action="<?php echo 'servicechannel/add';?>" method="post">
                 <div class="line">
                 	<div class="float">
                         <p><label>公司/机构</label></p>
@@ -24,26 +24,26 @@
                     </div>
                     <div class="float">
                         <p><label>电话</label></p>
-                        <input name="company" type="text" size="38" class="input_s">
+                        <input name="phone" type="text" size="38" class="input_s">
                     </div>
                 </div>
                 <div class="line">
                 	<div class="float">
                         <p><label>姓名/职务</label></p>
-                        <input name="company" type="text" size="38" class="input_s">
+                        <input name="client_name" type="text" size="38" class="input_s">
                         &nbsp;&nbsp;
                     </div>
                     <div class="float">
                         <p><label>邮箱</label></p>
-                        <input name="company" type="text" size="38" class="input_s">
+                        <input name="email" type="text" size="38" class="input_s">
                     </div>
                 </div>
                 <div class="line">
                     <p><label>工作地址</label></p>
-                    <input name="company" type="text" size="80" class="input_l">
+                    <input name="address" type="text" size="80" class="input_l">
                 </div>
                 <p><label>留言</label></p>
-                <textarea class="t_area" name="words" cols="68" rows="5"></textarea>
+                <textarea class="t_area" name="message" cols="68" rows="5"></textarea>
                 <div class="sr float">
                 	<input name="sub" type="submit" value="提交">
                 </div>
@@ -57,26 +57,9 @@
         <div class="m_text float" onclick="unhide(this)">
         	<p>常见问题</p>
             <div class="text_li">
-                <a href="">品牌设计需要哪些资料？</a><br />
-                <a href="">每次提供几个设计稿供用户选择？</a><br />
-                <a href="">品牌设计需要多长时间？</a><br />
-                <a href="">所设计的稿件通过什么方式供用户查询？</a><br />
-                <a href="">品牌设计需要哪些资料？</a><br />
-                <a href="">每次提供几个设计稿供用户选择？</a><br />
-                <a href="">品牌设计需要多长时间？</a><br />
-                <a href="">所设计的稿件通过什么方式供用户查询？</a><br />
-                <a href="">品牌设计需要哪些资料？</a><br />
-                <a href="">每次提供几个设计稿供用户选择？</a><br />
-                <a href="">品牌设计需要多长时间？</a><br />
-                <a href="">所设计的稿件通过什么方式供用户查询？</a><br />
-                <a href="">品牌设计需要哪些资料？</a><br />
-                <a href="">每次提供几个设计稿供用户选择？</a><br />
-                <a href="">品牌设计需要多长时间？</a><br />
-                <a href="">所设计的稿件通过什么方式供用户查询？</a><br />
-                <a href="">品牌设计需要哪些资料？</a><br />
-                <a href="">每次提供几个设计稿供用户选择？</a><br />
-                <a href="">品牌设计需要多长时间？</a><br />
-                <a href="">所设计的稿件通过什么方式供用户查询？</a><br />
+			    <?php foreach ($pro as $pro): ?>
+					<a href="servicechannel/businesspro#<?php echo $pro['id'];?>"><?php echo $pro['title'];?></a><br />
+                <?php endforeach;?> 
         	</div>
         </div> 
               
