@@ -52,6 +52,7 @@ class Join_us extends CI_Controller
             $data['did'] = $_POST['employee_department'];
             $data['pic'] = $pic;
             $data['signature'] = $sign;
+            var_dump($data);
             $ue_content= $_POST['ue_content'];
             $preg = "/<p.*>(.*)<\/p>/";//正则
             preg_match($preg,$ue_content,$store);
@@ -60,7 +61,7 @@ class Join_us extends CI_Controller
                 redirect('admin/join_us/employee');
             }
         } else if($type == 'job') {
-            redirect('admin/join_us/employee');
+            redirect('admin/join_us/job');
         }  
     }
     public function employee()
@@ -98,6 +99,7 @@ class Join_us extends CI_Controller
     
     public function job()
     {
-        
+        $data['username'] = $this->session->userdata('username');
+        $this->load->view('admin/job_list',$data);
     }
 }
