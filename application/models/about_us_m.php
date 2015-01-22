@@ -113,6 +113,9 @@ class About_us_m extends CI_Model {
 		}
 		$this->db->where('id',$arr['id']);
 		$this->db->update($tab,$data);
+		var_dump($data);
+		echo $tab;
+		echo $arr['id'];
 		return $this->db->affected_rows();	
 	}
 }

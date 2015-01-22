@@ -79,9 +79,18 @@ class Index extends CI_Controller {
 		$type = 3;
 		$data['result'] = $this->about_us_m->get_all($type);
 		$this->load->view('joycenter', $data);
-	}	
+	}
+	public function about_us()
+	{
+		$data['title'] = "我喜欢";
+		$type = 2;
+		$data['result'] = $this->about_us_m->get_all($type);
+		$this->load->view('about_us', $data);
+	}
 	public function service()
 	{
-		$this->load->view('service');
+		$type = 1;
+		$data['result'] = $this->about_us_m->get_all($type);
+		$this->load->view('service', $data);
 	}
 }

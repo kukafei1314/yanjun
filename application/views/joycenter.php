@@ -18,14 +18,14 @@
 			<div class="leftTopTitle">分享中心</div>
             <div class="leftTopContent">梦想与忠诚，团结与自由， <br/>恰当的诠释了晏钧团队的风格和状态。</div>
 		</div>
-        <?php foreach($result as $row) {?>
-		<div class="leftMiddleContent">
+        <div class="leftMiddleContent">
+		<?php foreach($result as $row) {?>
         	<div class="middleTitle"><?php echo $row['title'];?></div>
             <div class="middleIntro">
          	　<?php echo $row['content'];?>
             </div>
-		</div>
         <?php }?>
+        </div>
 	</div>
 	<div class="joyRight">
 		<div class="rightDiv">
