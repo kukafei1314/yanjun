@@ -16,23 +16,70 @@ class Join_us_m extends CI_Model {
 		$this->load->library('uploader_ue');
 	}
 	
-	public function get_department()
+	public function get_all_department()
 	{
 	    $query = $this->db->get('yj_department_type');
 	    return $query->result_array();
 	}
 	
-	public function get_employee()
+	public function get_all_employee()
 	{  
-	    $this->db->select('did,pic,signature,motto,employee_name,employee_id');
 	    $query = $this->db->get('yj_employee');
 	    return $query->result_array();
 	}
 	
+	public function get_employee($id)
+	{
+	    $this->db->where('id',$id);
+	    $query = $this->db->get('yj_employee');
+	    return $query->row_array();
+	}
+	
 	public function add_employee($data)
 	{
-	    $this->db->insert('yj_employee',$data);
+	    if($data['id'] == '') {
+	        $this->db->insert('yj_employee',$data);
+	    } else {
+	        $this->db->where('id',$data['id']);
+	        $this->db->update('yj_employee',$data);
+	    }
 	    return TRUE;
 	}
 	
+	public function delete_employee($id)
+	{
+	    $this->db->where('id',$id);
+	    $this->db->delete('yj_employee');
+	    return TRUE;
+	}
+	
+	public function get_all_job()
+	{
+	    $query = $this->db->get('yj_job');
+	    return $query->result_array();
+	}
+	
+	public function get_job($id)
+	{
+	    $this->db->where('id',$id);
+	    $query = $this->db->get('yj_job');
+	    return $query->row_array();
+	}
+	
+	public function add_job($data)
+	{
+	    if($data['id'] == '') {
+	        $this->db->insert('yj_job',$data);
+	    } else {
+	        $this->db->where('id',$data['id']);
+	        $this->db->update('yj_job',$data);
+	    }
+	    return TRUE;
+	}
+	public function delete_job($id)
+	{
+	    $this->db->where('id',$id);
+	    $this->db->delete('yj_job');
+	    return TRUE;
+	}
 }

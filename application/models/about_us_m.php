@@ -30,15 +30,16 @@ class About_us_m extends CI_Model {
 		return $tab;
 	}
 	
-	/*public function get_all($type) {
+	public function get_all($type) {
 		$tab = $this->select_tab($type);
+		$this->db->order_by('id','asc');
 		$query = $this->db->get($tab);
 		if($query) {
 			return $query->result_array();
 		} else {
 			return false;
 		}	
-	}*/
+	}
 	
 	public function get_all_num($type) {
 		$tab = $this->select_tab($type);

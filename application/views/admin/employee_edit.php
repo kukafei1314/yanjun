@@ -36,7 +36,7 @@
                                       <div class="col-sm-5">
                                            <select name= "employee_department">
                                                <?php foreach ($departments as $department):?>
-                                                    <option value = "<?php echo $department['tid'];?>" selected = "<?php if($employee['did'] == $department['tid']) {echo "selected";}?>"><?php echo $department['name'];?></option>
+                                                    <option value = "<?php echo $department['tid'];?>" <?php if($employee['did'] == $department['tid']) {echo "selected";}?>><?php echo $department['name'];?></option>
                                                <?php endforeach;?>
                                            </select>
                                       </div>
