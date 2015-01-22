@@ -16,6 +16,12 @@ class Join_us extends CI_Controller
     public function add()
     {
         $type = $_GET['type'];
+        if(isset($_GET['id'])){
+            $data['id'] = $_GET['id'];
+            $employee_old = $this->join_us_m->get_employee($data['id']);
+        } else {
+            $data['id'] ='';
+        }
         if($type == 'employee') {
             $config = array(
                 "pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
@@ -26,16 +32,21 @@ class Join_us extends CI_Controller
             $pic_info = $ue_pic->getFileInfo();
             if($pic_info['state'] == 'SUCCESS') {
                 $pic = $pic_info['url'];
+            } else if(isset($_GET['id'])) {
+                $pic = $employee_old['pic'];
             } else {
-                $pic = '';
+                $pic='';
             }
             $ue_sign = new Uploader_ue( "sign" , $config);
             $sign_info = $ue_sign->getFileInfo();
             if($sign_info['state'] == 'SUCCESS') {
                 $sign = $sign_info['url'];
+            } else if(isset($_GET['id'])){
+                $sign = $employee_old['signature'];
             } else {
                 $sign = '';
             }
+                
             $data['employee_name'] = $_POST['employee_name'];
             $data['employee_id'] = $_POST['employee_id'];
             $data['did'] = $_POST['employee_department'];
@@ -54,8 +65,8 @@ class Join_us extends CI_Controller
     }
     public function employee()
     {
-        $data['departments'] = $this->join_us_m->get_department();
-        $data['employees'] = $this->join_us_m->get_employee();
+        $data['departments'] = $this->join_us_m->get_all_department();
+        $data['employees'] = $this->join_us_m->get_all_employee();
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/employee_list',$data);
     }
@@ -63,9 +74,26 @@ class Join_us extends CI_Controller
     public function add_employee()
     {
         $data['form_url'] = 'admin/join_us/add?type=employee';
-        $data['departments'] = $this->join_us_m->get_department();
+        $data['departments'] = $this->join_us_m->get_all_department();
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/employee_add',$data);
+    }
+    
+    public function edit_employee()
+    {
+        $id = $_GET['id'];
+        $data['form_url'] = "admin/join_us/add?type=employee&id=$id";
+        $data['employee'] = $this->join_us_m->get_employee($id);
+        $data['departments'] = $this->join_us_m->get_all_department();
+        $data['username'] = $this->session->userdata('username');
+        $this->load->view('admin/employee_edit',$data);
+    }
+    
+    public function delete_employee()
+    {
+        $id = $_GET['id'];
+        $this->join_us_m->delete_employee($id);
+        redirect('admin/join_us/employee');
     }
     
     public function job()
