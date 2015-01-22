@@ -9,6 +9,7 @@ class Index extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('about_us_m');
 	}
 	
 	public function index()
@@ -75,7 +76,9 @@ class Index extends CI_Controller {
 	}
 	public function joycenter()
 	{
-		$this->load->view('joycenter');
+		$type = 3;
+		$data['result'] = $this->about_us_m->get_all($type);
+		$this->load->view('joycenter', $data);
 	}	
 	public function service()
 	{
