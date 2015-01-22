@@ -42,7 +42,7 @@
 											      <?php endif;?>
                                               </div>
                                               <div class="task-title-sp pull_left list_time">
-                                              	  发布时间：&nbsp;<?php echo date('Y-m-d',$news['date']); ?>
+                                              	  发布时间：&nbsp;<?php echo date('Y-m-d',$news['add_date']); ?>
                                               </div>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
