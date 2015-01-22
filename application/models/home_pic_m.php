@@ -17,8 +17,9 @@ class Home_pic_m extends CI_Model
        $query = $this->db->query($sql);
 	   foreach($query->result_array() as $row) {
 		   $type = $row['type'];
-		   $result[$type] 		  = $this->pic_info($type);
+		   $result[$type] = $this->pic_info($type);
 	   }
+	   //var_dump($query->result_array());
        return $result;
    }
    
