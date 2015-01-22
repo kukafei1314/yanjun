@@ -53,4 +53,33 @@ class Join_us_m extends CI_Model {
 	    return TRUE;
 	}
 	
+	public function get_all_job()
+	{
+	    $query = $this->db->get('yj_job');
+	    return $query->result_array();
+	}
+	
+	public function get_job($id)
+	{
+	    $this->db->where('id',$id);
+	    $query = $this->db->get('yj_job');
+	    return $query->row_array();
+	}
+	
+	public function add_job($data)
+	{
+	    if($data['id'] == '') {
+	        $this->db->insert('yj_job',$data);
+	    } else {
+	        $this->db->where('id',$data['id']);
+	        $this->db->update('yj_job',$data);
+	    }
+	    return TRUE;
+	}
+	public function delete_job($id)
+	{
+	    $this->db->where('id',$id);
+	    $this->db->delete('yj_job');
+	    return TRUE;
+	}
 }

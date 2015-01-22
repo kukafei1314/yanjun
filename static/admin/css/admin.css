@@ -221,7 +221,7 @@
 }
 
 /* start_join_us */
-.employee_title{
+.employee_title , .job_title{
 	text-align:left;
 	height:80px;
 }
@@ -247,6 +247,24 @@
 
 .employee_tool {
 	height:80px;
-	padding-top:35px;
+	padding-top:32px;
+}
+
+.job_name , .job_addtime {
+	line-height:80px;
+	height:80px;
+	width:15%;
+}
+
+.job_content {
+	overflow:hidden;
+	line-height:80px;
+	height:80px;
+	width:60%;
+}
+
+.job_tool {
+	height:80px;
+	padding-top:32px;
 }
 /* end_join_us */
