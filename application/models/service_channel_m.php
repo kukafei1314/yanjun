@@ -19,7 +19,7 @@ class Service_channel_m extends CI_Model {
 	// 获取每页文章列表，不包括文章内容字段
 	public function get_list($limit,$offset)
 	{
-	   $this->db->order_by('id desc,date desc');
+	   $this->db->order_by('id desc,add_date desc');
        $query = $this->db->get('yj_service_channel',$limit, $offset);
        return $query->result_array();
 	}
@@ -50,7 +50,7 @@ class Service_channel_m extends CI_Model {
 						'email'	     =>	$row['email'],
 						'address'	 =>	$row['address'],
 						'message'	 =>	$row['message'],
-						'date'	     =>	$row['date'],
+						'add_date'	     =>	$row['add_date'],
 					);
 		}
 		return FALSE;
@@ -67,8 +67,8 @@ class Service_channel_m extends CI_Model {
 					'email'	     =>	$data['email'],
 					'address'	 =>	$data['address'],
 					'message'	 =>	$data['message'],
-					//'date'	     =>	$data['date'],
-					//'date'    => time(),
+					//'add_date'	     =>	$data['add_date'],
+					//'add_date'    => time(),
 			);
 		$this->db->where('id', $id);
 		$this->db->update('yj_service_channel', $array);

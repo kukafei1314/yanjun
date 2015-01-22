@@ -94,12 +94,41 @@
 .list_title{
 	width:35%;
 }
+.list_title1{
+	width:12%;
+	valign:value;
+}
+.list_title2{
+	width:8%;
+}
+.list_title3{
+	width:8%;
+}
+.list_title4{
+	width:8%;
+}
+.list_title5{
+	width:15%;
+}
+.list_title6{
+	width:20%;
+	line-height: 110%
+}
+.list_center{
+	text-align:center;
+}
+.list_font {
+	font-weight:bold;
+}
 .list_order{
 	width:10%;
 	line-height:100px;
 }
 .list_time{
 	width:15%;
+}
+.list_time1{
+	width:6%;
 }
 .list_img {
 	width:25%;
