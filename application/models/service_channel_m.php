@@ -23,6 +23,12 @@ class Service_channel_m extends CI_Model {
        $query = $this->db->get('yj_service_channel',$limit, $offset);
        return $query->result_array();
 	}
+	public function get_prolist()
+	{
+	   $this->db->order_by('id asc');
+       $query = $this->db->get('yj_questions');
+       return $query->result_array();
+	}
 	
 	//删除文章
 	public function del($id) 
@@ -55,8 +61,25 @@ class Service_channel_m extends CI_Model {
 		}
 		return FALSE;
 	}
+	//添加用户信息
+	public function add($company, $phone, $client_name,$email, $address, $message) 
+	{
+		$data = array(
+					'company'	 =>	$company,
+					'phone'	     =>	$phone,
+					'client_name'=>	$client_name,
+					'email'	     =>	$email,
+					'address'	 =>	$address,
+					'message'	 =>	$message,
+					'add_date'	 =>	time(),
+				);
+		if($this->db->insert('yj_service_channel', $data) === FALSE) {
+			return FALSE;
+		}
+		return $this->db->insert_id();
+	}	
 	
-	//编辑文章
+	//编辑用户信息
 	public function edit($id, $data) 
 	{   
 		$id = (int) $id;
@@ -74,7 +97,7 @@ class Service_channel_m extends CI_Model {
 		$this->db->update('yj_service_channel', $array);
 	}
 	
-	//获得文章数量
+	//获得用户信息数量
 	public function get_num()
 	{
 		return $this->db->count_all('yj_service_channel');
