@@ -99,7 +99,7 @@
                   </li>
                   
                   <li class="sub-menu dcjq-parent-li">
-                      <a href="index.html">
+                      <a href="<?php echo base_url('/admin/servicechannel');?>">
                           <i class="fa fa-hdd-o"></i>
                           <span>业务通道管理</span>
                       </a>
