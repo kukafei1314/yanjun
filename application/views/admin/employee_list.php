@@ -43,10 +43,10 @@
                                               </div>
                                               <div class="pull-right employee_tool">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <a href="#">
+                                                  <a href="<?php echo base_url('admin/join_us/edit_employee').'?id='.$employee['id'];?>">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a href="#">   
+                                                  <a href="<?php echo base_url('admin/join_us/delete_employee').'?id='.$employee['id'];?>">   
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
