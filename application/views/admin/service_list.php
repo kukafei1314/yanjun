@@ -18,6 +18,35 @@
                           <div class="panel-body">
                               <div class="task-content">
                                   <ul id="sortable" class="task-list">
+								    <li class= \"list-primary list-news \">
+										  <div class="task-title">
+											  <div class="task-title-sp pull_left list_title1 list_center list_font">
+                                              	公司/机构
+                                              </div>
+											   <div class="task-title-sp pull_left list_title2 list_center list_font">
+                                              	电话
+                                              </div>
+											  <div class="task-title-sp pull_left list_title3 list_center list_font">
+                                              	姓名/职称
+                                              </div>
+											  <div class="task-title-sp pull_left list_title4 list_center list_font">
+                                              	邮箱
+                                              </div>
+											  <div class="task-title-sp pull_left list_title5 list_center list_font">
+                                              	工作地址
+                                              </div>
+											  <div class="task-title-sp pull_left list_title6 list_center list_font">
+											     留言
+											  </div>
+											  <div class="task-title-sp pull_left list_title5 list_center list_font">
+                                              	  发布时间
+                                              </div>
+                                              <div class="pull-right hidden-phone list_center list_font">
+											     操作&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                              </div>
+                                              <div class="cl"></div>
+                                          </div>
+                                      </li>
 									<?php foreach ($servicechannel as $servicechannel): ?>
                                       <li <?php
 										       switch(((int)$servicechannel['id'])%4){
@@ -31,29 +60,29 @@
 										>
 										  <div class="task-title">
 										     
-											  <div class="task-title-sp pull_left list_title">
+											  <div class="task-title-sp pull_left list_title1 list_center">
                                               	<?php echo $servicechannel['company']; ?>
                                               </div>
-											   <div class="task-title-sp pull_left list_title">
+											   <div class="task-title-sp pull_left list_title2 list_center">
                                               	<?php echo $servicechannel['phone']; ?>
                                               </div>
-											  <div class="task-title-sp pull_left list_title">
+											  <div class="task-title-sp pull_left list_title3 list_center">
                                               	<?php echo $servicechannel['client_name']; ?>
                                               </div>
-											  <div class="task-title-sp pull_left list_title">
+											  <div class="task-title-sp pull_left list_title4 list_center">
                                               	<?php echo $servicechannel['email']; ?>
                                               </div>
-											  <div class="task-title-sp pull_left list_title">
+											  <div class="task-title-sp pull_left list_title5 list_center">
                                               	<?php echo $servicechannel['address']; ?>
                                               </div>
-											  <div class="task-title-sp pull_left list_title">
-											     <?php $str=substr($servicechannel['message'],0,9);
+											  <div class="task-title-sp pull_left list_title6 list_center">
+											     <?php $str=substr($servicechannel['message'],0,159);
 												        echo($str);?>
 											  </div>
-											  <div class="task-title-sp pull_left list_time">
-                                              	  发布时间：&nbsp;<?php echo date('Y-m-d',$servicechannel['date']); ?>
+											  <div class="task-title-sp pull_left list_title5 list_center">
+                                              	  <?php echo date('Y-m-d',$servicechannel['add_date']); ?>
                                               </div>
-                                              <div class="pull-right hidden-phone">
+                                              <div class="pull-right hidden-phone list_center">
 											      <a href="<?php echo base_url('admin/servicechannel/service?id='.$servicechannel['id'].'&p='.$p);?>">
                                                         <button class="btn btn-success btn-xs fa fa-book"></button>
 												  </a>
@@ -64,7 +93,7 @@
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
-                                              <div class="cl"></div>
+                                              
                                           </div>
                                       </li>
 									<?php endforeach;?>               

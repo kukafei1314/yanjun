@@ -19,7 +19,7 @@ class News_m extends CI_Model {
 	// 获取每页文章列表，不包括文章内容字段
 	public function get_list($limit,$offset)
 	{
-	   $this->db->order_by('id desc,date desc');
+	   $this->db->order_by('id desc,add_date desc');
        $query = $this->db->get('yj_news',$limit, $offset);
        return $query->result_array();
 	}
@@ -41,7 +41,7 @@ class News_m extends CI_Model {
 					'title'		=>	$title,
 					'images'	=>	$images,
 					'content'	=>	$content,
-					'date'	    =>	time(),
+					'add_date'	    =>	time(),
 				);
 		if($this->db->insert('yj_news', $data) === FALSE) {
 			return FALSE;
@@ -62,7 +62,7 @@ class News_m extends CI_Model {
 						'title'		=>	$row['title'],
 						'content'	=>	$row['content'],
 						'images'	=>	$row['images'],
-						'date'	    =>	$row['date'],
+						'add_date'	    =>	$row['add_date'],
 					);
 		}
 		return FALSE;
@@ -76,14 +76,14 @@ class News_m extends CI_Model {
 			$array= array(
 					'title'   => $data['title'] ,
 					'content' => $data['content'],
-					'date'    => time(),
+					'add_date'    => time(),
 			);
 		} else {
 			$array= array(
 					'title'   => $data['title'] ,
 					'content' => $data['content'],
 					'images'  => $data['images'] ,
-					'date'    => time(),
+					'add_date'    => time(),
 			);
 		}
 		
