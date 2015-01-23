@@ -62,7 +62,7 @@
                         <div class="cl"></div>
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
             <div class="news_list">
 				<div class="news_list_word">
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
             <div class="news_list">
 				<div class="news_list_word">
@@ -144,8 +144,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="cl"></div>
-            </div><div class="news_list">
+                
+            </div>
+            <div class="news_list">
 				<div class="news_list_word">
                 	澳大利亚大事来中国啦啦啦啦啦啦阿里啦啦啦啦啦啦啦啦啦啦了
                 </div>
@@ -184,8 +185,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="cl"></div>
-            </div><div class="news_list">
+                
+            </div>
+            <div class="news_list">
 				<div class="news_list_word">
                 	澳大利亚大事来中国啦啦啦啦啦啦阿里啦啦啦啦啦啦啦啦啦啦了
                 </div>
@@ -224,8 +226,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="cl"></div>
-            </div><div class="news_list">
+                
+            </div>
+            <div class="news_list">
 				<div class="news_list_word">
                 	澳大利亚大事来中国啦啦啦啦啦啦阿里啦啦啦啦啦啦啦啦啦啦了
                 </div>
@@ -265,7 +268,7 @@
                          <div class="cl"></div>
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
             <div class="news_list">
 				<div class="news_list_word">
@@ -306,7 +309,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
         </div>
         <div class="cl"></div>

@@ -14,11 +14,12 @@ body {
 }
 #news_middle {
 	background:#fff;
-	margin-bottom:5px;
 }
 .news_left {
 	width:536px;
-	padding:45px 30px 5px 30px;
+	_width:596px!important;
+	padding:45px 30px 6px 30px;
+	_padding-bottom:2px!important;
 	float:left;
 	background:#fff;
 	color:#333;
@@ -33,6 +34,7 @@ body {
 	width:390px;
 	float:right;
 	padding-top:5px;
+	_padding-top:6px!important;
 	background:#fff;
 }
 .news_title {
@@ -45,13 +47,17 @@ body {
 }
 .news_list {
 	width:100%;
+	height:190px;
 	position:relative;
-	margin-top:5px;
+	margin-bottom:5px;
+	_margin-bottom:1px!important;
+	clear:both;
 }
 .news_list_word {
 	width:135px;
 	_width:190px!important;
 	height:150px;
+	_height:190px!important;
 	padding:40px 35px 0 20px;
 	background:#60605b;
 	color:#fff;
@@ -84,6 +90,7 @@ body {
 	position:relative;
 	width:100%;
 	margin-top:5px;
+	_margin-top: 2px!important;
 }
 #pic {
 	_height:410px;
