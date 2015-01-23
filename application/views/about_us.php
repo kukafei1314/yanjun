@@ -30,7 +30,7 @@
                 <div class="news_list_img">
                 	<img src="<?php echo base_url('static/image/news_list.png');?>" width=200 height=190/>
                 </div>
-                <a class="fade" href="http://www.baidu.com"></a>
+				<a class="fade" href="http://www.baidu.com"></a>
                 <div class="share">
                 	<img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                     <div class="share_1">
