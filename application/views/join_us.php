@@ -12,9 +12,9 @@
             <a class="pic_left" onclick="change(1)"></a>
             <a class="pic_right" onclick="change(0)"></a>
         </div>
-        <div class="cl"></div>
+        
     </div>
-    <div>
+    <div class="join_mid">
     <div class="join_left">
     	<div class="left_top">
         	<div class="left_top_title">如何与团队一起工作</div>
@@ -36,7 +36,7 @@
                     <div class="intro_word">我们拥有开放、实效、无边界的工作氛围。我 们相信，对于专业人士，没什么比能够专注于 专业领域更有趣的事了。
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
             <div class="people_intro">
             	<div class="intro_pic">
@@ -49,7 +49,7 @@
                     <div class="intro_word">我们拥有开放、实效、无边界的工作氛围。我 们相信，对于专业人士，没什么比能够专注于 专业领域更有趣的事了。
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
             <div class="people_intro">
             	<div class="intro_pic">
@@ -62,7 +62,7 @@
                     <div class="intro_word">我们拥有开放、实效、无边界的工作氛围。我 们相信，对于专业人士，没什么比能够专注于 专业领域更有趣的事了。
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
             <div class="people_intro">
             	<div class="intro_pic">
@@ -75,7 +75,7 @@
                     <div class="intro_word">我们拥有开放、实效、无边界的工作氛围。我 们相信，对于专业人士，没什么比能够专注于 专业领域更有趣的事了。
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
             <div class="people_intro">
             	<div class="intro_pic">
@@ -88,7 +88,7 @@
                     <div class="intro_word">我们拥有开放、实效、无边界的工作氛围。我 们相信，对于专业人士，没什么比能够专注于 专业领域更有趣的事了。
                     </div>
                 </div>
-                <div class="cl"></div>
+                
             </div>
         </div>
     </div>
@@ -145,9 +145,12 @@
             	品牌设计部以Logo/VI和相关企业形象设计为主<br/>1.负责项目的创意与设计工作；<br/>2.配合总监和主管完成下达的设计项目；<br/>2.配合总监和主管完成下达的设计项<br/>2.配合总监和主管完成下达的设计项
             </div> 
         </div>
+       </div>
+       
+      </div>
     </div>
-    <div class="cl"></div>
+    <div class="main_page">
+    	more
     </div>
-</div>
 
 <?php $this->load->view('common/common_footer');?>
