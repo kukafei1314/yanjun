@@ -16,17 +16,30 @@ class Index extends CI_Controller {
 		if ($id < 0 || $id == FALSE) {
 			redirect('admin/login');
 		}
+		
+		$this->load->model('home_pic_m');
+		$this->load->library('uploader_ue');
 	}
 	
 	public function index()
 	{
 		$data['username'] = $this->session->userdata('username');
-		$this->load->view('admin/index',$data);
+	    $data['home_pic'] = $this->home_pic_m->home_pic_list();
+	    $this->load->view('admin/home_pic',$data);
 	}
 	
 	public function logout()
 	{
 		$this->login_m->logout();
 		redirect('admin');
+	}
+	
+	public function reset_password()
+	{
+		$id = $this->session->userdata('id');
+		$old_password = $this->input->post('old_password');
+		$new_password = $this->input->post('new_password');
+		$data = $this->login_m->change_pw($id,$old_password,$new_password);
+		echo json_encode($data);
 	}
 }

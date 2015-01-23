@@ -24,7 +24,7 @@ class Login_m extends CI_Model {
 	public function login($username, $password) 
 	{
 		$this->db->where('name', $username);
-		$query = $this->db->get('user');
+		$query = $this->db->get('yj_user');
 		if($query->num_rows() < 1) {
 			return -1;
 		}
@@ -73,8 +73,35 @@ class Login_m extends CI_Model {
 		return FALSE;
 	}
 	
+	public function change_pw($id,$old_password,$new_password)
+	{
+		$this->db->where('id', $id);
+		$query = $this->db->get('yj_user');
+		if($query->num_rows() < 1) {
+			return false;
+		}
+		$row = $query->row_array();
+		$password = $this->_make_password($old_password, $row['salt']);
+		if ($password != $row['password']) {
+			return false;
+		} else {
+			$data['salt'] = $this->_make_salt();
+			$data['password'] = $this->_make_password($new_password, $data['salt']);
+			$this->db->where('id', $id);
+			$this->db->update('yj_user',$data);
+			return true;
+		}
+	}
+	
 	private function _make_password($password, $salt = '')
 	{
 		return md5(md5($password) . $salt);
+	}
+	
+	private function _make_salt($len = 6)
+	{
+		$min = pow(10, $len - 1);
+		$max = pow(10, $len) - 1;
+		return mt_rand($min, $max) . '';
 	}
 }

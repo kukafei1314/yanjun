@@ -39,24 +39,26 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="<?php echo base_url('admin/login');?>" method=post>
-		        <h2 class="form-login-heading">登陆</h2>
+		      <!-- <form class="form-login" action=" " method=post> -->
+		      <div class="form-login">
+		        <h2 class="form-login-heading">晏钧设计后台管理系统</h2>
 		        <div class="login-wrap">
                 	<div class="login_error"><?php echo isset($error) ? $error : ''; ?></div>
-		            <input type="text" name="username" class="form-control" placeholder="用户名" autofocus>
+		            <input type="text" id="login_name" name="username" class="form-control" placeholder="用户名" autofocus>
 		            <br>
-		            <input type="password" name="password" class="form-control" placeholder="密码">
+		            <input type="password" id="login_pass" name="password" class="form-control" placeholder="密码">
                     <br>
-		            <input type="text" name="check_num" class="form-control password_input" placeholder="验证码" >
+		            <input type="text" id="login_num" name="check_num" class="form-control password_input" placeholder="验证码" >
                     <!--<img class="captcha" src="<?php //echo base_url('/admin/login/captcha'); ?>" />-->
                     <div id="check_num" onClick="get_check_num()"></div>
                     <div class="cl"></div>
+                    <div id="error" style="display:none;"></div>
 		            <label class="checkbox">
-		                <span class="pull-right">
+		               <!-- <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> 忘记密码？</a>		
-		                </span>
-		            </label>
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i>Login</button>
+		                </span>-->
+		            </label> 
+		            <button class="btn btn-theme btn-block" onclick="check_login_right()" type="submit"><i class="fa fa-lock"></i>登录</button>
 		            <hr>
 		            <div class="registration">
 		                Don't have an account yet?<br/>
@@ -87,8 +89,8 @@
 		              </div>
 		          </div>
 		          <!-- modal -->
-		
-		      </form>	  	
+				</div>
+		      <!-- </form>	 -->  	
 	  	
 	  	</div>
 	  </div>

@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*文章列表action
+/* @大图管理
  * @author mm
  */
 class Home_pic_m extends CI_Model

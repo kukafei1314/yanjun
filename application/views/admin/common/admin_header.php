@@ -27,6 +27,7 @@
     <link href="<?php echo base_url('static/admin/css/admin.css');?>" rel="stylesheet">
     <!-- My JS -->
     <script src="<?php echo base_url('static/admin/js/my.js');?>"></script>
+    <script src="<?php echo base_url('static/admin/js/login.js');?>"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,10 +49,37 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="<?php echo base_url('admin/index/logout'); ?>">Logout</a></li>
+                    <li><a class="logout" data-toggle="modal" href="#myModal">重置密码</a></li>
+            	</ul>
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="<?php echo base_url('admin/index/logout'); ?>">登出</a></li>
             	</ul>
             </div>
         </header>
+        
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">重置密码</h4>
+                      </div>
+                      <div class="modal-body">
+                          </br>
+                          <input name="old_password" type="password" value="" id="old_password" placeholder="请输入原始密码" autocomplete="off" class="form-control placeholder-no-fix">
+                          </br>
+                          <input name="new_password" type="password" value="" id="new_password" placeholder="请输入新密码" autocomplete="off" class="form-control placeholder-no-fix">
+                          </br>
+                          <input name="re_new_password" type="password" value="" id="re_new_password" placeholder="请确认新密码" autocomplete="off" class="form-control placeholder-no-fix">
+                      </div>
+                      <div class="modal-footer">
+                          <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                          <button onclick="return check_repw_right()" class="btn btn-theme" type="button">确定</button>
+                      </div>
+                      <div id="div" style="display:none;"></div>
+                  </div>
+              </div>
+        </div>
       <!--header end-->
       <!-- **********************************************************************************************************************************************************
       左侧导航栏      *********************************************************************************************************************************************************** -->

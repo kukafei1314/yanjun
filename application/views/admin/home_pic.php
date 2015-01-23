@@ -2,14 +2,14 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i>新闻管理</h3>	
+          	<h3><i class="fa fa-angle-right"></i>大图管理</h3>	
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt mb">
                   <div class="col-md-12">
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5>
-                            	<i class="fa fa-tasks">大图管理</i>
+                            	<i class="fa fa-tasks">&nbsp;大图管理</i>
                             </h5></div>
                             <div class="cl"></div>
 	                 	</div>

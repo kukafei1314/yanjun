@@ -14,7 +14,7 @@
 }
 
 #check_num{
-	width:50px;
+	width:60px;
 	height:34px;
 	color:#FFF;
 	font-size:18px;
@@ -22,12 +22,12 @@
 	border-radius:4px;
 	background-color:#68dff0;
 	margin-left:5px;
-	padding-left:2px;
+	padding-left:5px;
 	float:left;
 }
 
 .password_input{
-	width:80%;
+	width:77%;
 	float:left;
 }
 
@@ -121,7 +121,7 @@
 	font-weight:bold;
 }
 .list_order{
-	width:10%;
+	width:12%;
 	line-height:100px;
 }
 .list_time{
@@ -268,3 +268,43 @@
 	padding-top:32px;
 }
 /* end_join_us */
+
+/* start_reset_password */
+.check_all {
+	width:80%;
+	height:100px;
+	background:url(../../image/error.png) no-repeat;
+	position:absolute;
+	padding:23px 10px 0 40px;
+}
+
+.check {
+	top: 310px;
+	left: 42%;
+	z-index: 10;
+}
+
+.check1 {
+	top: 270px;
+	left: 42%;
+	z-index: 10;
+}
+
+.check2 {
+	top: 95px;
+	left: 55%;
+	z-index: 10;
+}
+
+.check3 {
+	top: 150px;
+	left: 55%;
+	z-index: 10;
+}
+
+.check4 {
+	top: 200px;
+	left: 55%;
+	z-index: 10;
+}
+/* end_reset_password */
