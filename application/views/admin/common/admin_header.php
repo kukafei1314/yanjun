@@ -127,6 +127,13 @@
                           <li><a  href="<?php echo base_url('admin/type?type=2');?>">部门类别管理</a></li>
                       </ul>
                   </li>
+                  
+                  <li class="sub-menu dcjq-parent-li">
+                      <a href="<?php echo base_url('admin/general/topic');?>">
+                          <i class="fa fa-heart"></i>
+                          <span>标语管理</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

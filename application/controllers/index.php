@@ -10,6 +10,7 @@ class Index extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('about_us_m');
+		$this->load->model('topic_m');
 	}
 	
 	public function index()
@@ -78,6 +79,7 @@ class Index extends CI_Controller {
 	{
 		$type = 3;
 		$data['result'] = $this->about_us_m->get_all($type);
+		$data['res_topic'] = $this->topic_m->get_all();
 		$this->load->view('joycenter', $data);
 	}
 	public function about_us()
@@ -91,6 +93,7 @@ class Index extends CI_Controller {
 	{
 		$type = 1;
 		$data['result'] = $this->about_us_m->get_all($type);
+		$data['res_topic'] = $this->topic_m->get_all();
 		$this->load->view('service', $data);
 	}
 }

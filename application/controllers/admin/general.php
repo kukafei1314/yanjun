@@ -9,6 +9,7 @@ class General extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('about_us_m');
+		$this->load->model('topic_m');
 		$this->load->helper('form');
 		$this->load->helper('url');
 		
@@ -83,6 +84,31 @@ class General extends CI_Controller {
 			$result = $this->about_us_m->g_update($type,$arr);
 			if($result){
 				redirect('admin/general/index?type='.$type);
+			}else echo "数据更新失败！";
+			}
+	}
+	
+	public function topic() {
+		$data['username'] = $this->session->userdata('username');
+		$query = $this->topic_m->get_all();
+		$data['font'] = $query;
+		$this->load->view('admin/g_topic',$data);
+	}
+	
+	public function t_edit() {
+		if(!is_post()) {
+			$data['username'] = $this->session->userdata('username');
+			$id = $this->input->get('id');
+			$data['result'] = $this->topic_m->select_i($id);
+			$data['id'] = $id;
+			$this->load->view('admin/topic_edit',$data);
+		}else {
+			$arr['id'] = $this->input->get('id');
+			$arr['type'] = $this->input->post('title');
+			$arr['content'] = $this->input->post('content');
+			$result = $this->topic_m->g_update($arr);
+			if($result){
+				redirect('admin/general/topic');
 			}else echo "数据更新失败！";
 			}
 	}

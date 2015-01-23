@@ -28,16 +28,28 @@
 	font-size:16px;
 	line-height:30px;
 }
-.leftMiddleContent {
-	padding:15px 20px 0px 35px;
+.share_left {
+	width:90%;
+	padding:0px 30px 5px 38px;
+	float:left;
+	background:#fff;
+	color:#333;
 }
-.middleTitle {
-	font-size:24px;
-	line-height:30px;
+.share_title {
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 30px;
+	margin-top: 25px;
 }
-.middleIntro {
-	margin-bottom: 35px;
-	line-height:28px;
+.share_content {
+	font-size:16px;
+	line-height:25px;
+	padding-bottom:10px;
+}
+.service_content {
+	font-size:16px;
+	line-height:25px;
+	padding-bottom:40px;
 }
 .joyRight {
 	float:left;

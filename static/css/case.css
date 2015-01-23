@@ -338,4 +338,20 @@ ol li {
 	font-size: 24px;
 	line-height:50px;	
 }
-
+.us_left {
+	width:536px;
+	padding:20px 30px 5px 30px;
+	float:left;
+	background:#fff;
+	color:#333;
+}
+.us_title {
+	font-weight:bold;
+	font-size:20px;
+	line-height:30px;
+	margin-top: 25px;
+}
+.us_content {
+	font-size:16px;
+	line-height:25px;
+}

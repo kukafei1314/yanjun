@@ -14,10 +14,10 @@
             </div>
         </div>
         <div id="news_middle">
-        <div class="news_left">
+        <div class="us_left">
         <?php foreach($result as $row) {?>
-        	<div class="news_title"><?php echo $row['title'];?></div>
-            <div class="news_content">
+        	<div class="us_title"><?php echo $row['title'];?></div>
+            <div class="us_content">
             	<?php echo $row['content'];?>
             </div>
         <?php }?>
@@ -311,6 +311,9 @@
         </div>
         <div class="cl"></div>
         </div>
+    </div>
+    <div class="main_page">
+    	more
     </div>
     
 <?php $this->load->view('common/common_footer'); ?> 
