@@ -28,11 +28,11 @@
             <a class="join2_middle_email">请投简历<p class="email">HR E-mail：555@yanjun.net</p></a>
        </div>
        <div class="join2_right">
-            <a class="join2_middle_right">设计部</a>
-            <a class="join2_middle_right">动画部</a>
-            <a class="join2_middle_right">事业部</a>
-            <a class="join2_middle_right">人事部</a>
-            <a class="join2_middle_right">财务行政部</a>
+            <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=14');?>">设计部</a>
+            <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=15');?>">动画部</a>
+            <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=16');?>">事业部</a>
+            <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=17');?>">人事部</a>
+            <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=18');?>">财务行政部</a>
             <a class="join2_middle_right" style="margin-bottom:0;"></a>
        </div>
        
