@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2015-01-25 14:52:12
+-- Generation Time: 2015-01-26 13:29:50
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -112,16 +112,18 @@ CREATE TABLE IF NOT EXISTS `yj_cases` (
   `logo` varchar(500) NOT NULL COMMENT '案列小图片',
   `content` text NOT NULL COMMENT '案列介绍',
   `images` varchar(500) NOT NULL COMMENT '案例大图',
+  `abstract` text NOT NULL COMMENT '案列简介',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `yj_cases`
 --
 
-INSERT INTO `yj_cases` (`id`, `name`, `project`, `date`, `logo`, `content`, `images`) VALUES
-(5, '123', '', '1421654936', 'upload/20150119/142165493656.jpg', '<p>0</p>', 'upload/20150119/142165493656.jpg'),
-(6, '蒙牛特伦苏纯牛奶礼盒250mlx12件  ', 'dfs', '1421753528', 'upload/20150120/142175352808.jpg', '<p>dfdsfsfds&nbsp;</p>', 'upload/20150120/142175352808.jpg');
+INSERT INTO `yj_cases` (`id`, `name`, `project`, `date`, `logo`, `content`, `images`, `abstract`) VALUES
+(9, '1', '1', '1422249032', 'upload/20150126/142224903232.jpg', '<p>1</p><p><img src="http://picview01.baomihua.com/photos/20120412/m_14_634698468056093750_38293363.jpg" style=""/></p><p><img src="http://picview01.baomihua.com/photos/20120306/m_14_634666437677968750_14775838.jpg" style=""/></p><p><img src="http://www.6188.com/upload_6188s/flashAll/s800/20120822/1345599155IdGWRm.jpg" style=""/></p><p><br/></p>', 'upload/20150126/142224903131.jpg', '1'),
+(10, '2', '2', '1422251477', 'upload/20150126/142225147717.jpg', '<p><img src="http://s1.img.766.com/288/120328/1530/278904.jpg" alt="278904.jpg" width="777" height="539" style="width: 777px; height: 539px;"/></p>', 'upload/20150126/142225147616.jpg', '2'),
+(11, '3', '3', '1422251290', 'upload/20150126/142225128909.png', '<p><br/></p><h1 label="Title center" name="tc" style="border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;text-align:center;margin:0px 0px 20px;" class="ue_t">[此处键入文章标题]</h1><p><img src="http://img.baidu.com/hi/youa/y_0034.gif" width="300" height="200" border="0" hspace="0" vspace="0" style="width:300px;height:200px;float:left;"/>图文混排方法</p><p>1. 图片居左，文字围绕图片排版</p><p>方法：在文字前面插入图片，设置居左对齐，然后即可在右边输入多行文本</p><p><br/></p><p>2. 图片居右，文字围绕图片排版</p><p>方法：在文字前面插入图片，设置居右对齐，然后即可在左边输入多行文本</p><p><br/></p><p>3. 图片居中环绕排版</p><p>方法：亲，这个真心没有办法。。。</p><p><br/></p><p><br/></p><p><img src="http://img.baidu.com/hi/youa/y_0040.gif" width="300" height="300" border="0" hspace="0" vspace="0" style="width:300px;height:300px;float:right;"/></p><p>还有没有什么其他的环绕方式呢？这里是居右环绕</p><p><br/></p><p>欢迎大家多多尝试，为UEditor提供更多高质量模板！</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p><br/></p><p><br/></p>', 'upload/20150126/142225129010.jpg', '3');
 
 -- --------------------------------------------------------
 
@@ -417,6 +419,28 @@ INSERT INTO `yj_share` (`id`, `title`, `content`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `yj_topic`
+--
+
+CREATE TABLE IF NOT EXISTS `yj_topic` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) NOT NULL,
+  `content` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `yj_topic`
+--
+
+INSERT INTO `yj_topic` (`id`, `type`, `content`) VALUES
+(2, '服务', '<p>梦想与忠诚，团结与自由， <br/>恰当的诠释了晏钧团队的风格和状态。</p>'),
+(3, '分享中心', '<p>梦想与忠诚，团结与自由， <br/>恰当的诠释了晏钧团队的风格和状态。</p>'),
+(4, '如何与团队一起工作', '<p>梦想与忠诚，团结与自由， <br/>恰当的诠释了晏钧团队的风格和状态。</p>');
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `yj_user`
 --
 
@@ -435,7 +459,7 @@ CREATE TABLE IF NOT EXISTS `yj_user` (
 --
 
 INSERT INTO `yj_user` (`id`, `name`, `password`, `email`, `salt`, `token`) VALUES
-(1, 'aa', 'd00eaf3b925458e794780b106d39a7d4', 'lizzy.999@qq.com', '295674', ''),
+(1, 'aa', '08f305b17ae510f930087788c501617b', 'lizzy.999@qq.com', '357478', ''),
 (27, 'cc', '61ab43b3c68c9859595a5fbe16d1ff7f', '111111@qq.com', '794612', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
