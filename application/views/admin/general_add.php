@@ -63,5 +63,7 @@
     	</section>
     </section>
     
-    
+	<script type="text/javascript">
+        var ue = UE.getEditor('ue_content');
+    </script>
 <?php echo $this->load->view('admin/common/admin_footer'); ?>

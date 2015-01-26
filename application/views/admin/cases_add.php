@@ -84,5 +84,8 @@
 		</section> <!--/wrapper -->
       </section>
 
+        <script type="text/javascript">
+            var ue = UE.getEditor('ue_content');
+        </script>
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    

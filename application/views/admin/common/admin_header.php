@@ -16,10 +16,12 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('static/admin/assets/css/style.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('static/admin/assets/css/style-responsive.css');?>" rel="stylesheet">
-	<!-- Bootstrap core CSS -->
+	<!-- Bootstrap core CSS <link rel="stylesheet" type="text/css" href="<?php echo base_url('static/admin/assets/js/bootstrap-datepicker/css/datepicker.css');?>" /><link rel="stylesheet" type="text/css" href="<?php echo base_url('static/admin/assets/js/bootstrap-daterangepicker/daterangepicker.css');?>" />-->
     <link rel="stylesheet" href="<?php echo base_url('static/admin/assets/css/to-do.css');?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('static/admin/assets/js/bootstrap-datepicker/css/datepicker.css');?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('static/admin/assets/js/bootstrap-daterangepicker/daterangepicker.css');?>" />
+    
+    <script type=text/javascript src="/static/ueditor/ueditor.config.js"></script>
+    <script type=text/javascript src="/static/ueditor/ueditor.all.min.js"></script>
+
     
     <script src="<?php echo base_url('static/admin/assets/js/chart-master/Chart.js');?>"></script>
     <script src="<?php echo base_url('static/admin/js/jquery-1.7.2.min.js');?>"></script>
