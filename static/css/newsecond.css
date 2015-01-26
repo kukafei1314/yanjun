@@ -348,3 +348,12 @@ body {
 	text-align:center;
 	padding-top:75px;
 }
+
+.current{
+	color:#faad00 !important;
+}
+
+.main_page a{
+	padding:0 5px 0 5px;
+	color:#fff;
+}

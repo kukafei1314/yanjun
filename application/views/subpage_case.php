@@ -3,338 +3,38 @@
     <div class="div_1">
         <div class="div_h float">
             <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="">品牌策略<br />Brand<br />Strategy</a>
+            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <div class="div_h float">
             <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="">品牌策略<br />Brand<br />Strategy</a>
+            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <div class="div_h float">
             <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="">品牌策略<br />Brand<br />Strategy</a>
+            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <div class="div_h float">
             <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="">品牌策略<br />Brand<br />Strategy</a>
+            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <div class="div_h float">
             <div class="div_hr float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="">品牌策略<br />Brand<br />Strategy</a>
+            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <!--<div class="clc"></div>-->
     </div>
     <div class="div_2">
+		<?php foreach ($cases as $case): ?>
         <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
+            <a href='<?php echo base_url('cases_expand?id='.$case['id']);?>'><img src="<?php echo $case['logo'];?>" width="100%" height="100%" /></a><div class="slide">
+            	<p>Client / <?php echo $case['name'];?> </p>
+                <p>Project / <?php echo $case['project'];?> </p>
+                <p>Time / <?php echo date('Y.m.d',$case['date']);?> </p>
             </div>
         </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="c_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
-        <div class="l_img float">
-            <img src="<?php echo base_url('/static/image/case2_img.png');?>" /><br />
-			<div class="slide">
-            	<p>Client / 河北银行 </p>
-                <p>Project / 河北银行视觉识别系统 </p>
-                <p>Time / 2009.12.16 </p>
-            </div>
-        </div>
+		<?php endforeach ?>
+ 
+
         
     </div>
     <div class="main_page">

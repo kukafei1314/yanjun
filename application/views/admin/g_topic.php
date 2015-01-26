@@ -17,6 +17,16 @@
                         <div class="panel-body">
                               <div class="task-content">
                                   <ul id="sortable" class="task-list">
+                                  	<li>
+										  <div class="task-title">
+                                              <div class="task-title-sp pull_left" style="width:20%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
+													<b>类别</b>	
+                                              </div>
+                                              <div class="task-title-sp pull_left" style="width:60%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; margin-left:5%; line-height:48px;">
+													<b>内容</b>
+                                              </div>
+                                     	  </div>
+                                    </li>
                       	<?php foreach($font as $row) {?>
                                 <li <?php switch(((int)$row['id'])%4){
                                             case 0: echo "class= \"list-primary list-news \"";break;
@@ -24,14 +34,13 @@
                                             case 2: echo "class= \"list-success list-news \"";break;
                                             case 3: echo "class= \"list-warning list-news \"";break;
                                             default:echo "class= \"list-primary list-news \"";break;
-                                         }?> >
+                                         }?> style="height:auto; line-height:20px">
                                     <div class="task-title">
-                                        <span class="task-title-sp"><?php echo $row['type'];?></span>
-                                    
-                                        <div class="pull-right hidden-phone">
-                                            <button class="btn btn-success btn-xs fa fa-book" onclick='location=""'></button>
+                                        <div class="task-title-sp pull_left" style="width:20%; height:auto; padding-top:20px"><?php echo $row['type'];?></div>
+                                    	<div class="task-title-sp pull_left" style="width:60%; height:auto; padding-top:10px"><?php echo $row['content'];?></div>
+                                        <div class="pull-right hidden-phone" style="padding-top:20px">
                                             <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/t_edit?&id='.$row['id']);?>"'></button>
-                                            <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=""'></button>
+                                            
                                         </div>
                                     </div>
                                   </li>

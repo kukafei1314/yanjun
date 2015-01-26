@@ -89,7 +89,7 @@ function check_repw_right() {
 	$.ajax({  
         type: "POST", 
 		async: false,     
-        url: "admin/index/reset_password",      
+        url: "index/reset_password",      
         data: {old_password:old_password,new_password:new_password},
         success: function(data){
 			if(data == "false") {

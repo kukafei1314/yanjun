@@ -113,4 +113,13 @@ class General extends CI_Controller {
 			}
 	}
 	
+	public function detail() {
+		$data['username'] = $this->session->userdata('username');
+		$type = $this->input->get('type');
+		$id = $this->input->get('id');
+		$data['type'] = $type;
+		$data['text'] = $this->about_us_m->select_i($type,$id);
+		$this->load->view('admin/g_detail', $data);
+	}
+	
 }

@@ -94,6 +94,7 @@
 .list_title{
 	width:35%;
 }
+
 .list_title1{
 	width:15%;
 	valign:value;
@@ -315,3 +316,14 @@
 	z-index: 10;
 }
 /* end_reset_password */
+.gd_title {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left:auto;
+	margin-right:auto;
+}
+.gd_content {
+	font-size: 14px;
+	margin-left:auto;
+	margin-right:auto;
+}
