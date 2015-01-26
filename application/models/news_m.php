@@ -62,7 +62,7 @@ class News_m extends CI_Model {
 						'title'		=>	$row['title'],
 						'content'	=>	$row['content'],
 						'images'	=>	$row['images'],
-						'add_date'	    =>	$row['add_date'],
+						'add_date'	=>	$row['add_date'],
 					);
 		}
 		return FALSE;
