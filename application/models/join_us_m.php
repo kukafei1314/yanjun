@@ -34,7 +34,31 @@ class Join_us_m extends CI_Model {
 	    $query = $this->db->get('yj_employee');
 	    return $query->row_array();
 	}
+	//
+	public function get_department_employee($did)
+	{
+	    $query = $this->db->get_where('yj_employee', array('did' => $did));
+		return $query->result_array();
+	}
 	
+	public function get_department_job($did)
+	{
+	    $query = $this->db->get_where('yj_job', array('did' => $did));
+		return $query->result_array();
+	}
+	
+	public function get_department($tid)
+	{
+		$query = $this->db->get_where('yj_department_type', array('tid' => $tid));
+	    return $query->row_array();
+	}
+	
+	public function get_topic()
+	{
+		$query = $this->db->get_where('yj_topic', array('id' => 4));
+	    return $query->row_array();
+	}
+	//
 	public function add_employee($data)
 	{
 	    if($data['id'] == '') {
