@@ -75,7 +75,8 @@ class Cases extends CI_Controller {
     	}
 		
 		$content = $this->input->post('ue_content');
-		$this->cases_m->add($name, $project, $images, $logo, $content);
+		$abstract = $this->input->post('ue_abstract');
+		$this->cases_m->add($name, $project, $images, $logo, $content,$abstract);
 		redirect('admin/cases');
 	}
 	
@@ -85,6 +86,7 @@ class Cases extends CI_Controller {
 		$data['name'] = '';
 		$data['project'] = '';
 		$data['content'] = '';
+		$data['abstract'] = '';
 		$data['images'] = '';
 		$data['logo'] = '';
 		$data['form_url'] = 'admin/cases/add';
@@ -120,9 +122,12 @@ class Cases extends CI_Controller {
     	} else {
     		$data['logo'] = '';
     	}
-		
 		$data['content'] = $this->input->post('ue_content');
 		if($data['name'] === FALSE || $data['content'] === FALSE) {
+			redirect('admin/cases');
+		}
+		$data['abstract'] = $this->input->post('ue_abstract');
+		if($data['name'] === FALSE || $data['abstract'] === FALSE) {
 			redirect('admin/cases');
 		}
 		$this->cases_m->edit($id, $data);
@@ -141,6 +146,7 @@ class Cases extends CI_Controller {
 		$data['name'] = $cases['name'];
 		$data['project'] = $cases['project'];
 		$data['content'] = $cases['content'];
+		$data['abstract'] = $cases['abstract'];
 		$data['images'] = $cases['images'];
 		$data['logo'] = $cases['logo'];
 		$data['form_url'] = 'admin/cases/edit?id=' . $data['id'].'&p='.$data['p'];
