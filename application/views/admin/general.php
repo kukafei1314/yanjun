@@ -42,10 +42,9 @@
                                                 	<span class="task-title-sp"><?php echo $row['service_area'];?></span>
                                                 
                                                     <div class="pull-right hidden-phone">
-                                                        <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/detail?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <div class="fa g_hid">详情</div>
-                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>" :""'></button>
+                                                        <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/detail?type='.$type.'&id='.$row['id']);?>"' title="详情"></button>
+                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"' title="编辑"></button>
+                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>" :""' title="删除"></button>
                                                      </div>
                                                 </div>
                                               </li>
@@ -66,9 +65,9 @@
                                                 	<span class="task-title-sp"><?php echo $row['title'];?></span>
                                                 
                                                     <div class="pull-right hidden-phone">
-                                                        <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/detail?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>" :""'></button>
+                                                        <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/detail?type='.$type.'&id='.$row['id']);?>"' title="详情"></button>
+                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"' title="编辑"></button>
+                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>" :""' title="删除"></button>
                                                      </div>
                                                 </div>
                                               </li>
