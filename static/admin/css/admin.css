@@ -96,24 +96,31 @@
 }
 
 .list_title1{
-	width:12%;
+	width:15%;
 	valign:value;
+	position: relative;
 }
 .list_title2{
-	width:8%;
+	width:10%;
+	position: relative;
 }
 .list_title3{
-	width:8%;
+	width:15%;
+	position: relative;
 }
 .list_title4{
-	width:8%;
+	width:15%;
+	position: relative;
 }
 .list_title5{
-	width:15%;
+	width:20%;
+	text-align:center;
+	position: relative;
 }
 .list_title6{
-	width:20%;
-	line-height: 110%
+	width:25%;
+	line-height: 110%;
+	position: relative;
 }
 .list_center{
 	text-align:center;

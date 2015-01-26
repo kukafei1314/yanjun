@@ -26,15 +26,15 @@
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> <?php echo $g_t.'详情';?></h5></div>
                             <div class="cl"></div>
 	                 	</div>
-                        <div class="panel-body" style="margin:0 25%; padding-bottom:0px">
+                        <div class="panel-body" style="margin:0 20%; padding-bottom:0px">
                         	<div class="gd_title">
                             	<?php if($type == 1) {
 										echo $row['service_area'];
 								      }else echo $row['title'];?>
                             </div>
                         </div>
-                        <hr style="border:#63F dashed thin" width="60%" size="1" />
-                        <div class="panel-body" style="margin:0 25%; padding-top:0px">
+                        <hr style="border:#63F solid thin" width="70%" size="1" />
+                        <div class="panel-body" style="margin:0 20%; padding-top:0px; padding-bottom:25px">
                             <div class="gd_content">
                             	<?php echo $row['content'];?>
                             </div>
