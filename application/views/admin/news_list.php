@@ -46,10 +46,10 @@
                                               </div>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id'].'&p='.$p);?>">
+                                                  <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id'].'&p='.$p);?>" title="编辑">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a href="<?php echo base_url('admin/news/del?id='.$news['id'].'&p='.$p);?>">   
+                                                  <a onclick="return del_alert()" href="<?php echo base_url('admin/news/del?id='.$news['id'].'&p='.$p);?>" title="删除">   
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
@@ -68,6 +68,10 @@
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
-
+	  <script type="text/javascript">
+		function del_alert(){
+			return confirm('删除操作不可恢复，确定删除么？');
+		}
+	  </script>
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    
