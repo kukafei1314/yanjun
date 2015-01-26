@@ -39,10 +39,7 @@
                             	<?php echo $row['content'];?>
                             </div>
                         </div>
-                        
-                        
-                        
-                        </div>
+                    
                       </section>
                    </div>
             </div>
