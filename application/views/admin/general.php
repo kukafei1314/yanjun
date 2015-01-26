@@ -43,8 +43,9 @@
                                                 
                                                     <div class="pull-right hidden-phone">
                                                         <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/detail?type='.$type.'&id='.$row['id']);?>"'></button>
+                                                        <div class="fa g_hid">详情</div>
                                                         <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location="<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>"'></button>
+                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>" :""'></button>
                                                      </div>
                                                 </div>
                                               </li>
@@ -67,7 +68,7 @@
                                                     <div class="pull-right hidden-phone">
                                                         <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/general/detail?type='.$type.'&id='.$row['id']);?>"'></button>
                                                         <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location="<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>"'></button>
+                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/general/delete?type='.$type.'&id='.$row['id']);?>" :""'></button>
                                                      </div>
                                                 </div>
                                               </li>
