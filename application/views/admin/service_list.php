@@ -31,18 +31,12 @@
                                               </div>
 											  <div class="task-title-sp pull_left list_title4 list_center list_font">
                                               	邮箱
-                                              </div>
-											  <div class="task-title-sp pull_left list_title5 list_center list_font">
-                                              	工作地址
-                                              </div>
+                                              </div>											  
 											  <div class="task-title-sp pull_left list_title6 list_center list_font">
 											     留言
-											  </div>
-											  <div class="task-title-sp pull_left list_title5 list_center list_font">
-                                              	  发布时间
-                                              </div>
-                                              <div class="pull-right hidden-phone list_center list_font">
-											     操作&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+											  </div>											  
+                                              <div class=" hidden-phone list_center list_font" style="text-align:center">
+											     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作
                                               </div>
                                               <div class="cl"></div>
                                           </div>
@@ -71,25 +65,19 @@
                                               </div>
 											  <div class="task-title-sp pull_left list_title4 list_center">
                                               	<?php echo $servicechannel['email']; ?>
-                                              </div>
-											  <div class="task-title-sp pull_left list_title5 list_center">
-                                              	<?php echo $servicechannel['address']; ?>
-                                              </div>
+                                              </div>											
 											  <div class="task-title-sp pull_left list_title6 list_center">
 											     <?php $str=substr($servicechannel['message'],0,159);
 												        echo($str);?>
-											  </div>
-											  <div class="task-title-sp pull_left list_title5 list_center">
-                                              	  <?php echo date('Y-m-d',$servicechannel['add_date']); ?>
-                                              </div>
-                                              <div class="pull-right hidden-phone list_center">
-											      <a href="<?php echo base_url('admin/servicechannel/service?id='.$servicechannel['id'].'&p='.$p);?>">
+											  </div>				
+                                              <div class="pull-right hidden-phone list_center5">
+											      <a href="<?php echo base_url('admin/servicechannel/service?id='.$servicechannel['id'].'&p='.$p);?>"  title="查看">
                                                         <button class="btn btn-success btn-xs fa fa-book"></button>
 												  </a>
-                                                  <a href="<?php echo base_url('admin/servicechannel/edit_v?id='.$servicechannel['id'].'&p='.$p);?>">
+                                                  <a href="<?php echo base_url('admin/servicechannel/edit_v?id='.$servicechannel['id'].'&p='.$p);?>" title="编辑">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a href="<?php echo base_url('admin/servicechannel/del?id='.$servicechannel['id'].'&p='.$p);?>">   
+                                                  <a onclick="return del_alert()" href="<?php echo base_url('admin/servicechannel/del?id='.$servicechannel['id'].'&p='.$p);?>" title="删除">   
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
@@ -108,6 +96,10 @@
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
-
+      <script type="text/javascript">
+		function del_alert(){
+			return confirm('删除操作不可恢复，确定删除么？');
+		}
+	  </script>
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    
