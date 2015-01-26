@@ -19,33 +19,33 @@
                 <div class="line">
                 	<div class="float">
                         <p><label>公司/机构</label></p>
-                        <input name="company" type="text" size="38" class="input_s">
+                        <input id="company0" name="company" type="text" size="38" class="input_s">
                         &nbsp;&nbsp;
                     </div>
                     <div class="float">
                         <p><label>电话</label></p>
-                        <input name="phone" type="text" size="38" class="input_s">
+                        <input id="phone0" name="phone" type="text" size="38" class="input_s">
                     </div>
                 </div>
                 <div class="line">
                 	<div class="float">
                         <p><label>姓名/职务</label></p>
-                        <input name="client_name" type="text" size="38" class="input_s">
+                        <input id="client_name0" name="client_name" type="text" size="38" class="input_s">
                         &nbsp;&nbsp;
                     </div>
                     <div class="float">
                         <p><label>邮箱</label></p>
-                        <input name="email" type="text" size="38" class="input_s">
+                        <input id="email0" name="email" type="email" size="38" class="input_s">
                     </div>
                 </div>
                 <div class="line">
                     <p><label>工作地址</label></p>
-                    <input name="address" type="text" size="80" class="input_l">
+                    <input id="address0" name="address" type="text" size="80" class="input_l">
                 </div>
                 <p><label>留言</label></p>
                 <textarea class="t_area" name="message" cols="68" rows="5"></textarea>
                 <div class="sr float">
-                	<input name="sub" type="submit" value="提交">
+                	<input onclick="return is_empty()" name="sub" type="submit" value="提交">
                 </div>
                 <div class="sr float">
                 	<input name="reset" type="reset" value="重填">
@@ -65,5 +65,32 @@
               
         <div class="cl"></div>
     </div>
+	<script type="text/javascript">
+				  function is_empty(){
+					var company = document.getElementById('company0').value;
+					var phone = document.getElementById('phone0').value;
+					var client_name = document.getElementById('client_name0').value;
+					var email = document.getElementById('email0').value;
+					var address = document.getElementById('address0').value;
+					if(company ==""){
+						alert("公司/机构不能为空！");
+						return false;
+					}else if(phone ==""){
+						alert("电话不能为空！");
+						return false;
+					}else if(client_name ==""){
+						alert("姓名/职务不能为空！");
+						return false;
+					}else if(email ==""){
+						alert("邮箱不能为空！");
+						return false;
+					}else if(address ==""){
+						alert("工作地址不能为空！");
+						return false;
+					}else {
+						return ture;
+					}					
+				 }
+			      </script>
 
 <?php $this->load->view('common/common_footer');?>
