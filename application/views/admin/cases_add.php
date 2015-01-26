@@ -56,6 +56,15 @@
 									</div>
 									<div class="cl"></div>
                                   </div>
+								  
+								  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">案例简介</label>
+                                      <div class="col-sm-10">
+                                          <textarea id="ue_abstract" name="ue_abstract" rows='3' cols='100'><?php echo $abstract;?></textarea>
+                                      </div>
+                                      <div class="cl"></div>
+                                  </div>
+								  
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例内容</label>
                                       <div class="col-sm-10">

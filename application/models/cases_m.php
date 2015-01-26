@@ -22,6 +22,12 @@ class Cases_m extends CI_Model {
 	   $this->db->order_by('id desc,date desc');
        $query = $this->db->get('yj_cases',$limit, $offset);
        return $query->result_array();
+	}		
+	// 从id获取文章内容
+	public function get_id($id)
+	{
+       $query = $this->db->get_where('yj_cases',array('id' => $id));
+       return $query->result_array();
 	}
 	
 		//删除文章
@@ -35,7 +41,7 @@ class Cases_m extends CI_Model {
 	}
 	
 		//添加文章
-	public function add($name, $project, $logo, $images, $content) 
+	public function add($name, $project, $logo, $images, $content, $abstract) 
 	{
 		$data = array(
 					'name'		=>	$name,
@@ -43,6 +49,7 @@ class Cases_m extends CI_Model {
 					'logo'		=>	$logo,
 					'images'	=>	$images,
 					'content'	=>	$content,
+					'abstract'	=>	$abstract,
 					'date'	    =>	time(),
 				);
 		if($this->db->insert('yj_cases', $data) === FALSE) {
@@ -65,6 +72,7 @@ class Cases_m extends CI_Model {
 						'project'	=>	$row['project'],
 						'logo'		=>	$row['logo'],
 						'content'	=>	$row['content'],
+						'abstract'	=>	$row['abstract'],
 						'images'	=>	$row['images'],
 						'date'	    =>	$row['date'],
 					);
@@ -81,6 +89,7 @@ class Cases_m extends CI_Model {
 				'project'	=>	$data['project'],
 				'logo'		=>	$data['logo'],
 				'content'	=>	$data['content'],
+				'abstract'	=>	$data['abstract'],
 				'date'    => time(),
 			);
 		} else {
@@ -89,6 +98,7 @@ class Cases_m extends CI_Model {
 				'project'	=>	$data['project'],
 				'logo'		=>	$data['logo'],
 				'content'	=>	$data['content'],
+				'abstract'	=>	$data['abstract'],
 				'images'	=>	$data['images'],
 			    'date'    => time(),
             );
