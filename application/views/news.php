@@ -15,9 +15,18 @@
         </div>
         <div id="news_middle">
         <div class="news_left">
-        	<div class="news_title" id="news_title"><?php echo $news[0]['title'];?></div>
+        	<?php 
+				if($id>0){
+					$title = $title;
+					$content = $content;
+				}else{
+					$title = $news[0]['title'];
+					$content = $news[0]['content'];
+				}
+			?>
+        	<div class="news_title" id="news_title"><?php echo $title;?></div>
             <div class="news_content" id="news_content">
-         		<?php echo $news[0]['content'];?>
+         		<?php echo $content;?>
 				<!-- <img src="<?php echo base_url('static/image/news_detail.png');?>" width=528 height=334/>
 	            <img src="<?php echo base_url('static/image/news_detail.png');?>" width=528 height=334/>
 	            <img src="<?php echo base_url('static/image/news_detail.png');?>" width=528 height=334/> -->

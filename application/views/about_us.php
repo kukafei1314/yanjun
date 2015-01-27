@@ -31,7 +31,7 @@
                 <div class="news_list_img">
                 	<img src="<?php echo base_url($new['images']);?>" width=200 height=190/>
                 </div>
-                <a class="fade" onclick='location="<?php echo base_url('news/index?new_id='.$new['id'])?>"'></a>
+                <a class="fade" onclick='location="<?php echo base_url('about_us/to_news?&p='.$this->input->get('p').'&id='.$new['id']);?>"'></a>
                 <div class="share">
                 	<img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                     <div class="share_1">
