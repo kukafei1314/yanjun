@@ -106,4 +106,15 @@ class Type_m extends CI_Model {
 		$this->db->from($tab);
 		return $this->db->count_all_results();
 	}
+	
+	public function select_i($type,$id) {
+		$tab = $this->get_table($type);
+		$this->db->where('tid',$id);
+		$query = $this->db->get($tab);
+		if($query) {
+			return $query->result_array();
+		} else {
+			return false;
+		}
+	}
 }

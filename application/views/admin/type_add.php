@@ -45,12 +45,8 @@
 	<script type="text/javascript">
 	  function is_empty(){
 		var tit = document.getElementById('t_txt').value;
-		var con = document.getElementById('edui1_iframeholder').value;
 		if(tit ==""){
 			alert("名称不能为空！");
-			return false;
-		}else if(con =="") {
-			alert("内容不能为空！");
 			return false;
 		}				
 	 }
