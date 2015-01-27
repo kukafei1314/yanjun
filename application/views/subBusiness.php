@@ -50,9 +50,7 @@
                     <p><label>验证码</label></p>
                     <input type="text" id="checkin" name="check_num" class="input_s" placeholder="" >
 				</div>
-				<div class="float">
-                    <div id="check_num" onClick="get_check_num()"></div>
-				</div>	
+                <div class="float" style ="position:relative;left:20px;top:24px; background-color: green;" id="check_num" onClick="get_check_num()"></div>	
                 </div>
 				
                 <div class="sr float">
