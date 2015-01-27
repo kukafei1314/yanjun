@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="<?php echo base_url('static/css/joycenter.css'); ?>"/>
 <script type="text/javascript" src="<?php echo base_url('static/js/jquery-1.8.0.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('static/js/news.js'); ?>"></script>
-
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AwiCeIVhbizweIdRqOIavdAZ"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
 <title>晏钧设计</title>
