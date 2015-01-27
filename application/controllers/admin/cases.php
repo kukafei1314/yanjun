@@ -22,7 +22,7 @@ class Cases extends CI_Controller {
 		$this->load->helper('form');
 	}
 	
-		//获取表格数据，显示案例列表
+	//获取表格数据，显示案例列表
 	public function index()
 	{
 		$per_page = 10;
@@ -34,7 +34,18 @@ class Cases extends CI_Controller {
 		$this->load->view('admin/cases_list',$data);
 	}
 	
-		//删除新闻
+	public function detail()
+	{
+		$data['p'] = (int) page_cur();	// 获取当前页码
+		$data['username'] = $this->session->userdata('username');
+		$data['id'] = (int) $this->input->get('id');
+		$data['cases'] = $this->cases_m->get($data['id']);
+		if($data['cases'] === FALSE) {
+			redirect('admin/cases');
+		}
+		$this->load->view('admin/cases_detail.php', $data);
+	}
+	//删除新闻
 	public function del() 
 	{
 		$p = (int) page_cur();	// 获取当前页码
@@ -46,7 +57,7 @@ class Cases extends CI_Controller {
 		redirect('admin/cases?p='.$p);  
 	}
 	
-		//添加新闻
+	//添加新闻
 	public function add() 
 	{
 		$name = $this->input->post('name');
@@ -76,7 +87,8 @@ class Cases extends CI_Controller {
 		
 		$content = $this->input->post('ue_content');
 		$abstract = $this->input->post('ue_abstract');
-		$this->cases_m->add($name, $project, $images, $logo, $content,$abstract);
+		$date = $this->input->post('date');
+		$this->cases_m->add($name, $project, $images, $logo, $content,$abstract,$date);
 		redirect('admin/cases');
 	}
 	
@@ -89,6 +101,7 @@ class Cases extends CI_Controller {
 		$data['abstract'] = '';
 		$data['images'] = '';
 		$data['logo'] = '';
+		$data['date'] = '';
 		$data['form_url'] = 'admin/cases/add';
 		$this->load->view('admin/cases_add', $data);
 	}
@@ -123,6 +136,7 @@ class Cases extends CI_Controller {
     		$data['logo'] = '';
     	}
 		$data['content'] = $this->input->post('ue_content');
+		$data['date'] = $this->input->post('date');
 		if($data['name'] === FALSE || $data['content'] === FALSE) {
 			redirect('admin/cases');
 		}
@@ -149,6 +163,7 @@ class Cases extends CI_Controller {
 		$data['abstract'] = $cases['abstract'];
 		$data['images'] = $cases['images'];
 		$data['logo'] = $cases['logo'];
+		$data['date'] = $cases['date'];
 		$data['form_url'] = 'admin/cases/edit?id=' . $data['id'].'&p='.$data['p'];
 		$this->load->view('admin/cases_add.php', $data);
 	}

@@ -24,6 +24,7 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> <?php echo $g_t.'详情';?></h5></div>
+                            <a class="btn btn-success btn-sm add_news" href="<?php echo $_SERVER['HTTP_REFERER'];?>">返回</a>
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body" style="margin:0 20%; padding-bottom:0px">
