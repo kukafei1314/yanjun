@@ -34,7 +34,7 @@
                                                        		<button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/type/detail?type='.$type.'&tid='.$row['tid']);?>"' title="详情"></button>
 													   <?php endif;?>
                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/type/edit?type='.$type.'&tid='.$row['tid']);?>"' title="编辑"></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/type/delete?type='.$type.'&tid='.$row['tid']);?>" :""' title="删除"></button>
+                                                        <!--<button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/type/delete?type='.$type.'&tid='.$row['tid']);?>" :""' title="删除"></button>-->
                                                      </div>
                                                 </div>
                                               </li>

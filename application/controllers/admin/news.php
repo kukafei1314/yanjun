@@ -109,7 +109,7 @@ class News extends CI_Controller {
     		$data['images'] = '';
     	}
 		$data['content'] = $this->input->post('ue_content');
-		if($data['title'] === FALSE || $data['content'] === FALSE) {
+		if($data['title'] === FALSE) {
 			redirect('admin/news');
 		}
 		$this->news_m->edit($id, $data);

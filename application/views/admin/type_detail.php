@@ -23,7 +23,9 @@
                         <hr style="border:#63F solid thin" width="70%" size="1" />
                         <div class="panel-body" style="margin:0 20%; padding-top:0px; padding-bottom:25px">
                             <div class="gd_content">
-                            	<?php echo $row['content'];?>
+                            	部门邮箱：<?php echo $row['e_mail'];?><br /><br />
+								<div class="pull_left">部门简介：</div>
+                                <div style="padding-left:70px"><?php echo $row['content'];?></div>
                             </div>
                         </div>
                     

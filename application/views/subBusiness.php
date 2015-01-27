@@ -1,10 +1,11 @@
 <?php $this->load->view('common/common_header'); ?>
-
+<script src="<?php echo base_url('static/js/service.js');?>"></script>
 	<div class="main_big_pic">
         <div id="pic">
             <ul>
-                <li><img src="<?php echo base_url('static/image/join_image.png');?>" width=986 height=430/></li>
-                <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=430/></li>
+             <?php foreach($imgs as $img): ?>
+                <li><img src="<?php echo base_url($img['path']);?>" width=986 height=410/></li>
+            <?php endforeach; ?>
                 <div class="cl"></div>
             </ul>
         </div>
@@ -19,33 +20,44 @@
                 <div class="line">
                 	<div class="float">
                         <p><label>公司/机构</label></p>
-                        <input name="company" type="text" size="38" class="input_s">
+                        <input id="company0" name="company" type="text" size="38" class="input_s">
                         &nbsp;&nbsp;
                     </div>
                     <div class="float">
                         <p><label>电话</label></p>
-                        <input name="phone" type="text" size="38" class="input_s">
+                        <input id="phone0" name="phone" type="text" size="38" class="input_s">
                     </div>
                 </div>
                 <div class="line">
                 	<div class="float">
                         <p><label>姓名/职务</label></p>
-                        <input name="client_name" type="text" size="38" class="input_s">
+                        <input id="client_name0" name="client_name" type="text" size="38" class="input_s">
                         &nbsp;&nbsp;
                     </div>
                     <div class="float">
                         <p><label>邮箱</label></p>
-                        <input name="email" type="text" size="38" class="input_s">
+                        <input id="email0" name="email" type="email" size="38" class="input_s">
                     </div>
                 </div>
                 <div class="line">
                     <p><label>工作地址</label></p>
-                    <input name="address" type="text" size="80" class="input_l">
+                    <input id="address0" name="address" type="text" size="80" class="input_l">
                 </div>
                 <p><label>留言</label></p>
                 <textarea class="t_area" name="message" cols="68" rows="5"></textarea>
+
+				<div class="line">
+				<div class="float">
+                    <p><label>验证码</label></p>
+                    <input type="text" id="checkin" name="check_num" class="input_s" placeholder="" >
+				</div>
+				<div class="float">
+                    <div id="check_num" onClick="get_check_num()"></div>
+				</div>	
+                </div>
+				
                 <div class="sr float">
-                	<input name="sub" type="submit" value="提交">
+                	<input onclick="return is_empty_right()" name="sub" type="submit" value="提交">
                 </div>
                 <div class="sr float">
                 	<input name="reset" type="reset" value="重填">
@@ -65,5 +77,5 @@
               
         <div class="cl"></div>
     </div>
-
+	
 <?php $this->load->view('common/common_footer');?>

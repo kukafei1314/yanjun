@@ -9,8 +9,7 @@ class News extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('news_m');
-		$this->load->model('topic_m');
+		$this->load->model(array('news_m','home_pic_m','topic_m'));
 	}
 	
 	public function index()
@@ -20,6 +19,7 @@ class News extends CI_Controller {
 		$data['p'] = $p;
 		$data['news']  = $this->news_m->get_list($per_page,$per_page*($p-1));
 		$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
+		$data['imgs'] = $this->home_pic_m->pic_info(7);
 		$this->load->view('news',$data);
 	}
 	

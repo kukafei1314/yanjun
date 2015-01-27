@@ -22,7 +22,7 @@
 <body>
 	<div class="main_header"><!--header开始-->
     	<div class="main_header_left">
-        	<img src="<?php echo base_url('static/image/header1.png');?>"/>
+        	<a href="<?php echo base_url('index');?>"><img src="<?php echo base_url('static/image/header1.png');?>"/></a>
         </div>
         <div class="main_header_right">
         	<div class="main_header_top">
@@ -31,15 +31,15 @@
             </div>
             <div class="main_header_nav">
             	<div class="main_ul1">
-                	<a href="#">案例</a>
-                    <a href="#">服务</a>
-                    <a href="#">我们</a>
+                	<a href="<?php echo base_url('cases');?>">案例</a>
+                    <a href="<?php echo base_url('service');?>">服务</a>
+                    <a href="<?php echo base_url('about_us');?>">我们</a>
                 </div>
                 <div class="main_ul2">
-                	<a href="#">业务通道</a>
-                    <a href="#">加入我们</a>
-                    <a href="#">分享中心</a>
-                    <a href="#">新闻</a>
+                	<a href="<?php echo base_url('servicechannel');?>">业务通道</a>
+                    <a href="<?php echo base_url('join_us');?>">加入我们</a>
+                    <a href="<?php echo base_url('share');?>">分享中心</a>
+                    <a href="<?php echo base_url('news');?>">新闻</a>
                 </div>
                 <!--<div class="cl"></div>-->
             </div>

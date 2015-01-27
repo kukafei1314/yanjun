@@ -3,8 +3,9 @@
 	<div class="pic_div">
         <div id="pic">
             <ul>
-                <li><img src="<?php echo base_url('static/image/servicetop.png');?>" width=986 height=432/></li>
-                <li><img src="<?php echo base_url('static/image/servicetop.png');?>" width=986 height=432/></li>
+            <?php foreach($imgs as $img): ?>
+                <li><img src="<?php echo base_url($img['path']);?>" width=986 height=410/></li>
+            <?php endforeach; ?>
             </ul>
         </div>
         <div id="joycenter">
@@ -56,8 +57,8 @@
 	</div>
     <div class="cl"></div>
 </div>
-<div class="centerFoot">
-    	more
+<div class="main_page">
+    <?php echo $page_html;?>
 </div>
 
 <?php $this->load->view('common/common_footer');?>
