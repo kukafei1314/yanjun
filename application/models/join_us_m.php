@@ -22,6 +22,14 @@ class Join_us_m extends CI_Model {
 	    return $query->result_array();
 	}
 	
+	public function get_department_name($did)
+	{
+		$this->db->where('tid',$did);
+		$query = $this->db->get('yj_department_type');
+		$result = $query->result_array();
+		return $result[0]['name'];
+	}
+	
 	public function get_all_employee()
 	{  
 	    $query = $this->db->get('yj_employee');
