@@ -11,7 +11,7 @@ class servicechannel extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('service_channel_m');
-		//$this->load->model('problem_m');
+		$this->load->library('captcha_np');
 		$this->load->helper('form');
 	}
 	
@@ -37,5 +37,46 @@ class servicechannel extends CI_Controller {
 	{   
 	    $data['pro'] = $this->service_channel_m->get_prolist();
 		$this->load->view('busi_problem',$data);
+	}
+ /* 	// 验证码模块
+	public function captcha() 
+	{
+		$this->captcha_np1->setStyle(1);
+		$this->captcha_np1->setBgColor(array(0, 23, 33));
+		$this->captcha_np1->setFontColor(array(255, 255, 235));
+		$_SESSION['check'] = $this->captcha_np1->getStr();
+		$this->captcha_np1->display();
+		//echo $_SESSION['check'];
+		
+	}  */
+	
+	/**
+	 * 验证码图片生成
+	 * 
+	 * TODO 需要加上header防止缓存
+	 */
+	 public function captcha() 
+	{
+		$this->captcha_np->setStyle(1);
+		$this->captcha_np->setBgColor(array(0, 23, 33));
+		$this->captcha_np->setFontColor(array(255, 255, 235));
+		//$this->session->unset_userdata('admin_img_check');
+		//$this->session->set_userdata('admin_img_check', $this->captcha_np->getStr());
+		$check_num = $this->captcha_np->getStr();
+		echo json_encode($check_num);
+		//$this->captcha_np->display();
+	} 
+	
+	public function get_login() 
+	{
+		$check_num = $this->input->post('check_num');
+		$img_check = $this->session->userdata('admin_img_check');
+		if ($img_check == FALSE || $img_check != $check_num) {
+			$error = 1;
+			//$this->pub_error($error);
+			echo json_encode($error);
+		} else {
+			redirect('admin');
+		}
 	}
 }
