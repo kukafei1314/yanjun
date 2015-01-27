@@ -30,7 +30,7 @@
                 <div class="line">
                 	<div class="float">
                         <p><label>姓名/职务</label></p>
-                        <input id="client_name0" name="client_name" type="text" size="38" class="input_s">
+                        <input id="client_name0" name="client_name" type="text" size="38" class="input_s" placeholder ="">
                         &nbsp;&nbsp;
                     </div>
                     <div class="float">

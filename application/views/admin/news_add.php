@@ -13,6 +13,9 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 添加新闻</h5></div>
+							<a href="<?php echo base_url('admin/news?p='.$p);?>">
+	                        	<button type="submit" class="btn btn-theme03 back_botton pull-right">返回</button>
+	                        </a>
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">
