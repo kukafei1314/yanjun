@@ -1,5 +1,5 @@
 <?php $this->load->view('common/common_header'); ?>
-
+<script src="<?php echo base_url('static/js/service.js');?>"></script>
 	<div class="main_big_pic">
         <div id="pic">
             <ul>
@@ -44,8 +44,19 @@
                 </div>
                 <p><label>留言</label></p>
                 <textarea class="t_area" name="message" cols="68" rows="5"></textarea>
+
+				<div class="line">
+				<div class="float">
+                    <p><label>验证码</label></p>
+                    <input type="text" id="login_num" name="check_num" class="input_s" placeholder="" >
+				</div>
+				<div class="float">
+                    <div id="check_num" onClick="get_check_num()"></div>
+				</div>	
+                </div>
+				
                 <div class="sr float">
-                	<input onclick="return is_empty()" name="sub" type="submit" value="提交">
+                	<input onclick="twofun" name="sub" type="submit" value="提交">
                 </div>
                 <div class="sr float">
                 	<input name="reset" type="reset" value="重填">
@@ -65,32 +76,5 @@
               
         <div class="cl"></div>
     </div>
-	<script type="text/javascript">
-				  function is_empty(){
-					var company = document.getElementById('company0').value;
-					var phone = document.getElementById('phone0').value;
-					var client_name = document.getElementById('client_name0').value;
-					var email = document.getElementById('email0').value;
-					var address = document.getElementById('address0').value;
-					if(company ==""){
-						alert("公司/机构不能为空！");
-						return false;
-					}else if(phone ==""){
-						alert("电话不能为空！");
-						return false;
-					}else if(client_name ==""){
-						alert("姓名/职务不能为空！");
-						return false;
-					}else if(email ==""){
-						alert("邮箱不能为空！");
-						return false;
-					}else if(address ==""){
-						alert("工作地址不能为空！");
-						return false;
-					}else {
-						return ture;
-					}					
-				 }
-			      </script>
-
+	
 <?php $this->load->view('common/common_footer');?>
