@@ -55,7 +55,8 @@
 					if(tit ==""){
 						alert("文章标题不能为空！");
 						return false;
-					}					
+					}
+										
 				 }
 			      </script>
               </div><!-- /row -->

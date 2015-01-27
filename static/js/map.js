@@ -1,6 +1,6 @@
 // JavaScript Document
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	// 百度地图API功能
 	var map = new BMap.Map("map_shi");    // 创建Map实例
 	map.centerAndZoom(new BMap.Point(114.529032,38.055124), 8);  // 初始化地图,设置中心点坐标和地图级别
