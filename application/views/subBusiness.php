@@ -3,9 +3,8 @@
 	<div class="main_big_pic">
         <div id="pic">
             <ul>
-             <?php foreach($imgs as $img): ?>
-                <li><img src="<?php echo base_url($img['path']);?>" width=986 height=410/></li>
-            <?php endforeach; ?>
+                <li><img src="<?php echo base_url('static/image/join_image.png');?>" width=986 height=430/></li>
+                <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=430/></li>
                 <div class="cl"></div>
             </ul>
         </div>
@@ -51,9 +50,7 @@
                     <p><label>验证码</label></p>
                     <input type="text" id="checkin" name="check_num" class="input_s" placeholder="" >
 				</div>
-				<div class="float">
-                    <div id="check_num" onClick="get_check_num()"></div>
-				</div>	
+                <div class="float" style ="position:relative;left:20px;top:24px; background-color: #123123;" id="check_num" onClick="get_check_num()"></div>	
                 </div>
 				
                 <div class="sr float">
