@@ -2,11 +2,9 @@
 	background:#fff;
 	margin-bottom:10px;
 }
-#pic {
-	overflow:hidden;
-}
 #joycenter a:hover {
 	opacity:0.4;
+	filter:alpha(opacity=40); 
 }
 .joyLeft{
 	width:80%;

@@ -37,6 +37,11 @@
           	</div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
+       <script type="text/javascript">
+            var ue = UE.getEditor('ue_content');
+        </script>
+
+
 	<script type="text/javascript">
 	  function is_empty(){
 		var tit = document.getElementById('t_txt').value;

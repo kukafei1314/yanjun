@@ -14,11 +14,6 @@ class Upload extends CI_Controller
 	{
 		parent::__construct();
 		
-		$this->load->model('admin_user_m');
-		if($this->admin_user_m->check_login(FALSE) === FALSE) {
-			exit;
-		}
-		
 		header("Content-Type: text/html; charset=utf-8");
 		
 		// 加载UE上传库

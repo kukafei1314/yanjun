@@ -23,6 +23,14 @@ class Cases_m extends CI_Model {
        $query = $this->db->get('yj_cases',$limit, $offset);
        return $query->result_array();
 	}		
+			// 随机获取每页文章列表，不包括文章内容字段
+	public function get_list_rand($limit,$offset)
+	{
+	   $this->db->order_by('id', 'random');
+       $query = $this->db->get('yj_cases',$limit, $offset);
+       return $query->result_array();
+	}		
+	
 	// 从id获取文章内容
 	public function get_id($id)
 	{

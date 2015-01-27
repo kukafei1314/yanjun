@@ -90,13 +90,13 @@
                                               <div class="task-title-sp pull_left list_time" style="line-height:48px; margin-left:5%;" >
                                               	  <?php echo date('Y-m-d',$cases['date']); ?>
                                               </div>
-                                              <div class="pull-right hidden-phone">
+                                              <div class="pull-right hidden-phone" style="margin-top:16px;">
                                                   <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <a href="<?php echo base_url('admin/cases/edit_v?id='.$cases['id'].'&p='.$p);?>">
-                                                  		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
+                                                  <a href="<?php echo base_url('admin/cases/edit_v?id='.$cases['id'].'&p='.$p);?>" title="编辑">
+													<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a href="<?php echo base_url('admin/cases/del?id='.$cases['id'].'&p='.$p);?>">   
-                                                  		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
+                                                  <a onclick="return del_alert()" href="<?php echo base_url('admin/cases/del?id='.$cases['id'].'&p='.$p);?>" title="删除">   
+													<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
                                               <div class="cl"></div>
@@ -114,6 +114,10 @@
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
-
+	  <script type="text/javascript">
+		function del_alert(){
+			return confirm('删除操作不可恢复，确定删除么？');
+		}
+	  </script>
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    

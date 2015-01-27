@@ -64,6 +64,7 @@
     
     	</section>
     </section>
+<<<<<<< HEAD
     <script type="text/javascript">
 	  function is_empty(){
 		var tit = document.getElementById('g_title').value;
@@ -74,4 +75,10 @@
 	 }
 	</script>
     
+=======
+    
+    <script type="text/javascript">
+         var ue = UE.getEditor('ue_content');
+    </script>
+>>>>>>> 73fd11a39c94b93799e4bc19f1d2bafce5457df5
 <?php echo $this->load->view('admin/common/admin_footer'); ?>
