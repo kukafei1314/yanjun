@@ -28,12 +28,13 @@
 														default:echo "class= \"list-primary list-news \"";break;
 											  		 }?> >
                                             	<div class="task-title">
-                                                	<span class="task-title-sp"><?php echo $row['name'];?></span>
-                                                
+                                                    <span class="task-title-sp"><?php echo $row['name'];?></span>
                                                     <div class="pull-right hidden-phone">
-                                                        <button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('');?>"'></button>
-                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/type/edit?type='.$type.'&tid='.$row['tid']);?>"'></button>
-                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location="<?php echo base_url('admin/type/delete?type='.$type.'&tid='.$row['tid']);?>"'></button>
+                                                       <?php if ($type != 1):?>
+                                                       		<button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/type/detail?type='.$type.'&tid='.$row['tid']);?>"' title="详情"></button>
+													   <?php endif;?>
+                                                       <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/type/edit?type='.$type.'&tid='.$row['tid']);?>"' title="编辑"></button>
+                                                        <button class="btn btn-danger btn-xs fa fa-trash-o" onclick='location=delcfm()? "<?php echo base_url('admin/type/delete?type='.$type.'&tid='.$row['tid']);?>" :""' title="删除"></button>
                                                      </div>
                                                 </div>
                                               </li>

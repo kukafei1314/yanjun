@@ -86,4 +86,13 @@ class Type extends CI_Controller {
 			redirect('admin/type/index?type='.$type);
 		}else echo "数据删除失败！";	
 	}
+	
+	public function detail() {
+		$data['username'] = $this->session->userdata('username');
+		$type = $this->input->get('type');
+		$id = $this->input->get('tid');
+		$data['type'] = $type;
+		$data['text'] = $this->type_m->select_i($type,$id);
+		$this->load->view('admin/type_detail.php', $data);
+	}
 }
