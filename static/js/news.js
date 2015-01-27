@@ -11,12 +11,12 @@ function change(id){
 	clearTimeout(interval);
 	if(id==0) {
 		if(focus_cur==1) {
-			next = 2;
+			next = 3;
 		} else {
 			next = focus_cur - 1;
 		}
 	} else if(id==1) {
-		if (focus_cur==2){
+		if (focus_cur==3){
 			next = 1;
 		} else {
 			next = focus_cur + 1;
@@ -26,7 +26,7 @@ function change(id){
 }
 
 function move() {
-	if (focus_cur==2){
+	if (focus_cur==3){
 		next = 1;
 	} else {
 		next = focus_cur + 1;
