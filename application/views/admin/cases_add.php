@@ -119,8 +119,8 @@
 					if(tit_ue_abstract ==""){
 						alert("简介不能为空！");
 						return false;
-					}else if(tit_ue_abstract_length > 150){
-						alert("简介不能超过150字符！");
+					}else if(tit_ue_abstract_length > 120){
+						alert("简介不能超过120字符！");
 						return false;
 					}						
 				 }

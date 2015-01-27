@@ -83,6 +83,15 @@ class Join_us extends CI_Controller
         $this->load->view('admin/employee_list',$data);
     }
     
+    public function employee_detail()
+    {
+    	$id = $_GET['id'];
+        $data['employee'] = $this->join_us_m->get_employee($id);
+        $data['department'] = $this->join_us_m->get_department_name($data['employee']['did']);
+        $data['username'] = $this->session->userdata('username');
+        $this->load->view('admin/employee_detail',$data);
+    }
+    
     public function add_employee()
     {
         $data['form_url'] = 'admin/join_us/add?type=employee';

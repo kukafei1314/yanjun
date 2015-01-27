@@ -1,5 +1,4 @@
 <?php $this->load->view('common/common_header');?>
-<?php echo $depart['content']; ?>
 <div id="news_middle">
 	<div class="pic_div">
         <div id="pic">
@@ -49,7 +48,7 @@
     <div class="join_right">
     	<div class="right_top">
         	<div class="right_top_title">招聘职位</div>
-            <div class="right_top_content">人力资源<br/> HR E-mail：555@yanjun.net</div>
+            <div class="right_top_content">人力资源<br/> HR E-mail：<?php echo $depart['e_mail']; ?></div>
         </div>
 		
 		
