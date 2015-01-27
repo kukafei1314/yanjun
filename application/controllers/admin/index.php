@@ -42,4 +42,10 @@ class Index extends CI_Controller {
 		$data = $this->login_m->change_pw($id,$old_password,$new_password);
 		echo json_encode($data);
 	}
+	
+	public function brand_info()
+	{
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('admin/brand_info_edit',$data);
+	}
 }

@@ -160,8 +160,14 @@
                   
                   <li class="sub-menu dcjq-parent-li">
                       <a href="<?php echo base_url('admin/general/topic');?>">
-                          <i class="fa fa-heart"></i>
+                          <i class="fa fa-delicious"></i>
                           <span>标语管理</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu dcjq-parent-li">
+                      <a href="<?php echo base_url('admin/index/brand_info');?>">
+                          <i class="fa fa-arrow-circle-o-right"></i>
+                          <span>首页品牌介绍</span>
                       </a>
                   </li>
               </ul>
