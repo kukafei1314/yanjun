@@ -1,5 +1,4 @@
 <?php $this->load->view('common/common_header');?>
-<?php echo $depart['content']; ?>
 <div id="news_middle">
 	<div class="pic_div">
         <div id="pic">
