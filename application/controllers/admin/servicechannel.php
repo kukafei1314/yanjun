@@ -57,9 +57,9 @@ class servicechannel extends CI_Controller {
 		$data['email'] = $this->input->post('email');
 		$data['address'] = $this->input->post('address');
 		$data['message'] = $this->input->post('ue_content');
-		if($data['company'] === FALSE || $data['phone'] === FALSE || $data['client_name'] === FALSE || $data['email'] === FALSE || $data['address'] === FALSE || $data['message'] === FALSE) {
-			redirect('admin/servicechannel');
-		}
+		//if($data['company'] === FALSE || $data['phone'] === FALSE || $data['client_name'] === FALSE || $data['email'] === FALSE || $data['address'] === FALSE ) {
+		//	redirect('admin/servicechannel');
+		//}
 		$this->service_channel_m->edit($id, $data);
 		redirect('admin/servicechannel?p='.$p);
 	}

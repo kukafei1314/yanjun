@@ -6,7 +6,7 @@
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i><?php echo ($type == 1)?  '大图' : '部门';?>类别管理</h3>
-          	
+          	<div style="padding-right:10px"><a class="btn btn-primary btn-sm add_news" href="<?php echo $_SERVER['HTTP_REFERER'];?>">返回</a></div>
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
@@ -15,7 +15,7 @@
 							 <div class="form-group">
                                   <label class="col-sm-2 col-sm-2 control-label"><?php echo ($type == 1)? '类别名称' : '部门名称';?></label>
                                   <div class="col-sm-10">
-                                      <input name="name" type="text" class="form-control" value="<?php echo $name;?>">
+                                      <input name="name" type="text" id="t_txt" class="form-control" value="<?php echo $name;?>">
                                   </div>
                             </div>							
 							<?php if ($type != 1):?>
@@ -27,7 +27,8 @@
                             </div>
 							<?php endif;?>
                             <div class=" add-task-row page_html">
-                            	<button type="submit" class="btn btn-theme03 news_botton">提交</button>
+                            	<button type="submit" class="btn btn-theme03 news_botton" onclick="return is_empty()">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="reset" class="btn btn-theme03 news_botton">重置</button>
                             </div>
                  	 </form>
  
@@ -39,5 +40,20 @@
        <script type="text/javascript">
             var ue = UE.getEditor('ue_content');
         </script>
+
+
+	<script type="text/javascript">
+	  function is_empty(){
+		var tit = document.getElementById('t_txt').value;
+		var con = document.getElementById('edui1_iframeholder').value;
+		if(tit ==""){
+			alert("名称不能为空！");
+			return false;
+		}else if(con =="") {
+			alert("内容不能为空！");
+			return false;
+		}				
+	 }
+	</script>
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    

@@ -17,6 +17,7 @@
     <section id="main-content">
     	<section class="wrapper">
         	<h3><i class="fa fa-angle-right"></i><?php echo '添加'.$g_t;?></h3>
+            <div style="padding-right:10px"><a class="btn btn-primary btn-sm add_news" href="<?php echo $_SERVER['HTTP_REFERER'];?>">返回</a></div>
             <div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
@@ -27,7 +28,7 @@
                                     <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">服务范围</label>
                                       <div class="col-sm-10">
-                                          <input name="title" type="text" class="form-control">
+                                          <input name="title" type="text" id="g_title" class="form-control">
                                       </div>
                                   	</div>
                               <?php break;?>
@@ -53,7 +54,8 @@
                       </div>
                                  
                       <div class=" add-task-row page_html">
-                         <button type="submit" class="btn btn-theme03 news_botton">提交</button>
+                         <button type="submit" class="btn btn-theme03 news_botton" onclick="return is_empty()">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         <button type="reset" class="btn btn-theme03 news_botton">重置</button>
                       </div>
                   </form>
                 </div>
@@ -62,6 +64,20 @@
     
     	</section>
     </section>
+    <script type="text/javascript">
+	  function is_empty(){
+		var tit = document.getElementById('g_title').value;
+		var con = document.getElementById('edui1_iframeholder').value;
+		if(tit ==""){
+			alert("标题不能为空！");
+			return false;
+		}else if(con =="") {
+			alert("内容不能为空！");
+			return false;
+		}				
+	 }
+	</script>
+
     
 	<script type="text/javascript">
         var ue = UE.getEditor('ue_content');

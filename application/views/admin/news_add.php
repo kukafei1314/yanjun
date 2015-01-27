@@ -20,7 +20,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">新闻标题</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="title" class="form-control" value="<?php echo $title;?>">
+                                          <input type="text" id="demo" name="title" class="form-control" value="<?php echo $title;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>
@@ -43,12 +43,21 @@
                                   </div>
                                  
                                   <div class=" add-task-row page_html">
-                                     <button type="submit" class="btn btn-theme03 news_botton">提交</button>
-                                  </div>
-                              </form>
+                                     <button onclick="return is_empty()" type="submit" class="btn btn-theme03 news_botton">提交</button>
+                                  </div>								  
+                            </form>
                           </div>
                       </section>
-                  </div><!--/col-md-12 -->
+                  </div><!--/col-md-12 -->	
+				  <script type="text/javascript">
+				  function is_empty(){
+					var tit = document.getElementById('demo').value;
+					if(tit ==""){
+						alert("文章标题不能为空！");
+						return false;
+					}					
+				 }
+			      </script>
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>

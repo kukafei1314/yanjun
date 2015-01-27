@@ -20,35 +20,35 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">公司/机构</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="company" class="form-control" value="<?php echo $company;?>">
+                                          <input id="company0" type="text" name="company" class="form-control" value="<?php echo $company;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">电话</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="phone" class="form-control" value="<?php echo $phone;?>">
+                                          <input id="phone0" type="text" name="phone" class="form-control" value="<?php echo $phone;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">姓名/职务</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="client_name" class="form-control" value="<?php echo $client_name;?>">
+                                          <input id="client_name0" type="text" name="client_name" class="form-control" value="<?php echo $client_name;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">邮箱</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="email" class="form-control" value="<?php echo $email;?>">
+                                          <input id="email0" type="email" name="email" class="form-control" value="<?php echo $email;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">工作地址</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="address" class="form-control" value="<?php echo $address;?>">
+                                          <input id="address0" type="text" name="address" class="form-control" value="<?php echo $address;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>							  
@@ -62,12 +62,39 @@
                                   </div>
                                  
                                   <div class=" add-task-row page_html">
-                                     <button type="submit" class="btn btn-theme03 news_botton">提交</button>
+                                     <button onclick="return is_empty()" type="submit" class="btn btn-theme03 news_botton">提交</button>
                                   </div>
                               </form>
                           </div>
                       </section>
                   </div><!--/col-md-12 -->
+				  <script type="text/javascript">
+				  function is_empty(){
+					var company = document.getElementById('company0').value;
+					var phone = document.getElementById('phone0').value;
+					var client_name = document.getElementById('client_name0').value;
+					var email = document.getElementById('email0').value;
+					var address = document.getElementById('address0').value;
+					if(company ==""){
+						alert("公司/机构不能为空！");
+						return false;
+					}else if(phone ==""){
+						alert("电话不能为空！");
+						return false;
+					}else if(client_name ==""){
+						alert("姓名/职务不能为空！");
+						return false;
+					}else if(email ==""){
+						alert("邮箱不能为空！");
+						return false;
+					}else if(address ==""){
+						alert("工作地址不能为空！");
+						return false;
+					}else {
+						return ture;
+					}					
+				 }
+			      </script>
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
