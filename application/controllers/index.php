@@ -9,30 +9,26 @@ class Index extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('about_us_m');
-		$this->load->model('topic_m');
+		$this->load->model(array('about_us_m','topic_m','news_m','cases_m'));
 	}
 	
 	public function index()
 	{
-		$data['title'] = "我喜欢";
+		$per_page_news = 6;		//新闻
+		$per_page = 3;			//案例
+		$p = (int) page_cur();	// 获取当前页码
+		$data['p'] = $p;
+		$data['news']  = $this->news_m->get_list($per_page_news,$per_page_news*($p-1));
+		$data['cases']  = $this->cases_m->get_list($per_page,$per_page*($p-1));
+		if($this->news_m->get_num()/$per_page_news > $this->cases_m->get_num()/$per_page) {
+			$num = $this->news_m->get_num();
+			$data['page_html']	 =	page($num,$per_page_news);
+		} else {
+			$num = $this->cases_m->get_num();
+			$data['page_html']	 =	page($num,$per_page);
+		}
+		
 		$this->load->view('index',$data);
-	}
-	
-	public function news()
-	{
-		$data['title'] = "我喜欢";
-		$this->load->view('news',$data);
-	}
-	public function joinus()
-	{
-		$data['title'] = "我喜欢";
-		$this->load->view('join_us',$data);
-	}
-	
-	public function test()
-	{
-		$this->load->view('test');
 	}
 	
 	public function joinus2()
