@@ -67,14 +67,10 @@
     <script type="text/javascript">
 	  function is_empty(){
 		var tit = document.getElementById('g_title').value;
-		var con = document.getElementById('edui1_iframeholder').value;
 		if(tit ==""){
 			alert("标题不能为空！");
 			return false;
-		}else if(con =="") {
-			alert("内容不能为空！");
-			return false;
-		}				
+		}			
 	 }
 	</script>
 

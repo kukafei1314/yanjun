@@ -29,18 +29,17 @@
                                     <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">服务范围</label>
                                       <div class="col-sm-10">
-                                          <input name="title" type="text" class="form-control" value="<?php echo $row['service_area'];?>">
+                                          <input name="title" type="text" id="g_title" class="form-control" value="<?php echo $row['service_area'];?>">
                                       </div>
                                   	</div>
                               <?php break;?>
-                          <?php //case 2: break;?>
                           <?php case 2;
 						  		case 3;
                                 case 4:?>
                                     <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">标题</label>
                                       <div class="col-sm-10">
-                                          <input name="title" type="text" class="form-control" value="<?php echo $row['title'];?>">
+                                          <input name="title" type="text" id="g_title" class="form-control" value="<?php echo $row['title'];?>">
                                       </div>
                                   	</div>
                              <?php break;
@@ -55,7 +54,7 @@
                       </div>
                                  
                       <div class=" add-task-row page_html">
-                         <button type="submit" class="btn btn-theme03 news_botton">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         <button type="submit" class="btn btn-theme03 news_botton" onclick="return is_empty()">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                          <button type="reset" class="btn btn-theme03 news_botton" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'>重置</button>
                       </div>
                   </form>
@@ -65,6 +64,14 @@
     
     	</section>
     </section>
-    
+    <script type="text/javascript">
+	  function is_empty(){
+		var tit = document.getElementById('g_title').value;
+		if(tit ==""){
+			alert("标题不能为空！");
+			return false;
+		}			
+	 }
+	</script>
     
 <?php echo $this->load->view('admin/common/admin_footer'); ?>
