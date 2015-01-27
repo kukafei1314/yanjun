@@ -9,15 +9,13 @@ class Index extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('login_m');
+		$this->load->model(array('login_m','home_pic_m','brand_intro_m'));
 		
 		// 先验证登录
 		$id = $this->login_m->check_login();
 		if ($id < 0 || $id == FALSE) {
 			redirect('admin/login');
 		}
-		
-		$this->load->model('home_pic_m');
 		$this->load->library('uploader_ue');
 	}
 	
@@ -46,6 +44,7 @@ class Index extends CI_Controller {
 	public function brand_info()
 	{
 		$data['username'] = $this->session->userdata('username');
+		$data['brand']    = $this->brand_intro_m->get_list();
 		$this->load->view('admin/brand_info_edit',$data);
 	}
 }

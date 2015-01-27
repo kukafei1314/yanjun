@@ -7,7 +7,7 @@
  * @time 2015.01.27
  *
  */
-class News_m extends CI_Model {
+class Brand_intro_m extends CI_Model {
 	// 构造函数
 	public function __construct()
 	{
