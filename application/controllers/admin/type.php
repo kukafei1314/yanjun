@@ -42,38 +42,44 @@ class Type extends CI_Controller {
 	{
 		$data['type'] = $this->input->get('type',true);
 		if(is_post()) {
-			$name = $this->input->post('name', TRUE);
-			$content = $this->input->post('content', TRUE);
-			$this->type_m->add_type($name,$content,$data['type']);
+			$data['name'] = $this->input->post('name', TRUE);
+			$data['content'] = $this->input->post('content', TRUE);
+			$data['e_mail'] = $this->input->post('e_mail', TRUE);
+			$this->type_m->add_type($data);
 			redirect('admin/type?type='.$data['type']);
 			
 		} else {
 			$data['name'] = '';
 			$data['content'] = '';
+			$data['e_mail'] = '';
 			$data['username'] = $this->session->userdata('username');
 			$data['form_url'] = 'admin/type/add?type='.$data['type'];
-			$this->load->view('admin/type_add.php',$data);
+			$this->load->view('admin/type_add',$data);
 		}
 	}
 	
 	public function edit()
 	{
-		$data['type'] = $this->input->get('type',true);
+		$type = $this->input->get('type',true);
 		$tid = $this->input->get('tid',true);
 		if(is_post()) {
-			$name = $this->input->post('name', TRUE);
-			$content = $this->input->post('content', TRUE);
-			$this->type_m->update_type($tid,$name,$content,$data['type']);
-			redirect('admin/type?type='.$data['type']);	
+			$data['name'] = $this->input->post('name', TRUE);
+			$data['e_mail'] = $this->input->post('e_mail', TRUE);
+			//echo $data['e_mail'];
+			$data['content'] = $this->input->post('content', TRUE);
+			$this->type_m->update_type($type,$tid,$data);
+			redirect('admin/type?type='.$type);	
 		} else {
-			$result = $this->type_m->get_single_name($tid,$data['type']);
+			$result = $this->type_m->get_single_name($tid,$type);
+			$data['type'] = $type;
 			$data['name'] = $result[0]['name'];
 			if ($data['type'] != 1) {
 				$data['content'] = $result[0]['content'];
+				$data['e_mail'] = $result[0]['e_mail'];
 			}
 			$data['username'] = $this->session->userdata('username');
-			$data['form_url'] = 'admin/type/edit?type='.$data['type'].'&tid='.$tid;
-			$this->load->view('admin/type_add.php',$data);
+			$data['form_url'] = 'admin/type/edit?type='.$type.'&tid='.$tid;
+			$this->load->view('admin/type_add',$data);
 		}
 	}
 	
@@ -85,5 +91,14 @@ class Type extends CI_Controller {
 		if($result){
 			redirect('admin/type/index?type='.$type);
 		}else echo "数据删除失败！";	
+	}
+	
+	public function detail() {
+		$data['username'] = $this->session->userdata('username');
+		$type = $this->input->get('type');
+		$id = $this->input->get('tid');
+		$data['type'] = $type;
+		$data['text'] = $this->type_m->select_i($type,$id);
+		$this->load->view('admin/type_detail.php', $data);
 	}
 }
