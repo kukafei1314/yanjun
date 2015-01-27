@@ -18,7 +18,7 @@
 	                        <?php else:?>
 	                        <a href="<?php echo base_url('admin/cases');?>">
 	                        <?php endif;?>
-	                        	<button type="submit" class="btn btn-theme03 back_botton pull-right">返回</button>
+	                        	<button class="btn btn-theme03 back_botton pull-right">返回</button>
 	                        </a>
                             <div class="cl"></div>
 	                 	</div>
@@ -119,8 +119,8 @@
 					if(tit_ue_abstract ==""){
 						alert("简介不能为空！");
 						return false;
-					}else if(tit_ue_abstract_length > 150){
-						alert("简介不能超过150字符！");
+					}else if(tit_ue_abstract_length > 120){
+						alert("简介不能超过120字符！");
 						return false;
 					}						
 				 }
