@@ -60,23 +60,8 @@ class servicechannel extends CI_Controller {
 		$this->captcha_np->setStyle(1);
 		$this->captcha_np->setBgColor(array(0, 23, 33));
 		$this->captcha_np->setFontColor(array(255, 255, 235));
-		//$this->session->unset_userdata('admin_img_check');
-		//$this->session->set_userdata('admin_img_check', $this->captcha_np->getStr());
 		$check_num = $this->captcha_np->getStr();
 		echo json_encode($check_num);
-		//$this->captcha_np->display();
 	} 
 	
-	public function get_login() 
-	{
-		$check_num = $this->input->post('check_num');
-		$img_check = $this->session->userdata('admin_img_check');
-		if ($img_check == FALSE || $img_check != $check_num) {
-			$error = 1;
-			//$this->pub_error($error);
-			echo json_encode($error);
-		} else {
-			redirect('admin');
-		}
-	}
 }
