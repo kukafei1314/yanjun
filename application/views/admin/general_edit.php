@@ -49,7 +49,7 @@
                        <div class="form-group">
                           <label class="col-sm-2 col-sm-2 control-label">内容</label>
                           <div class="col-sm-10">
-                              <script id="ue_content" name="content" type="text/plain"><?php echo $row['content'];?></script>
+                              <script id="ue_content" name="content" type="text/javascript"><?php echo $row['content'];?></script>
                           </div>
                       </div>
                                  
@@ -64,8 +64,9 @@
     
     	</section>
     </section>
-<<<<<<< HEAD
+
     <script type="text/javascript">
+	  var ue = UE.getEditor('ue_content');
 	  function is_empty(){
 		var tit = document.getElementById('g_title').value;
 		if(tit ==""){
@@ -75,10 +76,4 @@
 	 }
 	</script>
     
-=======
-    
-    <script type="text/javascript">
-         var ue = UE.getEditor('ue_content');
-    </script>
->>>>>>> 73fd11a39c94b93799e4bc19f1d2bafce5457df5
 <?php echo $this->load->view('admin/common/admin_footer'); ?>
