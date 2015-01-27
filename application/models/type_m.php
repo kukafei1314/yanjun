@@ -34,43 +34,45 @@ class Type_m extends CI_Model {
 		}		
 	}
 	//添加大图类别或部门类别和部门简介
-	public function add_type($name,$content, $type)
+	public function add_type($data)
 	{
-		$table = $this->get_table($type);
-		if ($content) {
-			$data = array(
-					'name'    => $name,
-					'content' => $content,
+		$table = $this->get_table($data['type']);
+		if ($data['type'] == '2') {
+			$arr = array(
+					'name'    => $data['name'],
+					'e_mail'  => $data['e_mail'],
+					'content' => $data['content']
 			);
 		} else {
-			$data = array(
-					'name' => $name,
+			$arr = array(
+					'name' => $data['name']
 			);
 			
 		}
-		if ($this->db->insert($table,$data))
+		if ($this->db->insert($table,$arr))
 		{
 			return true;
 		}
 	}
 	
 	//编辑大图类别或部门类别和部门简介
-	public function update_type($tid,$name,$content,$type)
+	public function update_type($type,$tid,$data)
 	{
 		$table = $this->get_table($type);
-		if ($content) {
-			$data = array(
-					'name'    => $name,
-					'content' => $content,
+		if ($type == '2') {
+			$arr = array(
+					'name'    => $data['name'],
+					'e_mail'  => $data['e_mail'],
+					'content' => $data['content']
 			);
 		} else {
-			$data = array(
-					'name' => $name,
+			$arr = array(
+					'name' => $data['name']
 			);
+			
 		}
-		
 		$this->db->where('tid',$tid);
-		$this->db->update($table,$data);
+		$this->db->update($table,$arr);
 	}
 	
 	//删除大图类别或部门类别
