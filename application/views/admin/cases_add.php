@@ -18,7 +18,7 @@
 	                        <?php else:?>
 	                        <a href="<?php echo base_url('admin/cases');?>">
 	                        <?php endif;?>
-	                        	<button type="submit" class="btn btn-theme03 back_botton pull-right">返回</button>
+	                        	<button class="btn btn-theme03 back_botton pull-right">返回</button>
 	                        </a>
                             <div class="cl"></div>
 	                 	</div>

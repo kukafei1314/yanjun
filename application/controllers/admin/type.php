@@ -32,6 +32,7 @@ class Type extends CI_Controller {
 		$offset = $per_page*($p-1);
 		$num = $this->type_m->get_all_num($type);
 		$data['link'] = page($num, $per_page);
+		$data['p'] = $p;
 		$data['types'] = $this->type_m->select_limit($type, $per_page, $offset);
 		
 		//$data['types'] = $this->type_m->get_all($type);
@@ -40,6 +41,7 @@ class Type extends CI_Controller {
 	
 	public function add()
 	{
+		$p = (int) page_cur();
 		$data['type'] = $this->input->get('type',true);
 		if(is_post()) {
 			$data['name'] = $this->input->post('name', TRUE);
@@ -60,6 +62,8 @@ class Type extends CI_Controller {
 	
 	public function edit()
 	{
+		$p = (int) page_cur();
+		$data['p'] = $p;
 		$type = $this->input->get('type',true);
 		$tid = $this->input->get('tid',true);
 		if(is_post()) {
@@ -68,7 +72,7 @@ class Type extends CI_Controller {
 			//echo $data['e_mail'];
 			$data['content'] = $this->input->post('content', TRUE);
 			$this->type_m->update_type($type,$tid,$data);
-			redirect('admin/type?type='.$type);	
+			redirect('admin/type?type='.$type.'&p='.$p);	
 		} else {
 			$result = $this->type_m->get_single_name($tid,$type);
 			$data['type'] = $type;
@@ -84,16 +88,19 @@ class Type extends CI_Controller {
 	}
 	
 	public function delete() {
+		$p = (int) page_cur();
 		$type = $this->input->get('type');
 		$arr['type'] = $type;
 		$arr['tid'] = $this->input->get('tid');
 		$result = $this->type_m->t_delete($arr);
 		if($result){
-			redirect('admin/type/index?type='.$type);
+			redirect('admin/type/index?type='.$type.'&p='.$p);
 		}else echo "数据删除失败！";	
 	}
 	
 	public function detail() {
+		$p = (int) page_cur();
+		$data['p'] = $p;
 		$data['username'] = $this->session->userdata('username');
 		$type = $this->input->get('type');
 		$id = $this->input->get('tid');
