@@ -24,22 +24,22 @@
 								     <li>
 										  <div class="task-title">
                                               <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
-													<b>Name</b>	
+													<b>名称</b>	
                                               </div>
                                               <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; margin-left:5%; line-height:48px;">
-													<b>Project</b>
+													<b>项目</b>
                                               </div>
 											  <div class=" pull_left list_title" style="width:15%; margin-left:5%; line-height:48px;">
-													<b>Logo</b>
+													<b>小图</b>
                                               </div>
                                               <div class=" pull_left list_title" style="width:15%; margin-left:5%; line-height:48px;">
-													<b>Image</b>
+													<b>大图</b>
                                               </div>
                                               <div class="task-title-sp pull_left list_time" style="line-height:48px; margin-left:5%;">
-													<b>Date</b>
+													<b>日期</b>
                                               </div>
                                               <div class="pull-right hidden-phone" style="line-height:48px; margin-right:4%;">
-													<b>Action</b>
+													<b>操作</b>
                                               </div>
                                               <div class="cl"></div>
                                           </div>
