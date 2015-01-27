@@ -19,6 +19,12 @@
                                   </div>
                             </div>							
 							<?php if ($type != 1):?>
+                            <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+                                  <div class="col-sm-10">
+                                      <input name="e_mail" type="email" id="t_mail" class="form-control" value="<?php echo $e_mail;?>">
+                                  </div>
+                            </div>	
 							<div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">部门介绍</label>
                               <div class="col-sm-10">
