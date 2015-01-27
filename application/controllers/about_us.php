@@ -23,4 +23,20 @@ class About_us extends CI_Controller
 		$data['res_topic'] = $this->topic_m->get_all();
 		$this->load->view('about_us',$data);
 	}
+	
+	public function to_news()
+	{
+		$id = $this->input->get('id');
+		$per_page = 7;
+		$p = $this->input->get('p')? $this->input->get('p'):1;	// 获取当前页码
+		$data['p'] = $p;
+		$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1));
+		$data['page_html'] = page($this->news_m->get_num(), $per_page);
+		
+		$res = $this->news_m->get($id);
+		$data['title'] = $res['title'];
+		$data['content'] = $res['content'];
+		$data['id'] = $id;
+		$this->load->view('news',$data);
+	}
 }
