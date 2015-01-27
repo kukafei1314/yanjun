@@ -75,5 +75,5 @@
 		}			
 	 }
 	</script>
-    
+
 <?php echo $this->load->view('admin/common/admin_footer'); ?>
