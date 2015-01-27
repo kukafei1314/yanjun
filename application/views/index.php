@@ -3,8 +3,9 @@
     <div class="main_big_pic">
         <div id="pic">
             <ul>
-                <li><img src="<?php echo base_url('static/image/main_image.png');?>" width=986 height=410/></li>
-                <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=410/></li>
+            <?php foreach($imgs as $img): ?>
+                <li><img src="<?php echo base_url($img['path']);?>" width=986 height=410/></li>
+            <?php endforeach; ?>
                 <div class="cl"></div>
             </ul>
         </div>

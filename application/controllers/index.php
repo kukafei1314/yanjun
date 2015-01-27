@@ -9,7 +9,7 @@ class Index extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(array('about_us_m','topic_m','news_m','cases_m'));
+		$this->load->model(array('about_us_m','topic_m','news_m','cases_m','home_pic_m'));
 	}
 	
 	public function index()
@@ -27,7 +27,7 @@ class Index extends CI_Controller {
 			$num = $this->cases_m->get_num();
 			$data['page_html']	 =	page($num,$per_page);
 		}
-		
+		$data['imgs'] = $this->home_pic_m->pic_info(1);
 		$this->load->view('index',$data);
 	}
 	
@@ -41,17 +41,10 @@ class Index extends CI_Controller {
 		$this->load->view('subpage_case');
 	}
 	
-	public function case_expand()
-	{
-		$data['title'] = "我喜欢";
-		$this->load->view('case_expand',$data);
-	}
-	
-	
-	
 	public function map()
 	{
 		$type = $this->input->get('type',true);
+		$data['imgs'] = $this->home_pic_m->pic_info(2);
 		if($type == 1) {
 			$this->load->view('map_shi');
 		} else {
@@ -77,19 +70,5 @@ class Index extends CI_Controller {
 		$data['result'] = $this->about_us_m->get_all($type);
 		$data['res_topic'] = $this->topic_m->get_all();
 		$this->load->view('joycenter', $data);
-	}
-	public function about_us()
-	{
-		$data['title'] = "我喜欢";
-		$type = 2;
-		$data['result'] = $this->about_us_m->get_all($type);
-		$this->load->view('about_us', $data);
-	}
-	public function service()
-	{
-		$type = 1;
-		$data['result'] = $this->about_us_m->get_all($type);
-		$data['res_topic'] = $this->topic_m->get_all();
-		$this->load->view('service', $data);
 	}
 }

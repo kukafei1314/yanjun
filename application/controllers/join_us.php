@@ -10,12 +10,13 @@ class Join_us extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('join_us_m');
+        $this->load->model(array('join_us_m','home_pic_m'));
     }
     
     public function index()
     {
-         $this->load->view('join_us_second');
+		$data['imgs'] = $this->home_pic_m->pic_info(5);
+        $this->load->view('join_us_second',$data);
     }
 	
 	public function department()
@@ -25,8 +26,7 @@ class Join_us extends CI_Controller
 		$data['job'] = $this->join_us_m->get_department_job($did);
 		$data['depart'] = $this->join_us_m->get_department($did);
 		$data['topic'] = $this->join_us_m->get_topic();
-		//var_dump($data['depart']);
-		//die;
+		$data['imgs'] = $this->home_pic_m->pic_info(5);
         $this->load->view('join_us',$data);      
     }
 	

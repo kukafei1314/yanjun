@@ -5,9 +5,7 @@ class About_us extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('about_us_m');
-		$this->load->model('topic_m');
-		$this->load->model('news_m');
+		$this->load->model(array('about_us_m','topic_m','news_m','home_pic_m'));
 	}
 	
 	
@@ -20,6 +18,7 @@ class About_us extends CI_Controller
 		$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
 		$type = 2;
 		$data['title'] = "我喜欢";
+		$data['imgs'] = $this->home_pic_m->pic_info(6);
 		$data['result'] = $this->about_us_m->get_all($type);
 		$data['res_topic'] = $this->topic_m->get_all();
 		$this->load->view('about_us',$data);

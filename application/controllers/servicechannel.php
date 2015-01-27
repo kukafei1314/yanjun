@@ -5,12 +5,12 @@
  * @author Lsen
  * @version 1.0 2015-01-16
  */
-class servicechannel extends CI_Controller {
+class Servicechannel extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->database();
-		$this->load->model('service_channel_m');
+		$this->load->model(array('service_channel_m','home_pic_m'));
 		$this->load->library('captcha_np');
 		$this->load->helper('form');
 	}
@@ -18,6 +18,7 @@ class servicechannel extends CI_Controller {
 	public function index()
 	{   
 		$data['pro'] = $this->service_channel_m->get_prolist(); 
+		$data['imgs'] = $this->home_pic_m->pic_info(8);
 		$this->load->view('subBusiness',$data);
 	}
 	//添加用户信息
@@ -36,6 +37,7 @@ class servicechannel extends CI_Controller {
 	public function businesspro() 
 	{   
 	    $data['pro'] = $this->service_channel_m->get_prolist();
+		$data['imgs'] = $this->home_pic_m->pic_info(8);
 		$this->load->view('busi_problem',$data);
 	}
  /* 	// 验证码模块
