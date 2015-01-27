@@ -48,15 +48,13 @@
 				<div class="line">
 				<div class="float">
                     <p><label>验证码</label></p>
-                    <input type="text" id="login_num" name="check_num" class="input_s" placeholder="" >
+                    <input type="text" id="checkin" name="check_num" class="input_s" placeholder="" >
 				</div>
-				<div class="float">
-                    <div id="check_num" onClick="get_check_num()"></div>
-				</div>	
+                <div class="float" style ="position:relative;left:20px;top:24px; background-color: #123123;" id="check_num" onClick="get_check_num()"></div>	
                 </div>
 				
                 <div class="sr float">
-                	<input onclick="return is_empty()" name="sub" type="submit" value="提交">
+                	<input onclick="return is_empty_right()" name="sub" type="submit" value="提交">
                 </div>
                 <div class="sr float">
                 	<input name="reset" type="reset" value="重填">

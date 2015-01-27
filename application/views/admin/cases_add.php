@@ -21,7 +21,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例名称</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="name" class="form-control" value="<?php echo $name;?>">
+                                          <input type="text" id='name' name="name" class="form-control" value="<?php echo $name;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>
@@ -29,7 +29,7 @@
 	                              <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例项目</label>
                                       <div class="col-sm-10">
-                                          <input type="text" name="project" class="form-control" value="<?php echo $project;?>">
+                                          <input type="text" id='project' name="project" class="form-control" value="<?php echo $project;?>">
                                       </div>
                                       <div class="cl"></div>
                                   </div>								  
@@ -60,7 +60,7 @@
 								  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例简介</label>
                                       <div class="col-sm-10">
-                                          <textarea id="ue_abstract" name="ue_abstract" rows='3' cols='100'><?php echo $abstract;?></textarea>
+                                          <textarea  id="ue_abstract" name="ue_abstract" rows='3' cols='100'><?php echo $abstract;?></textarea>
                                       </div>
                                       <div class="cl"></div>
                                   </div>
@@ -68,22 +68,44 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例内容</label>
                                       <div class="col-sm-10">
-                                          <script id="ue_content" name="ue_content" type="text/plain"><?php echo $content;?></script>
+                                          <script  id="ue_content" name="ue_content" type="text/plain"><?php echo $content;?></script>
                                       </div>
                                       <div class="cl"></div>
                                   </div>
                                  
                                   <div class=" add-task-row page_html">
-                                     <button type="submit" class="btn btn-theme03 news_botton">提交</button>
+                                     <button onclick="return is_empty()" type="submit" class="btn btn-theme03 news_botton">提交</button>
                                   </div>
                               </form>
                           </div>
                       </section>
                   </div><!--/col-md-12 -->
+				  <script type="text/javascript">
+				  function is_empty(){
+					var tit_name = document.getElementById('name').value;
+					if(tit_name ==""){
+						alert("名称不能为空！");
+						return false;
+					}
+					var tit_project = document.getElementById('project').value;
+					if(tit_project ==""){
+						alert("项目不能为空！");
+						return false;
+					}
+					var tit_ue_abstract = document.getElementById('ue_abstract').value;
+					var tit_ue_abstract_length = document.getElementById('ue_abstract').value.length;
+					if(tit_ue_abstract ==""){
+						alert("简介不能为空！");
+						return false;
+					}else if(tit_ue_abstract_length > 150){
+						alert("简介不能超过150字符！");
+						return false;
+					}						
+				 }
+			    </script>
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
-
         <script type="text/javascript">
             var ue = UE.getEditor('ue_content');
         </script>

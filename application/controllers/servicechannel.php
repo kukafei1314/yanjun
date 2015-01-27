@@ -5,12 +5,12 @@
  * @author Lsen
  * @version 1.0 2015-01-16
  */
-class servicechannel extends CI_Controller {
+class Servicechannel extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->database();
-		$this->load->model('service_channel_m');
+		$this->load->model(array('service_channel_m','home_pic_m'));
 		$this->load->library('captcha_np');
 		$this->load->helper('form');
 	}
@@ -18,6 +18,7 @@ class servicechannel extends CI_Controller {
 	public function index()
 	{   
 		$data['pro'] = $this->service_channel_m->get_prolist(); 
+		$data['imgs'] = $this->home_pic_m->pic_info(8);
 		$this->load->view('subBusiness',$data);
 	}
 	//添加用户信息
@@ -36,6 +37,7 @@ class servicechannel extends CI_Controller {
 	public function businesspro() 
 	{   
 	    $data['pro'] = $this->service_channel_m->get_prolist();
+		$data['imgs'] = $this->home_pic_m->pic_info(8);
 		$this->load->view('busi_problem',$data);
 	}
  /* 	// 验证码模块
@@ -60,23 +62,8 @@ class servicechannel extends CI_Controller {
 		$this->captcha_np->setStyle(1);
 		$this->captcha_np->setBgColor(array(0, 23, 33));
 		$this->captcha_np->setFontColor(array(255, 255, 235));
-		//$this->session->unset_userdata('admin_img_check');
-		//$this->session->set_userdata('admin_img_check', $this->captcha_np->getStr());
 		$check_num = $this->captcha_np->getStr();
 		echo json_encode($check_num);
-		//$this->captcha_np->display();
 	} 
 	
-	public function get_login() 
-	{
-		$check_num = $this->input->post('check_num');
-		$img_check = $this->session->userdata('admin_img_check');
-		if ($img_check == FALSE || $img_check != $check_num) {
-			$error = 1;
-			//$this->pub_error($error);
-			echo json_encode($error);
-		} else {
-			redirect('admin');
-		}
-	}
 }
