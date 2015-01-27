@@ -92,6 +92,11 @@
                                  
                                   <div class=" add-task-row page_html">
                                      <button onclick="return is_empty()" type="submit" class="btn btn-theme03 news_botton">提交</button>
+                                     <?php if (empty($name)):?>
+                                     <button type="reset" class="btn btn-theme03 news_botton" onclick='window.location.reload();'>重置</button>
+                                     <?php else:?>
+                                     <button type="reset" class="btn btn-theme03 news_botton" onclick='location="<?php echo base_url('admin/cases/edit_v?id='.$id.'&p='.$p);?>"'>重置</button>
+                                  	 <?php endif;?>
                                   </div>
                               </form>
                           </div>

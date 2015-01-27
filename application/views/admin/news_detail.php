@@ -13,56 +13,35 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 查看新闻详情</h5></div>
-	                        <a href="<?php echo base_url('admin/cases?p='.$p);?>">
+	                        <a href="<?php echo base_url('admin/news?p='.$p);?>">
 	                        	<button type="submit" class="btn btn-theme03 back_botton pull-right">返回</button>
 	                        </a>
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">                        								 
                                   <div class="form-group">
-                                      <div class="col-sm-10">
-                                          <?php echo $news['name'];?>"
+                                      <div class="col-sm-title">
+                                          <?php echo $news['title'];?>"
                                       </div>
                                       <div class="cl"></div>
                                   </div>
                                   <div class="form-group">
-                                      <div class="col-sm-10">
-                                         <?php echo date('Y-m-d',$news['date']); ?>
+                                      <div class="col-sm-time">
+                                        	 发布时间：<?php echo date('Y-m-d',$news['add_date']); ?>
                                       </div>
                                       <div class="cl"></div>
                                   </div>	
 								  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">大图</label>
-                                      <div class="col-sm-10">
-                                          <?php if(!empty($news['logo'])) :?>
-											<img src="<?php echo base_url($news['logo']);?>" width="200" height="190" style="margin-top:10px;"/>
+                                      <div class="col-sm-image">
+                                          <?php if(!empty($news['images'])) :?>
+											<img src="<?php echo base_url($news['images']);?>" width="200" height="190" style="margin-top:10px;"/>
 										  <?php endif;?>
                                       </div>
                                       <div class="cl"></div>
                                   </div>
-								  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">案例海报</label>
-                                      <div class="col-sm-10">
-                                         <?php if(!empty($cases['images'])) :?>
-										  	  <img src="<?php echo base_url($cases['images']);?>" width="588" height="385"/>
-										  <?php else:?>
-										  	  <img src=" " width="80" height="48"/>
-									      <?php endif;?>
-                                      </div>
-                                      <div class="cl"></div>
-                                  </div>						  
-                                  
                                   <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">案例简介</label>
                                       <div class="col-sm-10">
-                                          <?php echo $cases['abstract'];?>
-                                      </div>
-                                      <div class="cl"></div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">案例内容</label>
-                                      <div class="col-sm-10">
-                                          <?php echo $cases['content'];?>
+                                          <?php echo $news['content'];?>
                                       </div>
                                       <div class="cl"></div>
                                   </div>

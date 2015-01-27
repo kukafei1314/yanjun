@@ -69,6 +69,7 @@
 	width:100px;
 	height:35px;
 	font-size:14px;
+	margin:0 20px 0 20px;
 }
 
 .back_botton{
@@ -340,8 +341,22 @@
 	font-size:12px;
 }
 
-.col-sm-half{
-	width:40%;
+.col-sm-title{
+	width:100%;
+	text-align:center;
+	font-size:16px;
+	color:#333;
+}
+
+.col-sm-time{
+	width:90%;
+	text-align:right;
+	font-size:12px;
+}
+
+.col-sm-image{
+	width:100%;
+	text-align:center;
 }
 
 .Wdate {
