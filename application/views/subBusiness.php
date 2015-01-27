@@ -56,7 +56,7 @@
                 </div>
 				
                 <div class="sr float">
-                	<input onclick="twofun" name="sub" type="submit" value="提交">
+                	<input onclick="return is_empty()" name="sub" type="submit" value="提交">
                 </div>
                 <div class="sr float">
                 	<input name="reset" type="reset" value="重填">
