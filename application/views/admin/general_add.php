@@ -16,12 +16,17 @@
 	?>
     <section id="main-content">
     	<section class="wrapper">
-        	<h3><i class="fa fa-angle-right"></i><?php echo '添加'.$g_t;?></h3>
-            <div style="padding-right:10px"><a class="btn btn-primary btn-sm add_news" href="<?php echo $_SERVER['HTTP_REFERER'];?>">返回</a></div>
+        	<h3><i class="fa fa-angle-right"></i><?php echo $g_t;?></h3>
             <div class="row mt">
           		<div class="col-lg-12">
-                  <div class="form-panel">
-                    <form class="form-horizontal style-form" action="<?php echo base_url('admin/general/g_add?type='.$type); ?>" method="post">
+                  <section class="task-panel tasks-widget">
+                    <div class="panel-heading">
+                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> <?php echo '添加'.$g_t;?></h5></div>
+                        <a class="btn btn-success btn-sm add_news" href="<?php echo $_SERVER['HTTP_REFERER'];?>">返回</a>
+                        <div class="cl"></div>
+                    </div>
+                    <div class="form-panel">
+                      <form class="form-horizontal style-form" action="<?php echo base_url('admin/general/g_add?type='.$type); ?>" method="post">
                        <?php
                             switch($type) {
                                 case 1: ?>
@@ -59,8 +64,9 @@
                       </div>
                   </form>
                 </div>
-			  </div>
-            </div>
+             </section>
+          </div>
+        </div>
     
     	</section>
     </section>

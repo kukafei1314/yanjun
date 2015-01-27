@@ -30,6 +30,7 @@
     <!-- My JS -->
     <script src="<?php echo base_url('static/admin/js/my.js');?>"></script>
     <script src="<?php echo base_url('static/admin/js/login.js');?>"></script>
+    <script src="<?php echo base_url('/static/admin/js/calendar/WdatePicker.js'); ?>"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -160,8 +161,14 @@
                   
                   <li class="sub-menu dcjq-parent-li">
                       <a href="<?php echo base_url('admin/general/topic');?>">
-                          <i class="fa fa-heart"></i>
+                          <i class="fa fa-delicious"></i>
                           <span>标语管理</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu dcjq-parent-li">
+                      <a href="<?php echo base_url('admin/index/brand_info');?>">
+                          <i class="fa fa-arrow-circle-o-right"></i>
+                          <span>首页品牌介绍</span>
                       </a>
                   </li>
               </ul>

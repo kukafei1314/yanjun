@@ -24,19 +24,19 @@
 								     <li>
 										  <div class="task-title">
                                               <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
-													<b>名称</b>	
+													<b>案例名称</b>	
                                               </div>
                                               <div class="task-title-sp pull_left list_title" style="width:10%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; margin-left:5%; line-height:48px;">
-													<b>项目</b>
+													<b>案例项目</b>
                                               </div>
 											  <div class=" pull_left list_title" style="width:15%; margin-left:5%; line-height:48px;">
-													<b>小图</b>
+													<b>案例Logo</b>
                                               </div>
                                               <div class=" pull_left list_title" style="width:15%; margin-left:5%; line-height:48px;">
-													<b>大图</b>
+													<b>案例海报</b>
                                               </div>
                                               <div class="task-title-sp pull_left list_time" style="line-height:48px; margin-left:5%;">
-													<b>日期</b>
+													<b>完成时间</b>
                                               </div>
                                               <div class="pull-right hidden-phone" style="line-height:48px; margin-right:4%;">
 													<b>操作</b>
@@ -88,10 +88,12 @@
 											      <?php endif;?>
                                               </div>
                                               <div class="task-title-sp pull_left list_time" style="line-height:48px; margin-left:5%;" >
-                                              	  <?php echo date('Y-m-d',$cases['date']); ?>
+                                              	  <?php echo $cases['date']; ?>
                                               </div>
                                               <div class="pull-right hidden-phone" style="margin-top:16px;">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
+                                              	  <a href="<?php echo base_url('admin/cases/detail?id='.$cases['id'].'&p='.$p);?>" title="详情">
+                                                  	<button class="btn btn-success btn-xs fa fa-book"></button>
+                                                  </a>
                                                   <a href="<?php echo base_url('admin/cases/edit_v?id='.$cases['id'].'&p='.$p);?>" title="编辑">
 													<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
