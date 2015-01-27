@@ -45,7 +45,9 @@
                                               	  发布时间：&nbsp;<?php echo date('Y-m-d',$news['add_date']); ?>
                                               </div>
                                               <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
+                                              	  <a href="<?php echo base_url('admin/news/news_detail?id='.$news['id'].'&p='.$p);?>" title="详情">
+                                                  	    <button class="btn btn-success btn-xs fa fa-book"></button>
+                                                  </a>
                                                   <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id'].'&p='.$p);?>" title="编辑">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
