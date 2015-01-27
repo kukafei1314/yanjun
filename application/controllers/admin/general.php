@@ -45,12 +45,8 @@ class General extends CI_Controller {
 	
 	public function g_add() {
 		$type = $this->input->get('type');
-		/*if($type == 2) {
-			$arr['content'] = $this->input->post('content');
-		}else {*/
-				$arr['title'] = $this->input->post('title');
-				$arr['content'] = $this->input->post('content');
-			//}
+		$arr['title'] = $this->input->post('title');
+		$arr['content'] = $this->input->post('content');
 		$result = $this->about_us_m->g_add($type,$arr);
 		if($result){
 			redirect('admin/general/index?type='.$type);

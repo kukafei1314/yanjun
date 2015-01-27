@@ -258,6 +258,7 @@ body{
 
 #main_tip a:hover {
 	opacity:0.5;
+	filter:alpha(opacity=50); 
 }
 
 .main_out{
@@ -298,6 +299,7 @@ body{
 	height:45px;
 	font-size:22px;
 	line-height:30px;
+	line-height:45px \9;
 	text-align:center;
 	color:#313842;
 	background-color:#faad00;
@@ -309,7 +311,8 @@ body{
 	top:0px;
 	left:-1px;
 	z-index:1000;
-	width:165px;
+	width:163px;
+	width:193px \9;
 	height:176px;
 	padding:20px 20px 0 15px;
 	font-size:16px;
@@ -367,6 +370,7 @@ body{
 	height:385px;
 	background-color:#666;
 	opacity:0.5;
+	filter:alpha(opacity=50); 
 	z-index:100;
 	display:none;
 }
@@ -379,9 +383,11 @@ body{
 	left:0;
 	background-color:#34302c;
 	opacity:0.8;
+	filter:alpha(opacity=80); 
 	font-size:12px;
 	line-height:20px;
 	padding-top:15px;
+	padding-top:5px \9;
 	color:#fffde5;
 	display:none;
 	z-index:1000;
@@ -448,6 +454,7 @@ body{
 	width:200px;
 	height:190px;
 	opacity:0.7;
+	filter:alpha(opacity=70); 
 	background:#666;
 	z-index:200;
 }

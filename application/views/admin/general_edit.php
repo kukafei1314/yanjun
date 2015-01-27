@@ -18,6 +18,7 @@
     <section id="main-content">
     	<section class="wrapper">
         	<h3><i class="fa fa-angle-right"></i><?php echo '编辑'.$g_t;?></h3>
+            <div style="padding-right:10px"><a class="btn btn-primary btn-sm add_news" href="<?php echo $_SERVER['HTTP_REFERER'];?>">返回</a></div>
             <div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
@@ -54,7 +55,8 @@
                       </div>
                                  
                       <div class=" add-task-row page_html">
-                         <button type="submit" class="btn btn-theme03 news_botton">提交</button>
+                         <button type="submit" class="btn btn-theme03 news_botton">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         <button type="reset" class="btn btn-theme03 news_botton" onclick='location="<?php echo base_url('admin/general/edit?type='.$type.'&id='.$row['id']);?>"'>重置</button>
                       </div>
                   </form>
                 </div>
@@ -64,5 +66,7 @@
     	</section>
     </section>
     
-    
+    <script type="text/javascript">
+         var ue = UE.getEditor('ue_content');
+    </script>
 <?php echo $this->load->view('admin/common/admin_footer'); ?>

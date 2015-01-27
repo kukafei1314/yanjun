@@ -15,7 +15,7 @@ class Cases_expand extends CI_Controller
 		$case = $this->cases_m->get_id($id);
 		$data['case'] = $case;
 		$data['title'] = "我喜欢";
-		$data['cases'] = $this->cases_m->get_list(10,'');
+		$data['cases'] = $this->cases_m->get_list_rand(10,'');
 		$this->load->view('case_expand',$data);
 	}
 }

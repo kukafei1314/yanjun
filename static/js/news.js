@@ -115,7 +115,7 @@ $(document).ready(function() {
 			$(this).children('.main_block-yellow').css("display","block");
 			//$(this).children('.main_block-detail').slideDown("slow");
 			$(this).children('.main_block-detail').css("display","block");
-			$(this).children('.main_block-detail').animate({ top: "-60px", }, 100 );
+			$(this).children('.main_block-detail').animate({ top: "-60px" }, 100 );
 		});
 		$(this).mouseleave(function(){
 			$(this).children('.main_block-yellow').css("display","none");
@@ -182,5 +182,19 @@ $(document).ready(function() {
 	});
 });
 
-
+function get_single_news(id)
+{
+	$.ajax({
+		 type: "post",//使用get方法访问后台
+	     dataType: "json",//返回json格式的数据
+	     url: "/news/single_news",//要访问的后台地址
+	     data: {new_id:id},//要发送的数据
+	     success: function(data){
+	    	 if(data){
+	            $("#news_title").html(data.title);
+	            $("#news_content").html(data.content);
+		     }
+	     }
+	});
+}
 

@@ -16,7 +16,7 @@
         <div id="news_middle">
         <div class="news_left">
         	<div class="news_title" id="news_title"><?php echo $news[0]['title'];?></div>
-            <div class="news_content" id="news_title">
+            <div class="news_content" id="news_content">
          		<?php echo $news[0]['content'];?>
 				<!-- <img src="<?php echo base_url('static/image/news_detail.png');?>" width=528 height=334/>
 	            <img src="<?php echo base_url('static/image/news_detail.png');?>" width=528 height=334/>
@@ -32,7 +32,7 @@
                 <div class="news_list_img">
                 	<img src="<?php echo base_url($new['images']);?>" width=200 height=190/>
                 </div>
-                <a class="fade" href="<?php echo base_url('news/')?>"></a>
+                <a class="fade" onclick="get_single_news(<?php echo $new['id'];?>)"></a>
                 <div class="share">
                 	<img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                     <div class="share_1">

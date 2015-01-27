@@ -25,9 +25,8 @@ class News extends CI_Controller {
 	
 	public function single_news()
 	{
-		$id = $this->input->post('id');
-		$data['news']  = $this->news_m->get($id);
-		$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
-		$this->load->view('news',$data);
+		$id = $this->input->post('new_id');
+		$news  = $this->news_m->get($id);
+		echo json_encode($news);
 	}
 }
