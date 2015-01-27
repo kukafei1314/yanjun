@@ -34,6 +34,19 @@ class News extends CI_Controller {
 		$this->load->view('admin/news_list',$data);
 	}
 	
+	//新闻详情
+	public function news_detail()
+	{
+		$data['p'] = (int) page_cur();	// 获取当前页码
+		$data['username'] = $this->session->userdata('username');
+		$data['id'] = (int) $this->input->get('id');
+		$data['news'] = $this->news_m->get($data['id']);
+		if($data['news'] === FALSE) {
+			redirect('admin/news');
+		}
+		$this->load->view('admin/news_detail.php', $data);
+	}
+	
 	//删除新闻
 	public function del() 
 	{

@@ -69,8 +69,15 @@
 	width:100px;
 	height:35px;
 	font-size:14px;
-	margin-top:20px;
 }
+
+.back_botton{
+	width:100px;
+	height:35px;
+	font-size:14px;
+	margin-right:90px;
+}
+
 .g_title_t {
 	font-size:14px;
 	color:#00F;
@@ -326,4 +333,18 @@
 	font-size: 14px;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+.give_notice{
+	color:red;
+	font-size:12px;
+}
+
+.col-sm-half{
+	width:40%;
+}
+
+.Wdate {
+	width: 15% !important;
+	margin-top:5px;
 }

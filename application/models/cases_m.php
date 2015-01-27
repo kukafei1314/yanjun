@@ -49,7 +49,7 @@ class Cases_m extends CI_Model {
 	}
 	
 		//添加文章
-	public function add($name, $project, $logo, $images, $content, $abstract) 
+	public function add($name, $project, $logo, $images, $content, $abstract,$date) 
 	{
 		$data = array(
 					'name'		=>	$name,
@@ -58,7 +58,7 @@ class Cases_m extends CI_Model {
 					'images'	=>	$images,
 					'content'	=>	$content,
 					'abstract'	=>	$abstract,
-					'date'	    =>	time(),
+					'date'	    =>	$date,
 				);
 		if($this->db->insert('yj_cases', $data) === FALSE) {
 			return FALSE;
@@ -98,7 +98,7 @@ class Cases_m extends CI_Model {
 				'logo'		=>	$data['logo'],
 				'content'	=>	$data['content'],
 				'abstract'	=>	$data['abstract'],
-				'date'    => time(),
+				'date'      =>  $data['date'],
 			);
 		} else {
 		$array= array(
@@ -108,7 +108,7 @@ class Cases_m extends CI_Model {
 				'content'	=>	$data['content'],
 				'abstract'	=>	$data['abstract'],
 				'images'	=>	$data['images'],
-			    'date'    => time(),
+			    'date'      =>  $data['date'],
             );
 		}
 		$this->db->where('id', $id);

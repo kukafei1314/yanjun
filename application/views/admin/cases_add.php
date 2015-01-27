@@ -12,7 +12,14 @@
                   <div class="col-md-12">
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
-	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 添加案例</h5></div>
+	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i>&nbsp;&nbsp;<?php echo empty($name)? '添加案例':'编辑案例';?></h5></div>
+	                        <?php if (!empty($name)):?>
+	                        <a href="<?php echo base_url('admin/cases?p='.$p);?>">
+	                        <?php else:?>
+	                        <a href="<?php echo base_url('admin/cases');?>">
+	                        <?php endif;?>
+	                        	<button type="submit" class="btn btn-theme03 back_botton pull-right">返回</button>
+	                        </a>
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">
@@ -32,11 +39,18 @@
                                           <input type="text" name="project" class="form-control" value="<?php echo $project;?>">
                                       </div>
                                       <div class="cl"></div>
-                                  </div>								  
-								  
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">完成时间</label>
+                                      <div class="col-sm-10">
+                                          <input class="Wdate" name="date" placeholder="选择日期" value="<?php echo $date; ?>" onClick="WdatePicker()">
+                                      </div>
+                                      <div class="cl"></div>
+                                  </div>
 								  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">Logo</label>
+                                    <label class="col-sm-2 col-sm-2 control-label" style="padding-top: 25px;">案例Logo</label>
 									<div class="col-sm-10">
+										<p class="give_notice">jpg图片规格：192*192！</p>
 										<?php if(!empty($logo)) :?>
 											<img src="<?php echo base_url($logo);?>" width="80" style="margin-top:10px;"/>
 										<?php endif;?>
@@ -47,8 +61,9 @@
 								  
 								  
                                   <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">图片</label>
+                                      <label class="col-sm-2 col-sm-2 control-label" style="padding-top: 25px;">案例海报</label>
 									<div class="col-sm-10">
+										<p class="give_notice">jpg图片规格：588*385！</p>
 										<?php if(!empty($images)) :?>
 											<img src="<?php echo base_url($images);?>" width="80" style="margin-top:10px;"/>
 										<?php endif;?>
@@ -58,9 +73,11 @@
                                   </div>
 								  
 								  <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">案例简介</label>
+                                      <label class="col-sm-2 col-sm-2 control-label" style="padding-top: 25px;">案例简介</label>
                                       <div class="col-sm-10">
-                                          <textarea id="ue_abstract" name="ue_abstract" rows='3' cols='100'><?php echo $abstract;?></textarea>
+                                      	  <p class="give_notice">简介内容不超过120个字！</p>
+                                          <textarea oninput="if(value.length>120) value=value.substr(0,120)" id="ue_abstract" name="ue_abstract" rows='5' cols='100'><?php echo $abstract;?></textarea>
+                                          
                                       </div>
                                       <div class="cl"></div>
                                   </div>
