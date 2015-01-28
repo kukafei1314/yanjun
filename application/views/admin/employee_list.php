@@ -17,13 +17,13 @@
                             <div class="cl"></div>
 	                 	</div>
                       <div class="panel-body">
-                        <?php foreach ($departments as $department):?>
-                        <div class="department_name"><?php echo $department['name']?></div>
+                        <?php //foreach ($departments as $department):?>
+                        <!--<div class="department_name"><?php //echo $department['name']?></div> -->
                           <div class="task-content">
                              <ul id="sortable" class="task-list">
                                 <li>
                                     <?php foreach($employees as $employee):?>
-                                        <?php if($employee['did'] == $department['tid']):?>
+                                        <?php //if($employee['did'] == $department['tid']):?>
                                            <div class="employee_title">
                                               <div class=" pull_left employee_pic">
 	                                              <?php if(!empty($employee['pic'])) :?>
@@ -38,8 +38,11 @@
                                               <div class="pull_left employee_id">
                                               	  工号：<?php echo $employee['employee_id']; ?>
                                               </div>
-                                              <div class="pull_left employee_motto">
+                                              <div class="pull_left employee_motto" style = 'width:20%;'>
                                               	  座右铭：<?php echo $employee['motto']; ?>
+                                              </div>
+                                              <div class="pull_left employee_motto" style = 'width:10%;'>
+                                              	  所属部门：<?php echo $employee['position']; ?>
                                               </div>
                                               <div class="pull-right employee_tool">
                                               	  <a href="<?php echo base_url('admin/join_us/employee_detail').'?id='.$employee['id'];?>" title="详情">
@@ -54,12 +57,15 @@
                                               </div>
                                               <div class="cl"></div>
                                           </div>
-                                        <?php endif;?>
+                                        <?php //endif;?>
                                     <?php endforeach;?>
                                 </li>								             
                               </ul>
                           </div>
-                          <?php endforeach;?>
+                              <div class=" add-task-row page_html">
+                                  <?php echo $page_html;?>
+                              </div>
+                          <?php// endforeach;?>
                       </div>
                       </section>
                   </div><!--/col-md-12 -->
