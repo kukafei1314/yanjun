@@ -15,13 +15,14 @@ class Join_us_m extends CI_Model {
 		$this->load->database();
 		$this->load->library('uploader_ue');
 	}
-	
+	//获得部门
 	public function get_all_department()
 	{
 	    $query = $this->db->get('yj_department_type');
 	    return $query->result_array();
 	}
 	
+	//获得部门名称
 	public function get_department_name($did)
 	{
 		$this->db->where('tid',$did);
@@ -30,38 +31,20 @@ class Join_us_m extends CI_Model {
 		return $result['name'];
 	}
 	
+	//获得所有员工
 	public function get_all_employee()
 	{  
 	    $query = $this->db->get('yj_employee');
 	    return $query->result_array();
 	}
 	
-	public function get_employee($id)
-	{
-	    $this->db->where('id',$id);
-	    $query = $this->db->get('yj_employee');
-	    return $query->row_array();
-	}
-	//
-	public function get_department_employee($did)
-	{
-	    $query = $this->db->get_where('yj_employee', array('did' => $did));
-		return $query->result_array();
-	}
-	
-	public function get_department_job($did)
-	{
-	    $query = $this->db->get_where('yj_job', array('did' => $did));
-		return $query->result_array();
-	}
-	
+	//获得部门信息
 	public function get_department($tid)
 	{
 		$query = $this->db->get_where('yj_department_type', array('tid' => $tid));
 	    return $query->row_array();
 	}
-	
-	public function get_topic()
+public function get_topic()
 	{
 		$query = $this->db->get_where('yj_topic', array('id' => 4));
 	    return $query->row_array();
@@ -130,6 +113,7 @@ class Join_us_m extends CI_Model {
 	{
 		return $this->db->count_all($table);
 	}
+   
 	public function get_list($limit,$offset)
 	{
 	   $this->db->order_by('did ASC, id desc');
@@ -143,4 +127,35 @@ class Join_us_m extends CI_Model {
 		$query = $this->db->get('yj_job',$limit, $offset);
 		return $query->result_array();
 	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//获得工作数量
+	public function get_job_num()
+	{
+		return $this->db->count_all('yj_job');
+	}
+	
+	//获得员工信息
+	public function get_employee($id)
+	{
+	    $this->db->where('id',$id);
+	    $query = $this->db->get('yj_employee');
+	    return $query->row_array();
+	}
+	//获得各部门员工
+	public function get_department_employee($did,$limit,$offset)
+	{
+		$this->db->order_by('id asc');
+	    $query = $this->db->get_where('yj_employee', array('did' => $did),$limit, $offset);
+		return $query->result_array();
+	}
+	//获得各部门招聘职位
+	public function get_department_job($did,$limit,$offset)
+	{
+		$this->db->order_by('id asc');
+	    $query = $this->db->get_where('yj_job', array('did' => $did),$limit, $offset);
+		return $query->result_array();
+	}
+	
+	
+	
 }

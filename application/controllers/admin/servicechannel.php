@@ -27,10 +27,16 @@ class servicechannel extends CI_Controller {
 	{
 		$per_page = 10;
 		$p = (int) page_cur();	// 获取当前页码
+		if(!empty($this->input->get('search'))) {
+			$keyword = $this->input->get('search');
+		} else {
+			$keyword = NULL;
+		}
+		$data['servicechannel'] = $this->service_channel_m->get_list($per_page,$per_page*($p-1),$keyword); 
+		$data['page_html']	  =	page($this->service_channel_m->get_num($keyword), $per_page);
 		$data['p'] = $p;
-		$data['servicechannel'] = $this->service_channel_m->get_list($per_page,$per_page*($p-1)); 
-		$data['page_html']	  =	page($this->service_channel_m->get_num(), $per_page);
 		$data['username'] = $this->session->userdata('username');
+		$data['form_url'] = 'admin/servicechannel?p='.$p.'&search='.$keyword;
 		$this->load->view('admin/service_list',$data);
 	}
 	

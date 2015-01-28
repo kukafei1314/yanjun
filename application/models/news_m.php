@@ -97,6 +97,21 @@ class News_m extends CI_Model {
 		return $this->db->count_all('yj_news');
 	}
 	
+	public function search_num($str){
+		$this->db->like('title',$str);
+		$this->db->from('yj_news');
+		return $this->db->count_all_results();//->result();
+	}
+	
+	public function search_list($str, $pagesize, $offset){
+		$this->db->select('*');
+		$this->db->like('title',$str);
+		$this->db->order_by('id','asc');
+		$this->db->limit($pagesize, $offset);
+		$query = $this->db->get('yj_news');
+		return $query->result_array();
+	}
+	
 	//分页配置
 	public function pageConfig($count)
    {

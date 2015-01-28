@@ -25,7 +25,11 @@
     </div>
     <div class="div_2">
 		<?php foreach ($cases as $case): ?>
+        <?php $count++;if($count%5==0):?>
+        <div class="c_img float" style="margin-right:0;">
+        <?php else:?>
         <div class="c_img float">
+        <?php endif; ?>
             <a href='<?php echo base_url('cases_expand?id='.$case['id']);?>'><img src="<?php echo $case['logo'];?>" width="100%" height="100%" /></a>
 			<div class="slide">
             	<p>Client / <?php echo $case['name'];?> </p>

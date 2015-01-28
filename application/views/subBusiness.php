@@ -3,8 +3,9 @@
 	<div class="main_big_pic">
         <div id="pic">
             <ul>
-                <li><img src="<?php echo base_url('static/image/join_image.png');?>" width=986 height=430/></li>
-                <li><img src="<?php echo base_url('static/image/news_image.png');?>" width=986 height=430/></li>
+            <?php foreach($imgs as $img): ?>
+                <li><img src="<?php echo base_url($img['path']);?>" width=986 height=410/></li>
+            <?php endforeach; ?>
                 <div class="cl"></div>
             </ul>
         </div>
@@ -67,7 +68,10 @@
         	<p>常见问题</p>
             <div class="text_li">
 			    <?php foreach ($pro as $pro): ?>
-					<a href="servicechannel/businesspro#<?php echo $pro['id'];?>"><?php echo $pro['title'];?></a><br />
+					<a href="servicechannel/businesspro?&p=<?php $a=($pro['id']-$pro['id']%5+5)/5;echo $a;?>
+						#<?php echo $pro['id']%5;?>">
+						<?php echo $pro['title'];?>
+					</a><br/>
                 <?php endforeach;?> 
         	</div>
         </div> 

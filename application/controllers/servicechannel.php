@@ -36,7 +36,11 @@ class Servicechannel extends CI_Controller {
 	//业务详情
 	public function businesspro() 
 	{   
-	    $data['pro'] = $this->service_channel_m->get_prolist();
+		$per_page = 5;			
+		$p = (int) page_cur();	// 获取当前页码	
+		$data['p'] = $p;		
+	    $data['pro'] = $this->service_channel_m->get_pro_list($per_page,$per_page*($p-1));
+		$data['page_html']	  =	page($this->service_channel_m->get_pro_num(), $per_page);
 		$data['imgs'] = $this->home_pic_m->pic_info(8);
 		$this->load->view('busi_problem',$data);
 	}

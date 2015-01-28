@@ -12,7 +12,12 @@
                   <div class="col-md-12">
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
-	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 业务通道</h5></div>             
+	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 业务通道</h5></div>  
+                            <form class="my_search" method="get" action="<?php echo base_url($form_url);?>">
+                            	<div class="form-group">
+                                	<input class="form-control" type="text" name="search" placeholder="请输入关键字搜索"/>
+                                </div>
+                            </form>           
                             <div class="cl"></div>
 	                 	</div>
                           <div class="panel-body">

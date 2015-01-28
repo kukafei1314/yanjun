@@ -24,7 +24,7 @@
     </div>
     <div class="pro_text">
 		<?php foreach ($pro as $pro): ?>
-			<a name="<?php echo $pro['id'];?>"></a>
+			<a name="<?php echo $pro['id']%5;?>"></a>
 			<p><?php echo $pro['title'];?></p>
 			<?php echo $pro['content'];?>
 		<?php endforeach;?>
@@ -32,7 +32,7 @@
     </div>
     
     <div class="main_page">
-    	显示页码
+    	<?php echo $page_html;?>
     </div>
     
 <?php $this->load->view('common/common_footer');?>
