@@ -26,7 +26,7 @@
        <div class="join2_middle">
             <a class="join2_middle_block1">加入团队</a>
             <a class="join2_middle_block1">应聘帮助</a>
-            <a class="join2_middle_email">请投简历<p class="email">HR E-mail：555@yanjun.net</p></a>
+            <a class="join2_middle_email">请投简历<p class="email">HR E-mail：<?php echo $depart['e_mail']; ?></p></a>
        </div>
        <div class="join2_right">
             <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=14');?>">设计部</a>
