@@ -262,9 +262,9 @@ body{
 }
 
 .main_out{
-	position:absolute;
-	left:986px;
-	top:0px;
+	position:fixed;
+	left:1280px;
+	top:200px;
 	width:42px;
 	height:43px;
 }
