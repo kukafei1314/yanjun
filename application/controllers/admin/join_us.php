@@ -16,6 +16,7 @@ class Join_us extends CI_Controller
     public function add()
     {
         $type = $_GET['type'];
+        $p = (int) page_cur();
         if(isset($_GET['id'])){
             $data['id'] = $_GET['id'];
         } else {
@@ -55,24 +56,24 @@ class Join_us extends CI_Controller
             $data['did'] = $_POST['employee_department'];
             $data['pic'] = $pic;
             $data['signature'] = $sign;
-            $ue_content= $_POST['ue_content'];
-            $preg = "/<p.*>(.*)<\/p>/";//正则
-            preg_match($preg,$ue_content,$store);
-            $data['motto'] = $store[1];
+            $data['motto']= $_POST['ue_content'];
+            //$preg = "/<p.*>(.*)<\/p>/";//正则
+            //preg_match($preg,$ue_content,$store);
+            //$data['motto'] = $store[1];
             if($this->join_us_m->add_employee($data) == TRUE) {
-                redirect('admin/join_us/employee');
+                redirect('admin/join_us/employee?p='.$p);
             }
         } else if($type == 'job') {
             $data['did'] = $_POST['did'];
             $data['job_name'] = $_POST['job_name'];
             $data['add_time'] = time();
-            $ue_content= $_POST['ue_content'];
-            $preg = "/<p.*>(.*)<\/p>/";//正则
-            preg_match($preg,$ue_content,$store);
-            $data['content'] = $store[1]; 
+            $data['content']= $_POST['ue_content'];
+            //$preg = "/<p.*>(.*)<\/p>/";//正则
+            //preg_match($preg,$ue_content,$store);
+            //$data['content'] = $store[1]; 
             
             $this->join_us_m->add_job($data);
-            redirect('admin/join_us/job');
+            redirect('admin/join_us/job?p='.$p);
         }  
     }
     public function employee()
@@ -82,17 +83,18 @@ class Join_us extends CI_Controller
 		$data['p'] = $p;
         //$data['departments'] = $this->join_us_m->get_all_department();
         $data['employees'] = $this->join_us_m->get_list($per_page,$per_page*($p-1));
-			foreach ($data['employees'] as &$employee){
-				$department = $this->join_us_m->get_department_name($employee['did']);
-				$employee['position'] = $department;
-			}
-		$data['page_html']	  =	page($this->join_us_m->get_num(), $per_page);
+		foreach ($data['employees'] as &$employee){
+			$department = $this->join_us_m->get_department_name($employee['did']);
+			$employee['position'] = $department;
+		}
+		$data['page_html']	  =	page($this->join_us_m->get_num('yj_employee'), $per_page);
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/employee_list',$data);
     }
     
     public function employee_detail()
     {
+    	$data['p'] = (int)page_cur();
     	$id = $_GET['id'];
         $data['employee'] = $this->join_us_m->get_employee($id);
         $data['department'] = $this->join_us_m->get_department_name($data['employee']['did']);
@@ -102,6 +104,7 @@ class Join_us extends CI_Controller
     
     public function add_employee()
     {
+    	$data['p'] = (int)page_cur();
         $data['form_url'] = 'admin/join_us/add?type=employee';
         $data['departments'] = $this->join_us_m->get_all_department();
         $data['username'] = $this->session->userdata('username');
@@ -110,6 +113,7 @@ class Join_us extends CI_Controller
     
     public function edit_employee()
     {
+    	$data['p'] = (int)page_cur();
         $id = $_GET['id'];
         $data['form_url'] = "admin/join_us/add?type=employee&id=$id";
         $data['employee'] = $this->join_us_m->get_employee($id);
@@ -120,39 +124,62 @@ class Join_us extends CI_Controller
     
     public function delete_employee()
     {
+    	$p = (int)page_cur();
         $id = $_GET['id'];
         $this->join_us_m->delete_employee($id);
-        redirect('admin/join_us/employee');
+        redirect('admin/join_us/employee?p='.$p);
     }
     
     public function job()
     {
-        $data['jobs'] = $this->join_us_m->get_all_job();
-        $data['departments'] = $this->join_us_m->get_all_department();
+    	$per_page = 10;
+    	$p = (int) page_cur();	// 获取当前页码
+    	$data['p'] = $p;
+        $data['jobs'] = $this->join_us_m->get_job_list($per_page,$per_page*($p-1));
+        foreach ($data['jobs'] as &$job){
+        	$department = $this->join_us_m->get_department_name($job['did']);
+        	$job['department'] = $department;
+        }
+        //var_dump($data['jobs']);
+        $data['page_html']	  =	page($this->join_us_m->get_num('yj_job'), $per_page);
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/job_list',$data);
     }
+    
+    public function detail_job()
+    {
+    	$data['p'] = (int)page_cur();
+    	$id = $this->input->get('id');
+    	$data['job'] = $this->join_us_m->get_job($id);
+    	$data['department'] = $this->join_us_m->get_department_name($data['job']['did']);
+    	$data['username'] = $this->session->userdata('username');
+    	$this->load->view('admin/job_detail',$data);
+    }
+    
     public function add_job()
     {
-        $data['form_url'] = 'admin/join_us/add?type=job';
+    	$data['p'] = (int) page_cur();	// 获取当前页码
+        $data['form_url'] = 'admin/join_us/add?type=job&p='.$data['p'];
         $data['departments'] = $this->join_us_m->get_all_department();
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/job_add',$data);
     }
     public function edit_job()
     {
+    	$data['p'] = (int) page_cur();	// 获取当前页码
         $id = $_GET['id'];
-        $data['form_url'] = "admin/join_us/add?type=job&id=$id";
+        $data['form_url'] = "admin/join_us/add?type=job&id=$id&p=".$data['p'];
         $data['departments'] = $this->join_us_m->get_all_department();
         $data['job'] = $this->join_us_m->get_job($id);
         $data['username'] = $this->session->userdata('username');
-        $this->load->view('admin/job_edit',$data);
+        $this->load->view('admin/job_add',$data);
     }
     
     public function delete_job()
     {
+    	$p = (int)page_cur();
         $id = $_GET['id'];
         $this->join_us_m->delete_job($id);
-        redirect('admin/join_us/job');
+        redirect('admin/join_us/job?p='.$p);
     }
 }

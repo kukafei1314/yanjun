@@ -13,7 +13,7 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 员工列表</h5></div>
-                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/join_us/add_employee');?>">添加员工</a>
+                            <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/join_us/add_employee?p='.$p);?>">添加员工</a>
                             <div class="cl"></div>
 	                 	</div>
                       <div class="panel-body">
@@ -21,9 +21,32 @@
                         <!--<div class="department_name"><?php //echo $department['name']?></div> -->
                           <div class="task-content">
                              <ul id="sortable" class="task-list">
+							 	<li>
+									<div class="task-title">
+                                    	<div class="task-title-sp pull_left list_title" style="width:15%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
+											<b>照片</b>	
+                                        </div>
+                                        <div class="task-title-sp pull_left list_title" style="width:15%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
+											<b>姓名</b>
+                                        </div>
+									    <div class=" pull_left list_title" style="width:15%; line-height:48px;">
+											<b>工号</b>
+                                        </div>
+                                        <div class=" pull_left list_title" style="width:20%; line-height:48px;">
+											<b>座右铭</b>
+                                        </div>
+                                        <div class="task-title-sp pull_left list_time" style="width:10%;line-height:48px;">
+											<b>所属部门</b>
+                                        </div>
+                                        <div class="pull-right hidden-phone" style="line-height:48px; margin-right:4%;">
+											<b>操作</b>
+                                        </div>
+                                        <div class="cl"></div>
+                                	</div>
+                                </li>
+                                <?php foreach($employees as $employee):?>
                                 <li>
-                                    <?php foreach($employees as $employee):?>
-                                        <?php //if($employee['did'] == $department['tid']):?>
+                                    
                                            <div class="employee_title">
                                               <div class=" pull_left employee_pic">
 	                                              <?php if(!empty($employee['pic'])) :?>
@@ -33,39 +56,39 @@
 											      <?php endif;?>
                                               </div>
                                               <div class="pull_left employee_name">
-                                              	  姓名：<?php echo $employee['employee_name']; ?>
+                                              	  <?php echo $employee['employee_name']; ?>
                                               </div>
                                               <div class="pull_left employee_id">
-                                              	  工号：<?php echo $employee['employee_id']; ?>
+                                              	  <?php echo $employee['employee_id']; ?>
                                               </div>
                                               <div class="pull_left employee_motto" style = 'width:20%;'>
-                                              	  座右铭：<?php echo $employee['motto']; ?>
+                                              	  <?php echo $employee['motto']; ?>
                                               </div>
                                               <div class="pull_left employee_motto" style = 'width:10%;'>
-                                              	  所属部门：<?php echo $employee['position']; ?>
+                                              	  <?php echo $employee['position']; ?>
                                               </div>
                                               <div class="pull-right employee_tool">
-                                              	  <a href="<?php echo base_url('admin/join_us/employee_detail').'?id='.$employee['id'];?>" title="详情">
+                                              	  <a href="<?php echo base_url('admin/join_us/employee_detail?id='.$employee['id'].'$p='.$p);?>" title="详情">
                                                         <button class="btn btn-success btn-xs fa fa-book"></button>
                                                   </a>
-                                                  <a href="<?php echo base_url('admin/join_us/edit_employee').'?id='.$employee['id'];?>" title="编辑">
+                                                  <a href="<?php echo base_url('admin/join_us/edit_employee?id='.$employee['id'].'&p='.$p);?>" title="编辑">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a onclick="return del_alert()" href="<?php echo base_url('admin/join_us/delete_employee').'?id='.$employee['id'];?>" title="删除">   
+                                                  <a onclick="return del_alert()" href="<?php echo base_url('admin/join_us/delete_employee?id='.$employee['id'].'&p='.$p);?>" title="删除">   
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
                                               <div class="cl"></div>
                                           </div>
                                         <?php //endif;?>
-                                    <?php endforeach;?>
-                                </li>								             
+                                    
+                                </li>	
+                                <?php endforeach;?>							             
                               </ul>
                           </div>
-                              <div class=" add-task-row page_html">
-                                  <?php echo $page_html;?>
-                              </div>
-                          <?php// endforeach;?>
+                          <div class=" add-task-row page_html">
+                               <?php echo $page_html;?>
+                          </div>
                       </div>
                       </section>
                   </div><!--/col-md-12 -->

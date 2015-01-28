@@ -13,7 +13,7 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 员工详细资料</h5></div>
-	                        <a href="<?php echo base_url('admin/join_us/employee');?>">
+	                        <a href="<?php echo base_url('admin/join_us/employee?p='.$p);?>">
 	                        	<button class="btn btn-theme03 back_botton pull-right">返回</button>
 	                        </a>
                             <div class="cl"></div>
@@ -22,7 +22,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">姓名</label>
                                       <div class="col-sm-10">
-                                          <?php echo $employee['employee_name'];?>"
+                                          <?php echo $job['employee_name'];?>"
                                       </div>
                                       <div class="cl"></div>
                                   </div>
@@ -76,4 +76,4 @@
       </section>
 
       <!--main content end-->
- <?php echo $this->load->view('admin/common/admin_footer'); ?>    
+ <?php echo $this->load->view('admin/common/admin_footer'); ?>   
