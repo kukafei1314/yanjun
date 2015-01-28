@@ -13,6 +13,11 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 新闻列表</h5></div>
+                            <form class="my_search" method="post" action="<?php echo base_url('admin/news?test=1');?>" role="search">
+                            	<div class="form-group">
+                                	<input class="form-control" type="text" name="search" placeholder="请输入关键字搜索"/>
+                                </div>
+                            </form>
                             <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/news/add_v');?>">添加新闻</a>
                             <div class="cl"></div>
 	                 	</div>
