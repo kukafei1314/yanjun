@@ -321,7 +321,6 @@ body{
 	overflow:hidden;
 	text-overflow:ellipsis;
 	color:#fff;
-	background:url(../image/main_block_bk.png) repeat-y;
 	display:none;
 }
 .main_block-detail a{ 
