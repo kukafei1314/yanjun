@@ -18,4 +18,11 @@ class Cases_expand extends CI_Controller
 		$data['cases'] = $this->cases_m->get_list_rand(10,'');
 		$this->load->view('case_expand',$data);
 	}
+	public function single_cases()
+	{
+		$id = $this->input->post('case_id');
+		$case  = $this->cases_m->get($id);
+		$cases = $this->cases_m->get_list_rand(10,'');
+		echo json_encode($case);
+	}
 }

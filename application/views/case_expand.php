@@ -45,7 +45,10 @@
         </div>
         <div class="case_right float">
 			<?php foreach( $cases as $item): ?>
-            <a href="<?php echo base_url('cases_expand?id='.$item['id']);?>">
+			<!--<a href="<?php// echo base_url('cases_expand?id='.$item['id']);?>"> -->
+			<a class="case_left_expand" onclick="get_single_cases(<?php echo $item['id'];?>)">
+			
+			
 			<div class="div_opa">
                 <img src="<?php echo $item['logo'];?>" width='100%' height='100%'/><br/>
 				<div class="case_opacity"></div>
