@@ -26,8 +26,8 @@ class Join_us_m extends CI_Model {
 	{
 		$this->db->where('tid',$did);
 		$query = $this->db->get('yj_department_type');
-		$result = $query->result_array();
-		return $result[0]['name'];
+		$result = $query->row_array();
+		return $result['name'];
 	}
 	
 	public function get_all_employee()
@@ -126,14 +126,21 @@ class Join_us_m extends CI_Model {
        $config['cur_tag_close'] = '</b>';
        $this->pagination->initialize($config);
    }
-   	public function get_num()
+   	public function get_num($table)
 	{
-		return $this->db->count_all('yj_employee');
+		return $this->db->count_all($table);
 	}
 	public function get_list($limit,$offset)
 	{
-	   //$this->db->order_by('');
+	   $this->db->order_by('did ASC, id desc');
        $query = $this->db->get('yj_employee',$limit, $offset);
        return $query->result_array();
-	}	
+	}
+
+	public function get_job_list($limit,$offset)
+	{
+		$this->db->order_by('did ASC, id desc');
+		$query = $this->db->get('yj_job',$limit, $offset);
+		return $query->result_array();
+	}
 }

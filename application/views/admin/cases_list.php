@@ -88,7 +88,7 @@
 											      <?php endif;?>
                                               </div>
                                               <div class="task-title-sp pull_left list_time" style="line-height:48px; margin-left:5%;" >
-                                              	  <?php echo date('Y-m-d',$cases['date']); ?>
+                                              	  <?php echo $cases['date']; ?>
                                               </div>
                                               <div class="pull-right hidden-phone" style="margin-top:16px;">
                                               	  <a href="<?php echo base_url('admin/cases/detail?id='.$cases['id'].'&p='.$p);?>" title="详情">
