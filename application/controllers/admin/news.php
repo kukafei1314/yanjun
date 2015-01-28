@@ -12,6 +12,7 @@ class News extends CI_Controller {
 		$this->load->database();
 		$this->load->model('login_m');
 		$this->load->library('uploader_ue');
+		$this->load->library('session');
 		
 		// 先验证登录
 		$id = $this->login_m->check_login();
@@ -25,13 +26,31 @@ class News extends CI_Controller {
 	//获取表格数据，显示新闻列表
 	public function index()
 	{
-		$per_page = 10;
-		$p = (int) page_cur();	// 获取当前页码
-		$data['p'] = $p;
-		$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1)); 
-		$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
-		$data['username'] = $this->session->userdata('username');
-		$this->load->view('admin/news_list',$data);
+		if($_POST || $this->input->get('test') == 1) {
+			if($_POST) {
+				$msg = array('str' => '');
+				$this->session->unset_userdata($msg);
+				$msg = array('str' => $this->input->post('search'));
+				$this->session->set_userdata($msg);
+			}
+			$str = $this->session->userdata('str');
+			$per_page = 10; 
+			$p = (int) page_cur();	// 获取当前页码
+			$data['p'] = $p;
+			$data['news'] = $this->news_m->search_list($str,$per_page,$per_page*($p-1));
+			$data['page_html']	  =	page($this->news_m->search_num($str), $per_page);
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('admin/news_list',$data);
+			
+		}else{
+			$per_page = 10;
+			$p = (int) page_cur();	// 获取当前页码
+			$data['p'] = $p;
+			$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1)); 
+			$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('admin/news_list',$data);
+		}
 	}
 	
 	//新闻详情

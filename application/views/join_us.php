@@ -15,7 +15,7 @@
         
     </div>
     <div class="join_mid">
-    <div class="join_left">
+   	    <div class="join_left">
     	<div class="left_top">
         	<div class="left_top_title"><?php echo $topic['type']; ?></div>
             <div class="left_top_content"><?php echo $topic['content'] ?></div>
@@ -45,7 +45,7 @@
 				
         </div>
     </div>
-    <div class="join_right">
+        <div class="join_right">
     	<div class="right_top">
         	<div class="right_top_title">招聘职位</div>
             <div class="right_top_content">人力资源<br/> HR E-mail：<?php echo $depart['e_mail']; ?></div>
@@ -65,8 +65,6 @@
 		
         
        </div>
-       
-      </div>
     </div>
     <div class="main_page">
     	<?php echo $page_html;?>

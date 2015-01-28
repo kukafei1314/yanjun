@@ -25,13 +25,32 @@ class Cases extends CI_Controller {
 	//获取表格数据，显示案例列表
 	public function index()
 	{
-		$per_page = 10;
-		$p = (int) page_cur();	// 获取当前页码
-		$data['p'] = $p;
-		$data['cases'] = $this->cases_m->get_list($per_page,$per_page*($p-1)); 
-		$data['page_html']	  =	page($this->cases_m->get_num(), $per_page);
-		$data['username'] = $this->session->userdata('username');
-		$this->load->view('admin/cases_list',$data);
+		if($_POST || $this->input->get('test') == 1) {
+			if($_POST) {
+				$msg = array('str' => '');
+				$this->session->unset_userdata($msg);
+				$msg = array('str' => $this->input->post('search'));
+				$this->session->set_userdata($msg);
+			}
+			$str = $this->session->userdata('str');
+			echo $str;
+			$per_page = 7; 
+			$p = (int) page_cur();	// 获取当前页码
+			$data['p'] = $p;
+			$data['cases'] = $this->cases_m->search_list($str,$per_page,$per_page*($p-1));
+			$data['page_html']	  =	page($this->cases_m->search_num($str), $per_page);
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('admin/cases_list',$data);
+			
+		}else{
+			$per_page = 7;
+			$p = (int) page_cur();	// 获取当前页码
+			$data['p'] = $p;
+			$data['cases'] = $this->cases_m->get_list($per_page,$per_page*($p-1)); 
+			$data['page_html']	  =	page($this->cases_m->get_num(), $per_page);
+			$data['username'] = $this->session->userdata('username');
+			$this->load->view('admin/cases_list',$data);
+		}
 	}
 	
 	public function detail()

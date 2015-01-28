@@ -363,3 +363,8 @@
 	width: 15% !important;
 	margin-top:5px;
 }
+.my_search {
+	float:left;
+	margin-left:48%;
+	width:20%;
+}

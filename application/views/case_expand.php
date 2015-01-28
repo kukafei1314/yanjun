@@ -27,9 +27,9 @@
         <div class="case_left float">
             <div>
                 <div class="case_t float">
-                    <div class="text_title"><?php echo $case['0']['name'];?></div>
-                    <div class="text_st"><span class= "text_st_project"><?php echo $case['0']['project'];?>/</span> <span class = "text_st_date"><?php echo date('Y.m.d',$case['0']['date']);?></span></div>
-                    <div class="text"><?php echo $case['0']['abstract'];?></div>
+                    <div class="text_title"><?php echo $case['name'];?></div>
+                    <div class="text_st"><span class= "text_st_project"><?php echo $case['project'];?>/</span> <span class = "text_st_date"><?php echo date('Y.m.d',$case['date']);?></span></div>
+                    <div class="text"><?php echo $case['abstract'];?></div>
                 </div>
                 <div class="t_con float">
                     <li><a href="">Top↑</a></li>
@@ -37,10 +37,10 @@
                     <li><a href="">Sevice</a></li>
                     <li><a href="">About Us</a></li>
                 </div>
-                <!--<div class="clc"></div>-->
+                <div class="clc"></div>
             </div>
 
-				<div class="case_img"><?php echo $case['0']['content'];?></div>
+				<div class="case_img"><?php echo $case['content'];?></div>
 
         </div>
         <div class="case_right float">
@@ -61,7 +61,7 @@
                                     var p = {
                                     url:location.href, /*获取URL，可加上来自分享到QQ标识，方便统计*/
                                     desc:'', /*分享理由(风格应模拟用户对话),支持多分享语随机展现（使用|分隔）*/
-                                    title:'<?php echo $title;?>', /*分享标题(可选)*/
+                                    title:'<?php echo $item['name'];?>', /*分享标题(可选)*/
                                     summary:'hahahahah', /*分享摘要(可选)*/
                                     pics:"http://picapi.ooopic.com/00/87/68/91b1OOOPIC4e.jpg", /*分享图片(可选)*/
                                     flash: '', /*视频地址(可选)*/
@@ -80,7 +80,7 @@
                             </script>
                         </div>
                         <div class="weibo_share">
-                            <wb:share-button appkey="4BD8Tl" addition="simple" type="button" size="big" width="63" height="26" pic="http://picapi.ooopic.com/00/87/68/91b1OOOPIC4e.jpg" title="<?php echo $title;?>"></wb:share-button>
+                            <wb:share-button appkey="4BD8Tl" addition="simple" type="button" size="big" width="63" height="26" pic="http://picapi.ooopic.com/00/87/68/91b1OOOPIC4e.jpg" title="<?php echo $item['name'];?>"></wb:share-button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
         <!--<div class="clc"></div>-->
 	</div>
     <div class="main_page">
-    	显示页码
+    	<?php echo $page_html;?>
     </div>
    
 <?php $this->load->view('common/common_footer'); ?>
