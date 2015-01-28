@@ -30,13 +30,14 @@ class About_us extends CI_Controller
 		$per_page = 7;
 		$p = $this->input->get('p')? $this->input->get('p'):1;	// 获取当前页码
 		$data['p'] = $p;
+		$data['imgs'] = $this->home_pic_m->pic_info(6);
 		$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1));
 		$data['page_html'] = page($this->news_m->get_num(), $per_page);
 		
 		$res = $this->news_m->get($id);
 		$data['title'] = $res['title'];
 		$data['content'] = $res['content'];
-		$data['id'] = $id;
+		$data['test'] = true;
 		$this->load->view('news',$data);
 	}
 }
