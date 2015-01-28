@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="main_page">
-    	more
+    	<?php echo $page_html;?>
     </div>
 
 <?php $this->load->view('common/common_footer');?>
