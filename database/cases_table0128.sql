@@ -1,0 +1,59 @@
+CREATE DATABASE  IF NOT EXISTS `yanjun` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `yanjun`;
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
+--
+-- Host: localhost    Database: yanjun
+-- ------------------------------------------------------
+-- Server version	5.6.21-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `yj_cases`
+--
+
+DROP TABLE IF EXISTS `yj_cases`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `yj_cases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL COMMENT '案例名称',
+  `project` varchar(100) NOT NULL COMMENT '工程名称',
+  `date` varchar(50) NOT NULL COMMENT '完成时间',
+  `logo` varchar(500) NOT NULL COMMENT '案列小图片',
+  `content` text NOT NULL COMMENT '案列介绍',
+  `images` varchar(500) NOT NULL COMMENT '案例大图',
+  `abstract` text NOT NULL COMMENT '案列简介',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `yj_cases`
+--
+
+LOCK TABLES `yj_cases` WRITE;
+/*!40000 ALTER TABLE `yj_cases` DISABLE KEYS */;
+INSERT INTO `yj_cases` VALUES (9,'1','1','1422249032','upload/20150126/142224903232.jpg','<p>1</p><p><img src=\"http://picview01.baomihua.com/photos/20120412/m_14_634698468056093750_38293363.jpg\" style=\"\"/></p><p><img src=\"http://picview01.baomihua.com/photos/20120306/m_14_634666437677968750_14775838.jpg\" style=\"\"/></p><p><img src=\"http://www.6188.com/upload_6188s/flashAll/s800/20120822/1345599155IdGWRm.jpg\" style=\"\"/></p><p><br/></p>','upload/20150126/142224903131.jpg','1'),(10,'2','2','1422251477','upload/20150126/142225147717.jpg','<p><img src=\"http://s1.img.766.com/288/120328/1530/278904.jpg\" alt=\"278904.jpg\" width=\"777\" height=\"539\" style=\"width: 777px; height: 539px;\"/></p>','upload/20150126/142225147616.jpg','2'),(11,'3','3','1422251290','upload/20150126/142225128909.png','<p><br/></p><h1 label=\"Title center\" name=\"tc\" style=\"border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;text-align:center;margin:0px 0px 20px;\" class=\"ue_t\">[此处键入文章标题]</h1><p><img src=\"http://img.baidu.com/hi/youa/y_0034.gif\" width=\"300\" height=\"200\" border=\"0\" hspace=\"0\" vspace=\"0\" style=\"width:300px;height:200px;float:left;\"/>图文混排方法</p><p>1. 图片居左，文字围绕图片排版</p><p>方法：在文字前面插入图片，设置居左对齐，然后即可在右边输入多行文本</p><p><br/></p><p>2. 图片居右，文字围绕图片排版</p><p>方法：在文字前面插入图片，设置居右对齐，然后即可在左边输入多行文本</p><p><br/></p><p>3. 图片居中环绕排版</p><p>方法：亲，这个真心没有办法。。。</p><p><br/></p><p><br/></p><p><img src=\"http://img.baidu.com/hi/youa/y_0040.gif\" width=\"300\" height=\"300\" border=\"0\" hspace=\"0\" vspace=\"0\" style=\"width:300px;height:300px;float:right;\"/></p><p>还有没有什么其他的环绕方式呢？这里是居右环绕</p><p><br/></p><p>欢迎大家多多尝试，为UEditor提供更多高质量模板！</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p>占位</p><p><br/></p><p><br/></p><p><br/></p>','upload/20150126/142225129010.jpg','3'),(12,'4','4','1422325832','upload/20150127/142232583131.jpg','<p><img src=\"/upload/image/20150127/1422325810112532.jpg\" title=\"1422325810112532.jpg\" alt=\"53a24439f1621.jpg\" width=\"765\" height=\"567\" style=\"width: 765px; height: 567px;\"/></p><span class=\"edui-editor-scale-hand1\" style=\"box-sizing: border-box; position: absolute; width: 6px; height: 6px; overflow: hidden; font-size: 0px; display: block; cursor: n-resize; top: 0px; margin-top: -4px; left: 636px; margin-left: -4px; color: rgb(121, 121, 121); font-family: Ruda, sans-serif; background-color: rgb(60, 157, 208);\"></span><span class=\"edui-editor-scale-hand2\" style=\"box-sizing: border-box; position: absolute; width: 6px; height: 6px; overflow: hidden; font-size: 0px; display: block; cursor: ne-resize; top: 0px; margin-top: -4px; left: 1272px; margin-left: -3px; color: rgb(121, 121, 121); font-family: Ruda, sans-serif; background-color: rgb(60, 157, 208);\"></span>','upload/20150127/142232583232.jpg','4'),(13,'5','5','1422325890','upload/20150127/142232588929.png','<p><img src=\"/upload/image/20150127/1422325873111009.png\" title=\"1422325873111009.png\" alt=\"屏幕截图(1).png\" width=\"712\" height=\"503\" style=\"width: 712px; height: 503px;\"/></p>','upload/20150127/142232589030.png','5'),(14,'6','6','1422325956','upload/20150127/142232595535.jpg','<p><img src=\"/upload/image/20150127/1422325941130833.jpg\" title=\"1422325941130833.jpg\" alt=\"53a24439f1621.jpg\" width=\"786\" height=\"388\" style=\"width: 786px; height: 388px;\"/></p>','upload/20150127/142232595636.jpg','6'),(15,'7','7','1422326001','upload/20150127/142232600020.jpg','<p><img src=\"/upload/image/20150127/1422325999111159.jpg\" title=\"1422325999111159.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232600121.jpg','7'),(16,'8','8','1422326016','upload/20150127/142232601535.jpg','<p><img src=\"/upload/image/20150127/1422326012430619.jpg\" title=\"1422326012430619.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232601636.jpg','8'),(17,'9','9','1422326029','upload/20150127/142232602848.jpg','<p><img src=\"/upload/image/20150127/1422326026274887.jpg\" title=\"1422326026274887.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232602949.jpg','9'),(18,'10','10','1422326042','upload/20150127/142232604101.jpg','<p><img src=\"/upload/image/20150127/1422326040970452.jpg\" title=\"1422326040970452.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232604202.jpg','10'),(19,'11','11','1422326053','upload/20150127/142232605212.jpg','<p><img src=\"/upload/image/20150127/1422326051105229.jpg\" title=\"1422326051105229.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232605313.jpg','11'),(20,'12','12','1422326065','upload/20150127/142232606424.jpg','<p><img src=\"/upload/image/20150127/1422326063101425.jpg\" title=\"1422326063101425.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232606525.jpg','12'),(21,'13','13','1422326079','upload/20150127/142232607838.jpg','<p>13<img src=\"/upload/image/20150127/1422326076431178.jpg\" title=\"1422326076431178.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232607939.jpg','13'),(22,'14','14','1422326093','upload/20150127/142232609252.jpg','<p><img src=\"/upload/image/20150127/1422326091974239.jpg\" title=\"1422326091974239.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232609353.jpg','14'),(23,'15','15','1422326108','upload/20150127/142232610707.jpg','<p>15<img src=\"/upload/image/20150127/1422326106123385.jpg\" title=\"1422326106123385.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232610808.jpg','15'),(24,'16','16','1422326121','upload/20150127/142232612020.jpg','<p>16<img src=\"/upload/image/20150127/1422326118127658.jpg\" title=\"1422326118127658.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232612121.jpg','16'),(25,'17','17','1422326282','upload/20150127/142232628101.jpg','<p>17<img src=\"/upload/image/20150127/1422326280440344.jpg\" title=\"1422326280440344.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232628202.jpg','17'),(26,'18','18','1422326294','upload/20150127/142232629313.jpg','<p><img src=\"/upload/image/20150127/1422326292443657.jpg\" title=\"1422326292443657.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232629414.jpg','18'),(27,'19','19','1422326305','upload/20150127/142232630424.jpg','<p><img src=\"/upload/image/20150127/1422326303281686.jpg\" title=\"1422326303281686.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232630525.jpg','19'),(28,'20','20','1422326327','upload/20150127/142232632646.jpg','<p><img src=\"/upload/image/20150127/1422326318124017.jpg\" title=\"1422326318124017.jpg\" alt=\"葫芦娃.jpg\" width=\"812\" height=\"586\" style=\"width: 812px; height: 586px;\"/></p>','upload/20150127/142232632747.jpg','20'),(29,'21','21','1422326347','upload/20150127/142232634606.jpg','<p><img src=\"/upload/image/20150127/1422326339137662.jpg\" title=\"1422326339137662.jpg\" alt=\"葫芦娃.jpg\" width=\"769\" height=\"467\" style=\"width: 769px; height: 467px;\"/></p>','upload/20150127/142232634707.jpg','21'),(30,'22','22','1422326363','upload/20150127/142232636222.jpg','<p>22<img src=\"/upload/image/20150127/1422326361803575.jpg\" title=\"1422326361803575.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232636323.jpg','22'),(31,'23','23','1422326394','upload/20150127/142232639353.jpg','<p>23<img src=\"http://avatar.l99.com/200x222/30/MjAxMTEyMjkxOTA0MjZfMTI0LjIwNy4xMDQuMThfMTY0NTIx.jpg\" alt=\"MjAxMTEyMjkxOTA0MjZfMTI0LjIwNy4xMDQuMThfMTY0NTIx.jpg\" width=\"433\" height=\"439\" style=\"width: 433px; height: 439px;\"/></p>','upload/20150127/142232639454.jpg','234'),(32,'24','24','1422326414','upload/20150127/142232641313.jpg','<p><img src=\"/upload/image/20150127/1422326407861840.jpg\" title=\"1422326407861840.jpg\" alt=\"葫芦娃.jpg\" width=\"794\" height=\"559\" style=\"width: 794px; height: 559px;\"/></p>','upload/20150127/142232641414.jpg','24'),(33,'25','25','1422326434','upload/20150127/142232643333.jpg','<p><img src=\"/upload/image/20150127/1422326431111052.jpg\" title=\"1422326431111052.jpg\" alt=\"53220cefh90e29188e7f8&amp;690.jpg\"/></p>','upload/20150127/142232643434.jpg','25'),(34,'26','26','1422326480','upload/20150127/142232647919.jpg','<p><img src=\"http://www.photophoto.cn/image/g15/005/011/0050110185.jpg\" alt=\"0050110185.jpg\" width=\"757\" height=\"529\" style=\"width: 757px; height: 529px;\"/></p>','upload/20150127/142232648020.jpg','26'),(35,'27','27','1422326514','upload/20150127/142232651353.jpg','<p><img src=\"http://gb.cri.cn/mmsource/images/2011/03/15/81/3369400409402133517.jpg\" alt=\"3369400409402133517.jpg\"/></p>','upload/20150127/142232651454.jpg','27'),(36,'28','28','1422326541','upload/20150127/142232654020.jpg','<p>28<img src=\"http://image.xinmin.cn/2012/12/07/20121207173323192604.jpg\" alt=\"20121207173323192604.jpg\"/></p>','upload/20150127/142232654121.jpg','28'),(37,'29','29','1422326572','upload/20150127/142232657151.jpg','<p><img src=\"http://www.hinews.cn/pic/0/10/73/71/10737153_987375.jpg\" alt=\"10737153_987375.jpg\" width=\"757\" height=\"662\" style=\"width: 757px; height: 662px;\"/></p>','upload/20150127/142232657252.jpg','29'),(38,'30','30','1422326601','upload/20150127/142232660020.jpg','<p><img src=\"http://news.xinhuanet.com/mil/2006-05/10/xinsrc_13205031010439841551719.jpg\" alt=\"xinsrc_13205031010439841551719.jpg\" width=\"585\" height=\"510\" style=\"width: 585px; height: 510px;\"/></p>','upload/20150127/142232660121.jpg','30');
+/*!40000 ALTER TABLE `yj_cases` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-01-28 12:33:30

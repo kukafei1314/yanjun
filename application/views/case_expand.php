@@ -28,7 +28,7 @@
             <div>
                 <div class="case_t float">
                     <div class="text_title"><?php echo $case['0']['name'];?></div>
-                    <div class="text_st"><?php echo $case['0']['project'];?>/ <?php echo date('Y.m.d',$case['0']['date']);?></div>
+                    <div class="text_st"><span class= "text_st_project"><?php echo $case['0']['project'];?>/</span> <span class = "text_st_date"><?php echo date('Y.m.d',$case['0']['date']);?></span></div>
                     <div class="text"><?php echo $case['0']['abstract'];?></div>
                 </div>
                 <div class="t_con float">

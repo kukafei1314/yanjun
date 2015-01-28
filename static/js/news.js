@@ -208,10 +208,13 @@ function get_single_cases(id)
 	     success: function(data){
 	    	 if(data){
 	            $(".text_title").html(data.name);
-	            $(".text_st").html(data.project);
+	            $(".text_st_project").html(data.project);
 	            $(".text").html(data.abstract);
+				$(".text_st_date").html(data.date.format);
 	            $(".case_img").html(data.content);
+				
 		     }
 	     }
 	});
 }
+
