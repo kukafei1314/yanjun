@@ -79,6 +79,11 @@ class Join_us extends CI_Controller
     {
         $data['departments'] = $this->join_us_m->get_all_department();
         $data['employees'] = $this->join_us_m->get_all_employee();
+
+			foreach ($data['employees'] as &$employee){
+				$department = $this->join_us_m->get_department_name($employee['did']);
+				$employee['position'] = $department;
+			}
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/employee_list',$data);
     }
