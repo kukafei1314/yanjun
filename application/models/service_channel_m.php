@@ -17,17 +17,32 @@ class Service_channel_m extends CI_Model {
 	}
 
 	// 获取每页文章列表，不包括文章内容字段
-	public function get_list($limit,$offset)
+	public function get_list($limit,$offset,$keyword = NULL)
 	{
-	   $this->db->order_by('id desc,add_date desc');
-       $query = $this->db->get('yj_service_channel',$limit, $offset);
-       return $query->result_array();
+		if(!empty($keyword)) {
+			$this->db->like('company',$keyword);
+		}
+	    $this->db->order_by('id desc,add_date desc');
+        $query = $this->db->get('yj_service_channel',$limit, $offset);
+        return $query->result_array();
 	}
 	public function get_prolist()
 	{
 	   $this->db->order_by('id asc');
        $query = $this->db->get('yj_questions');
        return $query->result_array();
+	}
+	
+	public function get_pro_list($limit,$offset)
+	{
+	   $this->db->order_by('id asc');
+       $query = $this->db->get('yj_questions',$limit, $offset);
+       return $query->result_array();
+	}
+	
+	public function get_pro_num()
+	{
+		return $this->db->count_all('yj_questions');
 	}
 	
 	//删除文章
@@ -98,9 +113,12 @@ class Service_channel_m extends CI_Model {
 	}
 	
 	//获得用户信息数量
-	public function get_num()
+	public function get_num($keyword = NULL)
 	{
-		return $this->db->count_all('yj_service_channel');
+		if(!empty($keyword)) {
+			$this->db->like('company',$keyword);
+		}
+		return $this->db->count_all_results('yj_service_channel');
 	}
 	
 	//分页配置
