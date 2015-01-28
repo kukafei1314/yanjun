@@ -99,6 +99,7 @@ class servicechannel extends CI_Controller {
 		$data['email'] = $servicechannel['email'];
 		$data['address'] = $servicechannel['address'];
 		$data['message'] = $servicechannel['message'];
+		$data['add_date'] = $servicechannel['add_date'];
 		//$data['form_url'] = 'admin/servicechannel/edit?id=' . $data['id'].'&p='.$data['p'];
 		$this->load->view('admin/service.php', $data);
 	}
