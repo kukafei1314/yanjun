@@ -25,20 +25,22 @@
     </div>
     <div class="div_2">
 		<?php foreach ($cases as $case): ?>
+        <?php $count++;if($count%5==0):?>
+        <div class="c_img float" style="margin-right:0;">
+        <?php else:?>
         <div class="c_img float">
-            <a href='<?php echo base_url('cases_expand?id='.$case['id']);?>'><img src="<?php echo $case['logo'];?>" width="100%" height="100%" /></a><div class="slide">
+        <?php endif; ?>
+            <a href='<?php echo base_url('cases_expand?id='.$case['id']);?>'><img src="<?php echo $case['logo'];?>" width="100%" height="100%" /></a>
+			<div class="slide">
             	<p>Client / <?php echo $case['name'];?> </p>
                 <p>Project / <?php echo $case['project'];?> </p>
                 <p>Time / <?php echo date('Y.m.d',$case['date']);?> </p>
             </div>
         </div>
-		<?php endforeach ?>
- 
-
-        
+		<?php endforeach ?> 
     </div>
     <div class="main_page">
-    	more
+    	<?php echo $page_html;?>
     </div>
           
 <?php $this->load->view('common/common_footer'); ?>

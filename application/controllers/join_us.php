@@ -22,8 +22,20 @@ class Join_us extends CI_Controller
 	public function department()
     {    
 		$did = (int) $this->input->get('did');
-		$data['employ'] = $this->join_us_m->get_department_employee($did);
-		$data['job'] = $this->join_us_m->get_department_job($did);
+		$per_page_job = 8;		//招聘职位
+		$per_page = 5;			//员工
+		$p = (int) page_cur();	// 获取当前页码
+		
+		$data['p'] = $p;
+		$data['employ'] = $this->join_us_m->get_department_employee($did,$per_page,$per_page*($p-1));
+		$data['job'] = $this->join_us_m->get_department_job($did,$per_page_job,$per_page_job*($p-1));
+		if($this->join_us_m->get_job_num()/$per_page_job > $this->join_us_m->get_num()/$per_page) {
+			$num = $this->join_us_m->get_job_num();
+			$data['page_html']	 =	page($num,$per_page_job);
+		} else {
+			$num = $this->join_us_m->get_num();
+			$data['page_html']	 =	page($num,$per_page);
+		}
 		$data['depart'] = $this->join_us_m->get_department($did);
 		$data['topic'] = $this->join_us_m->get_topic();
 		$data['imgs'] = $this->home_pic_m->pic_info(5);

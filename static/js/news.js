@@ -198,3 +198,23 @@ function get_single_news(id)
 	});
 }
 
+function get_single_cases(id)
+{
+	$.ajax({
+		 type: "post",//使用get方法访问后台
+	     dataType: "json",//返回json格式的数据
+	     url: "/cases_expand/single_cases",//要访问的后台地址
+	     data: {case_id:id},//要发送的数据
+	     success: function(data){
+	    	 if(data){
+	            $(".text_title").html(data.name);
+	            $(".text_st_project").html(data.project);
+	            $(".text").html(data.abstract);
+				$(".text_st_date").html(data.date.format);
+	            $(".case_img").html(data.content);
+				
+		     }
+	     }
+	});
+}
+

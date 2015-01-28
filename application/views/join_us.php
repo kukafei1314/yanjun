@@ -15,7 +15,7 @@
         
     </div>
     <div class="join_mid">
-    <div class="join_left">
+   	    <div class="join_left">
     	<div class="left_top">
         	<div class="left_top_title"><?php echo $topic['type']; ?></div>
             <div class="left_top_content"><?php echo $topic['content'] ?></div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="intro_content">
                 	<div class="intro_logo">
-                    	<img src="<?php echo base_url($employ['signature']);?>"/>
+                    	<img src="<?php echo base_url($employ['signature']);?>" width="240" height="100" />
                     </div>
                     <div class="intro_word"><?php echo $employ['motto']; ?>
                     </div>
@@ -45,7 +45,7 @@
 				
         </div>
     </div>
-    <div class="join_right">
+        <div class="join_right">
     	<div class="right_top">
         	<div class="right_top_title">招聘职位</div>
             <div class="right_top_content">人力资源<br/> HR E-mail：<?php echo $depart['e_mail']; ?></div>
@@ -65,11 +65,9 @@
 		
         
        </div>
-       
-      </div>
     </div>
     <div class="main_page">
-    	more
+    	<?php echo $page_html;?>
     </div>
 
 <?php $this->load->view('common/common_footer');?>

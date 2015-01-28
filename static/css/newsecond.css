@@ -221,9 +221,7 @@ body {
 	font-size:15px;
 	line-height:30px;
 	padding-left:30px;
-}
-.join_mid {
-	height: 1800px;
+	padding-right:30px;
 }
 .not {
 	display:block;

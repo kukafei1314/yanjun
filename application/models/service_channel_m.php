@@ -106,7 +106,7 @@ class Service_channel_m extends CI_Model {
 	//分页配置
 	public function pageConfig($count)
    {
-       $config['base_url'] = 'admin/news';
+       $config['base_url'] = 'admin/servicrchannel';
        $config['total_rows'] = $count;
        $config['per_page'] = 6;
        $config['first_link'] = "首页";

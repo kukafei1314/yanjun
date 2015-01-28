@@ -112,8 +112,7 @@
 }
 .a_link {
 	font-size: 24px;
-	font-weight: bold;
-	color: #FFF;
+	color: #a4a4a5;
 	height: 252px;
 	_height: 382px!important;
 	width: 193px;
@@ -156,11 +155,11 @@
 	padding-bottom: 0px;
 	padding-left: 33px;
 	margin-bottom: 5px;
+	color: #c4c4c5;
 }
 .text {
 	font-size: 13px;
 	line-height: 20px;
-	color: #FFF;
 	margin-top:15px;
 }
 .t_con {
@@ -170,7 +169,6 @@
 	_height: 192px!important;
 	background-color: #60605B;
 	font-size: 13px;
-	color: #FFF;
 	line-height:25px;
 	padding-left:80px;
 	padding-top:15px;
@@ -179,17 +177,15 @@
 	list-style-type: none;	
 }
 .t_con a {
-	color: #FFF;
+	color: #c4c4c5;
 	text-decoration: none;
 }
 .text_title {
 	font-size: 24px;
-	color: #FFF;
 	line-height: 60px;
 }
 .text_st {
 	font-size: 16px;
-	color: #FFF;
 	line-height: 10px;
 }
 .img_ss {
