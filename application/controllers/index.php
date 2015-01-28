@@ -9,7 +9,7 @@ class Index extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(array('about_us_m','topic_m','news_m','cases_m','home_pic_m'));
+		$this->load->model(array('about_us_m','topic_m','news_m','cases_m','home_pic_m','brand_intro_m'));
 	}
 	
 	public function index()
@@ -28,6 +28,7 @@ class Index extends CI_Controller {
 			$data['page_html']	 =	page($num,$per_page);
 		}
 		$data['imgs'] = $this->home_pic_m->pic_info(1);
+		$data['brand']    = $this->brand_intro_m->get_list();
 		$this->load->view('index',$data);
 	}
 	
