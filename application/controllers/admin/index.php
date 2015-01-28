@@ -9,15 +9,13 @@ class Index extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('login_m');
+		$this->load->model(array('login_m','home_pic_m','brand_intro_m'));
 		
 		// 先验证登录
 		$id = $this->login_m->check_login();
 		if ($id < 0 || $id == FALSE) {
 			redirect('admin/login');
 		}
-		
-		$this->load->model('home_pic_m');
 		$this->load->library('uploader_ue');
 	}
 	
@@ -46,6 +44,36 @@ class Index extends CI_Controller {
 	public function brand_info()
 	{
 		$data['username'] = $this->session->userdata('username');
+		$data['brand']    = $this->brand_intro_m->get_list();
+		$this->load->view('admin/brand_info_list',$data);
+	}
+	
+	public function brand_info_edit_v()
+	{
+		$bid = $this->input->get('bid');
+		$data['username'] = $this->session->userdata('username');
+		$data['brand']    = $this->brand_intro_m->get($bid);
+		$data['form_url'] = 'admin/index/brand_info_edit?id='.$bid;
 		$this->load->view('admin/brand_info_edit',$data);
+	}
+	
+	public function brand_info_edit()
+	{
+		$id = (int) $this->input->get('id');
+		$data['content'] = $this->input->post('ue_abstract');
+		$config = array(
+    			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
+    			"maxSize" => 50000000 , //单位KB
+    			"allowFiles" => array( ".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"  )
+	    );
+    	$pic = new Uploader_ue( "pic" , $config);
+    	$info = $pic->getFileInfo();
+    	if($info['state'] == 'SUCCESS') {
+    		$data['pic'] = $info['url'];
+    	} else {
+    		$data['pic'] = '';
+    	}
+		$this->brand_intro_m->edit($id, $data);
+		redirect('admin/index/brand_info');
 	}
 }

@@ -38,7 +38,7 @@
         
     </div>
     <div class="main_page">
-    	显示页码
+    	more
     </div>
           
 <?php $this->load->view('common/common_footer'); ?>

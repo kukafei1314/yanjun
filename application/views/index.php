@@ -16,72 +16,28 @@
     </div>
  
     <div class="main_block">
-        <div class="main_block1">
-            <p class="main_block_p1">品牌策略</p>
-            <p>Brand</p>
-            <p>Strategy</p>
-            
-            <div class="main_block-yellow">
-                <p>品牌策略</p>
-            </div>
-            
-            <div class="main_block-detail">
-                <a href="#">“0”起步创建品牌，从无到有贴身式为您提供品牌理念；品牌命名；品牌口号语；品牌形象；品牌传播等专业服务。</a>
-            </div>
-            
-        </div>
-        <div class="main_block1">
-        	<p class="main_block_p1">品牌创建</p>
-            <p>Brand</p>
-            <p>Establish</p>
-            
-            <div class="main_block-yellow">
-        		<p>品牌创建</p>
-            </div>
-            
-            <div class="main_block-detail">
-        		<a href="http://www.baidu.com">“0”起步创建品牌，从无到有贴身式为您提供品牌理念；品牌命名；品牌口号语；品牌形象；品牌传播等专业服务。</a>
-            </div>
-        </div>
-        <div class="main_block1">
-        	<p class="main_block_p1">品牌升级</p>
-            <p>Brand</p>
-            <p>Update</p>
-            
-            <div class="main_block-yellow">
-        		<p>品牌升级</p>
-            </div>
-            
-            <div class="main_block-detail">
-        		<a href="http://www.baidu.com">“0”起步创建品牌，从无到有贴身式为您提供品牌理念；品牌命名；品牌口号语；品牌形象；品牌传播等专业服务。</a>
-            </div>
-        </div>
-        <div class="main_block1">
-        	<p class="main_block_p1">品牌咨询</p>
-            <p>Brand</p>
-            <p>Consultation</p>
-            
-            <div class="main_block-yellow">
-        		<p>品牌咨询</p>
-            </div>
-            
-            <div class="main_block-detail">
-        		<a href="http://www.baidu.com">“0”起步创建品牌，从无到有贴身式为您提供品牌理念；品牌命名；品牌口号语；品牌形象；品牌传播等专业服务。</a>
-            </div>
-        </div>
+    <?php foreach($brand as $brand) :?>
+    	<?php if($brand['bid']==5):?>
         <div class="main_block1" style="margin-right:0px;">
-        	<p class="main_block_p1">品牌实现</p>
+		<?php else:?>
+        <div class="main_block1">
+		<?php endif;?>
+            <p class="main_block_p1"><?php echo $brand['name'];?></p>
             <p>Brand</p>
-            <p>Realization</p>
+            <p><?php echo $brand['en_name'];?></p>
             
             <div class="main_block-yellow">
-        		<p>品牌实现</p>
+                <p><?php echo $brand['name'];?></p>
             </div>
-            
-            <div class="main_block-detail">
-        		<a href="http://www.baidu.com">“0”起步创建品牌，从无到有贴身式为您提供品牌理念；品牌命名；品牌口号语；品牌形象；品牌传播等专业服务。</a>
+           
+            <div class="main_block-detail" style="background:url(<?php echo base_url($brand['pic']);?>);">
+                <a href="#"><?php echo $brand['content'];?></a>
             </div>
         </div>
+    <?php endforeach;?>
+
+       
+       
         <!--<div class="cl"></div>-->
     </div>
     

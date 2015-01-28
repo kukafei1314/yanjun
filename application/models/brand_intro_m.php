@@ -7,7 +7,7 @@
  * @time 2015.01.27
  *
  */
-class News_m extends CI_Model {
+class Brand_intro_m extends CI_Model {
 	// 构造函数
 	public function __construct()
 	{
@@ -26,17 +26,10 @@ class News_m extends CI_Model {
 	public function get($id)
 	{
 		$id = intval($id);
-		$this->db->where('id', $id);
-		$query = $this->db->get('yj_news');
+		$this->db->where('bid', $id);
+		$query = $this->db->get('yj_brand_intro');
 		if($query->num_rows() != 0) {
-			$row = $query->row_array();
-			return array(
-						'id'		=>	$id,
-						'title'		=>	$row['title'],
-						'content'	=>	$row['content'],
-						'images'	=>	$row['images'],
-						'add_date'	=>	$row['add_date'],
-					);
+			return $query->row_array();
 		}
 		return FALSE;
 	}
@@ -45,22 +38,18 @@ class News_m extends CI_Model {
 	public function edit($id, $data) 
 	{   
 		$id = (int) $id;
-		if ($data['images'] == '') {
+		if ($data['pic'] == '') {
 			$array= array(
-					'title'   => $data['title'] ,
-					'content' => $data['content'],
-					'add_date'    => time(),
+				'content' => $data['content'],
 			);
 		} else {
 			$array= array(
-					'title'   => $data['title'] ,
 					'content' => $data['content'],
-					'images'  => $data['images'] ,
-					'add_date'    => time(),
+					'pic'  => $data['pic'] ,
 			);
 		}
-		
-		$this->db->where('id', $id);
-		$this->db->update('yj_news', $array);
+		var_dump($array);
+		$this->db->where('bid', $id);
+		$this->db->update('yj_brand_intro', $array);
 	}
 }
