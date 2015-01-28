@@ -13,6 +13,11 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 案例列表</h5></div>
+                            <form class="my_search" method="post" action="<?php echo base_url('admin/cases?test=1');?>" role="search">
+                            	<div class="form-group">
+                                	<input class="form-control" type="text" name="search" placeholder="请输入关键字搜索"/>
+                                </div>
+                            </form>
                             <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/cases/add_v');?>">添加案例</a>
                             <div class="cl"></div>
 	                 	</div>
