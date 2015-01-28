@@ -34,7 +34,6 @@ class News extends CI_Controller {
 				$this->session->set_userdata($msg);
 			}
 			$str = $this->session->userdata('str');
-			echo $str;
 			$per_page = 10; 
 			$p = (int) page_cur();	// 获取当前页码
 			$data['p'] = $p;
@@ -151,18 +150,5 @@ class News extends CI_Controller {
 		$data['images'] = $news['images'];
 		$data['form_url'] = 'admin/news/edit?id=' . $data['id'].'&p='.$data['p'];
 		$this->load->view('admin/news_add.php', $data);
-	}
-	
-	public function search_new() {
-		$msg = $this->input->post('search');
-		$per_page = 10;
-		$p = (int) page_cur();	// 获取当前页码
-		$data['p'] = $p;
-		$data['news'] = $this->news_m->search_list($msg,$per_page,$per_page*($p-1));
-		$data['page_html']	  =	page($this->news_m->search_num($msg), $per_page);
-		$data['username'] = $this->session->userdata('username');
-		//var_dump($data['news']);
-		$this->load->view('admin/news_list',$data);
-		
 	}
 }

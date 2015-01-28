@@ -33,6 +33,18 @@ class Service_channel_m extends CI_Model {
        return $query->result_array();
 	}
 	
+	public function get_pro_list($limit,$offset)
+	{
+	   $this->db->order_by('id asc');
+       $query = $this->db->get('yj_questions',$limit, $offset);
+       return $query->result_array();
+	}
+	
+	public function get_pro_num()
+	{
+		return $this->db->count_all('yj_questions');
+	}
+	
 	//删除文章
 	public function del($id) 
 	{
