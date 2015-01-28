@@ -61,7 +61,7 @@ class News extends CI_Controller {
 	
 	//添加新闻
 	public function add() 
-	{
+	{   
 		$title = $this->input->post('title');
 		$config = array(
 	    			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
@@ -81,7 +81,8 @@ class News extends CI_Controller {
 	}
 	
 	public function add_v() 
-	{
+	{   
+	    $data['p'] = (int) page_cur();	// 获取当前页码
 		$data['username'] = $this->session->userdata('username');
 		$data['title'] = '';
 		$data['content'] = '';

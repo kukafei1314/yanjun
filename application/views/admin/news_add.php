@@ -13,6 +13,9 @@
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> 添加新闻</h5></div>
+							<a href="<?php echo base_url('admin/news?p='.$p);?>">
+	                        	<button type="submit" class="btn btn-theme03 back_botton pull-right">返回</button>
+	                        </a>
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">
@@ -24,9 +27,10 @@
                                       </div>
                                       <div class="cl"></div>
                                   </div>
-                                  <div class="form-group">
+                                  <div class="form-group">								   
                                       <label class="col-sm-2 col-sm-2 control-label">图片</label>
 									<div class="col-sm-10">
+									    <p class="give_notice">jpg图片规格：588*385！</p>
 										<?php if(!empty($images)) :?>
 											<img src="<?php echo base_url($images);?>" width="80" style="margin-top:10px;"/>
 										<?php endif;?>
@@ -44,6 +48,11 @@
                                  
                                   <div class=" add-task-row page_html">
                                      <button onclick="return is_empty()" type="submit" class="btn btn-theme03 news_botton">提交</button>
+									 <?php if (empty($name)):?>
+                                     <button type="reset" class="btn btn-theme03 news_botton" onclick='window.location.reload();'>重置</button>
+                                     <?php else:?>
+                                     <button type="reset" class="btn btn-theme03 news_botton" onclick='location="<?php echo base_url('admin/news/edit_v?id='.$id.'&p='.$p);?>"'>重置</button>
+                                  	 <?php endif;?>
                                   </div>								  
                             </form>
                           </div>
