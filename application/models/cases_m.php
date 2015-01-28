@@ -26,7 +26,6 @@ class Cases_m extends CI_Model {
 			// 随机获取每页文章列表，不包括文章内容字段
 	public function get_list_rand($limit,$offset)
 	{
-	   $this->db->order_by('id', 'random');
        $query = $this->db->get('yj_cases',$limit, $offset);
        return $query->result_array();
 	}		
@@ -35,7 +34,7 @@ class Cases_m extends CI_Model {
 	public function get_id($id)
 	{
        $query = $this->db->get_where('yj_cases',array('id' => $id));
-       return $query->result_array();
+       return $query->row_array();
 	}
 	
 		//删除文章

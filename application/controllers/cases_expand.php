@@ -11,11 +11,14 @@ class Cases_expand extends CI_Controller
 	
 	public function index()
 	{	
+		$per_page = 10;
+		$p = (int) page_cur();	// 获取当前页码
+		$data['p'] = $p;
 		$id = $this->input->get('id');
 		$case = $this->cases_m->get_id($id);
 		$data['case'] = $case;
-		$data['title'] = "我喜欢";
-		$data['cases'] = $this->cases_m->get_list_rand(10,'');
+		$data['cases'] = $this->cases_m->get_list_rand($per_page,($p-1)*$per_page);
+		$data['page_html'] = page($this->cases_m->get_num(),$per_page);
 		$this->load->view('case_expand',$data);
 	}
 	public function single_cases()

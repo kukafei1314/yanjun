@@ -46,6 +46,7 @@
         	Work
         </div>
     <?php foreach($cases as $case): ?>
+    <a href="<?php echo base_url('cases_expand?id='.$case['id']);?>">
         <div class="main_work_pic">
         	<img src="<?php echo base_url($case['images']); ?>" width=588 height=385/>
             <div class="main_pic_mask"></div>
@@ -87,6 +88,7 @@
                 
             </div>
         </div>
+    </a>
     <?php endforeach; ?>
     </div>
     <div class="main_news">

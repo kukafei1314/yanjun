@@ -387,9 +387,12 @@ body{
 	line-height:20px;
 	padding-top:15px;
 	padding-top:5px \9;
-	color:#fffde5;
 	display:none;
 	z-index:1000;
+}
+
+.main_work_detail a{
+	color:#fffde5;
 }
 
 .main_work_detail p{
