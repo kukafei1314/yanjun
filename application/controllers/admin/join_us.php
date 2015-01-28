@@ -77,13 +77,16 @@ class Join_us extends CI_Controller
     }
     public function employee()
     {
-        $data['departments'] = $this->join_us_m->get_all_department();
-        $data['employees'] = $this->join_us_m->get_all_employee();
-
+		$per_page = 10;
+		$p = (int) page_cur();	// 获取当前页码
+		$data['p'] = $p;
+        //$data['departments'] = $this->join_us_m->get_all_department();
+        $data['employees'] = $this->join_us_m->get_list($per_page,$per_page*($p-1));
 			foreach ($data['employees'] as &$employee){
 				$department = $this->join_us_m->get_department_name($employee['did']);
 				$employee['position'] = $department;
 			}
+		$data['page_html']	  =	page($this->join_us_m->get_num(), $per_page);
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/employee_list',$data);
     }

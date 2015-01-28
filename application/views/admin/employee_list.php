@@ -62,6 +62,9 @@
                                 </li>								             
                               </ul>
                           </div>
+                              <div class=" add-task-row page_html">
+                                  <?php echo $page_html;?>
+                              </div>
                           <?php// endforeach;?>
                       </div>
                       </section>

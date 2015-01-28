@@ -114,4 +114,26 @@ class Join_us_m extends CI_Model {
 	    $this->db->delete('yj_job');
 	    return TRUE;
 	}
+	public function pageConfig($count)
+   {
+       $config['base_url'] = 'admin/join_us/employee';
+       $config['total_rows'] = $count;
+       $config['per_page'] = 6;
+       $config['first_link'] = "首页";
+       $config['last_link'] = "末页";
+       $config['use_page_numbers'] = TRUE;
+       $config['cur_tag_open'] = '<b>';
+       $config['cur_tag_close'] = '</b>';
+       $this->pagination->initialize($config);
+   }
+   	public function get_num()
+	{
+		return $this->db->count_all('yj_employee');
+	}
+	public function get_list($limit,$offset)
+	{
+	   //$this->db->order_by('');
+       $query = $this->db->get('yj_employee',$limit, $offset);
+       return $query->result_array();
+	}	
 }
