@@ -12,7 +12,13 @@
                 	<section class="task-panel tasks-widget">
                         <div class="panel-heading">
                             <div class="pull-left"><h5><i class="fa fa-tasks"></i> <?php echo '添加类别';?></h5></div>
-                            <a class="btn btn-success btn-sm add_news" href="<?php echo $_SERVER['HTTP_REFERER'];?>">返回</a>
+                            <?php if (!empty($name)):?>
+                            <a href="<?php echo base_url('admin/type?type='.$type.'&p='.$p);?>">
+                            <?php else:?>
+                            <a href="<?php echo base_url('admin/type?type='.$type);?>">
+                            <?php endif;?>
+	                        	<button class="btn btn-theme03 back_botton pull-right">返回</button>
+	                        </a>
                             <div class="cl"></div>
                         </div>
                       <div class="form-panel">
@@ -31,11 +37,14 @@
                                       </div>
                                 </div>	
                                 <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">部门介绍</label>
-                                  <div class="col-sm-10">
-                                      <script id="ue_content" name="content" type="text/plain"><?php echo $content;?></script>
+                                      <label class="col-sm-2 col-sm-2 control-label" style="padding-top: 25px;">部门简介</label>
+                                      <div class="col-sm-10">
+                                          <p class="give_notice">简介内容不超过120个字！</p>
+                                          <textarea oninput="if(value.length>120) value=value.substr(0,120)" id="ue_abstract" name="content" rows='5' cols='130'><?php echo $content;?></textarea>
+                                          
+                                      </div>
+                                      <div class="cl"></div>
                                   </div>
-                                </div>
                                 <?php endif;?>
                                 <div class=" add-task-row page_html">
                                     <button type="submit" class="btn btn-theme03 news_botton" onclick="return is_empty()">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -60,7 +69,17 @@
 		if(tit ==""){
 			alert("名称不能为空！");
 			return false;
-		}				
+		}
+		
+		var tit_ue_abstract = document.getElementById('ue_abstract').value;
+			var tit_ue_abstract_length = document.getElementById('ue_abstract').value.length;
+			if(tit_ue_abstract ==""){
+				alert("简介不能为空！");
+				return false;
+			}else if(tit_ue_abstract_length > 120){
+				alert("简介不能超过120字符！");
+				return false;
+			}										
 	 }
 	</script>
       <!--main content end-->

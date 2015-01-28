@@ -30,7 +30,7 @@
                 <div class="line">
                 	<div class="float">
                         <p><label>姓名/职务</label></p>
-                        <input id="client_name0" name="client_name" type="text" size="38" class="input_s">
+                        <input id="client_name0" name="client_name" type="text" size="38" class="input_s" placeholder ="">
                         &nbsp;&nbsp;
                     </div>
                     <div class="float">
@@ -50,7 +50,7 @@
                     <p><label>验证码</label></p>
                     <input type="text" id="checkin" name="check_num" class="input_s" placeholder="" >
 				</div>
-                <div class="float" style ="position:relative;left:20px;top:24px; background-color: #123123;" id="check_num" onClick="get_check_num()"></div>	
+                <div class="float" style ="position:relative;left:20px;top:24px; background-color: #00FFFF;" id="check_num" onClick="get_check_num()"></div>	
                 </div>
 				
                 <div class="sr float">

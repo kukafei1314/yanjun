@@ -32,6 +32,7 @@ class General extends CI_Controller {
 		
 		$query = $this->about_us_m->select_limit($type, $per_page, $offset);
 		$data['font'] = $query;
+		$data['p'] = $p;
 		//echo $num;
 		$data['link'] = page($num, $per_page);
 		$this->load->view('admin/general',$data);
@@ -54,32 +55,36 @@ class General extends CI_Controller {
 	}
 	
 	public function delete() {
+		$p = (int) page_cur();
 		$type = $this->input->get('type');
 		$arr['type'] = $type;
 		$arr['id'] = $this->input->get('id');
 		$result = $this->about_us_m->g_delete($arr);
 		if($result){
-			redirect('admin/general/index?type='.$type);
+			redirect('admin/general/index?type='.$type.'&p='.$p);
 		}else echo "数据删除失败！";	
 	}
 	
 	public function edit() {
 		if(!is_post()) {
+			$p = (int) page_cur();
 			$data['username'] = $this->session->userdata('username');
 			$type = $this->input->get('type');
 			$id = $this->input->get('id');
 			$data['result'] = $this->about_us_m->select_i($type,$id);
 			$data['type'] = $type;
 			$data['id'] = $id;
+			$data['p'] = $p;
 			$this->load->view('admin/general_edit',$data);
 		}else {
+			$p = (int) page_cur();
 			$type = $this->input->get('type');
 			$arr['id'] = $this->input->get('id');
 			$arr['title'] = $this->input->post('title');
 			$arr['content'] = $this->input->post('content');
 			$result = $this->about_us_m->g_update($type,$arr);
 			if($result){
-				redirect('admin/general/index?type='.$type);
+				redirect('admin/general/index?type='.$type.'&p='.$p);
 			}else echo "数据更新失败！";
 			}
 	}
@@ -110,6 +115,8 @@ class General extends CI_Controller {
 	}
 	
 	public function detail() {
+		$p = (int) page_cur();
+		$data['p'] = $p;
 		$data['username'] = $this->session->userdata('username');
 		$type = $this->input->get('type');
 		$id = $this->input->get('id');

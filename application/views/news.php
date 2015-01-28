@@ -1,5 +1,4 @@
 <?php $this->load->view('common/common_header'); ?>
-
 	<div id="newsecond">
         <div class="pic_div">
         	<div id="pic">
@@ -17,7 +16,7 @@
         <div id="news_middle">
         <div class="news_left">
         	<?php 
-				if($id>0){
+				if(isset($test)){
 					$title = $title;
 					$content = $content;
 				}else{

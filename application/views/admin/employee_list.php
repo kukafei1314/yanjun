@@ -42,11 +42,13 @@
                                               	  座右铭：<?php echo $employee['motto']; ?>
                                               </div>
                                               <div class="pull-right employee_tool">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <a href="<?php echo base_url('admin/join_us/edit_employee').'?id='.$employee['id'];?>">
+                                              	  <a href="<?php echo base_url('admin/join_us/employee_detail').'?id='.$employee['id'];?>" title="详情">
+                                                        <button class="btn btn-success btn-xs fa fa-book"></button>
+                                                  </a>
+                                                  <a href="<?php echo base_url('admin/join_us/edit_employee').'?id='.$employee['id'];?>" title="编辑">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a href="<?php echo base_url('admin/join_us/delete_employee').'?id='.$employee['id'];?>">   
+                                                  <a onclick="return del_alert()" href="<?php echo base_url('admin/join_us/delete_employee').'?id='.$employee['id'];?>" title="删除">   
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
@@ -64,6 +66,6 @@
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
-
+ 	  
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    
