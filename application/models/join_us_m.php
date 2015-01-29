@@ -128,12 +128,7 @@ public function get_topic()
 		return $query->result_array();
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//获得工作数量
-	public function get_job_num()
-	{
-		return $this->db->count_all('yj_job');
-	}
-	
+
 	//获得员工信息
 	public function get_employee($id)
 	{
