@@ -16,6 +16,7 @@ class Join_us extends CI_Controller
     public function index()
     {
 		$data['imgs'] = $this->home_pic_m->pic_info(5);
+		$data['depart'] = $this->join_us_m->get_department(17);
         $this->load->view('join_us_second',$data);
     }
 	

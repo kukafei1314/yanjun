@@ -351,7 +351,9 @@ body {
 
 .current{
 	padding:0 5px 0 5px;
-	color:#faad00 !important;
+	color:#FFF !important;
+	background-image:url(../image/case2_top.gif);
+	display:inline-block;
 }
 
 .main_page a{

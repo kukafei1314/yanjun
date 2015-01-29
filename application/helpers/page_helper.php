@@ -49,12 +49,12 @@ function page($total_rows, $per_page = 10, $base_url = NULL)
 			'query_string_segment'	=> 'p',
 			'first_link'			=> '首页',
 			'last_link'				=> '末页',
-			'prev_link'				=> '<',
-			'next_link'				=> '>',
+			'prev_link'				=> '< Previous',
+			'next_link'				=> 'Next >',
 			'use_page_numbers'		=> TRUE,
 			'page_query_string'		=> TRUE,
-			'cur_tag_open'          => '<a class="current">', // 当前页开始样式
-			'cur_tag_close'         => '</a>',
+			'cur_tag_open'          => '<a class="current">&nbsp;&nbsp;&nbsp;', // 当前页开始样式
+			'cur_tag_close'         => '&nbsp;&nbsp;&nbsp;</a>',
 	);
 	
 	// 初始化和返回链接

@@ -25,7 +25,7 @@ class General extends CI_Controller {
 		$type = $this->input->get('type');
 		$data['type'] = $type;
 		
-		$per_page = 10;
+		$per_page = 7;
 		$p = (int) page_cur();	// 获取当前页码
 		$offset = $per_page*($p-1);
 		$num = $this->about_us_m->get_all_num($type);
