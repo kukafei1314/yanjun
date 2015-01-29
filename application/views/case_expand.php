@@ -35,7 +35,7 @@
                     <li><a href="#">Top↑</a></li>
                     <li><a href="">Work</a></li>
                     <li><a href="<?php echo base_url('service');?>">Sevice</a></li>
-                    <li><a href="<?php echo base_url('service');?>">About Us</a></li>
+                    <li><a href="<?php echo base_url('about_us');?>">About Us</a></li>
                 </div>
                 <div class="clc"></div>
             </div>
