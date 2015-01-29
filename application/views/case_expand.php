@@ -33,7 +33,7 @@
                 </div>
                 <div class="t_con float">
                     <li><a href="#">Top↑</a></li>
-                    <li><a href="">Work</a></li>
+                    <li><a href="<?php echo base_url('cases');?>">Work</a></li>
                     <li><a href="<?php echo base_url('service');?>">Sevice</a></li>
                     <li><a href="<?php echo base_url('about_us');?>">About Us</a></li>
                 </div>
