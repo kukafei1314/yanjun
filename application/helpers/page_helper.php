@@ -53,8 +53,8 @@ function page($total_rows, $per_page = 10, $base_url = NULL)
 			'next_link'				=> 'Next >',
 			'use_page_numbers'		=> TRUE,
 			'page_query_string'		=> TRUE,
-			'cur_tag_open'          => '<a class="current">', // 当前页开始样式
-			'cur_tag_close'         => '</a>',
+			'cur_tag_open'          => '<a class="current">&nbsp;&nbsp;&nbsp;', // 当前页开始样式
+			'cur_tag_close'         => '&nbsp;&nbsp;&nbsp;</a>',
 	);
 	
 	// 初始化和返回链接
