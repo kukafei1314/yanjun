@@ -31,11 +31,11 @@ class Join_us extends CI_Controller
 		$data['p'] = $p;
 		$data['employ'] = $this->join_us_m->get_department_employee($did,$per_page,$per_page*($p-1));
 		$data['job'] = $this->join_us_m->get_department_job($did,$per_page_job,$per_page_job*($p-1));
-		if($this->join_us_m->get_num($employee_job)/$per_page_job > $this->join_us_m->get_num($employee_table)/$per_page) {
-			$num = $this->join_us_m->get_num($employee_job);
+		if($this->join_us_m->get_depar_num($did,$employee_job)/$per_page_job > $this->join_us_m->get_depar_num($did,$employee_table)/$per_page) {
+			$num = $this->join_us_m->get_depar_num($did,$employee_job);
 			$data['page_html']	 =	page($num,$per_page_job);
 		} else {
-			$num = $this->join_us_m->get_num($employee_table);
+			$num = $this->join_us_m->get_depar_num($did,$employee_table);
 			$data['page_html']	 =	page($num,$per_page);
 		}
 		$data['depart'] = $this->join_us_m->get_department($did);
