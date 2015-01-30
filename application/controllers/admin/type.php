@@ -31,7 +31,7 @@ class Type extends CI_Controller {
 		$p = (int) page_cur();	// 获取当前页码
 		$offset = $per_page*($p-1);
 		$num = $this->type_m->get_all_num($type);
-		$data['link'] = page($num, $per_page);
+		$data['link'] = page_r($num, $per_page);
 		$data['p'] = $p;
 		$data['types'] = $this->type_m->select_limit($type, $per_page, $offset);
 		

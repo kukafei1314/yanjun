@@ -87,7 +87,7 @@ class Join_us extends CI_Controller
 			$department = $this->join_us_m->get_department_name($employee['did']);
 			$employee['position'] = $department;
 		}
-		$data['page_html']	  =	page($this->join_us_m->get_num('yj_employee'), $per_page);
+		$data['page_html']	  =	page_r($this->join_us_m->get_num('yj_employee'), $per_page);
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/employee_list',$data);
     }
@@ -141,7 +141,7 @@ class Join_us extends CI_Controller
         	$job['department'] = $department;
         }
         //var_dump($data['jobs']);
-        $data['page_html']	  =	page($this->join_us_m->get_num('yj_job'), $per_page);
+        $data['page_html']	  =	page_r($this->join_us_m->get_num('yj_job'), $per_page);
         $data['username'] = $this->session->userdata('username');
         $this->load->view('admin/job_list',$data);
     }

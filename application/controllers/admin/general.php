@@ -34,7 +34,7 @@ class General extends CI_Controller {
 		$data['font'] = $query;
 		$data['p'] = $p;
 		//echo $num;
-		$data['link'] = page($num, $per_page);
+		$data['link'] = page_r($num, $per_page);
 		$this->load->view('admin/general',$data);
 	}
 	

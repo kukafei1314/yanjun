@@ -38,7 +38,7 @@ class News extends CI_Controller {
 			$p = (int) page_cur();	// 获取当前页码
 			$data['p'] = $p;
 			$data['news'] = $this->news_m->search_list($str,$per_page,$per_page*($p-1));
-			$data['page_html']	  =	page($this->news_m->search_num($str), $per_page);
+			$data['page_html']	  =	page_r($this->news_m->search_num($str), $per_page);
 			$data['username'] = $this->session->userdata('username');
 			$this->load->view('admin/news_list',$data);
 			
@@ -47,7 +47,7 @@ class News extends CI_Controller {
 			$p = (int) page_cur();	// 获取当前页码
 			$data['p'] = $p;
 			$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1)); 
-			$data['page_html']	  =	page($this->news_m->get_num(), $per_page);
+			$data['page_html']	  =	page_r($this->news_m->get_num(), $per_page);
 			$data['username'] = $this->session->userdata('username');
 			$this->load->view('admin/news_list',$data);
 		}
