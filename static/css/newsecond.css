@@ -353,6 +353,18 @@ body {
 	color:#FFF !important;
 	background-image:url(../image/case2_top.gif);
 	display:inline-block;
+	float:left;
+}
+
+.page_full {
+	margin-right: auto;
+	margin-bottom: auto;
+	width:auto;
+}
+.page_num {
+	height: 43px;
+	width: 55px;
+	float:left;
 }
 
 .main_page a{

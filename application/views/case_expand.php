@@ -91,8 +91,9 @@
 
         <!--<div class="clc"></div>-->
 	</div>
-    <div class="main_page">
-    	<?php echo $page_html;?>
-    </div>
+  </div>
+<div class="main_page">
+    <?php echo $page_html;?>
+</div>
    
 <?php $this->load->view('common/common_footer'); ?>
