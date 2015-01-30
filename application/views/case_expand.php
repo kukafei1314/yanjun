@@ -29,7 +29,7 @@
                 <div class="case_t float">
                     <div class="text_title"><?php echo $case['name'];?></div>
                     <div class="text_st"><span class= "text_st_project"><?php echo $case['project'];?>/</span> <span class = "text_st_date"><?php echo $case['date'];?></span></div>
-                    <div class="text"></div>
+                    <div class="text"><?php echo $case['abstract'];?></div>
                 </div>
                 <div class="t_con float">
                     <li><a href="#">Top↑</a></li>
