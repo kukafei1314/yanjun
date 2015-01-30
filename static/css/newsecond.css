@@ -354,6 +354,7 @@ body {
 	color:#FFF !important;
 	background-image:url(../image/case2_top.gif);
 	display:inline-block;
+	float:left;
 }
 
 .main_page a{

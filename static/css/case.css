@@ -203,6 +203,8 @@
 	top: 0px;
 	height: 74px;
 	width: 178px;
+	_width: 192px!important;
+	_height: 84px!important;
 	background-color: #3D3D37;
 	line-height: 20px;
 	padding-left: 15px;
@@ -355,4 +357,13 @@ ol li {
 .us_content {
 	font-size:16px;
 	line-height:25px;
+}
+.page_full {
+	margin-right: auto;
+	margin-bottom: auto;
+}
+.page_num {
+	height: 43px;
+	width: 55px;
+	float:left;
 }
