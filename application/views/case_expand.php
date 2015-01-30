@@ -37,7 +37,7 @@
                     <li><a href="<?php echo base_url('service');?>">Sevice</a></li>
                     <li><a href="<?php echo base_url('about_us');?>">About Us</a></li>
                 </div>
-                <div class="clc"></div>
+                
             </div>
 
 				<div class="case_img"><?php echo $case['content'];?></div>
