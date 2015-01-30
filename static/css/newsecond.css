@@ -109,8 +109,10 @@ body {
 }
 .share {
 	position:absolute;
+	height:100px;
+	width:100px;
 	top:10px;
-	left:360px;
+	left:322px;
 	z-index:10;
 
 }

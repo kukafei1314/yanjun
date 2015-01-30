@@ -52,7 +52,7 @@
 			<div class="div_opa">
                 <img src="<?php echo $item['logo'];?>" width='100%' height='100%'/><br/>
 				<div class="case_opacity"></div>
-                <div class="share share1">
+                <div class="share share1" style="position:absolute; left:125px">
                     <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width='22' height='22'/>
                     <div class="share_1">
                         <div class="qq_share">
