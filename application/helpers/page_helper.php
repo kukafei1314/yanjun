@@ -47,10 +47,10 @@ function page($total_rows, $per_page = 10, $base_url = NULL)
 			'base_url'				=> $base_url,
 			'per_page'				=> $per_page,
 			'total_rows'			=> $total_rows,
-			'num_links'				=> 10,
+			'num_links'				=> 6,
 			'query_string_segment'	=> 'p',
-			'first_link'			=> '首页',
-			'last_link'				=> '末页',
+			'first_link'			=> false,
+			'last_link'				=> false,
 			'prev_link'				=> '< Previous',
 			'next_link'				=> 'Next >',
 			'use_page_numbers'		=> TRUE,
@@ -63,12 +63,8 @@ function page($total_rows, $per_page = 10, $base_url = NULL)
 			'cur_tag_close'         => '&nbsp;&nbsp;&nbsp;</a>',
 			'prev_tag_open'			=> '<div style="float:left ; margin-left:12px; margin-right:25px">',
 			'prev_tag_close' 		=> '</div>',
-			'next_tag_open'			=> '<div style="float:left; margin-left:12px; margin-left:25px">',
+			'next_tag_open'			=> '<div style="float:left; margin-left:25px; margin-right:12px">',
 			'next_tag_close' 		=> '</div>',
-			'first_tag_open'		=> '<div style="float:left; margin-right:25px">',
-			'first_tag_close' 		=> '</div>',
-			'last_tag_open'			=> '<div style="float:left; margin-left:25px">',
-			'last_tag_close' 		=> '</div>',
 	);
 	
 	// 初始化和返回链接
