@@ -63,8 +63,12 @@ function page($total_rows, $per_page = 10, $base_url = NULL)
 			'cur_tag_close'         => '&nbsp;&nbsp;&nbsp;</a>',
 			'prev_tag_open'			=> '<div style="float:left ; margin-left:12px; margin-right:25px">',
 			'prev_tag_close' 		=> '</div>',
-			'next_tag_open'			=> '<div style="float:left; margin-left:25px">',
+			'next_tag_open'			=> '<div style="float:left; margin-left:12px; margin-left:25px">',
 			'next_tag_close' 		=> '</div>',
+			'first_tag_open'		=> '<div style="float:left; margin-right:25px">',
+			'first_tag_close' 		=> '</div>',
+			'last_tag_open'			=> '<div style="float:left; margin-left:25px">',
+			'last_tag_close' 		=> '</div>',
 	);
 	
 	// 初始化和返回链接
@@ -72,6 +76,7 @@ function page($total_rows, $per_page = 10, $base_url = NULL)
 	return $CI->pagination->create_links();
 }
 
+//后台分页
 function page_r($total_rows, $per_page = 10, $base_url = NULL)
 {
 	// 加载CI的pagination类库

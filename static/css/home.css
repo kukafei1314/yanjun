@@ -116,6 +116,7 @@ body{
 }
 
 .main_footer{
+	text-align:left;
 	width:986px;
 	margin:2px auto 0 auto;
 	background-color:#3e3a39;
@@ -214,6 +215,7 @@ body{
 }
 
 .main_content{
+	text-align:left;
 	position:relative;
 	width:986px;
 	margin:0 auto;
