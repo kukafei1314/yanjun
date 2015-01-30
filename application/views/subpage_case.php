@@ -34,7 +34,7 @@
 			<div class="slide">
             	<p>Client / <?php echo $case['name'];?> </p>
                 <p>Project / <?php echo $case['project'];?> </p>
-                <p>Time / <?php echo date('Y.m.d',$case['date']);?> </p>
+                <p>Time / <?php echo $case['date'];?> </p>
             </div>
         </div>
 		<?php endforeach ?> 
