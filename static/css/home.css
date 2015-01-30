@@ -260,10 +260,8 @@ body{
 	filter:alpha(opacity=50); 
 }
 
-.main_out{
+#main_out{
 	position:fixed;
-	left:1280px;
-	top:200px;
 	width:42px;
 	height:43px;
 }
