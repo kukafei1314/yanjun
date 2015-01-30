@@ -59,8 +59,10 @@ function page($total_rows, $per_page = 10, $base_url = NULL)
 			'num_tag_close' 		=> '</div>',
 			'cur_tag_open'          => '<a class="current">&nbsp;&nbsp;&nbsp;', // 当前页开始样式
 			'cur_tag_close'         => '&nbsp;&nbsp;&nbsp;</a>',
-			'prev_tag_open'			=> '<div style="float:left">',
+			'prev_tag_open'			=> '<div style="float:left ; margin-left:12px; margin-right:25px">',
 			'prev_tag_close' 		=> '</div>',
+			'next_tag_open'			=> '<div style="float:left; margin-left:25px">',
+			'next_tag_close' 		=> '</div>',
 	);
 	
 	// 初始化和返回链接

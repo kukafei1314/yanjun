@@ -69,8 +69,8 @@
         </div>
         <div class="cl"></div>
   </div>
-  <div class="main_page">
+</div>
+<div class="main_page">
 	<?php echo $page_html;?>
-  </div>
 </div>
 <?php $this->load->view('common/common_footer'); ?> 

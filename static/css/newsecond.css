@@ -356,6 +356,17 @@ body {
 	float:left;
 }
 
+.page_full {
+	margin-right: auto;
+	margin-bottom: auto;
+	width:auto;
+}
+.page_num {
+	height: 43px;
+	width: 55px;
+	float:left;
+}
+
 .main_page a{
 	padding:0 5px 0 5px;
 	color:#fff;
