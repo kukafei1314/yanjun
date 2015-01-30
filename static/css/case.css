@@ -106,6 +106,8 @@
 	padding-top: 117px;
 	line-height: 200%;
 	_z-index:10;
+	float:left;
+	_float:none!important;
 }
 .float {
 	float: left;
