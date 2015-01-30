@@ -53,7 +53,7 @@
             <div class="main_work_detail">
             	<p>Client / <?php echo $case['name'];?> </p>
                 <p>Project / <?php echo $case['project'];?> </p>
-                <p>Time /  <?php echo date('Y.m.d',$case['date']); ?> </p>
+                <p>Time /  <?php echo $case['date']; ?> </p>
                 <div class="share_work">
                 <img src="<?php echo base_url('static/image/pic1.png'); ?>"/>
                 <div class="share_2">

@@ -380,6 +380,7 @@ body{
 	opacity:0.8;
 	filter:alpha(opacity=80); 
 	font-size:12px;
+	text-align:left;
 	line-height:20px;
 	padding-top:15px;
 	padding-top:5px \9;

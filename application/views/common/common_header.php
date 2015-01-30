@@ -21,7 +21,7 @@
 
 window.onload=fnInit;
 	function fnInit(){ 
-		if ($.browser.msie && $.browser.version <= 10.0)
+		if ($.browser.msie && $.browser.version <= 9.0)
 		{
 			//alert('666');
 		} else {	
