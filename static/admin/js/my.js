@@ -3,12 +3,6 @@ $(function() {
 	//$( "#sort2" ).sortable();
 });
 
-function delcfm() { 
-	if (!confirm("确认要删除？")) { 
-		return false; 
-	} else return true;
-} 
-
 $(document).ready(function() {
     $(".btn").each(function() {
 		$(this).mouseenter(function(){

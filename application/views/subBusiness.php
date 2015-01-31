@@ -55,7 +55,7 @@
                 </div>
 				
                 <div class="sr float">
-                	<input onclick="return is_empty_right()" name="sub" type="submit" value="提交">
+                	<input onclick='return is_empty_right()' name="sub" type="submit" value="提交">
                 </div>
                 <div class="sr float">
                 	<input name="reset" type="reset" value="重填">
@@ -83,5 +83,4 @@
               
         <div class="cl"></div>
     </div>
-	
 <?php $this->load->view('common/common_footer');?>
