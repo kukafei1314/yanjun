@@ -32,24 +32,14 @@ class Index extends CI_Controller {
 		$this->load->view('index',$data);
 	}
 	
-	public function joinus2()
-	{
-		$this->load->view('join_us_second');
-	}
-	
-	public function subpage_case()
-	{
-		$this->load->view('subpage_case');
-	}
-	
 	public function map()
 	{
 		$type = $this->input->get('type',true);
 		$data['imgs'] = $this->home_pic_m->pic_info(2);
 		if($type == 1) {
-			$this->load->view('map_shi');
+			$this->load->view('map_shi',$data);
 		} else {
-			$this->load->view('map_bj');
+			$this->load->view('map_bj',$data);
 		}
 		
 	}
