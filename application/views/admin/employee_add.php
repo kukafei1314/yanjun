@@ -64,8 +64,8 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">座右铭</label>
                                       <div class="col-sm-10">
-                                         <p class="give_notice">座右铭不超过50个字！</p>
-                                         <textarea oninput="if(value.length>50) value=value.substr(0,50)" id="ue_content" name="ue_content" rows='5' cols='70'></textarea>
+                                         <p class="give_notice">座右铭不超过120个字！</p>
+                                         <textarea oninput="if(value.length>120) value=value.substr(0,120)" id="ue_content" name="ue_content" rows='5' cols='70'></textarea>
                                       </div>
                                       <div class="cl"></div>
                                   </div>

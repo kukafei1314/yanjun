@@ -38,8 +38,8 @@
                    <div class="form-group">
                       <label class="col-sm-2 col-sm-2 control-label">职位描述</label>
                       <div class="col-sm-10">
-                      	  <p class="give_notice">职位描述不超过250个字！</p>
-                          <textarea oninput="if(value.length>250) value=value.substr(0,250)" id="ue_abstract" name="ue_content" rows='5' cols='70'><?php echo isset($job)?$job['content']:'';?></textarea>
+                      	  <p class="give_notice">建议职位描述不超过250个字！</p>
+                          <script  id="ue_content" name="ue_content" type="text/plain"><?php echo isset($job)?$job['content']:'';?></script>
                       </div>
                    </div>          
                   <div class=" add-task-row page_html">
