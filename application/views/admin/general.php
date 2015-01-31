@@ -92,17 +92,17 @@
 
 	   </section>
     </section>
-<script type="text/javascript">
-	function del_alert(){
-		return confirm('删除操作不可恢复，确定删除么？');
-	}
-	
-	function delcfm() { 
-	if (!confirm("删除操作不可恢复，确定删除么？")) { 
-		return false; 
-	} else return true;
-} 
-</script>
+	<script type="text/javascript">
+        function del_alert(){
+            return confirm('删除操作不可恢复，确定删除么？');
+        }
+        
+        function delcfm() { 
+        if (!confirm("删除操作不可恢复，确定删除么？")) { 
+            return false; 
+        } else return true;
+    } 
+    </script>
     
 <?php echo $this->load->view('admin/common/admin_footer'); ?>
                                             

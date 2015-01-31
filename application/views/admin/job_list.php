@@ -81,6 +81,10 @@
               </div><!-- /row -->
 		</section> <!--/wrapper -->
       </section>
-
+	<script type="text/javascript">
+        function del_alert(){
+            return confirm('删除操作不可恢复，确定删除么？');
+        }
+    </script>
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    
