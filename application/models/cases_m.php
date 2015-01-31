@@ -94,7 +94,6 @@ class Cases_m extends CI_Model {
 			$array= array(
 				'name'		=>	$data['name'],
 				'project'	=>	$data['project'],
-				'logo'		=>	$data['logo'],
 				'content'	=>	$data['content'],
 				'abstract'	=>	$data['abstract'],
 				'date'      =>  $data['date'],

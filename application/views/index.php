@@ -53,7 +53,7 @@
             <div class="main_work_detail">
             	<p>Client / <?php echo $case['name'];?> </p>
                 <p>Project / <?php echo $case['project'];?> </p>
-                <p>Time /  <?php echo date('Y.m.d',$case['date']); ?> </p>
+                <p>Time /  <?php echo $case['date']; ?> </p>
                 <div class="share_work">
                 <img src="<?php echo base_url('static/image/pic1.png'); ?>"/>
                 <div class="share_2">
@@ -103,7 +103,7 @@
                     <div class="news_list_img">
                         <img src="<?php echo base_url($new['images']);?>" width=200 height=190/>
                     </div>
-                    <a class="fade" onclick='location="<?php echo base_url('about_us/to_news?id='.$new['id']);?>"'></a>
+                    <a href="javascript:void(0);" class="fade" onclick='location="<?php echo base_url('about_us/to_news?id='.$new['id']);?>"'></a>
                     <div class="share">
                         <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                         <div class="share_1">

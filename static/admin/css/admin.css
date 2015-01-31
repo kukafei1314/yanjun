@@ -240,6 +240,7 @@
 .employee_title , .job_title{
 	text-align:left;
 	height:80px;
+	margin-bottom:5px;
 }
 .employee_pic {
 	width:15%;
@@ -274,9 +275,10 @@
 
 .job_content {
 	overflow:hidden;
-	line-height:80px;
+	line-height:20px;
 	height:80px;
-	width:60%;
+	width:35%;
+	padding-right:5%;
 }
 
 .job_tool {

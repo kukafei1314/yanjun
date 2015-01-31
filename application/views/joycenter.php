@@ -12,7 +12,7 @@
             <a class="pic_left" onclick="change(1)"></a>
             <a class="pic_right" onclick="change(0)"></a>
         </div>
-        <div class="cl"></div>
+        
     </div>	
 	<div class="joyLeft">
 		<div class="leftTop">

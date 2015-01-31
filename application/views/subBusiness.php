@@ -51,7 +51,7 @@
                     <p><label>验证码</label></p>
                     <input type="text" id="checkin" name="check_num" class="input_s" placeholder="" >
 				</div>
-                <div class="float" style ="position:relative;left:20px;top:24px; background-color: #00FFFF;" id="check_num" onClick="get_check_num()"></div>	
+                <div class="float" style ="position:relative;left:20px;top:24px; background-color: #dcdddd;" id="check_num" onClick="get_check_num()"></div>	
                 </div>
 				
                 <div class="sr float">
@@ -68,7 +68,12 @@
         	<p>常见问题</p>
             <div class="text_li">
 			    <?php foreach ($pro as $pro): ?>
-					<a href="servicechannel/businesspro?&p=<?php $a=($pro['id']-$pro['id']%5+5)/5;echo $a;?>
+					<a href="servicechannel/businesspro?&p=<?php if ($pro['id']%5!=0){
+																	$a=($pro['id']-$pro['id']%5+5)/5;
+																}else{
+																	$a=$pro['id']/5;
+																}					                                          
+					                                             echo $a;?>
 						#<?php echo $pro['id']%5;?>">
 						<?php echo $pro['title'];?>
 					</a><br/>

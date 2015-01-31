@@ -13,7 +13,7 @@
                     <div class="form-group">
                       <label class="col-sm-2 col-sm-2 control-label">职位名称</label>
                       <div class="col-sm-5">
-                          <input name="job_name" type="text" class="form-control" value="<?php echo $job['job_name'];?>">
+                          <input name="job_name" type="text" class="form-control" value="<?php echo isset($job)?$job['job_name']:'';?>">
                       </div>
                   	</div>
                   	<div class="form-group">
@@ -35,6 +35,7 @@
                    </div>          
                   <div class=" add-task-row page_html">
                      <button type="submit" class="btn btn-theme03 news_botton">提交</button>
+                     <button type="reset" class="btn btn-theme03 news_botton" onclick='window.location.reload();'>重置</button>
                   </div>
                   </form>
                 </div>

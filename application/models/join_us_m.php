@@ -27,8 +27,8 @@ class Join_us_m extends CI_Model {
 	{
 		$this->db->where('tid',$did);
 		$query = $this->db->get('yj_department_type');
-		$result = $query->result_array();
-		return $result[0]['name'];
+		$result = $query->row_array();
+		return $result['name'];
 	}
 	
 	//获得所有员工
@@ -99,7 +99,7 @@ public function get_topic()
 	}
 	public function pageConfig($count)
    {
-       $config['base_url'] = 'admin/join_us/employee';
+       $config['base_url'] = 'join_us/department';
        $config['total_rows'] = $count;
        $config['per_page'] = 6;
        $config['first_link'] = "首页";
@@ -109,25 +109,26 @@ public function get_topic()
        $config['cur_tag_close'] = '</b>';
        $this->pagination->initialize($config);
    }
-   //获得员工数量
-	public function get_num()
+   	public function get_num($table)
 	{
-		return $this->db->count_all('yj_employee');
+		return $this->db->count_all($table);
 	}
    
 	public function get_list($limit,$offset)
 	{
-	   //$this->db->order_by('');
+	   $this->db->order_by('did ASC, id desc');
        $query = $this->db->get('yj_employee',$limit, $offset);
        return $query->result_array();
-	}	
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//获得工作数量
-	public function get_job_num()
-	{
-		return $this->db->count_all('yj_job');
 	}
-	
+
+	public function get_job_list($limit,$offset)
+	{
+		$this->db->order_by('did ASC, id desc');
+		$query = $this->db->get('yj_job',$limit, $offset);
+		return $query->result_array();
+	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	//获得员工信息
 	public function get_employee($id)
 	{
@@ -149,7 +150,12 @@ public function get_topic()
 	    $query = $this->db->get_where('yj_job', array('did' => $did),$limit, $offset);
 		return $query->result_array();
 	}
-	
+	public function get_depar_num($did,$table)
+	{   
+		$this->db->where('did',$did);
+		//$this->db->get($table);
+		return $this->db->count_all_results($table);
+	}
 	
 	
 }

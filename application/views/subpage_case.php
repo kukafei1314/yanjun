@@ -18,7 +18,7 @@
             <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <div class="div_h float">
-            <div class="div_hr float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
+            <div class="div_hr">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
             <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <!--<div class="clc"></div>-->
@@ -34,7 +34,7 @@
 			<div class="slide">
             	<p>Client / <?php echo $case['name'];?> </p>
                 <p>Project / <?php echo $case['project'];?> </p>
-                <p>Time / <?php echo date('Y.m.d',$case['date']);?> </p>
+                <p>Time / <?php echo $case['date'];?> </p>
             </div>
         </div>
 		<?php endforeach ?> 

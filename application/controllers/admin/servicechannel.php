@@ -33,7 +33,7 @@ class servicechannel extends CI_Controller {
 			$keyword = NULL;
 		}
 		$data['servicechannel'] = $this->service_channel_m->get_list($per_page,$per_page*($p-1),$keyword); 
-		$data['page_html']	  =	page($this->service_channel_m->get_num($keyword), $per_page);
+		$data['page_html']	  =	page_r($this->service_channel_m->get_num($keyword), $per_page);
 		$data['p'] = $p;
 		$data['username'] = $this->session->userdata('username');
 		$data['form_url'] = 'admin/servicechannel?p='.$p.'&search='.$keyword;

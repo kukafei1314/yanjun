@@ -22,14 +22,14 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例名称</label>
                                       <div class="col-sm-10">
-                                          <?php echo $cases['name'];?>"
+                                          <?php echo $cases['name'];?>
                                       </div>
                                       <div class="cl"></div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">案例项目</label>
                                       <div class="col-sm-10">
-                                          <?php echo $cases['project'];?>"
+                                          <?php echo $cases['project'];?>
                                       </div>
                                       <div class="cl"></div>
                                   </div>

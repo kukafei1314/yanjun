@@ -17,40 +17,64 @@
                             <div class="cl"></div>
 	                 	</div>
                       <div class="panel-body">
-                        <?php foreach ($departments as $department):?>
-                        <div class="department_name"><?php echo $department['name']?></div>
                           <div class="task-content">
                              <ul id="sortable" class="task-list">
+                             	<li>
+									<div class="task-title">
+                                    	<div class="task-title-sp pull_left list_title" style="width:15%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
+											<b>所属部门</b>	
+                                        </div>
+                                        <div class="task-title-sp pull_left list_title" style="width:15%; overflow:hidden;text-overflow:ellipsis; white-space:nowrap; line-height:48px;">
+											<b>职位名称</b>
+                                        </div>
+									    <div class=" pull_left list_title" style="width:35%; line-height:48px;">
+											<b>职位描述</b>
+                                        </div>
+                                        <div class=" pull_left list_title" style="width:15%; line-height:48px;">
+											<b>添加时间</b>
+                                        </div>
+                                        <div class="pull-right hidden-phone" style="line-height:48px; margin-right:4%;">
+											<b>操作</b>
+                                        </div>
+                                        <div class="cl"></div>
+                                	</div>
+                                </li>
+                                <?php foreach($jobs as $job):?>
                                 <li>
-                                    <?php foreach($jobs as $job):?>
-                                        <?php if($job['did'] == $department['tid']):?>
+                                    
                                            <div class="job_title">
                                               <div class="pull_left job_name">
-                                              	  职位名称：<?php echo $job['job_name'];?>
+                                              	  <?php echo $job['department'];?>
+                                              </div>
+                                              <div class="pull_left job_name">
+                                              	  <?php echo $job['job_name'];?>
                                               </div>
                                               <div class="pull_left job_content">
-                                              	  职位描述：<?php echo $job['content'];?>
+                                              	  <?php echo $job['content'];?>
                                               </div>
                                               <div class="pull_left job_addtime">
-                                              	  添加时间：<?php echo date("Y-m-d",$job['add_time']);?>
+                                              	  <?php echo date("Y-m-d",$job['add_time']);?>
                                               </div>
                                               <div class="pull-right job_tool">
-                                                  <button class="btn btn-success btn-xs fa fa-book"></button>
-                                                  <a href="<?php echo base_url('admin/join_us/edit_job').'?id='.$job['id'];?>">
+                                              	  <a href="<?php echo base_url('admin/join_us/detail_job?id='.$job['id'].'&p='.$p);?>"  title="详情">
+                                                  		<button class="btn btn-success btn-xs fa fa-book"></button>
+                                                  </a>
+                                                  <a href="<?php echo base_url('admin/join_us/edit_job?id='.$job['id'].'&p='.$p);?>"  title="编辑">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
                                                   </a>
-                                                  <a href="<?php echo base_url('admin/join_us/delete_job').'?id='.$job['id'];?>">   
+                                                  <a href="<?php echo base_url('admin/join_us/delete_job?id='.$job['id'].'&p='.$p);?>" title="详情">   
                                                   		<button class="btn btn-danger btn-xs fa fa-trash-o"></button> 
                                                   </a>
                                               </div>
                                               <div class="cl"></div>
                                           </div>
-                                        <?php endif;?>
-                                    <?php endforeach;?>
-                                </li>								             
+                                    
+                                </li>
+                                <?php endforeach;?>								             
                               </ul>
-                          </div>
-                          <?php endforeach;?>
+                      </div>
+                      <div class=" add-task-row page_html">
+                               <?php echo $page_html;?>
                       </div>
                       </section>
                   </div><!--/col-md-12 -->

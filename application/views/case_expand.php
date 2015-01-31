@@ -18,7 +18,7 @@
             <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <div class="div_h float">
-            <div class="div_hr float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
+            <div class="div_hr">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
             <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
         </div>
         <!--<div class="clc"></div>-->
@@ -28,16 +28,16 @@
             <div>
                 <div class="case_t float">
                     <div class="text_title"><?php echo $case['name'];?></div>
-                    <div class="text_st"><span class= "text_st_project"><?php echo $case['project'];?>/</span> <span class = "text_st_date"><?php echo date('Y.m.d',$case['date']);?></span></div>
+                    <div class="text_st"><span class= "text_st_project"><?php echo $case['project'];?>/</span> <span class = "text_st_date"><?php echo $case['date'];?></span></div>
                     <div class="text"><?php echo $case['abstract'];?></div>
                 </div>
                 <div class="t_con float">
-                    <li><a href="">Top↑</a></li>
-                    <li><a href="">Work</a></li>
-                    <li><a href="">Sevice</a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="#">Top↑</a></li>
+                    <li><a href="<?php echo base_url('cases');?>">Work</a></li>
+                    <li><a href="<?php echo base_url('service');?>">Sevice</a></li>
+                    <li><a href="<?php echo base_url('about_us');?>">About Us</a></li>
                 </div>
-                <div class="clc"></div>
+                
             </div>
 
 				<div class="case_img"><?php echo $case['content'];?></div>
@@ -51,8 +51,8 @@
 			
 			<div class="div_opa">
                 <img src="<?php echo $item['logo'];?>" width='100%' height='100%'/><br/>
-				<div class="case_opacity"></div>
-                <div class="share share1">
+				<a href="javascript:void(0);" class="case_opacity"></a>
+                <div class="share share1" style="position:absolute; left:165px">
                     <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width='22' height='22'/>
                     <div class="share_1">
                         <div class="qq_share">
@@ -91,8 +91,9 @@
 
         <!--<div class="clc"></div>-->
 	</div>
-    <div class="main_page">
-    	<?php echo $page_html;?>
-    </div>
+  </div>
+<div class="main_page">
+    <?php echo $page_html;?>
+</div>
    
 <?php $this->load->view('common/common_footer'); ?>
