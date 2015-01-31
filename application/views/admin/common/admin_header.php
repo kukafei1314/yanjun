@@ -28,7 +28,7 @@
     <!-- My CSS -->
     <link href="<?php echo base_url('static/admin/css/admin.css');?>" rel="stylesheet">
     <!-- My JS -->
-    <script src="<?php echo base_url('static/admin/js/my.js');?>"></script>
+
     <script src="<?php echo base_url('static/admin/js/login.js');?>"></script>
     <script src="<?php echo base_url('/static/admin/js/calendar/WdatePicker.js'); ?>"></script>
     
@@ -96,21 +96,21 @@
               	  <h5 class="centered"><?php echo $username;?></h5>
               	  	
                   <li class="mt">
-                      <a href="<?php echo base_url('/admin/home_pic');?>">
+                      <a href="<?php echo base_url('/admin/home_pic');?>" id="home_pic">
                           <i class="fa fa-dashboard"></i>
                           <span>大图管理</span>
                       </a>
                   </li>
                   
                   <li class="sub-menu dcjq-parent-li">
-                      <a href="<?php echo base_url('admin/cases');?>">
+                      <a href="<?php echo base_url('admin/cases');?>" id="cases">
                           <i class="fa fa-heart"></i>
                           <span>案例管理</span>
                       </a>
                   </li>
                   
                   <li class="sub-menu dcjq-parent-li">
-                      <a  href="<?php echo base_url('admin/news');?>">
+                      <a  href="<?php echo base_url('admin/news');?>" id="news">
                           <i class="fa fa-book"></i>
                           <span>新闻管理</span>
                       </a>
@@ -122,15 +122,15 @@
                           <span>常规项目管理</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="<?php echo base_url('admin/general?type=1');?>">服务</a></li>
-                          <li><a  href="<?php echo base_url('admin/general?type=2');?>">我们</a></li>
-                          <li><a  href="<?php echo base_url('admin/general?type=3');?>">分享中心</a></li>
-                          <li><a  href="<?php echo base_url('admin/general?type=4');?>">常见问题</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=1');?>" type="1">服务</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=2');?>" type="1">我们</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=3');?>" type="1">分享中心</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=4');?>" type="1">常见问题</a></li>
                       </ul>
                   </li>
                   
                   <li class="sub-menu dcjq-parent-li">
-                      <a href="<?php echo base_url('admin/servicechannel');?>">
+                      <a href="<?php echo base_url('admin/servicechannel');?>" id="servicechannel">
                           <i class="fa fa-hdd-o"></i>
                           <span>业务通道管理</span>
                       </a>
@@ -143,8 +143,8 @@
                       </a>
                       <ul class="sub">
                           <!-- <li><a  href="general.html">部门介绍</a></li> -->
-                          <li><a  href="<?php echo base_url('admin/join_us/employee');?>">员工介绍</a></li>
-                          <li><a  href="<?php echo base_url('admin/join_us/job');?>">招聘职位</a></li>
+                          <li><a  href="<?php echo base_url('admin/join_us/employee');?>" id="employee">员工介绍</a></li>
+                          <li><a  href="<?php echo base_url('admin/join_us/job');?>" id="job">招聘职位</a></li>
                       </ul>
                   </li>
                   
@@ -160,13 +160,13 @@
                   </li>
                   
                   <li class="sub-menu dcjq-parent-li">
-                      <a href="<?php echo base_url('admin/general/topic');?>">
+                      <a href="<?php echo base_url('admin/general/topic');?>" id="topic">
                           <i class="fa fa-delicious"></i>
                           <span>标语管理</span>
                       </a>
                   </li>
                   <li class="sub-menu dcjq-parent-li">
-                      <a href="<?php echo base_url('admin/index/brand_info');?>">
+                      <a href="<?php echo base_url('admin/index/brand_info');?>" id="brand_info">
                           <i class="fa fa-arrow-circle-o-right"></i>
                           <span>首页品牌介绍</span>
                       </a>
