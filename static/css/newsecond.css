@@ -17,7 +17,7 @@ body {
 }
 .news_left {
 	width:536px;
-	_width:566px!important;
+	_width:596px!important;
 	padding:45px 30px 0px 30px;
 	_margin-top:5px;
 	float:left;
@@ -354,7 +354,7 @@ body {
 
 .current{
 	padding:0 5px 0 5px;
-	color:#FFF !important;
+	color:#000 !important;
 	background-image:url(../image/case2_top.gif);
 	display:inline-block;
 	float:left;
@@ -364,11 +364,14 @@ body {
 	height:50px;
 	margin-right: auto;
 	margin-left: auto;
-	width:auto;
+	text-align:center;
+	display:inline-block;
+	_display:inline; 
+	_zoom:1;
 }
 .page_num {
-	height: 55px;
-	width: 55px;
+	height: 50px;
+	width: 50px;
 	float:left;
 }
 

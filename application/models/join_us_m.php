@@ -139,14 +139,14 @@ public function get_topic()
 	//获得各部门员工
 	public function get_department_employee($did,$limit,$offset)
 	{
-		$this->db->order_by('id asc');
+		$this->db->order_by('id','asc');
 	    $query = $this->db->get_where('yj_employee', array('did' => $did),$limit, $offset);
 		return $query->result_array();
 	}
 	//获得各部门招聘职位
 	public function get_department_job($did,$limit,$offset)
 	{
-		$this->db->order_by('id asc');
+		$this->db->order_by('add_time','desc');
 	    $query = $this->db->get_where('yj_job', array('did' => $did),$limit, $offset);
 		return $query->result_array();
 	}

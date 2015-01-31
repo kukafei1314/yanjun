@@ -41,6 +41,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">新闻内容</label>
                                       <div class="col-sm-10">
+                                      	  <p class="give_notice">内容中jpg图片宽度不大于536！</p>
                                           <script id="ue_content" name="ue_content" type="text/plain"><?php echo $content;?></script>
                                       </div>
                                       <div class="cl"></div>

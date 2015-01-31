@@ -68,10 +68,13 @@ function run() {
 function showdown(obj) {
 	$(obj).css("display","none");
 	$(obj).prev(".right_middle").css("height","auto");
+	$(obj).prev(".right_middle").css("overflow","visible");
+
 }
 function hideup(obj) {
 	if($(obj).css("height") != 130) {
 		$(obj).css("height","130");
+		$(obj).css("overflow","hidden");
 		$(obj).next(".not").css("display","block");
 	}
 }
@@ -90,10 +93,12 @@ var dot = "<a class='not' onclick='showdown(this)'>……</a>";
 function showall(obj) {
 	$(obj).css("display","none");
 	$(obj).prev(".m_text").css("height","auto");
+	$(obj).prev(".m_text").css("overflow","visible");
 }
 function unhide(obj) {
 	if($(obj).css("height") != 395) {
 		$(obj).css("height","395");
+		$(obj).css("overflow","hidden");
 		$(obj).next(".show").css("display","block");
 	}
 }
