@@ -60,6 +60,7 @@ glyphicon-pencil"></span></a>
                         <span class="up_word">更改图片</span>
                         <span class="up_input"><input id="pic1" name="pic" type="file" value="" size="5" /></span>
                         <div class="cl"></div>
+                        <p style="padding:5px 0 0 170px;">建议图片上传比例：986px*410px</p>
                     </div>
                     <input type="hidden" id="pid" name="pid" value="" />
                     <div class="button_img">

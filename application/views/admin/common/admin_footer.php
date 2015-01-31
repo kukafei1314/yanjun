@@ -46,6 +46,6 @@
 	<!--custom tagsinput-->
 	<script src="<?php echo base_url('static/admin/assets/js/jquery.tagsinput.js');?>"></script>
     
-   	
+   	<script src="<?php echo base_url('static/admin/js/my.js');?>"></script>
   </body>
 </html>

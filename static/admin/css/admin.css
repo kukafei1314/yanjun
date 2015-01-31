@@ -370,3 +370,10 @@
 	margin-left:48%;
 	width:20%;
 }
+.focus {
+	background:#68dff0 !important;
+	color:#fff !important;
+}
+.focus1 {
+	color:#68dff0 !important;
+}
