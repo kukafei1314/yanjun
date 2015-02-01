@@ -58,14 +58,14 @@
 		                    <a data-toggle="modal" href="login.html#myModal"> 忘记密码？</a>		
 		                </span>-->
 		            </label> 
-		            <button class="btn btn-theme btn-block" onclick="check_login_right()" type="submit"><i class="fa fa-lock"></i>登录</button>
-		            <hr>
+		            <button style="margin-bottom: 20px;" class="btn btn-theme btn-block" onclick="check_login_right()" type="submit"><i class="fa fa-lock"></i>登录</button>
+		           <!-- <hr>
 		            <div class="registration">
 		                Don't have an account yet?<br/>
 		                <a class="" href="<?php echo base_url('admin/register');?>">
 		                    Create an account
 		                </a>
-		            </div>
+		            </div>-->
 		
 		        </div>
 		
