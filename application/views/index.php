@@ -102,8 +102,8 @@
                     </div>
                     <div class="news_list_img">
                         <img src="<?php echo base_url($new['images']);?>" width=200 height=190/>
-                    </div>
-                    <a href="javascript:void(0);" class="fade" onclick='location="<?php echo base_url('about_us/to_news?id='.$new['id']);?>"'></a><br />
+                    	<div class="fade"><a onclick='location="<?php echo base_url('about_us/to_news?id='.$new['id']);?>"'></a></div>
+                    </div><br />
                     <div class="share">
                         <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
                         <div class="share_1">

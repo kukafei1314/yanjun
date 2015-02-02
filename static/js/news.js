@@ -133,10 +133,11 @@ $(document).ready(function() {
 		$(this).mouseenter(function(){
 			$(this).children('.main_pic_mask').css("display","block");
 			$(this).children('.main_work_detail').slideDown("fast");
+			$(this).children('.main_work_detail').fadeIn("slow");
 		});
 		$(this).mouseleave(function(){
 			$(this).children('.main_pic_mask').css("display","none");
-			$(this).children('.main_work_detail').css("display","none");
+			$(this).children('.main_work_detail').fadeOut("slow");
 		});
 	});
 	
@@ -152,18 +153,20 @@ $(document).ready(function() {
 	$(".c_img").each(function() {
 		$(this).mouseenter(function(){
 			$(this).children('.slide').slideDown("slow");
+			$(this).children('.slide').fadeIn("slow");
 		});
 		$(this).mouseleave(function(){
-			$(this).children('.slide').css("display","none");
+			$(this).children('.slide').fadeOut("slow");
 		});
 	});
 	
 	$(".l_img").each(function() {
 		$(this).mouseenter(function(){
 			$(this).children('.slide').slideDown("slow");
+			$(this).children('.slide').fadeIn("slow");
 		});
 		$(this).mouseleave(function(){
-			$(this).children('.slide').css("display","none");
+			$(this).children('.slide').fadeOut("slow");
 		});
 	});
 	
@@ -179,7 +182,6 @@ $(document).ready(function() {
 	$(".share_work").each(function() {
 		$(this).mouseenter(function(){
 			$(this).children(".share_2").slideDown();
-			//$(this).siblings('a .fade').css("opacity","0");
 		});
 		$(this).mouseleave(function(){
 			$(this).children(".share_2").slideUp();
@@ -222,4 +224,42 @@ function get_single_cases(id)
 	     }
 	});
 }
+
+$(document).ready(function() {
+	$(".div_h").each(function() {
+		$(this).mouseenter(function() {
+			$(this).children(".a_link").fadeOut("slow");
+		});
+		$(this).mouseleave(function() {
+			$(this).children(".a_link").fadeIn("slow");
+		});
+	});
+});
+
+$(document).ready(function() {
+	$(".news_list_img").each(function() {
+		$(this).mouseenter(function() {
+			$(this).children(".fade").fadeOut("slow");
+		});
+		$(this).mouseleave(function() {
+			$(this).children(".fade").css({opacity:0.7});
+			$(this).children(".fade").fadeIn("slow");
+			
+		});
+	});
+});
+
+$(document).ready(function() {
+	$(".div_opa").each(function() {
+		$(this).mouseenter(function() {
+			$(this).children(".case_left_expand").children(".case_opacity").fadeOut("slow");
+			$(this).children(".case_opacity").fadeOut("slow");
+		});
+		$(this).mouseleave(function() {
+			$(this).children(".case_opacity").css({opacity:0.7});
+			$(this).children(".case_left_expand").children(".case_opacity").fadeIn("slow");
+			$(this).children(".case_opacity").fadeIn("slow");
+		});
+	});
+});
 
