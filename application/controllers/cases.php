@@ -6,6 +6,7 @@ class Cases extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('cases_m');
+		$this->load->model('partners_m');
 	}
 	
 	
@@ -19,6 +20,7 @@ class Cases extends CI_Controller
 		$data['cases']  = $this->cases_m->get_list($per_page,$per_page*($p-1));
 		//$data['cases'] = $this->cases_m->get_list($cases_numb,'');
 		$data['page_html']	 =	page($cases_numb, $per_page);
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('subpage_case',$data);
 	}
 	
