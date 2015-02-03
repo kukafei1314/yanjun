@@ -34,11 +34,11 @@
                 	产业投资合作伙伴
                 </div>
                 <div class="main_footer_corp2">
-                	<a href="#">智行文化</a>
-                    <a href="#">海晏堂</a>
-                    <a href="#">尖峰影视</a>
-                    <a href="#">龙竹堂</a>
-                    <a href="#">道达咨询</a>
+                	<a href="<?php echo $partners[0]['content']; ?>"><?php echo $partners[0]['type']; ?></a>
+                    <a href="<?php echo $partners[1]['content']; ?>"><?php echo $partners[1]['type']; ?></a>
+                    <a href="<?php echo $partners[2]['content']; ?>"><?php echo $partners[2]['type']; ?></a>
+                    <a href="<?php echo $partners[3]['content']; ?>"><?php echo $partners[3]['type']; ?></a>
+                    <a href="<?php echo $partners[4]['content']; ?>"><?php echo $partners[4]['type']; ?></a>
                     
                 
                 </div>

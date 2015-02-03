@@ -171,6 +171,12 @@
                           <span>首页品牌介绍</span>
                       </a>
                   </li>
+                  <li class="sub-menu dcjq-parent-li">
+                      <a href="<?php echo base_url('admin/general/partners');?>" id="partners">
+                          <i class="fa fa-delicious"></i>
+                          <span>投资合作伙伴</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>
