@@ -11,12 +11,14 @@ class Join_us extends CI_Controller
     {
         parent::__construct();
         $this->load->model(array('join_us_m','home_pic_m'));
+		$this->load->model('partners_m');
     }
     
     public function index()
     {
 		$data['imgs'] = $this->home_pic_m->pic_info(5);
 		$data['depart'] = $this->join_us_m->get_department(17);
+		$data['partners'] = $this->partners_m->get_all();
         $this->load->view('join_us_second',$data);
     }
 	
@@ -41,6 +43,7 @@ class Join_us extends CI_Controller
 		$data['depart'] = $this->join_us_m->get_department($did);
 		$data['topic'] = $this->join_us_m->get_topic();
 		$data['imgs'] = $this->home_pic_m->pic_info(5);
+		$data['partners'] = $this->partners_m->get_all();
         $this->load->view('join_us',$data);      
     }
 	
@@ -49,6 +52,7 @@ class Join_us extends CI_Controller
         $data['departments'] = $this->join_us_m->get_all_department();
         $data['employees'] = $this->join_us_m->get_all_employee();
         $data['username'] = $this->session->userdata('username');
+		$data['partners'] = $this->partners_m->get_all();
         $this->load->view('admin/employee_list',$data);
     }
    

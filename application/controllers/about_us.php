@@ -6,6 +6,7 @@ class About_us extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model(array('about_us_m','topic_m','news_m','home_pic_m'));
+		$this->load->model('partners_m');
 	}
 	
 	
@@ -25,6 +26,7 @@ class About_us extends CI_Controller
 		$data['imgs'] = $this->home_pic_m->pic_info(6);
 		//$data['result'] = $this->about_us_m->get_all($type);
 		$data['res_topic'] = $this->topic_m->get_all();
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('about_us',$data);
 	}
 	
@@ -42,6 +44,7 @@ class About_us extends CI_Controller
 		$data['title'] = $res['title'];
 		$data['content'] = $res['content'];
 		$data['test'] = true;
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('news',$data);
 	}
 }

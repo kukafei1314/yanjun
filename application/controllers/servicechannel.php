@@ -13,12 +13,14 @@ class Servicechannel extends CI_Controller {
 		$this->load->model(array('service_channel_m','home_pic_m'));
 		$this->load->library('captcha_np');
 		$this->load->helper('form');
+		$this->load->model('partners_m');
 	}
 	
 	public function index()
 	{   
 		$data['pro'] = $this->service_channel_m->get_prolist(); 
 		$data['imgs'] = $this->home_pic_m->pic_info(8);
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('subBusiness',$data);
 	}
 	//添加用户信息
@@ -42,6 +44,7 @@ class Servicechannel extends CI_Controller {
 	    $data['pro'] = $this->service_channel_m->get_pro_list($per_page,$per_page*($p-1));
 		$data['page_html']	  =	page($this->service_channel_m->get_pro_num(), $per_page);
 		$data['imgs'] = $this->home_pic_m->pic_info(8);
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('busi_problem',$data);
 	}
  /* 	// 验证码模块

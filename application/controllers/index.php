@@ -36,7 +36,9 @@ class Index extends CI_Controller {
 	public function map()
 	{
 		$type = $this->input->get('type',true);
+		$data['partners'] = $this->partners_m->get_all();
 		$data['imgs'] = $this->home_pic_m->pic_info(2);
+		$data['partners'] = $this->partners_m->get_all();
 		if($type == 1) {
 			$this->load->view('map_shi',$data);
 		} else {
@@ -46,19 +48,23 @@ class Index extends CI_Controller {
 	}
 	public function up()
 	{
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('up');
 	}
 	public function subBusiness()
 	{
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('subBusiness');
 	}
 	public function busi_problem()
 	{
+		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('busi_problem');
 	}
 	public function joycenter()
 	{
 		$type = 3;
+		$data['partners'] = $this->partners_m->get_all();
 		$data['result'] = $this->about_us_m->get_all($type);
 		$data['res_topic'] = $this->topic_m->get_all();
 		$this->load->view('joycenter', $data);
