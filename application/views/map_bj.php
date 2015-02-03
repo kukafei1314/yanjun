@@ -29,9 +29,26 @@
 	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
 	map1.addControl(bottom_left_control);        
 	map1.addControl(top_left_navigation); 
-	var local1 = new BMap.LocalSearch(map1, {
-    renderOptions:{map: map1, autoViewport:true}});
-    local1.searchNearby("建外SOHO", "建外SOHO东区2号楼");
+	
+	var point = new BMap.Point(116.466448,39.911294);
+	var marker = new BMap.Marker(point);  // 创建标注
+	map1.addOverlay(marker);              // 将标注添加到地图中
+	map1.centerAndZoom(point, 20);
+	var opts = {
+	  width : 200,     // 信息窗口宽度
+	  height: 100,     // 信息窗口高度
+	  title : "晏钧设计" , // 信息窗口标题
+	  enableMessage:true,//设置允许信息窗发送短息
+	  message:"北京市朝阳区东三环中39号建外SOHO2号楼0501-晏钧设计"
+	}
+	var infoWindow = new BMap.InfoWindow("地址:北京市朝阳区东三环中39号建外SOHO2号楼0501", opts);  // 创建信息窗口对象 
+	marker.addEventListener("click", function(){          
+		map1.openInfoWindow(infoWindow,point); //开启信息窗口
+	});
+	
+	//var local1 = new BMap.LocalSearch(map1, {
+    //renderOptions:{map: map1, autoViewport:true}});
+   // local1.searchNearby("建外SOHO", "建外SOHO东区2号楼");
 </script> 
 
     

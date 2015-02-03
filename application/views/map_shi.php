@@ -33,9 +33,25 @@
 	map.addControl(bottom_left_control);        
 	map.addControl(top_left_navigation);     
 	//map.addControl(top_right_navigation);
-	var local = new BMap.LocalSearch(map, {
-	renderOptions:{map: map, autoViewport:true}});
-	local.searchNearby("美东国际", "美东国际C座");
+	var point = new BMap.Point(114.528487,38.055067);
+	var marker = new BMap.Marker(point);  // 创建标注
+	map.addOverlay(marker);              // 将标注添加到地图中
+	map.centerAndZoom(point, 20);
+	var opts = {
+	  width : 200,     // 信息窗口宽度
+	  height: 100,     // 信息窗口高度
+	  title : "晏钧设计" , // 信息窗口标题
+	  enableMessage:true,//设置允许信息窗发送短息
+	  message:"河北省石家庄市广安大街16号美东国际C座2708-晏钧设计"
+	}
+	var infoWindow = new BMap.InfoWindow("地址：河北省石家庄市广安大街16号美东国际C座2708", opts);  // 创建信息窗口对象 
+	marker.addEventListener("click", function(){          
+		map.openInfoWindow(infoWindow,point); //开启信息窗口
+	});
+	
+	//var local = new BMap.LocalSearch(map, {
+	//renderOptions:{map: map, autoViewport:true}});
+	//local.searchNearby("美东国际", "美东国际C座");
 </script>
     
 <?php $this->load->view('common/common_footer'); ?> 
