@@ -24,8 +24,7 @@ $(document).ready(function(){
 		var b = $(this).attr("id");
 		if (pn.indexOf(b) != -1){
 			$(this)[0].className = 'active';
-			if()
-		}
+		}	
     });
 	$("#nav-accordion li ul a").each(function(n) {
 		var b = $(this).attr("id");
@@ -35,11 +34,26 @@ $(document).ready(function(){
 			$(this).parent('li').parent('.sub').prev(".dcjq-parent").addClass("active");            
 		}
     });
-	$("#nav-accordion a").click(function() {
-		$("#nav-accordion a").each(function(n) {
-			$(this).removeClass('focus');
+	if(pn.indexOf('general') != -1) {
+		$("#general ul a").each(function(n) {
+			var tn = $(this).attr('type');
+			if( ty == tn) {
+				$(this)[0].className = 'focus1';
+				$(this).parent('li').parent('.sub').css('display','block');
+				$(this).parent('li').parent('.sub').prev(".dcjq-parent").addClass("active");   
+			}
 		});
-    });
+	}
+	if(pn.indexOf('type') != -1) {
+		$("#type ul a").each(function(n) {
+			var tn = $(this).attr('type');
+			if( ty == tn) {
+				$(this)[0].className = 'focus1';
+				$(this).parent('li').parent('.sub').css('display','block');
+				$(this).parent('li').parent('.sub').prev(".dcjq-parent").addClass("active");   
+			}
+		});
+	}
 });
 
 /*

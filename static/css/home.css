@@ -22,7 +22,9 @@ img {
 	height: 0px; 
 	width: 0px;
 }
-
+li {
+	list-style-type:none
+}
 body{
 	margin: 0 auto;
 	text-align:center;

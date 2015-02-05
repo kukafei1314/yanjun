@@ -116,16 +116,16 @@
                       </a>
                   </li>
                   
-                  <li class="sub-menu  dcjq-parent-li">
+                  <li class="sub-menu  dcjq-parent-li" id="general">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
                           <span>常规项目管理</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="<?php echo base_url('admin/general?type=1');?>" type="1">服务</a></li>
-                          <li><a  href="<?php echo base_url('admin/general?type=2');?>" type="1">我们</a></li>
-                          <li><a  href="<?php echo base_url('admin/general?type=3');?>" type="1">分享中心</a></li>
-                          <li><a  href="<?php echo base_url('admin/general?type=4');?>" type="1">常见问题</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=2');?>" type="2">我们</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=3');?>" type="3">分享中心</a></li>
+                          <li><a  href="<?php echo base_url('admin/general?type=4');?>" type="4">常见问题</a></li>
                       </ul>
                   </li>
                   
@@ -137,7 +137,7 @@
                   </li>
                   
                   <li class="sub-menu  dcjq-parent-li">
-                      <a href="javascript:;" >
+                      <a href="javascript:;">
                           <i class="fa fa-comment"></i>
                           <span>加入我们</span>
                       </a>
@@ -148,14 +148,14 @@
                       </ul>
                   </li>
                   
-                  <li class="sub-menu  dcjq-parent-li">
+                  <li class="sub-menu  dcjq-parent-li" id="type">
                       <a href="javascript:;" >
                           <i class="fa fa-bars"></i>
                           <span>类别管理</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="<?php echo base_url('admin/type?type=1');?>">大图类别管理</a></li>
-                          <li><a  href="<?php echo base_url('admin/type?type=2');?>">部门类别管理</a></li>
+                          <li><a href="<?php echo base_url('admin/type?type=1');?>" type=1>大图类别管理</a></li>
+                          <li><a href="<?php echo base_url('admin/type?type=2');?>" type=2>部门类别管理</a></li>
                       </ul>
                   </li>
                   
