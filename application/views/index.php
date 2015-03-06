@@ -97,7 +97,7 @@
         </div>
         <?php foreach($news as $new): ?>
     	 <div class="news_list">
-                    <div class="news_list_word">
+                    <div class="news_list_word2">
                         <?php echo $new['title'];?>
                     </div>
                     <div class="news_list_img">

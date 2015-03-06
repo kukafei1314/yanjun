@@ -135,7 +135,10 @@
 	margin-right: 5px;
 	margin-bottom: 5px;
 	position:relative;
+	border:none !important;
+	background-color:#FFF;
 }
+
 .l_img {
 	height: 192px;
 	width: 193px;

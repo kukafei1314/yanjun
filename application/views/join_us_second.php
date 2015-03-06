@@ -19,13 +19,13 @@
     </div>
    <div id="j2_m">
        <div class="join2_middle">
-            <a href="<?php echo base_url('service');?>" class="join2_middle_block">为什么选择 晏钧设计</a>
-            <a href="<?php echo base_url('service');?>" class="join2_middle_block">如何与团队 一起工作</a>
+            <a href="<?php echo base_url('service');?>" class="join2_middle_block1">理想与信念</a>
+            <a href="<?php echo base_url('service');?>" class="join2_middle_block">实习计划 <p class="email"> 111@yanjun.net</p></a>
             <a href="<?php echo base_url('service');?>" class="join2_middle_block1" style="margin-bottom:0;">实习计划</a>
        </div>
        <div class="join2_middle">
-            <a href="<?php echo base_url('service');?>" class="join2_middle_block1">加入团队</a>
-            <a href="<?php echo base_url('service');?>" class="join2_middle_block1">应聘帮助</a>
+            <a href="<?php echo base_url('service');?>" class="join2_middle_block">我们的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br> 理想与信念</a>
+            <a href="<?php echo base_url('service');?>" class="join2_middle_block">我们的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br> 理想与信念</a>
             <a href="<?php echo base_url('service');?>" class="join2_middle_email">请投简历<p class="email">HR E-mail：<?php echo $depart['e_mail']; ?></p></a>
        </div>
        <div class="join2_right">

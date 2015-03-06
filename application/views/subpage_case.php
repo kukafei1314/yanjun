@@ -30,7 +30,13 @@
         <?php else:?>
         <div class="c_img float">
         <?php endif; ?>
-            <a href='<?php echo base_url('cases_expand?id='.$case['id']);?>'><img src="<?php echo $case['logo'];?>" width="100%" height="100%" /></a>
+            <a href='<?php echo base_url('cases_expand?id='.$case['id']);?>'>
+            	<?php if(empty($case['logo'])): ?>
+            	<img src="<?php echo $case['logo'];?>" />
+                <?php else:?>
+                <img src="<?php echo $case['logo'];?>" width="100%" height="100%" />
+                <?php endif;?>
+            </a>
 			<div class="slide">
             	<p>Client / <?php echo $case['name'];?> </p>
                 <p>Project / <?php echo $case['project'];?> </p>
