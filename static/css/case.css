@@ -1,6 +1,6 @@
 .div_1 {
 	width: 986px;
-	height:382px;
+	height:190px;
 	margin: 5px 0;
 	_margin-bottom: 5px!important;
 	position: relative;
@@ -17,7 +17,7 @@
 	clear:both;
 }
 .div_h {
-	height: 382px;
+	height: 190px;
 	position:relative;
 }
 .top {
@@ -85,24 +85,24 @@
 }
 .div_hf {
 	background-color: #FAAD00;
-	height: 265px;
-	_height: 382px!important;
+	height: 150px;
+	_height: 190px!important;
 	width: 193px;
 	-width: 194px!important;
 	text-align: center;
-	padding-top: 117px;
+	padding-top: 40px;
 	margin-right: 5px;
 	-margin-right: 2px!important;
-	line-height: 200%;
+	line-height: 30px;
 }
 .div_hr {
 	background-color: #FAAD00;
-	height: 265px;
-	_height: 382px!important;
+	height: 150px;
+	_height: 190px!important;
 	width: 193px;
 	text-align: center;
-	padding-top: 117px;
-	line-height: 200%;
+	padding-top: 40px;
+	line-height: 30px;
 	_z-index:10;
 	float:left;
 	_float:none!important;
@@ -112,13 +112,13 @@
 }
 .a_link {
 	font-size: 24px;
-	color: #a4a4a5;
-	height: 252px;
-	_height: 382px!important;
+	color: #555350;
+	height: 140px;
+	_height: 190px!important;
 	width: 193px;
 	-width: 194px!important;
 	text-decoration: none;
-	background-color: #60605B;
+	background-color: #c1c1b9;
 	position: absolute;
 	_top:0px;
 	_left:0px;
@@ -126,7 +126,7 @@
 	vertical-align: middle;
 	margin-right: 5px;
 	-margin-right: 2px!important;
-	padding-top: 130px;
+	padding-top: 50px;
 	display: block;
 }
 .c_img {
