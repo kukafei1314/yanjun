@@ -16,9 +16,7 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AwiCeIVhbizweIdRqOIavdAZ"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script>
-<SCRIPT>
-
-
+<script>
 window.onload=fnInit;
 	function fnInit(){ 
 		if ($.browser.msie && $.browser.version <= 9.0)
@@ -30,7 +28,7 @@ window.onload=fnInit;
 	   		$('#main_out').css({left:left1});
 		}
 	}
-</SCRIPT>
+</script>
 <title>晏钧设计</title>
 </head>
 
