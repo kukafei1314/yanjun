@@ -41,8 +41,8 @@ window.onload=fnInit;
         </div>
         <div class="main_header_right">
         	<div class="main_header_top">
-            	<img src="<?php echo base_url('static/image/header_title_new.png');?>"/>
-                <p>Brand Tel:4001&nbsp;606&nbsp;909</p>
+            	<!--<img src="<?php echo base_url('static/image/header_title_new.png');?>"/>-->
+                <p>Brand Tel:&nbsp;4001&nbsp;606&nbsp;909</p>
             </div>
             <div class="main_header_nav">
             	<div class="main_ul1">

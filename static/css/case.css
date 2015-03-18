@@ -221,8 +221,8 @@
 	_padding-bottom: 20px!important;
 	padding-left: 34px;
 	position:relative;
-	width:630px;
-	_width:664px!important;
+	width:570px;
+	_width:604px!important;
 }
 .b_middle {
 	background-color:#FFF;
@@ -234,23 +234,20 @@
 	height: 54px;
 }
 .input_s {
-	background-color: #DCDDDD;
 	height: 30px;
-	width: 285px;
+	width: 255px;
 	border-width: 1px;
 	border-color: #D2D2D3;
 }
 .input_l {
-	background-color: #DCDDDD;
 	height: 30px;
-	width: 587px;
+	width: 527px;
 	border-width: 1px;
 	border-color: #D2D2D3;
 }
 .t_area {
-	background-color: #DCDDDD;
 	height: 152px;
-	width: 587px;
+	width: 527px;
 	border-width: 1px;
 	border-color: #D2D2D3;	
 }

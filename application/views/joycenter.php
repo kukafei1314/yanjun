@@ -9,8 +9,8 @@
             </ul>
         </div>
         <div id="joycenter">
-            <a class="pic_left" onclick="change(1)"></a>
-            <a class="pic_right" onclick="change(0)"></a>
+            <a class="pic_left1" onclick="change(1)"></a>
+            <a class="pic_right1" onclick="change(0)"></a>
         </div>
         
     </div>	
