@@ -137,8 +137,10 @@ $(document).ready(function() {
 		});
 		$(this).mouseleave(function(){
 			$(this).children('.main_pic_mask').css("display","none");
+			$(this).children('.main_work_detail').stop(true,true);
 			$(this).children('.main_work_detail').fadeOut("slow");
 		});
+		
 	});
 	
 	$(".news_list_img").each(function() {
