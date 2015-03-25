@@ -47,10 +47,10 @@
         </div>
     <?php foreach($cases as $case): ?>
         <div class="main_work_pic">
+        	<img src="<?php echo base_url($case['images']); ?>" width=588 height=385/>
         	<a href="<?php echo base_url('cases_expand?id='.$case['id'].'&p='.$p);?>">
-        		<img src="<?php echo base_url($case['images']); ?>" width=588 height=385/>
-        	</a>
-            <div class="main_pic_mask"></div>
+            	<div class="main_pic_mask"></div>
+            </a>
             <div class="main_work_detail">
             	<p>Client / <?php echo $case['name'];?> </p>
                 <p>Project / <?php echo $case['project'];?> </p>

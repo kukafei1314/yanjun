@@ -131,12 +131,12 @@ $(document).ready(function() {
 	
 	$(".main_work_pic").each(function() {
 		$(this).mouseenter(function(){
-			$(this).children('.main_pic_mask').css("display","block");
+			$(this).children('a').children('.main_pic_mask').css("display","block");
 			$(this).children('.main_work_detail').slideDown("fast");
 			$(this).children('.main_work_detail').fadeIn("slow");
 		});
 		$(this).mouseleave(function(){
-			$(this).children('.main_pic_mask').css("display","none");
+			$(this).children('a').children('.main_pic_mask').css("display","none");
 			$(this).children('.main_work_detail').stop(true,true);
 			$(this).children('.main_work_detail').fadeOut("slow");
 		});
