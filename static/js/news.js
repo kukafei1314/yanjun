@@ -259,13 +259,12 @@ $(document).ready(function() {
 	$(".div_opa").each(function() {
 		$(this).mouseenter(function() {
 			$(this).children(".case_left_expand").children(".case_opacity").fadeOut("slow");
-			$(this).children(".case_opacity").fadeOut("slow");
 		});
 		$(this).mouseleave(function() {
-			$(this).children(".case_opacity").stop(true,true);
-			$(this).children(".case_opacity").css({opacity:0.7});
+			$(this).children(".case_left_expand").children(".case_opacity").stop(true,true);
+			$(this).children(".case_left_expand").children(".case_opacity").css({opacity:0.7});
 			$(this).children(".case_left_expand").children(".case_opacity").fadeIn("slow");
-			$(this).children(".case_opacity").fadeIn("slow");
+			$(this).children(".case_left_expand").children(".case_opacity").fadeIn("slow");
 		});
 	});
 });
