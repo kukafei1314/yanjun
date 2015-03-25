@@ -105,7 +105,7 @@ function check_repw_right() {
 				$("#div").show()
 				 setTimeout(function () {
         		$("#div").hide();}, 100);
-				window.location.reload();
+				//window.location.reload();
 			}
         }            
     }); 
