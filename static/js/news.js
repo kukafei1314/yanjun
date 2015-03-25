@@ -158,6 +158,7 @@ $(document).ready(function() {
 			$(this).children('.slide').fadeIn("slow");
 		});
 		$(this).mouseleave(function(){
+			$(this).children('.slide').stop(true,true);
 			$(this).children('.slide').fadeOut("slow");
 		});
 	});
@@ -168,6 +169,7 @@ $(document).ready(function() {
 			$(this).children('.slide').fadeIn("slow");
 		});
 		$(this).mouseleave(function(){
+			$(this).children('.slide').stop(true,true);
 			$(this).children('.slide').fadeOut("slow");
 		});
 	});
@@ -233,6 +235,7 @@ $(document).ready(function() {
 			$(this).children(".a_link").fadeOut("slow");
 		});
 		$(this).mouseleave(function() {
+			$(this).children('.a_link').stop(true,true);
 			$(this).children(".a_link").fadeIn("slow");
 		});
 	});
@@ -244,6 +247,7 @@ $(document).ready(function() {
 			$(this).children(".fade").fadeOut("slow");
 		});
 		$(this).mouseleave(function() {
+			$(this).children('.fade').stop(true,true);
 			$(this).children(".fade").css({opacity:0.7});
 			$(this).children(".fade").fadeIn("slow");
 			
@@ -258,6 +262,7 @@ $(document).ready(function() {
 			$(this).children(".case_opacity").fadeOut("slow");
 		});
 		$(this).mouseleave(function() {
+			$(this).children(".case_opacity").stop(true,true);
 			$(this).children(".case_opacity").css({opacity:0.7});
 			$(this).children(".case_left_expand").children(".case_opacity").fadeIn("slow");
 			$(this).children(".case_opacity").fadeIn("slow");
