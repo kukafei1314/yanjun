@@ -409,6 +409,7 @@ body{
 
 .main_work_detail p{
 	padding-left:15px;
+	color:#fff;
 }
 
 .main_news{
@@ -518,4 +519,14 @@ body{
 
 .share1 {
 	_left:165px !important;
+}
+
+.bdshare {
+  _overflow-x: hidden;
+  z-index: 999999;
+  padding-bottom: 2px;
+  font-size: 12px;
+  float: left;
+  text-align: left!important;
+  zoom: 1;
 }
