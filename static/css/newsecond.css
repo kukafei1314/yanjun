@@ -142,7 +142,7 @@ body {
 	display:block;
 	width:36px;
 	height:73px;
-	background:url(../image/left.png);
+	background: url(../image/left.png);
 }
 .pic_right {
 	position:absolute;
@@ -161,7 +161,7 @@ body {
 	display:block;
 	width:35px;
 	height:72px;
-	background:url(../image/main_left_old.png);
+	background:url(../image/main_left.png);
 }
 .pic_right1 {
 	position:absolute;
@@ -170,7 +170,7 @@ body {
 	display:block;
 	width:35px;
 	height:72px;
-	background:url(../image/main_right_old.png);
+	background:url(../image/main_right.png);
 }
 #j2_m {
 	clear:both;
