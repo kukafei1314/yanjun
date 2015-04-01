@@ -514,7 +514,8 @@ body{
 
 .share_2{
 	display: none;
-	width:300px;
+	width:50px;
+	margin-left:30px;
 }
 
 .share1 {

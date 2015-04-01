@@ -49,7 +49,6 @@
                             <a class="bds_qzone">QQ </a>
                             <a class="bds_tsina">新浪</a>
                             <a class="bds_tqq">腾讯</a>
-                            <a class="bds_renren">人人</a>
                             <span class="bds_more">更多</span>
                         </div>
                         <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
