@@ -34,20 +34,14 @@
                     	<div class="fade" onclick='location="<?php echo base_url('about_us/to_news?&p='.$this->input->get('p').'&id='.$new['id']);?>"'></div>
                     </div><br />
                     <div class="share">
-                        <img class="pic1" src="<?php echo base_url('static/image/pic1.png');?>" width=22 height=22/>
-                        <div class="share_1">
                             <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'<?php echo $new['title'];?>','url':'http://yj.te168.cn/news','pic':'<?php echo base_url($new['images']);?>'}">
-                            <a class="bds_qzone">QQ </a>
-                            <a class="bds_tsina">新浪</a>
-                            <a class="bds_tqq">腾讯</a>
-                            <span class="bds_more">更多</span>
+                            <span class="bds_more share_1" style="background: url(<?php echo base_url('static/image/pic1.png'); ?>) no-repeat 0 5px!important;"></span>
                         </div>
                         <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
                             <script type="text/javascript" id="bdshell_js"></script>
                             <script type="text/javascript">
                                 document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
                             </script>
-                        </div>
                     </div> 
                 </div>
             <?php endforeach;?>
