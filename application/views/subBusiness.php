@@ -1,5 +1,4 @@
 <?php $this->load->view('common/common_header'); ?>
-<script src="<?php echo base_url('static/js/service.js');?>"></script>
 	<div class="main_big_pic">
         <div id="pic">
             <ul>
