@@ -43,6 +43,11 @@ body{
 	_margin-bottom: 0px;!important;
 }
 
+#main_out{
+	position:fixed;
+	width:42px;
+	height:43px;
+}
 .main_header_left{
 	float:left;
 	width:196px;
@@ -274,11 +279,6 @@ body{
 	filter:alpha(opacity=50); 
 }
 
-#main_out{
-	position:fixed;
-	width:42px;
-	height:43px;
-}
 
 .main_block{
 	width:100%;

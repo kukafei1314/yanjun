@@ -38,9 +38,9 @@
 				<div class="news_list_word">
                 	<?php echo $new['title'];?>
                 </div>
-                <div class="news_list_img">
+                <div class="news_list_img" onclick="get_single_news(<?php echo $new['id'];?>)">
                 	<img src="<?php echo base_url($new['images']);?>" width=200 height=190/>
-                	<div class="fade" onclick="get_single_news(<?php echo $new['id'];?>)"></div><br />
+                	<div class="fade"></div><br />
                 </div><br />
                 <div class="share">
                        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'<?php echo $new['title'];?>','url':'http://yj.te168.cn/news','pic':'<?php echo base_url($new['images']);?>'}">

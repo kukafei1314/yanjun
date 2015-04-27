@@ -55,6 +55,13 @@ function scrollMove(m){
 * 大图自动滚动
 **/
 $(document).ready(function() {
+	if ($.browser.msie && $.browser.version <= 9.0)
+	{
+		//alert('666');
+	} else {	
+		var left1=document.body.clientWidth/2 + 986/2;
+		$('#main_out').css({left:left1});
+	}
   	 run();      //加载页面时启动定时器  
 });
 
@@ -112,13 +119,11 @@ $(document).ready(function() {
 		$(this).mouseenter(function(){
 			$(this).children('.main_block-yellow').css("display","block");
 			//$(this).children('.main_block-detail').slideDown("slow");
-			$(this).children('.main_block-detail').css("display","block");
-			$(this).children('.main_block-detail').animate({ top: "-60px" }, 100 );
+			$(this).children('.main_block-detail').css("display","block").animate({ top: "-60px" }, 100 );
 		});
 		$(this).mouseleave(function(){
 			$(this).children('.main_block-yellow').css("display","none");
-			$(this).children('.main_block-detail').css("display","none");
-			$(this).children('.main_block-detail').css("top","0");
+			$(this).children('.main_block-detail').css("display","none").css("top","0");
 		});
 	});
 	

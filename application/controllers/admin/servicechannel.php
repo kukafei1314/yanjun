@@ -27,7 +27,7 @@ class servicechannel extends CI_Controller {
 	{
 		$per_page = 10;
 		$p = (int) page_cur();	// 获取当前页码
-		if(!empty($this->input->get('search'))) {
+		if(!$this->input->get('search')) {
 			$keyword = $this->input->get('search');
 		} else {
 			$keyword = NULL;

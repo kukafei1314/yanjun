@@ -11,19 +11,6 @@
 <script type="text/javascript" src="<?php echo base_url('static/js/jquery-1.8.0.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('static/js/news.js'); ?>"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AwiCeIVhbizweIdRqOIavdAZ"></script>
-<script>
-window.onload=fnInit;
-	function fnInit(){ 
-		if ($.browser.msie && $.browser.version <= 9.0)
-		{
-			//alert('666');
-		} else {	
-		//alert(document.body.clientWidth);
-			var left1=document.body.clientWidth/2 + 986/2;
-	   		$('#main_out').css({left:left1});
-		}
-	}
-</script>
 <title>晏钧设计</title>
 </head>
 
