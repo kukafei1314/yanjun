@@ -843,7 +843,7 @@ body {
 .join2_middle {
 	width:390px;
 	_width:396px!important;
-	margin-right:6px;
+	margin-right:5px;
 	_margin-right:0px!important;
 	float:left;
 }
@@ -884,9 +884,8 @@ body {
 	font-size:25px;
 }
 .join2_right {
-	width:190px;
+	width:196px;
 	float:left;
-	margin-left:4px;
 }
 .join2_right a {
 	display:block;

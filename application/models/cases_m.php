@@ -90,15 +90,6 @@ class Cases_m extends CI_Model {
 	public function edit($id, $data) 
 	{   
 		$id = (int) $id;
-		if ($data['images'] == '') {
-			$array= array(
-				'name'		=>	$data['name'],
-				'project'	=>	$data['project'],
-				'content'	=>	$data['content'],
-				'abstract'	=>	$data['abstract'],
-				'date'      =>  $data['date'],
-			);
-		} else {
 		$array= array(
 				'name'		=>	$data['name'],
 				'project'	=>	$data['project'],
@@ -108,7 +99,6 @@ class Cases_m extends CI_Model {
 				'images'	=>	$data['images'],
 			    'date'      =>  $data['date'],
             );
-		}
 		$this->db->where('id', $id);
 		$this->db->update('yj_cases', $array);
 	}
@@ -145,5 +135,17 @@ class Cases_m extends CI_Model {
        $config['cur_tag_open'] = '<b>';
        $config['cur_tag_close'] = '</b>';
        $this->pagination->initialize($config);
+   }
+   
+    
+   public function get_url($pid,$type)
+   {
+	   $this->db->where('id',$pid);
+	   $this->db->select($type);
+	   $query = $this->db->get('yj_cases');
+	   foreach($query->result_array() as $row) {
+		   $result = $row[$type];
+	   }
+	   return $result;
    }
 }

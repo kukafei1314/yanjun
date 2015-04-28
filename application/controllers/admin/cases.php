@@ -131,6 +131,7 @@ class Cases extends CI_Controller {
 		$id = (int) $this->input->get('id');
 		$data['name'] = $this->input->post('name');
 		$data['project'] = $this->input->post('project');
+		$old_images = $this->cases_m->get_url($id,'images');
 		$config = array(
     			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
     			"maxSize" => 50000000 , //单位KB
@@ -142,16 +143,17 @@ class Cases extends CI_Controller {
     	if($info['state'] == 'SUCCESS') {
     		$data['images'] = $info['url'];
     	} else {
-    		$data['images'] = '';
+    		$data['images'] = $old_images;
     	}
 		sleep(1);
+		$old_logo = $this->cases_m->get_url($id,'logo');
 		//添加logo
 		$logopic = new Uploader_ue( "logopic" , $config);
     	$logoinfo = $logopic->getFileInfo();
     	if($logoinfo['state'] == 'SUCCESS') {
     		$data['logo'] = $logoinfo['url'];
     	} else {
-    		$data['logo'] = '';
+    		$data['logo'] = $old_logo;
     	}
 		$data['content'] = $this->input->post('ue_content');
 		$data['date'] = $this->input->post('date');

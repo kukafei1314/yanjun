@@ -34,7 +34,7 @@
             <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=16');?>">事业部</a>
             <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=17');?>">人事部</a>
             <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=18');?>">财务行政部</a>
-            <a class="join2_middle_right" style="margin-bottom:0;"></a>
+            <a class="join2_middle_right" style="margin-bottom:0; height:116px;"></a>
        </div>
        
     </div>
