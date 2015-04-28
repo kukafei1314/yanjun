@@ -48,7 +48,7 @@ class Cases_m extends CI_Model {
 	}
 	
 		//添加文章
-	public function add($name, $project, $logo, $images, $content, $abstract,$date) 
+	public function add($name, $project, $images, $logo, $content, $abstract,$date) 
 	{
 		$data = array(
 					'name'		=>	$name,

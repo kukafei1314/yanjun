@@ -82,7 +82,7 @@ class Cases extends CI_Controller {
 		$project = $this->input->post('project');
 		$config = array(
 	    			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
-	    			"maxSize" => 50000000 , //单位KB
+	    			"maxSize" => 50000000 , //单位B
 	    			"allowFiles" => array( ".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"  )
 	    	);
 		//添加图片
