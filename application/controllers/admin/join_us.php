@@ -182,4 +182,17 @@ class Join_us extends CI_Controller
         $this->join_us_m->delete_job($id);
         redirect('admin/join_us/job?p='.$p);
     }
+	
+	public function set_order()
+	{
+		$id = $this->input->post('pid');
+		$order = $this->input->post('order');
+		$type = $this->input->get('type');
+		$this->join_us_m->upadate_order($id,$order,$type);
+		if($type=='yj_employee') {
+			redirect('admin/join_us/employee');
+		} else {
+			redirect('admin/join_us/job');
+		}
+	}
 }

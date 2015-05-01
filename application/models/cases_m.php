@@ -19,7 +19,7 @@ class Cases_m extends CI_Model {
 		// 获取每页文章列表，不包括文章内容字段
 	public function get_list($limit,$offset)
 	{
-	   $this->db->order_by('id desc,date desc');
+	   $this->db->order_by('order_id desc,date desc');
        $query = $this->db->get('yj_cases',$limit, $offset);
        return $query->result_array();
 	}		
@@ -50,6 +50,9 @@ class Cases_m extends CI_Model {
 		//添加文章
 	public function add($name, $project, $images, $logo, $content, $abstract,$date) 
 	{
+		$this->db->select_max('order_id');
+		$query = $this->db->get('yj_cases');
+		$order = $query->row_array();
 		$data = array(
 					'name'		=>	$name,
 					'project'	=>	$project,
@@ -58,11 +61,11 @@ class Cases_m extends CI_Model {
 					'content'	=>	$content,
 					'abstract'	=>	$abstract,
 					'date'	    =>	$date,
+					'order_id'  =>  $order['order_id'] + 1
 				);
 		if($this->db->insert('yj_cases', $data) === FALSE) {
 			return FALSE;
 		}
-		return $this->db->insert_id();
 	}	
 	
 		//获得编辑文章
@@ -115,9 +118,8 @@ class Cases_m extends CI_Model {
 	}
 	
 	public function search_list($str, $pagesize, $offset){
-		$this->db->select('*');
 		$this->db->like('name',$str);
-		$this->db->order_by('id','asc');
+		$this->db->order_by('order_id','desc');
 		$this->db->limit($pagesize, $offset);
 		$query = $this->db->get('yj_cases');
 		return $query->result_array();
@@ -147,5 +149,15 @@ class Cases_m extends CI_Model {
 		   $result = $row[$type];
 	   }
 	   return $result;
+   }
+   
+   public function upadate_order($id,$order)
+   {
+	   $this->db->where('id',$id);
+	   $data = array(
+	   			'order_id' => $order
+	   			);
+	   $this->db->update('yj_cases',$data);
+	   return true;
    }
 }

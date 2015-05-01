@@ -19,7 +19,7 @@ class News_m extends CI_Model {
 	// 获取每页文章列表，不包括文章内容字段
 	public function get_list($limit,$offset)
 	{
-	   $this->db->order_by('id desc,add_date desc');
+	   $this->db->order_by('order_id desc,add_date desc');
        $query = $this->db->get('yj_news',$limit, $offset);
        return $query->result_array();
 	}
@@ -37,11 +37,15 @@ class News_m extends CI_Model {
 	//添加文章
 	public function add($title, $images, $content) 
 	{
+		$this->db->select_max('order_id');
+		$query = $this->db->get('yj_news');
+		$order = $query->row_array();
 		$data = array(
 					'title'		=>	$title,
 					'images'	=>	$images,
 					'content'	=>	$content,
-					'add_date'	    =>	time(),
+					'add_date'	=>	time(),
+					'order_id'  =>  $order['order_id'] + 1
 				);
 		if($this->db->insert('yj_news', $data) === FALSE) {
 			return FALSE;
@@ -104,9 +108,8 @@ class News_m extends CI_Model {
 	}
 	
 	public function search_list($str, $pagesize, $offset){
-		$this->db->select('*');
 		$this->db->like('title',$str);
-		$this->db->order_by('id','asc');
+		$this->db->order_by('order_id','desc');
 		$this->db->limit($pagesize, $offset);
 		$query = $this->db->get('yj_news');
 		return $query->result_array();
@@ -124,5 +127,16 @@ class News_m extends CI_Model {
        $config['cur_tag_open'] = '<b>';
        $config['cur_tag_close'] = '</b>';
        $this->pagination->initialize($config);
+   }
+   
+      
+   public function upadate_order($id,$order)
+   {
+	   $this->db->where('id',$id);
+	   $data = array(
+	   			'order_id' => $order
+	   			);
+	   $this->db->update('yj_news',$data);
+	   return true;
    }
 }

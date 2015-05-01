@@ -34,6 +34,7 @@ class Join_us_m extends CI_Model {
 	//获得所有员工
 	public function get_all_employee()
 	{  
+		$this->db->order_by('did asc,order_id desc');	
 	    $query = $this->db->get('yj_employee');
 	    return $query->result_array();
 	}
@@ -44,7 +45,7 @@ class Join_us_m extends CI_Model {
 		$query = $this->db->get_where('yj_department_type', array('tid' => $tid));
 	    return $query->row_array();
 	}
-public function get_topic()
+	public function get_topic()
 	{
 		$query = $this->db->get_where('yj_topic', array('id' => 4));
 	    return $query->row_array();
@@ -53,6 +54,10 @@ public function get_topic()
 	public function add_employee($data)
 	{
 	    if($data['id'] == '') {
+			$this->db->select_max('order_id');
+			$query = $this->db->get('yj_employee');
+			$order = $query->row_array();
+			$data['order_id'] = $order['order_id'] + 1;
 	        $this->db->insert('yj_employee',$data);
 	    } else {
 	        $this->db->where('id',$data['id']);
@@ -70,6 +75,7 @@ public function get_topic()
 	
 	public function get_all_job()
 	{
+		$this->db->order_by('did asc,order_id desc');
 	    $query = $this->db->get('yj_job');
 	    return $query->result_array();
 	}
@@ -84,6 +90,10 @@ public function get_topic()
 	public function add_job($data)
 	{
 	    if($data['id'] == '') {
+			$this->db->select_max('order_id');
+			$query = $this->db->get('yj_job');
+			$order = $query->row_array();
+			$data['order_id'] = $order['order_id'] + 1;
 	        $this->db->insert('yj_job',$data);
 	    } else {
 	        $this->db->where('id',$data['id']);
@@ -116,20 +126,19 @@ public function get_topic()
    
 	public function get_list($limit,$offset)
 	{
-	   $this->db->order_by('did ASC, id desc');
+	   $this->db->order_by('did asc,order_id desc');
        $query = $this->db->get('yj_employee',$limit, $offset);
        return $query->result_array();
 	}
 
 	public function get_job_list($limit,$offset)
 	{
-		$this->db->order_by('did ASC, id desc');
+		$this->db->order_by('did asc,order_id desc');
 		$query = $this->db->get('yj_job',$limit, $offset);
 		return $query->result_array();
 	}
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	//获得员工信息
+	//获得单个员工信息
 	public function get_employee($id)
 	{
 	    $this->db->where('id',$id);
@@ -139,14 +148,14 @@ public function get_topic()
 	//获得各部门员工
 	public function get_department_employee($did,$limit,$offset)
 	{
-		$this->db->order_by('id','asc');
+		$this->db->order_by('order_id','desc');
 	    $query = $this->db->get_where('yj_employee', array('did' => $did),$limit, $offset);
 		return $query->result_array();
 	}
 	//获得各部门招聘职位
 	public function get_department_job($did,$limit,$offset)
 	{
-		$this->db->order_by('add_time','desc');
+		$this->db->order_by('order_id','desc');
 	    $query = $this->db->get_where('yj_job', array('did' => $did),$limit, $offset);
 		return $query->result_array();
 	}
@@ -156,6 +165,15 @@ public function get_topic()
 		//$this->db->get($table);
 		return $this->db->count_all_results($table);
 	}
-	
+	   
+   public function upadate_order($id,$order,$type)
+   {
+	   $this->db->where('id',$id);
+	   $data = array(
+	   			'order_id' => $order
+	   			);
+	   $this->db->update($type,$data);
+	   return true;
+   }
 	
 }

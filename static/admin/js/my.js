@@ -11,6 +11,21 @@ $(document).ready(function() {
 	});
 });
 
+function is_empty() {
+	if($('#order').val() == '') {
+		alert('请填入顺序');
+		return false;
+	}
+}
+function up_img(order,id) {
+	$("#order").val(order);
+	$("#pid").val(id);
+	$("#img_up").show();
+}
+function close_button() {
+	$("#img_up").hide();
+	return false;
+}
 
 //删除提醒函数
 function del_alert(){

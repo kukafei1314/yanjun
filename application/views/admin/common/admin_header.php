@@ -30,6 +30,8 @@
     <!-- My JS -->
 
     <script src="<?php echo base_url('static/admin/js/login.js');?>"></script>
+    
+    <script src="<?php echo base_url('static/admin/js/my.js');?>"></script>
     <script src="<?php echo base_url('/static/admin/js/calendar/WdatePicker.js'); ?>"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

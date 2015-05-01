@@ -151,4 +151,12 @@ class News extends CI_Controller {
 		$data['form_url'] = 'admin/news/edit?id=' . $data['id'].'&p='.$data['p'];
 		$this->load->view('admin/news_add.php', $data);
 	}
+	
+	public function set_order()
+	{
+		$id = $this->input->post('pid');
+		$order = $this->input->post('order');
+		$this->news_m->upadate_order($id,$order);
+		redirect('admin/news');
+	}
 }

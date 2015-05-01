@@ -36,10 +36,13 @@
 										 ?>
 										>
 										  <div class="task-title">
+                                          	<div class="task-title-sp pull_left" style="width:5%;">
+                                              	<?php echo $news['order_id']; ?>
+                                              </div>
                                               <div class="task-title-sp pull_left list_title">
                                               	<?php echo $news['title']; ?>
                                               </div>
-                                              <div class=" pull_left list_title">
+                                              <div class=" pull_left list_time">
 	                                              <?php if(!empty($news['images'])) :?>
 												  	  <img src="<?php echo base_url($news['images']);?>" width="80" height="48"/>
 												  <?php else:?>
@@ -52,6 +55,9 @@
                                               <div class="pull-right hidden-phone">
                                               	  <a href="<?php echo base_url('admin/news/news_detail?id='.$news['id'].'&p='.$p);?>" title="详情">
                                                   	    <button class="btn btn-success btn-xs fa fa-book"></button>
+                                                  </a>
+                                                  <a onclick="up_img(<?php echo $news['order_id'];?>,<?php echo $news['id'];?>)" title="调序">
+													<button class="btn btn-info btn-xs fa fa-retweet"></button> 
                                                   </a>
                                                   <a href="<?php echo base_url('admin/news/edit_v?id='.$news['id'].'&p='.$p);?>" title="编辑">
                                                   		<button class="btn btn-primary btn-xs fa fa-pencil"></button> 
@@ -70,7 +76,22 @@
                                   <?php echo $page_html;?>
                               </div>
                           </div>
-                      </section>
+                          
+                      </section> 
+              <form action="<?php echo base_url('admin/news/set_order');?>" method="post" enctype="multipart/form-data">
+                  <div id="img_up" style="display:none;">
+                    <div class="pic_div">						
+                        <span class="up_word">排序</span>
+                        <span class="up_input"><input id="order" name="order" type="text" value="" size="5" class="form-control"/></span>
+                        <div class="cl"></div>
+                    </div>
+                    <input type="hidden" id="pid" name="pid" value="" />
+                     <div class="button_img">
+                        <button onclick="return is_empty()" type="submit" class="btn btn-success">提交</button>
+                        <button onclick="return close_button()" class="btn btn-danger">关闭</button>
+                    </div>
+                 </div>
+             </form>
                   </div><!--/col-md-12 -->
               </div><!-- /row -->
 		</section> <!--/wrapper -->
@@ -78,6 +99,21 @@
 	  <script type="text/javascript">
 		function del_alert(){
 			return confirm('删除操作不可恢复，确定删除么？');
+		}
+		function is_empty() {
+			if($('#order').val() == '') {
+				alert('请填入顺序');
+				return false;
+			}
+		}
+		function up_img(order,id) {
+			$("#order").val(order);
+			$("#pid").val(id);
+			$("#img_up").show();
+		}
+		function close_button() {
+			$("#img_up").hide();
+			return false;
 		}
 	  </script>
       <!--main content end-->
