@@ -18,7 +18,6 @@ class Cases extends CI_Controller
 		$data['count'] = 0;
 		$cases_numb = $this->cases_m->get_num();
 		$data['cases']  = $this->cases_m->get_list($per_page,$per_page*($p-1));
-		//$data['cases'] = $this->cases_m->get_list($cases_numb,'');
 		$data['page_html']	 =	page($cases_numb, $per_page);
 		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('subpage_case',$data);
