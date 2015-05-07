@@ -61,6 +61,8 @@ class Index extends CI_Controller {
 	{
 		$id = (int) $this->input->get('id');
 		$data['content'] = $this->input->post('ue_abstract');
+		$data['name'] = $this->input->post('brand_name');
+		$data['en_name'] = $this->input->post('brand_en_name');
 		$config = array(
     			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
     			"maxSize" => 50000000 , //单位KB

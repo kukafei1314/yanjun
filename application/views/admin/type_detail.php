@@ -21,14 +21,13 @@
 	                        </a>
                             <div class="cl"></div>
 	                 	</div>
-                        <div class="panel-body" style="margin:0 20%; padding-bottom:0px">
+                        <div class="panel-body">
                         	<div class="gd_title">
                             	<?php $row = $text[0];
 									echo $row['name'];?>
                             </div>
                         </div>
-                        <hr style="border:#63F solid thin" width="70%" size="1" />
-                        <div class="panel-body" style="margin:0 20%; padding-top:0px; padding-bottom:25px">
+                        <div class="panel-body" style="margin:0 5%; padding-top:0px; padding-bottom:25px">
                             <div class="gd_content">
                             	部门邮箱：<?php echo $row['e_mail'];?><br /><br />
 								<div class="pull_left">部门简介：</div>

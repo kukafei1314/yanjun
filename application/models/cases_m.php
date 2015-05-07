@@ -17,11 +17,14 @@ class Cases_m extends CI_Model {
 	}
 	
 		// 获取每页文章列表，不包括文章内容字段
-	public function get_list($limit,$offset)
+	public function get_list($limit,$offset,$tid=NULL)
 	{
-	   $this->db->order_by('order_id desc,date desc');
-       $query = $this->db->get('yj_cases',$limit, $offset);
-       return $query->result_array();
+		if($tid != NULL) {
+			$this->db->where('tid',$tid);
+		}
+		$this->db->order_by('order_id desc,date desc');
+		$query = $this->db->get('yj_cases',$limit, $offset);
+		return $query->result_array();
 	}		
 			// 随机获取每页文章列表，不包括文章内容字段
 	public function get_list_rand($limit,$offset)
@@ -76,16 +79,7 @@ class Cases_m extends CI_Model {
 		$query = $this->db->get('yj_cases');
 		if($query->num_rows() != 0) {
 			$row = $query->row_array();
-			return array(
-						'id'		=>	$id,
-						'name'		=>	$row['name'],
-						'project'	=>	$row['project'],
-						'logo'		=>	$row['logo'],
-						'content'	=>	$row['content'],
-						'abstract'	=>	$row['abstract'],
-						'images'	=>	$row['images'],
-						'date'	    =>	$row['date'],
-					);
+			return $row;
 		}
 		return FALSE;
 	}
@@ -101,13 +95,17 @@ class Cases_m extends CI_Model {
 				'abstract'	=>	$data['abstract'],
 				'images'	=>	$data['images'],
 			    'date'      =>  $data['date'],
+				'tid'       =>  $data['tid']
             );
 		$this->db->where('id', $id);
 		$this->db->update('yj_cases', $array);
 	}
 	//获得文章数量
-	public function get_num()
+	public function get_num($tid=NULL)
 	{
+		if($tid != NULL) {
+			$this->db->where('tid',$tid);
+		}
 		return $this->db->count_all('yj_cases');
 	}
 	

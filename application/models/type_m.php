@@ -65,11 +65,16 @@ class Type_m extends CI_Model {
 					'e_mail'  => $data['e_mail'],
 					'content' => $data['content']
 			);
-		} else {
+		} else if($type == '1'){
 			$arr = array(
 					'name' => $data['name']
 			);
-			
+		} else {
+			$arr = array(
+					'name'    => $data['name'],
+					'en_name'  => $data['en_name'],
+					'content' => $data['content']
+			);
 		}
 		$this->db->where('tid',$tid);
 		$this->db->update($table,$arr);
@@ -88,7 +93,7 @@ class Type_m extends CI_Model {
 		$table = $this->get_table($type);
 		$this->db->where('tid',$tid);
 		$query = $this->db->get($table);
-		$data = $query->result_array();
+		$data = $query->row_array();
 		return $data;
 	}
 
@@ -96,8 +101,10 @@ class Type_m extends CI_Model {
 	{
 		if($type == '1') {
 			$table = 'yj_image_type';
-		} else {
+		} else if($type == '2'){
 			$table = 'yj_department_type';
+		} else {
+			$table = 'yj_cases_type';
 		}
 		return $table;
 	}
@@ -117,6 +124,16 @@ class Type_m extends CI_Model {
 			return $query->result_array();
 		} else {
 			return false;
+		}
+	}
+	
+	public function get_type_name($type) {
+		if($type == 1) {
+			return '大图';
+		} else if($type == 2) {
+			return '部门';
+		} else {
+			return '案例';
 		}
 	}
 }

@@ -23,7 +23,6 @@
         <div class="main_block1">
 		<?php endif;?>
             <p class="main_block_p1"><?php echo $brand['name'];?></p>
-            <p>Brand</p>
             <p><?php echo $brand['en_name'];?></p>
             
             <div class="main_block-yellow">

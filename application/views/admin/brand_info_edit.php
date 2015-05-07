@@ -32,6 +32,20 @@
 									</div>
 									<div class="cl"></div>
                                   </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">名称</label>
+                                      <div class="col-sm-10">
+                                          <input name="brand_name" value="<?php echo $brand['name'];?>" />
+                                      </div>
+                                      <div class="cl"></div>
+                                  </div> 
+                                  <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">英文名称</label>
+                                      <div class="col-sm-10">
+                                          <input name="brand_en_name" value="<?php echo $brand['en_name'];?>" />
+                                      </div>
+                                      <div class="cl"></div>
+                                  </div> 
 								  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label" style="padding-top: 25px;">案例简介</label>
                                       <div class="col-sm-10">

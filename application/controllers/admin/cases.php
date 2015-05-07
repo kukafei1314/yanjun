@@ -19,6 +19,7 @@ class Cases extends CI_Controller {
 			redirect('admin/login');
 		}		
 		$this->load->model('cases_m');
+		$this->load->model('type_m');
 		$this->load->helper('form');
 	}
 	
@@ -121,6 +122,7 @@ class Cases extends CI_Controller {
 		$data['logo'] = '';
 		$data['date'] = '';
 		$data['form_url'] = 'admin/cases/add';
+		$data['types'] = $this->type_m->get_all(3);
 		$this->load->view('admin/cases_add', $data);
 	}
 	
@@ -131,6 +133,7 @@ class Cases extends CI_Controller {
 		$id = (int) $this->input->get('id');
 		$data['name'] = $this->input->post('name');
 		$data['project'] = $this->input->post('project');
+		$data['tid'] = $this->input->post('case_type');
 		$old_images = $this->cases_m->get_url($id,'images');
 		$config = array(
     			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
@@ -170,21 +173,17 @@ class Cases extends CI_Controller {
 
 	public function edit_v() 
 	{
-		$data['p'] = (int) page_cur();	// 获取当前页码
-		$data['username'] = $this->session->userdata('username');
-		$data['id'] = (int) $this->input->get('id');
-		$cases = $this->cases_m->get($data['id']);
-		if($cases === FALSE) {
+		$id = (int) $this->input->get('id');
+		$data = $this->cases_m->get($id);
+		if($data === FALSE) {
 			redirect('admin/cases');
 		}
-		$data['name'] = $cases['name'];
-		$data['project'] = $cases['project'];
-		$data['content'] = $cases['content'];
-		$data['abstract'] = $cases['abstract'];
-		$data['images'] = $cases['images'];
-		$data['logo'] = $cases['logo'];
-		$data['date'] = $cases['date'];
+		$data['p'] = (int) page_cur();	// 获取当前页码
+		$data['username'] = $this->session->userdata('username');
+		$data['id'] = $id;
+		$data['types'] = $this->type_m->get_all(3);
 		$data['form_url'] = 'admin/cases/edit?id=' . $data['id'].'&p='.$data['p'];
+		
 		$this->load->view('admin/cases_add.php', $data);
 	}
 	

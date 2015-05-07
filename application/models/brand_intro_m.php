@@ -41,14 +41,16 @@ class Brand_intro_m extends CI_Model {
 		if ($data['pic'] == '') {
 			$array= array(
 				'content' => $data['content'],
+				'name'    => $data['name'],
+				'en_name'    => $data['en_name'],
 			);
 		} else {
 			$array= array(
 					'content' => $data['content'],
-					'pic'  => $data['pic'] ,
+					'pic'     => $data['pic'] ,
+					'en_name'    => $data['en_name']
 			);
 		}
-		var_dump($array);
 		$this->db->where('bid', $id);
 		$this->db->update('yj_brand_intro', $array);
 	}

@@ -158,6 +158,7 @@
                       <ul class="sub">
                           <li><a href="<?php echo base_url('admin/type?type=1');?>" type=1>大图类别管理</a></li>
                           <li><a href="<?php echo base_url('admin/type?type=2');?>" type=2>部门类别管理</a></li>
+                          <li><a href="<?php echo base_url('admin/type?type=3');?>" type=3>案例类别管理</a></li>
                       </ul>
                   </li>
                   

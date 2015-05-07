@@ -1,19 +1,19 @@
 <?php echo $this->load->view('admin/common/admin_header'); ?>
-      <!-- **********************************************************************************************************************************************************
-                   	后台类别管理页面
-      *********************************************************************************************************************************************************** -->
+      <!--  	后台类别管理页面 -->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i><?php echo ($type == 1)?  '大图' : '部门';?>类别管理</h3>
+          	<h3><i class="fa fa-angle-right"></i><?php echo $type_name;?>类别管理</h3>
           	
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt mb">
                   <div class="col-md-12">
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
-	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> <?php echo ($type == 1)?  '大图类别列表' : '部门类别列表';?></h5></div>
+	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> <?php echo $type_name;?></h5></div>
+                            <?php if($type != 3):?>
                             <a class="btn btn-success btn-sm add_news" href="<?php echo base_url('admin/type/add?type='.$type);?>">添加类别</a>
+                            <?php endif;?>
                             <div class="cl"></div>
 	                 	</div>
                         <div class="panel-body">
@@ -30,7 +30,7 @@
                                             	<div class="task-title">
                                                     <span class="task-title-sp"><?php echo $row['name'];?></span>
                                                     <div class="pull-right hidden-phone">
-                                                       <?php if ($type != 1):?>
+                                                       <?php if ($type == 2):?>
                                                        		<button class="btn btn-success btn-xs fa fa-book" onclick='location="<?php echo base_url('admin/type/detail?type='.$type.'&tid='.$row['tid']);?>"' title="详情"></button>
 													   <?php endif;?>
                                                        <button class="btn btn-primary btn-xs fa fa-pencil" onclick='location="<?php echo base_url('admin/type/edit?type='.$type.'&tid='.$row['tid']);?>"' title="编辑"></button>

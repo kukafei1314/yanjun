@@ -41,6 +41,17 @@
                                       <div class="cl"></div>
                                   </div>
                                   <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">案例类别</label>
+                                      <div class="col-sm-5">
+                                           <select name="case_type" style="margin-top: 5px;">
+                                               <?php foreach ($types as $type):?>
+                                                    <option value = "<?php echo $type['tid'];?>" <?php if($tid == $type['tid']) {echo "selected";}?>><?php echo $type['name'];?></option>
+                                               <?php endforeach;?>
+                                           </select>
+                                      </div>
+                                      <div class="cl"></div>
+                                  </div>
+                                  <div class="form-group">
                                       <label class="col-sm-2 col-sm-2 control-label">完成时间</label>
                                       <div class="col-sm-10">
                                           <input class="Wdate" name="date" placeholder="选择日期" value="<?php echo $date; ?>" onClick="WdatePicker()">

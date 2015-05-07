@@ -34,8 +34,7 @@ class Type extends CI_Controller {
 		$data['link'] = page_r($num, $per_page);
 		$data['p'] = $p;
 		$data['types'] = $this->type_m->select_limit($type, $per_page, $offset);
-		
-		//$data['types'] = $this->type_m->get_all($type);
+		$data['type_name'] = $this->type_m->get_type_name($type);
 		$this->load->view('admin/type',$data);
 	}
 	
@@ -56,6 +55,7 @@ class Type extends CI_Controller {
 			$data['e_mail'] = '';
 			$data['username'] = $this->session->userdata('username');
 			$data['form_url'] = 'admin/type/add?type='.$data['type'];
+			$data['type_name'] = $this->type_m->get_type_name($type);
 			$this->load->view('admin/type_add',$data);
 		}
 	}
@@ -69,18 +69,14 @@ class Type extends CI_Controller {
 		if(is_post()) {
 			$data['name'] = $this->input->post('name', TRUE);
 			$data['e_mail'] = $this->input->post('e_mail', TRUE);
-			//echo $data['e_mail'];
 			$data['content'] = $this->input->post('content', TRUE);
+			$data['en_name'] = $this->input->post('en_name', TRUE);
 			$this->type_m->update_type($type,$tid,$data);
 			redirect('admin/type?type='.$type.'&p='.$p);	
 		} else {
-			$result = $this->type_m->get_single_name($tid,$type);
+			$data = $this->type_m->get_single_name($tid,$type);
 			$data['type'] = $type;
-			$data['name'] = $result[0]['name'];
-			if ($data['type'] != 1) {
-				$data['content'] = $result[0]['content'];
-				$data['e_mail'] = $result[0]['e_mail'];
-			}
+			$data['type_name'] = $this->type_m->get_type_name($type);
 			$data['username'] = $this->session->userdata('username');
 			$data['form_url'] = 'admin/type/edit?type='.$type.'&tid='.$tid;
 			$this->load->view('admin/type_add',$data);
