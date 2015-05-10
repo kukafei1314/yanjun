@@ -11,6 +11,7 @@
 	                        <div class="pull-left"><h5>
                             	<i class="fa fa-tasks">&nbsp;大图管理</i>
                             </h5></div>
+                            <a class="btn btn-success btn-sm add_news" onclick="up_img('','','')">添加图片</a>
                             <div class="cl"></div>
 	                 	</div>
                           <div class="panel-body">
@@ -26,16 +27,18 @@
 													default:echo "class= \"list-primary \"";break;
 											   }
 										 ?>>
+                                          <div class="task-title-sp pull_left list_order">
+                                          	<?php echo $pic['0']['type']; ?>
+                                          </div>
 										  <div class="task-title">
-                                          	  <div class="task-title-sp pull_left list_order">
-                                              	<?php echo $pic['0']['type']; ?>
-                                              </div>
+                                          	  
 											  <?php foreach ($pic as $single_pic): ?>
                                               <div class="pull_left list_img">
 	                                              <?php if(!empty($single_pic['path'])) :?>
 												  	  <img src="<?php echo base_url($single_pic['path']);?>" width="100%" height=100/>
-                                                      <a class="mask_img" onclick="up_img(<?php echo $single_pic['order'];?>,<?php echo $single_pic['id'];?>)"><span class="glyphicon
+                                                      <a class="mask_img" onclick="up_img(<?php echo $single_pic['order'];?>,<?php echo $single_pic['id'];?>,<?php echo $single_pic['tid'];?>)"><span class="glyphicon
 glyphicon-pencil"></span></a>
+														<a class="mask_img_del" onclick="return del_alert();" href="<?php echo base_url('admin/home_pic/del_pic?pid='.$single_pic['id']);?>"><span class="fa fa-trash-o"></span></a>
 											      <?php endif;?>
                                               </div>
 											  <?php endforeach; ?> 
@@ -63,6 +66,17 @@ glyphicon-pencil"></span></a>
                         <p style="padding:5px 0 0 170px;">建议图片上传比例：986px*410px</p>
                     </div>
                     <input type="hidden" id="pid" name="pid" value="" />
+                    <div class="pic_div">
+                        <span class="up_word">图片类别</span>
+                        <span class="up_input">
+                        	<select id="type_select" name="type">
+                            	<?php foreach($types as $type):?>
+                                	<option value="<?php echo $type['tid'];?>" ><?php echo $type['name'];?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </span>
+                        <div class="cl"></div>
+                    </div>
                     <div class="button_img">
                         <button onclick="return is_empty()" type="submit" class="btn btn-success">提交</button>
                         <button onclick="return close_button()" class="btn btn-danger">关闭</button>
@@ -72,22 +86,5 @@ glyphicon-pencil"></span></a>
               <div class="cl"></div>
 		</section> <!--/wrapper -->
       </section>
-<script>
-	function is_empty() {
-		if($('#order').val() == '') {
-			alert('请填入顺序');
-			return false;
-		}
-	}
-	function up_img(order,id) {
-		$("#order").val(order);
-		$("#pid").val(id);
-		$("#img_up").show();
-	}
-	function close_button() {
-		$("#img_up").hide();
-		return false;
-	}
-</script>
       <!--main content end-->
  <?php echo $this->load->view('admin/common/admin_footer'); ?>    

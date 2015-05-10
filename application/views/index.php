@@ -14,7 +14,7 @@
             <a class="arrow_right" onclick="change(0)"></a>
         </div>
     </div>
- 
+ 	<input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
     <div class="main_block">
     <?php foreach($brand as $brand) :?>
     	<?php if($brand['bid']==5):?>

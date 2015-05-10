@@ -6,17 +6,18 @@ var masktime = 10;
 var focus_cur = 1;	
 var next;
 var interval = "";
+var num;
 function change(id){
 	clearTimeout(scrollmove);
 	clearTimeout(interval);
 	if(id==0) {
 		if(focus_cur==1) {
-			next = 3;
+			next = num;
 		} else {
 			next = focus_cur - 1;
 		}
 	} else if(id==1) {
-		if (focus_cur==3){
+		if (focus_cur==num){
 			next = 1;
 		} else {
 			next = focus_cur + 1;
@@ -26,7 +27,7 @@ function change(id){
 }
 
 function move() {
-	if (focus_cur==3){
+	if (focus_cur==num){
 		next = 1;
 	} else {
 		next = focus_cur + 1;
@@ -55,6 +56,7 @@ function scrollMove(m){
 * 大图自动滚动
 **/
 $(document).ready(function() {
+	num = $("#pic_num").val();
 	if ($.browser.msie && $.browser.version <= 9.0)
 	{
 		//alert('666');

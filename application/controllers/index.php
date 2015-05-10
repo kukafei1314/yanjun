@@ -28,6 +28,7 @@ class Index extends CI_Controller {
 			$data['page_html']	 =	page($num,$per_page);
 		}
 		$data['imgs'] = $this->home_pic_m->pic_info(1);
+		$data['imgs_num'] = $this->home_pic_m->pic_num(1);
 		$data['brand'] = $this->brand_intro_m->get_list();
 		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('index',$data);

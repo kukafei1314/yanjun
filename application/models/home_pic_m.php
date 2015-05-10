@@ -19,7 +19,6 @@ class Home_pic_m extends CI_Model
 		   $type = $row['type'];
 		   $result[$type] = $this->pic_info($type);
 	   }
-	   //var_dump($query->result_array());
        return $result;
    }
    
@@ -30,6 +29,18 @@ class Home_pic_m extends CI_Model
    		return TRUE;
    }
    
+   public function add_pic($pic)
+   {
+   		$this->db->insert('yj_big_image',$pic);
+   		return TRUE;
+   }
+   
+   public function del_pic($pid) 
+   {
+	   $this->db->where('id',$pid);
+	   $this->db->delete('yj_big_image');
+	   return TRUE;
+   }
    public function type_name($type)
    {
 	   $this->db->where('tid',$type);
@@ -63,8 +74,17 @@ class Home_pic_m extends CI_Model
 		   $result[$i]['type'] = $this->type_name($type);
 		   $result[$i]['path'] = $row['path'];
 		   $result[$i]['order'] = $row['order'];
+		   $result[$i]['tid']  = $type;
 		   $i++;
 	   }
+	   return $result;
+   }
+   
+    
+   public function pic_num($type)
+   {
+	   $this->db->where('type',$type);
+	   $result = $this->db->count_all_results('yj_big_image');
 	   return $result;
    }
 }

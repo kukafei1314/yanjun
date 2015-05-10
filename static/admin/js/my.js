@@ -17,9 +17,14 @@ function is_empty() {
 		return false;
 	}
 }
-function up_img(order,id) {
+function up_img(order,id,tid) {
 	$("#order").val(order);
 	$("#pid").val(id);
+	$("#type_select option").each(function() {
+		if($(this).val() == tid) {
+			$(this).attr('selected','selected');
+		}
+	});
 	$("#img_up").show();
 }
 function close_button() {
