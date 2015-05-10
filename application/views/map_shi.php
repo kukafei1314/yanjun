@@ -13,6 +13,7 @@
             <a class="pic_right" onclick="change(0)"></a>
         </div>
     </div>
+    <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
     <div class="map_title">
     	<img src="<?php echo base_url('static/image/map_title1.png');?>"/>
     </div>

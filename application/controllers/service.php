@@ -20,6 +20,7 @@ class Service extends CI_Controller
 		$data['page_html']	  =	page($this->about_us_m->get_all_num($type), $per_page);
 		$data['res_topic'] = $this->topic_m->get_all();
 		$data['imgs'] = $this->home_pic_m->pic_info(4);
+		$data['imgs_num'] = $this->home_pic_m->pic_num(4);
 		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('service',$data);
 	}

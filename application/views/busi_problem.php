@@ -14,6 +14,7 @@
             <a class="arrow_right" onclick="change(0)"></a>
         </div>
     </div>
+    <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
     <div class="pro_middle">
         <div class="pro_m1 float">常见问题</div>
         <div class="float" style="position: relative">

@@ -13,6 +13,7 @@
                 <a class="pic_right" onclick="change(0)"></a>
             </div>
         </div>
+        <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
         <div id="news_middle">
         <div class="news_left">
         	<?php 

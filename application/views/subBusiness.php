@@ -13,6 +13,7 @@
             <a class="arrow_right" onclick="change(0)"></a>
         </div>
     </div>
+    <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
     <div class="b_middle">
         <div class="b_form float">
             <form action="<?php echo 'servicechannel/add';?>" method="post">

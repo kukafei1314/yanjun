@@ -24,7 +24,7 @@ class About_us extends CI_Controller
 		}else $data['page_html'] = page($this->about_us_m->get_all_num($type), $per_page_w);
 		$data['title'] = "我喜欢";
 		$data['imgs'] = $this->home_pic_m->pic_info(6);
-		//$data['result'] = $this->about_us_m->get_all($type);
+		$data['imgs_num'] = $this->home_pic_m->pic_num(6);
 		$data['res_topic'] = $this->topic_m->get_all();
 		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('about_us',$data);

@@ -13,9 +13,9 @@
             <a class="pic_left" onclick="change(1)"></a>
             <a class="pic_right" onclick="change(0)"></a>
         </div>
+        <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
         <div class="img_dream">Dream</div>
         <div class="img_creat">梦想，创造现实</div>
-        
     </div>
    <div id="j2_m">
        <div class="join2_middle">

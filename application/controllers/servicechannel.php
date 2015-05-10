@@ -20,6 +20,7 @@ class Servicechannel extends CI_Controller {
 	{   
 		$data['pro'] = $this->service_channel_m->get_prolist(); 
 		$data['imgs'] = $this->home_pic_m->pic_info(8);
+		$data['imgs_num'] = $this->home_pic_m->pic_num(8);
 		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('subBusiness',$data);
 	}

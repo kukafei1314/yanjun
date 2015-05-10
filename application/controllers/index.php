@@ -39,6 +39,7 @@ class Index extends CI_Controller {
 		$type = $this->input->get('type',true);
 		$data['partners'] = $this->partners_m->get_all();
 		$data['imgs'] = $this->home_pic_m->pic_info(2);
+		$data['imgs_num'] = $this->home_pic_m->pic_num(2);
 		$data['partners'] = $this->partners_m->get_all();
 		if($type == 1) {
 			$this->load->view('map_shi',$data);

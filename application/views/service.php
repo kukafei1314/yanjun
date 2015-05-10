@@ -11,9 +11,9 @@
         <div id="joycenter">
             <a class="pic_left" onclick="change(1)"></a>
             <a class="pic_right" onclick="change(0)"></a>
-        </div>
-        
+        </div>  
     </div>	
+    <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
 	<div class="joyLeft">
 		<div class="leftTop">
 			<?php $topic = $res_topic[0];?>

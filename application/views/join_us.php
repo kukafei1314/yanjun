@@ -12,8 +12,8 @@
             <a class="pic_left" onclick="change(1)"></a>
             <a class="pic_right" onclick="change(0)"></a>
         </div>
-        
     </div>
+    <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
     <div class="join_mid">
    	    <div class="join_left">
     	<div class="left_top">

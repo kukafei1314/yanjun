@@ -14,6 +14,7 @@
                 <a class="pic_right1" onclick="change(0)"></a>
             </div>
         </div>
+        <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
         <div id="news_middle">
             <div class="us_left">
             <?php foreach($result as $row) {?>
