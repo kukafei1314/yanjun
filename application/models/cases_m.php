@@ -20,7 +20,7 @@ class Cases_m extends CI_Model {
 	public function get_list($limit,$offset,$tid=NULL)
 	{
 		if($tid != NULL) {
-			$this->db->where('tid',$tid);
+			$this->db->like('tid',$tid);
 		}
 		$this->db->order_by('order_id desc,date desc');
 		$query = $this->db->get('yj_cases',$limit, $offset);
@@ -51,7 +51,7 @@ class Cases_m extends CI_Model {
 	}
 	
 		//添加文章
-	public function add($name, $project, $images, $logo, $content, $abstract,$date) 
+	public function add($name, $project, $images, $logo, $content, $abstract,$date,$tid) 
 	{
 		$this->db->select_max('order_id');
 		$query = $this->db->get('yj_cases');
@@ -64,7 +64,8 @@ class Cases_m extends CI_Model {
 					'content'	=>	$content,
 					'abstract'	=>	$abstract,
 					'date'	    =>	$date,
-					'order_id'  =>  $order['order_id'] + 1
+					'order_id'  =>  $order['order_id'] + 1,
+					'tid'       =>  $tid,
 				);
 		if($this->db->insert('yj_cases', $data) === FALSE) {
 			return FALSE;

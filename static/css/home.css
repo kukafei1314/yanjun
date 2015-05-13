@@ -1309,6 +1309,17 @@ ol li {
 	background:#f9b900;
 	padding:25px 20px 0 30px;
 }
+.joyLeft_ser{
+	width:986px;
+	float:left;
+	color:#222;
+}
+.leftTop_ser {
+	width:936px;
+	height:165px;
+	background:#f9b900;
+	padding:25px 20px 0 30px;
+}
 .leftTopTitle {
 	font-size:28px;
 	line-height:40px;
@@ -1358,9 +1369,8 @@ ol li {
 	margin-bottom:5px;
 }
 .rightDivTitle {
-	font-size:24px;
-	margin-bottom:12px;
-	margin-top:22px;
+	font-size:18px;
+	margin:22px 10px 0 10px;
 	text-align:center;
 	height:30px;
 }

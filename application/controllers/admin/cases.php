@@ -107,7 +107,9 @@ class Cases extends CI_Controller {
 		$content = $this->input->post('ue_content');
 		$abstract = $this->input->post('ue_abstract');
 		$date = $this->input->post('date');
-		$this->cases_m->add($name, $project, $images, $logo, $content,$abstract,$date);
+		$tid = json_encode($this->input->post('case_type'));
+		//var_dump($tid);
+		$this->cases_m->add($name, $project, $images, $logo, $content,$abstract,$date,$tid);
 		redirect('admin/cases');
 	}
 	
@@ -118,6 +120,7 @@ class Cases extends CI_Controller {
 		$data['project'] = '';
 		$data['content'] = '';
 		$data['abstract'] = '';
+		$data['tid'] = array();
 		$data['images'] = '';
 		$data['logo'] = '';
 		$data['date'] = '';
@@ -133,7 +136,7 @@ class Cases extends CI_Controller {
 		$id = (int) $this->input->get('id');
 		$data['name'] = $this->input->post('name');
 		$data['project'] = $this->input->post('project');
-		$data['tid'] = $this->input->post('case_type');
+		$data['tid'] = json_encode($this->input->post('case_type'));
 		$old_images = $this->cases_m->get_url($id,'images');
 		$config = array(
     			"pathFormat" => "upload/{yyyy}{mm}{dd}/{time}{ss}" ,
@@ -178,6 +181,7 @@ class Cases extends CI_Controller {
 		if($data === FALSE) {
 			redirect('admin/cases');
 		}
+		$data['tid'] = json_decode($data['tid']);
 		$data['p'] = (int) page_cur();	// 获取当前页码
 		$data['username'] = $this->session->userdata('username');
 		$data['id'] = $id;

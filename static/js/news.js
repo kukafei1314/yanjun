@@ -189,7 +189,7 @@ $(document).ready(function() {
 function get_single_news(id)
 {
 	$.ajax({
-		 type: "post",//使用get方法访问后台
+		 type: "post",//使用post方法访问后台
 	     dataType: "json",//返回json格式的数据
 	     url: "/news/single_news",//要访问的后台地址
 	     data: {new_id:id},//要发送的数据
@@ -205,7 +205,7 @@ function get_single_news(id)
 function get_single_cases(id)
 {
 	$.ajax({
-		 type: "post",//使用get方法访问后台
+		 type: "post",//使用post方法访问后台
 	     dataType: "json",//返回json格式的数据
 	     url: "/cases_expand/single_cases",//要访问的后台地址
 	     data: {case_id:id},//要发送的数据
@@ -217,6 +217,22 @@ function get_single_cases(id)
 				$(".text_st_date").html(data.date.format);
 	            $(".case_img").html(data.content);
 				
+		     }
+	     }
+	});
+}
+
+function get_single_joy(id)
+{
+	$.ajax({
+		 type: "post",//使用post方法访问后台
+	     dataType: "json",//返回json格式的数据
+	     url: "/share/single_joy",//要访问的后台地址
+	     data: {joy_id:id},//要发送的数据
+	     success: function(data){
+	    	 if(data){
+	            $("#joy_title").html(data.title);
+	            $("#joy_content").html(data.content);
 		     }
 	     }
 	});

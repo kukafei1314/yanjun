@@ -22,39 +22,18 @@
 		</div>
        
         <div class="share_left">
-        <?php foreach($result as $row) {?>
-        	<div class="share_title"><?php echo $row['title'];?></div>
-            <div class="share_content">
-            	<?php echo $row['content'];?>
+        	<div id="joy_title" class="share_title"><?php echo $result[0]['title'];?></div>
+            <div id="joy_content" class="share_content">
+            	<?php echo $result[0]['content'];?>
             </div>
-        <?php }?>
         </div>
 	</div>
 	<div class="joyRight">
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
+	<?php foreach($result as $row) {?>
+		<div class="rightDiv" onclick="get_single_joy(<?php echo $row['id'];?>)">
+			<div class="rightDivTitle"><?php echo $row['title'];?></div>
 		</div>
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
-		</div>
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
-		</div>
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
-		</div>
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
-		</div>
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
-		</div>
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
-		</div>
-		<div class="rightDiv">
-			<div class="rightDivTitle">图片</br>常用工具文字</div>
-		</div>
+	<?php }?>
 	</div>
     <div class="cl"></div>
 </div>

@@ -23,4 +23,11 @@ class Share extends CI_Controller
 		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('joycenter',$data);
 	}
+	
+	public function single_joy() {
+		$type = 3;
+		$id = $this->input->post('joy_id');
+		$data = $this->about_us_m->get($type,$id);
+		echo json_encode($data);
+	}
 }

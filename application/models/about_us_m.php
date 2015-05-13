@@ -115,4 +115,19 @@ class About_us_m extends CI_Model {
 		$this->db->update($tab,$data);
 		return $this->db->affected_rows();	
 	}
+	
+	public function get($type,$id) {
+		$id = intval($id);
+		$tab = $this->select_tab($type);
+		$this->db->where('id',$id);
+		$query = $this->db->get($tab);
+		if ($query->num_rows() != 0) {
+			$row = $query->row_array();
+			return array(
+				'title'   => $row['title'],
+				'content' => $row['content'],
+			);
+		}
+		return FALSE;
+	}
 }
