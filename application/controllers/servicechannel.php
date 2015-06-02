@@ -17,8 +17,9 @@ class Servicechannel extends CI_Controller {
 	}
 	
 	public function index()
-	{   
-		$data['pro'] = $this->service_channel_m->get_prolist(); 
+	{ 
+		$per_page = 5;	  
+		$data['pro'] = $this->service_channel_m->get_prolist($per_page); 
 		$data['imgs'] = $this->home_pic_m->pic_info(8);
 		$data['imgs_num'] = $this->home_pic_m->pic_num(8);
 		$data['partners'] = $this->partners_m->get_all();
