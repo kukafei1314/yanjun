@@ -26,11 +26,25 @@ class Service_channel_m extends CI_Model {
         $query = $this->db->get('yj_service_channel',$limit, $offset);
         return $query->result_array();
 	}
-	public function get_prolist()
+	public function get_prolist($per_page)
 	{
 	   $this->db->order_by('id asc');
        $query = $this->db->get('yj_questions');
-       return $query->result_array();
+       $pro = $query->result_array();
+       $i=0;
+       foreach ($pro as $row) {
+       		$this->db->where("id <", $row['id']);
+       		$query = $this->db->get('yj_questions');
+       		$num = $query->num_rows();
+       		if(($num+1)%$per_page == 0)
+       		{
+       			$pro[$i]['page'] = ($num+1)/$per_page;
+       		} else {
+       			$pro[$i]['page'] = floor(($num+1)/$per_page)+1;
+       		}
+       		$i++;
+       }
+       return $pro;
 	}
 	
 	public function get_pro_list($limit,$offset)

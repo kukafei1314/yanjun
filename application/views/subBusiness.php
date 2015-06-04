@@ -68,13 +68,7 @@
         	<p>常见问题</p>
             <div class="text_li">
 			    <?php foreach ($pro as $pro): ?>
-					<a href="servicechannel/businesspro?&p=<?php if ($pro['id']%5!=0){
-																	$a=($pro['id']-$pro['id']%5+5)/5;
-																}else{
-																	$a=$pro['id']/5;
-																}					                                          
-					                                             echo $a;?>
-						#<?php echo $pro['id']%5;?>">
+					<a href="servicechannel/businesspro?p=<?php echo $pro['page'];?>">
 						<?php echo $pro['title'];?>
 					</a><br/>
                 <?php endforeach;?> 
