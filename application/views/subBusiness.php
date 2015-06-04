@@ -5,7 +5,6 @@
             <?php foreach($imgs as $img): ?>
                 <li><img src="<?php echo base_url($img['path']);?>" width=986 height=410/></li>
             <?php endforeach; ?>
-                <div class="cl"></div>
             </ul>
         </div>
         <div id="main_tip">

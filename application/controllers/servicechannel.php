@@ -46,6 +46,7 @@ class Servicechannel extends CI_Controller {
 	    $data['pro'] = $this->service_channel_m->get_pro_list($per_page,$per_page*($p-1));
 		$data['page_html']	  =	page($this->service_channel_m->get_pro_num(), $per_page);
 		$data['imgs'] = $this->home_pic_m->pic_info(8);
+		$data['imgs_num'] = $this->home_pic_m->pic_num(8);
 		$data['partners'] = $this->partners_m->get_all();
 		$this->load->view('busi_problem',$data);
 	}

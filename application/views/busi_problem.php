@@ -6,7 +6,6 @@
             <?php foreach($imgs as $img): ?>
                 <li><img src="<?php echo base_url($img['path']);?>" width=986 height=410/></li>
             <?php endforeach; ?>
-                <!--<div class="cl"></div>-->
             </ul>
         </div>
         <div id="main_tip">
@@ -14,6 +13,7 @@
             <a class="arrow_right" onclick="change(0)"></a>
         </div>
     </div>
+    <input id="pic_num" type="hidden" value="<?php echo $imgs_num;?>"/>
     <div class="pro_middle">
         <div class="pro_m1 float">常见问题</div>
         <div class="float" style="position: relative">
