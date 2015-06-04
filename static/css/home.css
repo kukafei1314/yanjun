@@ -12,6 +12,7 @@ p{
 a {  
 	color:#555;
 	text-decoration: none;
+	cursor:pointer;
 }
 img {
 	border:none;
@@ -1373,6 +1374,7 @@ ol li {
 	margin:22px 10px 0 10px;
 	text-align:center;
 	height:30px;
+	cursor:pointer;
 }
 .centerFoot{
 	width:100%;
