@@ -41,7 +41,8 @@ class Type_m extends CI_Model {
 			$arr = array(
 					'name'    => $data['name'],
 					'e_mail'  => $data['e_mail'],
-					'content' => $data['content']
+					'content' => $data['content'],
+					'recruit_name' => $data['recruit_name']
 			);
 		} else {
 			$arr = array(
@@ -63,7 +64,8 @@ class Type_m extends CI_Model {
 			$arr = array(
 					'name'    => $data['name'],
 					'e_mail'  => $data['e_mail'],
-					'content' => $data['content']
+					'content' => $data['content'],
+					'recruit_name' => $data['recruit_name']
 			);
 		} else if($type == '1'){
 			$arr = array(

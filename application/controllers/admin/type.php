@@ -46,16 +46,17 @@ class Type extends CI_Controller {
 			$data['name'] = $this->input->post('name', TRUE);
 			$data['content'] = $this->input->post('content', TRUE);
 			$data['e_mail'] = $this->input->post('e_mail', TRUE);
+			$data['recruit_name'] = $this->input->post('recruit_name', TRUE);
 			$this->type_m->add_type($data);
 			redirect('admin/type?type='.$data['type']);
-			
 		} else {
 			$data['name'] = '';
 			$data['content'] = '';
 			$data['e_mail'] = '';
+			$data['recruit_name'] = '';
 			$data['username'] = $this->session->userdata('username');
 			$data['form_url'] = 'admin/type/add?type='.$data['type'];
-			$data['type_name'] = $this->type_m->get_type_name($type);
+			$data['type_name'] = $this->type_m->get_type_name($data['type']);
 			$this->load->view('admin/type_add',$data);
 		}
 	}
@@ -71,6 +72,7 @@ class Type extends CI_Controller {
 			$data['e_mail'] = $this->input->post('e_mail', TRUE);
 			$data['content'] = $this->input->post('content', TRUE);
 			$data['en_name'] = $this->input->post('en_name', TRUE);
+			$data['recruit_name'] = $this->input->post('recruit_name', TRUE);
 			$this->type_m->update_type($type,$tid,$data);
 			redirect('admin/type?type='.$type.'&p='.$p);	
 		} else {

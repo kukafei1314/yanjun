@@ -34,9 +34,15 @@
                                       <div class="cl"></div>
                                   </div>
                                <?php endif;?>							
-                                <?php if ($type == 1):?>
+                                <?php if ($type == 2):?>
                                 <div class="form-group">
-                                      <label class="col-sm-2 col-sm-2 control-label">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+                                      <label class="col-sm-2 col-sm-2 control-label">招聘部门</label>
+                                      <div class="col-sm-10">
+                                          <input name="recruit_name" type="text"  class="form-control" value="<?php echo $recruit_name;?>">
+                                      </div>
+                                </div>	
+                                <div class="form-group">
+                                      <label class="col-sm-2 col-sm-2 control-label">邮箱</label>
                                       <div class="col-sm-10">
                                           <input name="e_mail" type="email" id="t_mail" class="form-control" value="<?php echo $e_mail;?>">
                                       </div>

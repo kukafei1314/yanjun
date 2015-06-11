@@ -6,7 +6,7 @@ class Cases_expand extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('cases_m');
-		$this->load->model('partners_m');
+		$this->load->model(array('partners_m','type_m'));
 	}
 	
 	
@@ -21,6 +21,7 @@ class Cases_expand extends CI_Controller
 		$data['cases'] = $this->cases_m->get_list_rand($per_page,($p-1)*$per_page);
 		$data['page_html'] = page($this->cases_m->get_num(),$per_page);
 		$data['partners'] = $this->partners_m->get_all();
+		$data['types'] = $this->type_m->get_all(3);
 		$this->load->view('case_expand',$data);
 	}
 	public function single_cases()

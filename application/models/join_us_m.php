@@ -21,7 +21,31 @@ class Join_us_m extends CI_Model {
 	    $query = $this->db->get('yj_department_type');
 	    return $query->result_array();
 	}
-	
+	//获得问题
+	public function get_all_question()
+	{
+	    $query = $this->db->get('yj_join_questions');
+	    return $query->result_array();
+	}
+	//获得问题详情
+	public function get_question($id)
+	{
+		$this->db->where('id',$id);
+		$query = $this->db->get('yj_join_questions');
+		$result = $query->row_array();
+		return $result;
+	}
+	//编辑问题
+	 public function question_edit($arr)
+   	{
+	   $this->db->where('id',$arr['id']);
+	   $data = array(
+	   			'title' => $arr['title'],
+				'content' => $arr['content']
+	   			);
+	   $this->db->update('yj_join_questions',$data);
+	   return true;
+   	}
 	//获得部门名称
 	public function get_department_name($did)
 	{

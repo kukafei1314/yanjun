@@ -48,10 +48,8 @@
         <div class="join_right">
     	<div class="right_top">
         	<div class="right_top_title">招聘职位</div>
-            <div class="right_top_content">人力资源<br/> HR E-mail：<?php echo $depart['e_mail']; ?></div>
+            <div class="right_top_content"><?php echo $depart['recruit_name']; ?><br/> HR E-mail：<?php echo $depart['e_mail']; ?></div>
         </div>
-		
-		
 		<?php foreach ($job as $job): ?>
         <div class="right_middle" onclick="hideup(this)">
         	<div class="right_middle_title"><?php echo $job['job_name']; ?></div>
@@ -59,11 +57,7 @@
             	<?php echo $job['content']; ?>
             </div> 
         </div>
-		 <?php endforeach;?> 
-		
-		
-		
-        
+		 <?php endforeach;?>   
        </div>
     </div>
     <div class="main_page">

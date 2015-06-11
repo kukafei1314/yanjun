@@ -1368,6 +1368,8 @@ ol li {
 	_padding-top:40px!important;
 	_height:165px!important;
 	margin-bottom:5px;
+	display:block;
+	color:#fff;
 }
 .rightDivTitle {
 	font-size:18px;

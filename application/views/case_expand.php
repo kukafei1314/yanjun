@@ -1,27 +1,16 @@
 <?php $this->load->view('common/common_header'); ?>
  
     <div class="div_1">
-        <div class="div_h float">
-            <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
+    <?php $i=0; foreach($types as $type):$i++;?>
+        <div class="div_h float" <?php if($i==5):?>style="width:194px; margin-right:0;"<?php endif;?>>
+        	<a href="<?php echo base_url('cases?tid='.$type['tid']);?>">
+                <div class="div_hf float"><?php echo $type['content'];?></div>
+                <a class="a_link">
+                    <?php echo $type['name'];?><br /><?php echo $type['en_name'];?>
+                </a>
+            </a>
         </div>
-        <div class="div_h float">
-            <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
-        </div>
-        <div class="div_h float">
-            <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
-        </div>
-        <div class="div_h float">
-            <div class="div_hf float">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="<?php echo base_url('servicechannel');?>">品牌策略<br />Brand<br />Strategy</a>
-        </div>
-        <div class="div_h float">
-            <div class="div_hr" style="width:194px;">品牌战略顾问<br />品牌文化与核心价值创建<br />品牌形象与产品定位<br />品牌管理咨询</div>
-            <a class="a_link" href="<?php echo base_url('servicechannel');?>" style="width:194px;">品牌策略<br />Brand<br />Strategy</a>
-        </div>
-        <!--<div class="clc"></div>-->
+	<?php endforeach;?>
     </div>
     <div>
         <div class="case_left float">

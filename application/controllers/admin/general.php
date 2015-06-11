@@ -52,7 +52,7 @@ class General extends CI_Controller {
 		$result = $this->about_us_m->g_add($type,$arr);
 		if($result){
 			redirect('admin/general/index?type='.$type);
-		}else echo "导入数据失败！";
+		}
 	}
 	
 	public function delete() {
@@ -63,7 +63,7 @@ class General extends CI_Controller {
 		$result = $this->about_us_m->g_delete($arr);
 		if($result){
 			redirect('admin/general/index?type='.$type.'&p='.$p);
-		}else echo "数据删除失败！";	
+		}
 	}
 	
 	public function edit() {
@@ -133,8 +133,8 @@ class General extends CI_Controller {
 			$result = $this->partners_m->g_update($arr);
 			if($result){
 				redirect('admin/general/partners');
-			}else echo "数据更新失败！";
 			}
+		}
 	}
 	
 	public function detail() {
@@ -147,5 +147,5 @@ class General extends CI_Controller {
 		$data['text'] = $this->about_us_m->select_i($type,$id);
 		$this->load->view('admin/g_detail', $data);
 	}
-	
+
 }

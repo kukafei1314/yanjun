@@ -57,9 +57,6 @@ class Join_us extends CI_Controller
             $data['pic'] = $pic;
             $data['signature'] = $sign;
             $data['motto']= $_POST['ue_content'];
-            //$preg = "/<p.*>(.*)<\/p>/";//正则
-            //preg_match($preg,$ue_content,$store);
-            //$data['motto'] = $store[1];
             if($this->join_us_m->add_employee($data) == TRUE) {
                 redirect('admin/join_us/employee?p='.$p);
             }
@@ -67,11 +64,7 @@ class Join_us extends CI_Controller
             $data['did'] = $_POST['did'];
             $data['job_name'] = $_POST['job_name'];
             $data['add_time'] = time();
-            $data['content']= $_POST['ue_content'];
-            //$preg = "/<p.*>(.*)<\/p>/";//正则
-            //preg_match($preg,$ue_content,$store);
-            //$data['content'] = $store[1]; 
-            
+            $data['content']= $_POST['ue_content'];          
             $this->join_us_m->add_job($data);
             redirect('admin/join_us/job?p='.$p);
         }  
@@ -193,6 +186,29 @@ class Join_us extends CI_Controller
 			redirect('admin/join_us/employee');
 		} else {
 			redirect('admin/join_us/job');
+		}
+	}
+	
+	public function question_join() {
+		$data['username'] = $this->session->userdata('username');
+		$data['question'] = $this->join_us_m->get_all_question();
+		$this->load->view('admin/join_question',$data);
+	}
+	
+	public function question_join_edit() {
+		$id = $this->input->get('id');
+		$data = $this->join_us_m->get_question($id);
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('admin/join_question_edit',$data);
+	}
+	
+	public function question_join_edit_v() {
+		$arr['id'] = $this->input->get('id');
+		$arr['title'] = $this->input->post('title');
+		$arr['content'] = $this->input->post('content');
+		$result = $this->join_us_m->question_edit($arr);
+		if($result){
+			redirect('admin/join_us/question_join');
 		}
 	}
 }
