@@ -20,6 +20,7 @@ class Join_us extends CI_Controller
 		$data['depart'] = $this->join_us_m->get_department(17);
 		$data['partners'] = $this->partners_m->get_all();
 		$data['imgs_num'] = $this->home_pic_m->pic_num(5);
+		$data['questions'] =  $this->join_us_m->get_all_question();
         $this->load->view('join_us_second',$data);
     }
 	

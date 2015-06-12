@@ -19,14 +19,14 @@
     </div>
    <div id="j2_m">
        <div class="join2_middle">
-            <a href="<?php echo base_url('join_us/question_join?id=22');?>" class="join2_middle_block">为什么选择 晏钧设计</a>
-            <a href="<?php echo base_url('join_us/question_join?id=23');?>" class="join2_middle_block">如何与团队 一起工作</a>
-            <a href="<?php echo base_url('join_us/question_join?id=24');?>" class="join2_middle_block1" style="margin-bottom:0;">实习计划</a>
+            <a href="<?php echo base_url('join_us/question_join?id=22');?>" class="join2_middle_block"><?php echo $questions[0]['title'];?></a>
+            <a href="<?php echo base_url('join_us/question_join?id=23');?>" class="join2_middle_block1"><?php echo $questions[1]['title'];?></a>
+            <a href="<?php echo base_url('join_us/question_join?id=25');?>" class="join2_middle_block1" style="margin-bottom:0;"><?php echo $questions[3]['title'];?></a>
        </div>
        <div class="join2_middle">
-            <a href="<?php echo base_url('join_us/question_join?id=25');?>" class="join2_middle_block1">加入团队</a>
-            <a href="<?php echo base_url('join_us/question_join?id=26');?>" class="join2_middle_block1">应聘帮助</a>
-            <a href="<?php echo base_url('join_us/question_join?id=27');?>" class="join2_middle_email">请投简历<p class="email">HR E-mail：<?php echo $depart['e_mail']; ?></p></a>
+             <a href="<?php echo base_url('join_us/question_join?id=24');?>" class="join2_middle_block"><?php echo $questions[2]['title'];?></a> 
+            <a href="<?php echo base_url('join_us/question_join?id=26');?>" class="join2_middle_block1"><?php echo $questions[4]['title'];?></a>
+            <a href="<?php echo base_url('join_us/question_join?id=27');?>" class="join2_middle_email"><?php echo $questions[5]['title'];?><p class="email">HR E-mail：<?php echo $depart['e_mail']; ?></p></a>
        </div>
        <div class="join2_right">
             <a class="join2_middle_right" href="<?php echo base_url('join_us/department?did=14');?>">设计部</a>
