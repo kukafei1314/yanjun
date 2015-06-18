@@ -17,7 +17,7 @@
                 </div>
                 <div class="cl"></div>
             </div>
-            <div class="main_footer_address">
+            <!--<div class="main_footer_address">
             	<div class="main_footer_address1">
                 	晏钧设计/北京
                 </div>
@@ -28,7 +28,7 @@
                 	<a href="<?php echo base_url('/index/map?type=2'); ?>"><input type="button" value="查看地图"/></a>
                 </div>
                 <div class="cl"></div>
-            </div>
+            </div>-->
             <div class="main_footer_corp">
             	<div class="main_footer_corp1">
                 	产业投资合作伙伴

@@ -37,6 +37,7 @@ class About_us extends CI_Controller
 		$p = $this->input->get('p')? $this->input->get('p'):1;	// 获取当前页码
 		$data['p'] = $p;
 		$data['imgs'] = $this->home_pic_m->pic_info(6);
+		$data['imgs_num'] = $this->home_pic_m->pic_num(6);
 		$data['news'] = $this->news_m->get_list($per_page,$per_page*($p-1));
 		$data['page_html'] = page($this->news_m->get_num(), $per_page);
 		
